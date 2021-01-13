@@ -19,10 +19,40 @@ var users = [
         "fullname": "Tomer Yosef",
         "username": "TomerTheCreator",
         "password": "123456",
-        "imgUrl": "http://some-img",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
         "tags": ["Funk", "Rock", "Hip-Hop", "World"],
         "about": "Really open for all kinds of jams and collaborations ;)",
         "talents": ["Guitar", "Singer", "Drums"],
+        "location": {
+            "city": "Tel Aviv",
+            "lat": 32.61308,
+            "lng": 34.1413
+        },
+        "followers": [
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "http://some-img"
+            }
+        ],
+        "following": [
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "http://some-img"
+            }
+        ]
+    },
+    {
+        "_id": "u102",
+        "createdAt": 12122134434,
+        "fullname": "Moshik Afia",
+        "username": "MoshikTheTerminator",
+        "password": "1234567",
+        "imgUrl": "http://some-img",
+        "tags": ["Israeli", "Yam-Tichoni"],
+        "about": "Open to any kind of offer",
+        "talents": [ "Singer", "Darbocka"],
         "location": {
             "city": "Tel Aviv",
             "lat": 32.61308,
@@ -58,7 +88,10 @@ function getUsers() {
 
 function getById(userId) {
     // return storageService.get('user', userId)
-    return httpService.get(`user/${userId}`)
+    // return httpService.get(`user/${userId}`)
+    return users.find(user => {
+        return user._id === userId
+    })
 }
 function remove(userId) {
     // return storageService.remove('user', userId)
