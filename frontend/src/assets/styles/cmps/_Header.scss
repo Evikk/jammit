@@ -3,7 +3,7 @@ header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     .loggedin-user {
         background-color: $clr1;
         padding: 2px 8px;
@@ -18,15 +18,15 @@ header {
         }
     }
 }
+
 nav {
-    background-color: $clr4;
+    font-family: Acme;
+    background-color: #fff;
     padding: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
 }
-nav a:not(:first-child) {
-    border-top: 1px solid $clr1;
-    padding: 0 5px;
-    margin: 10px;
-}
+
 nav .active {
     color: $clr1;
 }
