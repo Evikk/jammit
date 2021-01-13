@@ -10,6 +10,7 @@ export function JamPreview({ jam, onDelete }) {
             <div className="jam-card-title">
                 <Link to={`/jam/${jam._id}`}>
                     <span>{jam.title}</span>
+                    <h2>Make music</h2>
                 </Link>
             </div>
             <div className="jam-card-badges">
