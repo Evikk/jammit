@@ -17,7 +17,7 @@ class _Header extends Component {
                 </Link>
                 
             </span>}
-            <h1>DAniDuche</h1>
+            <h1>Alone is here</h1>
         </header>
     }
 
