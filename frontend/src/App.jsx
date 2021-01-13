@@ -8,7 +8,7 @@ import { Header } from './cmps/Header'
 
 export function App() {
   return (
-    <div className="app">
+    <div className="app main-container">
       <Router>
         <Header></Header>
         <main>
