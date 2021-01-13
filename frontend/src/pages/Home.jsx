@@ -17,7 +17,6 @@ class _Home extends Component {
 
   render() {
     const { jams, users, loggedInUser } = this.props
-    console.log(users, loggedInUser);
     if (!jams) return <h2>Loading...</h2>
     return (
       <div className="home">
