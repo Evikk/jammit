@@ -49,7 +49,7 @@ var users = [
         "fullname": "Moshik Afia",
         "username": "MoshikTheTerminator",
         "password": "1234567",
-        "imgUrl": "http://some-img",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
         "tags": ["Israeli", "Yam-Tichoni"],
         "about": "Open to any kind of offer",
         "talents": [ "Singer", "Darbocka"],

@@ -34,7 +34,9 @@ class _UserProfile extends Component {
         <p>{user.location.city}</p>
         <p>{user.tags}</p>
         <p>{user.about}</p>
-        <p>{user.talents}</p>
+        <ul>{user.talents.map((talent, idx) => {
+                    return <li key={idx}>{talent}</li>
+                })}</ul>
         
 
       </section>
