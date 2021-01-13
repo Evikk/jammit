@@ -14,12 +14,11 @@ export function App() {
         <main>
           <Switch>
             <Route path="/user/:id" component={UserDetails} />
-            <Route path="/login" component={LoginSignup} />
+            <Route path="/login" component={LoginSignup}/>
             <Route path="/" component={Home} />
           </Switch>
         </main>
         <footer>
-          Starter
         </footer>
       </Router>
     </div>
