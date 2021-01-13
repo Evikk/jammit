@@ -1,11 +1,12 @@
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import React from "react";
 import { authService } from "../services/authService.js";
+import { login } from '../store/actions/userActions.js'
 
-export class LoginSignup extends React.Component {
+class _LoginSignup extends React.Component {
     state = {
         msg: "",
-        loggedinUser: authService.getLoggedUser(),
+        loggedinUser: null,
         loginCred: {
             username: "",
             password: "",
@@ -48,19 +49,7 @@ export class LoginSignup extends React.Component {
             return this.setState({ msg: "Please enter user/password" });
         }
         const userCreds = { username, password };
-        authService
-            .login(userCreds)
-            .then((user) => {
-                this.setState({
-                    loginCred: { username: "", password: "" },
-                    loggedInUser: user,
-                });
-                this.props.history.push('/toy')
-            })
-            .catch((err) => {
-                console.log("ERR", err);
-                this.setState({ msg: "Try again" });
-            });
+        this.props.login(userCreds)
     };
 
     doSignup = async (ev) => {
@@ -79,9 +68,6 @@ export class LoginSignup extends React.Component {
     };
     
     render() {
-        const loggedInUser = authService.getLoggedUser();
-        if (loggedInUser) this.props.history.push('/toy')
-        
         let signupSection = (
             <form className="login-form" onSubmit={this.doSignup}>
                 <h2 className="form-title">Create a new account</h2>
@@ -145,3 +131,15 @@ export class LoginSignup extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return {
+      loggedInUser: state.userModule.loggedInUser
+    }
+  }
+  const mapDispatchToProps = {
+    login
+  }
+  
+  export const LoginSignup = connect(mapStateToProps, mapDispatchToProps)(_LoginSignup)
+  

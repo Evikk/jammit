@@ -23,7 +23,12 @@ var jams = [
         "startsAt": 12122212134,
         "tags": ["60's", "70's", "Blues", "Rock"],
         "createdAt": 121221453343,
-        "msgs": ["See you all there!", "don't forget to bring beers"],
+        "msgs": [
+            {
+                txt: "See you all there!",
+                sentBy: "haim"
+            }
+        ],
         "usersGoing": [
             {
                 "_id": "u104",
