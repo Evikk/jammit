@@ -11,11 +11,10 @@ export function JamPreview({ jam }) {
         <li className="jam-card flex">
             <div className="thumb flex column">
                 <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
-                <img className="jam-inst" src={Bass} alt="" width="50px"/>
+                <img className="jam-inst" src={Bass} alt=""/>
             </div>
-
             <div className="jam-card-content flex column" >
-                    <h2 onClick={()=>history.push(`/jam/${jam._id}`)}>{jam.title}</h2>
+                <h2 onClick={()=>history.push(`/jam/${jam._id}`)}>{jam.title}</h2>
             
             <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                 return <li key={idx}>{tag}</li> })}
