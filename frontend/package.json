@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
-    "@material-ui/icongit remotes": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/utils": "^4.11.2",
     "@testing-library/jest-dom": "^5.11.8",
