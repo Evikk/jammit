@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { userService } from '../services/userService'
 import { loadUsers } from '../store/actions/userActions'
-
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 class _UserProfile extends Component {
 
   state = {
-    user : null,
-    currUser: false 
+    user: null,
+    currUser: false
   }
 
   // async componentDidMount() {
@@ -17,27 +17,28 @@ class _UserProfile extends Component {
 
   componentDidMount() {
     const user = userService.getById(this.props.match.params.id)
-    console.log('userDits cmp didM',user );
-    this.setState({user})
+    console.log('userDits cmp didM', user);
+    this.setState({ user })
     // this.props.loadUsers()
   }
 
   render() {
-    
-    const {user} = this.state
-    if(!user) return <div>Loding..</div>
+
+    const { user } = this.state
+    if (!user) return <div>Loding..</div>
     return (
       <section className="user-details">
         <h1>User Details</h1>
-        <img src={user.imgUrl}/>
-        <p>{user.username}</p>
+        <img src={user.imgUrl} />
+        <LocationOnRoundedIcon><p>{user.username}</p></LocationOnRoundedIcon>
+        {/* <p>{user.username}</p> */}
         <p>{user.location.city}</p>
         <p>{user.tags}</p>
         <p>{user.about}</p>
         <ul>{user.talents.map((talent, idx) => {
-                    return <li key={idx}>{talent}</li>
-                })}</ul>
-        
+          return <li key={idx}>{talent}</li>
+        })}</ul>
+
 
       </section>
     )
