@@ -6,7 +6,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url('../../img/jam-session.jpg');
+    background-image: linear-gradient(to bottom, rgba(228, 224, 224, 0.056), rgba(255, 255, 255, 0.714)),
+    url('../../img/jam-session.jpg');
+    grid-gap: 20px;
+    background-size: cover;
 }
 
 .hero-title {

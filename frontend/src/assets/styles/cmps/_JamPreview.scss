@@ -1,0 +1,17 @@
+.jam-card {
+    
+}
+
+.jam-card-content {
+    
+}
+
+.jam-card-tags {
+    grid-gap: 4px;
+    * {
+        border-radius: 4px;
+        background-color: teal;
+        padding: 3px;
+        color: thistle;
+    }
+}
