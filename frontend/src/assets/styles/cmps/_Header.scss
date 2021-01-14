@@ -3,7 +3,7 @@ header {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
     .loggedin-user {
         background-color: $clr1;
         padding: 2px 8px;
@@ -18,15 +18,31 @@ header {
         }
     }
 }
+
 nav {
-    background-color: $clr4;
+    font-family: Source-Sans;
+    
     padding: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
+    a {
+        padding: 0 10px;
+        color: #606060;
+    }
+    a:not(:last-child){
+        border-right: 1px solid grey;
+    }
 }
-nav a:not(:first-child) {
-    border-top: 1px solid $clr1;
-    padding: 0 5px;
-    margin: 10px;
-}
+
 nav .active {
     color: $clr1;
+}
+
+.nav-right-side {
+    grid-gap: 10px;
+    justify-content: space-between;
+}
+
+.user-greet {
+    grid-gap: 5px;
 }

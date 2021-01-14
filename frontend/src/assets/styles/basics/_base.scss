@@ -2,15 +2,9 @@
     box-sizing: border-box;
 }
 
-::selection {
-    background-color: $clr1;
-    color: $clr6;
-}
-
 html {
-    font-family: montserrat;
-    line-height: 1.6;
-    color: $clr2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // color: $clr2;
 }
 
 body {
@@ -18,15 +12,15 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: caveat;
-    margin: 0 0 0.6em;
-    line-height: 1;
+h1, h2, h3, h4, h5, h6, ul {
+    // line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
 
 section, main, footer {
-    padding: 5px;
+    // padding: 5px;
 }
 
 img {
@@ -40,8 +34,9 @@ p {
 
 a {
     text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+    color: black;
 }
 
+ul {
+    list-style: none;
+}

@@ -8,8 +8,6 @@
 @import "basics/helpers";
 @import "basics/layout";
 @import "basics/base";
-@import "basics/links";
-@import "basics/forms";
 
 
 
@@ -17,4 +15,6 @@
 // Components
 @import "cmps/Header";
 
-
+//Views
+@import "views/HomePage";
+@import "views/UserProfile";

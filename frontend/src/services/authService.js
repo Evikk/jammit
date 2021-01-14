@@ -1,6 +1,6 @@
 import Axios from 'axios';
+import { userService } from './userService';
 const axios = Axios.create({withCredentials: true})
-// const baseUrl = 'http://localhost:3030/api/auth'
 const baseUrl = (process.env.NODE_ENV !== 'development') ? '/api/auth' : '//localhost:3030/api/auth';
 
 const STORAGE_KEY = 'loggedInUser'
@@ -14,13 +14,15 @@ export const authService = {
 
 
 function login(credentials) {
-    return axios.post(`${baseUrl}/login`, credentials)
-        .then(res => res.data)
-        .then(user => {
-            user = {...user}
-            console.log('Login success',user);
-            return _handleLogin(user);
-        })
+    const loggedInUser = userService.login(credentials)
+    return _handleLogin(loggedInUser)
+    // return axios.post(`${baseUrl}/login`, credentials)
+    //     .then(res => res.data)
+    //     .then(user => {
+    //         user = {...user}
+    //         console.log('Login success',user);
+    //         return _handleLogin(user);
+    //     })
 }
 // credentials strucutre: {username: '', password: '', fullname: ''}
 function signup(credentials) {
