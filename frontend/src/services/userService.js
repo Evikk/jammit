@@ -32,14 +32,14 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "http://some-img"
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
             }
         ],
         "following": [
             {
                 "_id": "u107",
                 "fullname": "Kobi Oz",
-                "imgUrl": "http://some-img"
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Eyepatch&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Red&eyeType=Wink&eyebrowType=RaisedExcitedNatural&mouthType=Concerned&skinColor=Light'"
             }
         ]
     },

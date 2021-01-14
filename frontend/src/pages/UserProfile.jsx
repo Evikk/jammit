@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { userService } from '../services/userService'
 import { loadUsers } from '../store/actions/userActions'
-import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 class _UserProfile extends Component {
 
   state = {
@@ -25,38 +25,53 @@ class _UserProfile extends Component {
   }
 
   render() {
-
     const { user } = this.state
     if (!user) return <div>Loding..</div>
     return (
-      <section >
-        <div className="user-box">
-        <div className="user-basic-info">
+      <section className="user-box flex">
+
+        <div className="user-left-box flex column">
+
+        <div className="user-basic-info flex">
+
           <div className="user-img">
             <img src={user.imgUrl} />
           </div>
 
-          <div className="user-tags-name">
-            <p>{user.username}</p>
-            <LocationOnRoundedIcon />
-            <p>{user.location.city}</p>
-            <ul>{user.tags.map((tag, idx) => {
-              return <li key={idx}>{tag}</li>
+          <div className="user-tags-name flex column justify-center">
+            <span className="user-stage-name fs30">{user.username}</span>
+            <br />
+            <div className="user-location">
+              <LocationOnOutlinedIcon className="location-icon" />
+              <span>{user.location.city}</span>
+            </div>
+            <ul >{user.tags.map((tag, idx) => {
+              return <li className="tags fs12" key={idx}>{tag}</li>
             })}</ul>
           </div>
 
         </div>
+
         <div className="user-about">
-          <p>{user.about}</p>
-          <ChatRoundedIcon />
+          <span>{user.about}</span>
+        </div>
+
+        <div className="reaction-icon">
+          <ChatRoundedIcon/>
           <FavoriteBorderRoundedIcon />
         </div>
 
-        <div className="user-talents">
-          <ul>{user.talents.map((talent, idx) => {
-            return <li key={idx}>{talent}</li>
-          })}</ul>
         </div>
+
+        <div className="user-right-box flex column">
+          <div className="titel flex">
+          <span className="talents-title fs18">Talents</span>
+          </div>
+          <div className="user-talents">
+            <ul className="flex column">{user.talents.map((talent, idx) => {
+              return <li  key={idx}>{talent}</li>
+            })}</ul>
+          </div>
 
         </div>
 

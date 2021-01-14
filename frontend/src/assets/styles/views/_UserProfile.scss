@@ -2,3 +2,86 @@
 //     width: 173px;
 //     height: 183px;
 // }
+
+.user-box{
+    // margin-top: 40px;
+    // margin-left: 40px;
+    margin: 40px 40px 40px 40px;
+    // width: 800px;
+    height: 400px;
+    border-bottom: 2px solid whitesmoke;
+}
+.user-right-box{
+    // width: 300px;
+    // height: 130px;
+    padding-top: 37px;
+    padding-left: 100px;
+}
+.user-basic-info{
+    margin-bottom: 15px;
+}
+
+.location-icon{
+    display: inline;
+    color: #929292;
+}
+
+.user-box p{
+    display: inline;
+    
+}
+
+.user-box li {
+    display: inline;
+    margin: 3px;
+}
+
+.user-tags-name .tags {
+    background-color: #999999;
+    padding: 2px;
+    color: white;
+    border-radius: 2px;
+}
+
+.user-img{
+    width: 173px;
+    height: 183px;
+}
+.user-location{
+    margin-bottom: 20px;
+}
+
+.user-location span{
+    color: #929292
+}
+
+.user-stage-name{
+    color: rgb(37, 36, 43);
+}
+
+.reaction-icon{
+    color: #606060;
+    padding-left: 26px;
+}
+
+.user-about span{
+    margin-left: 26px;
+    color: rgb(21, 24, 44);
+}
+.user-about{
+    height: 70px;
+}
+.talents-title{
+    background-color: #72bb53;
+    font-family: Helvetica;
+    color: white;
+    text-align: center;
+    height: 25px;
+    width: 90px;
+    border-radius: 2px;
+    line-height: 27px;
+   
+}
+.user-right-box .titel{
+    padding-bottom:20px;
+}
