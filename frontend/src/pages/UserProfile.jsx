@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { userService } from '../services/userService'
 import { loadUsers } from '../store/actions/userActions'
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
+import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
+import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 class _UserProfile extends Component {
 
   state = {
@@ -17,7 +19,7 @@ class _UserProfile extends Component {
 
   componentDidMount() {
     const user = userService.getById(this.props.match.params.id)
-    console.log('userDits cmp didM', user);
+    // console.log('userDits cmp didM', user);
     this.setState({ user })
     // this.props.loadUsers()
   }
@@ -27,18 +29,36 @@ class _UserProfile extends Component {
     const { user } = this.state
     if (!user) return <div>Loding..</div>
     return (
-      <section className="user-details">
-        <h1>User Details</h1>
-        <img src={user.imgUrl} />
-        <LocationOnRoundedIcon><p>{user.username}</p></LocationOnRoundedIcon>
-        {/* <p>{user.username}</p> */}
-        <p>{user.location.city}</p>
-        <p>{user.tags}</p>
-        <p>{user.about}</p>
-        <ul>{user.talents.map((talent, idx) => {
-          return <li key={idx}>{talent}</li>
-        })}</ul>
+      <section >
+        <div className="user-box">
+        <div className="user-basic-info">
+          <div className="user-img">
+            <img src={user.imgUrl} />
+          </div>
 
+          <div className="user-tags-name">
+            <p>{user.username}</p>
+            <LocationOnRoundedIcon />
+            <p>{user.location.city}</p>
+            <ul>{user.tags.map((tag, idx) => {
+              return <li key={idx}>{tag}</li>
+            })}</ul>
+          </div>
+
+        </div>
+        <div className="user-about">
+          <p>{user.about}</p>
+          <ChatRoundedIcon />
+          <FavoriteBorderRoundedIcon />
+        </div>
+
+        <div className="user-talents">
+          <ul>{user.talents.map((talent, idx) => {
+            return <li key={idx}>{talent}</li>
+          })}</ul>
+        </div>
+
+        </div>
 
       </section>
     )

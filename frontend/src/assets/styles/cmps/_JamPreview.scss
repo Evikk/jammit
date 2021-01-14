@@ -1,17 +1,35 @@
 .jam-card {
-    
+    background-color: #e8e4e4;
+    .jamThumb{
+        height: 80%;
+        width: 130px;
+        margin-right: 5px;
+    }
+    .jam-inst {
+        width: 30px;
+        border-radius: 50%;
+        background-color: rgb(184, 184, 184);
+    }
 }
 
 .jam-card-content {
-    
+    p {
+        display: flex;
+        align-items: center;
+        font-size: rem(16px);
+        margin-bottom: 5px;
+    }
 }
 
 .jam-card-tags {
+    margin: 5px 0;
     grid-gap: 4px;
     * {
         border-radius: 4px;
-        background-color: teal;
+        background-color: #e9bd5b;
         padding: 3px;
-        color: thistle;
+        color: black;
+        border: 1px solid grey;
+        font-size: rem(14px);
     }
 }
