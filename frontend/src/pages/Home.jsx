@@ -21,16 +21,18 @@ class _Home extends Component {
     return (
       <div className="home">
         <div className="hero-section">
-          <h1 className="hero-title fs40">Find a Jam. Make Music</h1>
-          <h3 className="hero-subtitle">Search and explore the best jam sessions around!</h3>
-          <div className="call-to-action">
-            <select className="jams-filter" name="filterBy" id="">
-              <option value="">Show All Jams Around Me...</option>
-            </select>
-            <button className="call-to-action-btn">Let's Go!</button>
+          <div className="hero-content flex column">
+            <h1 className="hero-title fs40">Find a Jam. Make Music</h1>
+            <h3 className="hero-subtitle">Search and explore the best jam sessions around!</h3>
+            <div className="call-to-action">
+              <button className="call-to-action-btn">Let's Find a Jam!</button>
+            </div>
           </div>
         </div>
-        <JamList jams={jams}/>
+        <div className="jam-previews-container">
+          <p className="jam-previews-title"></p>
+          <JamList jams={jams}/>
+        </div>
         <UserList users={users}/>
       </div>
     )

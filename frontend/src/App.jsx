@@ -5,7 +5,7 @@ import { LoginSignup } from './pages/LoginSignup'
 import { JamDetails } from './pages/JamDetails'
 import { UserProfile } from './pages/UserProfile'
 import { Header } from './cmps/Header'
-
+import { JamExplore } from './pages/JamExplore'
 
 export function App() {
   return (
@@ -17,6 +17,7 @@ export function App() {
             <Route path="/jam/:id" component={JamDetails} />
             <Route path="/user/:id" component={UserProfile} />
             <Route path="/login" component={LoginSignup} />
+            <Route path="/search" component={JamExplore} />
             <Route path="/" component={Home} />
           </Switch>
         </main>
