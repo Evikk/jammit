@@ -16,10 +16,6 @@ class _JamExplore extends Component {
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
-})(_JamExplore);
-
 const mapStateToProps = (state) => {
     return {
         jams: state.jamModule.jams,

@@ -22,7 +22,7 @@ export class MapContainer extends Component {
 
                 <InfoWindow onClose={this.onInfoWindowClose}>
                     <div>
-                        <h1>{this.state.selectedPlace.name}</h1>
+                        <h1>ahalan</h1>
                     </div>
                 </InfoWindow>
             </Map>
