@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { jamService } from '../services/jamService'
-import {MapContainer } from '../cmps/Map'
+import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
+import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
+import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
+import {MapContainer } from '../cmps/MapContainer'
 // import { loadJams } from '../store/actions/jamActions'
 
 
@@ -14,18 +18,6 @@ export class JamDetails extends Component {
         this.setState({ jam });
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (prevState.jam !== this.state.jam) {
-    //         let lat = this.state.jam.location.lat;
-    //         let lng = this.state.jam.location.lng;
-    //         jamMap.initMap(lat, lng)
-    //             .then(() => {
-    //                 jamMap.addMarker({ lat, lng });
-    //             })
-    //             .catch(console.log('INIT MAP ERROR'));
-    //     }
-    // }
-
 
     render() {
         return (
@@ -34,15 +26,19 @@ export class JamDetails extends Component {
                 {!this.state.jam && <div> Loading... </div>}
                 {this.state.jam &&
                     <div>
-                        <h1>{this.state.jam.title}</h1>
+                        <div className="jam-title-img-con">
+                        <h1 className="jam-title">{this.state.jam.title}</h1>
+                        </div>
                         <h3> Details </h3>
-                        <p><span>{this.state.jam.capacity}</span> people responded</p>
-                        <p>Event by <span><a>{this.state.jam.createdBy.fullname}</a></span></p>
-                        <p>{this.state.jam.location.address}</p>
+                        <p><span><PeopleAltRoundedIcon/></span><span>{this.state.jam.capacity}</span> people responded</p>
+                        <p><span><EmojiPeopleRoundedIcon/></span>Event by <span> {this.state.jam.createdBy.fullname}</span></p>
+                        <p><span><RoomRoundedIcon /></span>{this.state.jam.location.address}</p>
+                        <p> <span><AccessTimeRoundedIcon /></span>{this.state.jam.startsAt} - Duration </p>
                         <h3>About</h3>
                         <p>{this.state.jam.description}</p>
                         <h3> Location </h3>
-                        <MapContainer/>
+                       <div> <MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div>
+                        <p>Our event will be held at the <strong>{this.state.jam.location.address}</strong></p>
                     </div>}
             </section>
         )
