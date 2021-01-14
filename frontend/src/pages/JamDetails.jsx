@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { jamService } from '../services/jamService'
-import { jamMap } from '../services/mapService'
-import { loadJams } from '../store/actions/jamActions'
+import {MapContainer } from '../cmps/Map'
+// import { loadJams } from '../store/actions/jamActions'
 
 
 export class JamDetails extends Component {
@@ -30,8 +30,8 @@ export class JamDetails extends Component {
     render() {
         return (
             <section className="jam-details">
-               
-                {!this.state.jam && <div> <img src="spinnger.gif" /> </div>}
+
+                {!this.state.jam && <div> Loading... </div>}
                 {this.state.jam &&
                     <div>
                         <h1>{this.state.jam.title}</h1>
@@ -42,10 +42,7 @@ export class JamDetails extends Component {
                         <h3>About</h3>
                         <p>{this.state.jam.description}</p>
                         <h3> Location </h3>
-                        <div id="map">~map space~</div>
-                        {/* <pre>
-                            {JSON.stringify(this.state.jam, null, 2)}
-                        </pre> */}
+                        <MapContainer/>
                     </div>}
             </section>
         )
