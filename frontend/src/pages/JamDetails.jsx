@@ -37,7 +37,7 @@ export class JamDetails extends Component {
                         <h1>{this.state.jam.title}</h1>
                         <h3> Details </h3>
                         <p><span>{this.state.jam.capacity}</span> people responded</p>
-                        <p>Event by <span><a>{this.state.jam.createdBy.fullname}</a></span></p>
+                        <p>Event by <span> <a>{this.state.jam.createdBy.fullname}</a></span></p>
                         <p>{this.state.jam.location.address}</p>
                         <h3>About</h3>
                         <p>{this.state.jam.description}</p>
