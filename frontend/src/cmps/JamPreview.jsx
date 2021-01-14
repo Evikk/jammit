@@ -1,21 +1,29 @@
 import { useHistory } from "react-router-dom";
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import EventIcon from '@material-ui/icons/Event';
+import Bass from '../assets/img/inst-icons/Bass.svg'
+
 
 export function JamPreview({ jam }) {
     const history = useHistory()
     return (
         <li className="jam-card flex">
-            <img src={jamThumb} className={jamThumb} alt="jam-thumbnail"/>
-            <div className="jam-card-content flex column" onClick={()=>history.push(`/jam/${jam._id}`)}>
-                    <h2>{jam.title}</h2>
+            <div className="thumb flex column">
+                <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
+                <img className="jam-inst" src={Bass} alt="" width="50px"/>
+            </div>
+
+            <div className="jam-card-content flex column" >
+                    <h2 onClick={()=>history.push(`/jam/${jam._id}`)}>{jam.title}</h2>
             
             <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                 return <li key={idx}>{tag}</li> })}
             </ul>
             
-                <p>{jam.location.address}</p>
-                <p><LocationOnIcon/>{new Date(jam.startsAt).toLocaleString()}</p>
+                <p><LocationOnIcon/>{jam.location.city}</p>
+                <p><EventIcon/>{new Date(jam.startsAt).toLocaleString('he-IL',{month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'})}</p>
+                <p>8/10 Slots Free</p>
             </div>
         </li>
     );

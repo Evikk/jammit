@@ -12,7 +12,8 @@ var jams = [
         "imgUrl": "http://some-img",
         "capacity": 12,
         "location": {
-            "address": "Hayarkon 30, Tel Aviv",
+            "city": "Tel Aviv",
+            "address": "Hayarkon 30",
             "lat": -8.61308,
             "lng": 41.1413
         },
@@ -35,7 +36,7 @@ var jams = [
                 "_id": "u104",
                 "fullname": "Haim Romano",
                 "imgUrl": "http://some-img",
-                "playing": ["Guitar"]
+                "playing": ["Electric-Guitar"]
             },
             {
                 "_id": "u103",
@@ -47,7 +48,77 @@ var jams = [
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
                 "imgUrl": "http://some-img",
-                "playing": ["Drums", "Guitar", "Singer"]
+                "playing": ["Drums", "Electric-Guitar", "Singer"]
+            }
+        ]
+    },
+    {
+        "_id": "e502",
+        "title": "Karaoke Arsim",
+        "description": "Yalla Happy!! Good time!",
+        "imgUrl": "http://some-img",
+        "capacity": 200,
+        "location": {
+            "city": "Bat Yam",
+            "address": "Nisenbaum 38",
+            "lat": 31.61308,
+            "lng": 34.1413
+        },
+        "createdBy": {
+            "_id": "u102",
+            "fullname": "Moshik Afia",
+            "imgUrl": "http://some-img"
+        },
+        "startsAt": 56822212134,
+        "tags": ["Meditternean", "Happy"],
+        "createdAt": 121221453343,
+        "msgs": [
+            {
+                txt: "Yesssss!",
+                sentBy: "moshik"
+            }
+        ],
+        "usersGoing": [
+            {
+                "_id": "u102",
+                "fullname": "Moshik Afia",
+                "imgUrl": "http://some-img",
+                "playing": ["Singer"]
+            }
+        ]
+    },
+    {
+        "_id": "e503",
+        "title": "Jazz Blues and Booze",
+        "description": "Let's play some of that good ol' blues",
+        "imgUrl": "http://some-img",
+        "capacity": 9,
+        "location": {
+            "city": "Haifa",
+            "address": "Hakarish 23",
+            "lat": 35.61308,
+            "lng": 33.1413
+        },
+        "createdBy": {
+            "_id": "u103",
+            "fullname": "Rami Fortis",
+            "imgUrl": "http://some-img"
+        },
+        "startsAt": 56872212134,
+        "tags": ["Blues", "Jazz"],
+        "createdAt": 121221453343,
+        "msgs": [
+            {
+                txt: "Great",
+                sentBy: "rami"
+            }
+        ],
+        "usersGoing": [
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "http://some-img",
+                "playing": ["Electric-Guitar"]
             }
         ]
     }
