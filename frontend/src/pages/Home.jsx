@@ -19,6 +19,7 @@ class _Home extends Component {
     const { jams, users, loggedInUser } = this.props
     if (!jams) return <h2>Loading...</h2>
     return (
+    
       <div className="home">
         <div className="hero-section">
           <div className="hero-content flex column">
@@ -31,6 +32,7 @@ class _Home extends Component {
         </div>
         <div className="jam-previews-container">
           <p className="jam-previews-title"></p>
+          <h1>hello</h1>
           <JamList jams={jams}/>
         </div>
         <UserList users={users}/>
