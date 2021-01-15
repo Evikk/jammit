@@ -10,20 +10,33 @@ import { JamUserPreview } from '../cmps/JamUserPreview';
 import { utilService } from '../services/utilService';
 import { Link } from 'react-router-dom'
 import { JamNavbar } from '../cmps/JamDetailsNavbar'
+import { connect } from 'react-redux'
+import { updateJamGoing, loadJams } from '../store/actions/jamActions.js'
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 
 
-export class JamDetails extends Component {
+class _JamDetails extends Component {
     state = {
         jam: null
     }
 
+    
+
     async componentDidMount() {
-        var jam = await jamService.getById(this.props.match.params.id);
-        this.setState({ jam });
+        this.props.loadJams()
+
+       
+        //var jam = await jamService.getById(this.props.match.params.id);
+     
     }
 
+    componentDidUpdate(prevProps) {
+        if(this.props.jams !== prevProps.jams) 
+        {
+            this.setState({ jam:  this.props.jams.find(jam => jam._id === this.props.match.params.id) });
+        }
+      } 
 
     render() {
 
@@ -36,7 +49,13 @@ export class JamDetails extends Component {
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         <div className="jam-details-navbar">
-                            <JamNavbar />
+                            <JamNavbar user={ {
+                                 fullname: this.props.loggedInUser.fullname,
+                                 imgUrl: this.props.loggedInUser.imgUrl,
+                                 _id:this.props.loggedInUser._id,
+                                 playing: ["Electric Guitar"]
+                                }} jam={this.state.jam}
+                              updateJamGoing={this.props.updateJamGoing} />
                         </div>
                         <div className="page-content">
                             <div className="left-page-details">
@@ -47,7 +66,6 @@ export class JamDetails extends Component {
                                     <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span>Event by <Link to="/user/:_id" > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
                                     <p><span className="icon-style"><RoomRoundedIcon /></span>{this.state.jam.location.address}, {this.state.jam.location.city}</p>
                                     <p> <span className="icon-style"><AccessTimeRoundedIcon /></span>{utilService.getFormattedDate(this.state.jam.startsAt)}- Duration </p>
-                                
                                 <div className="description-con">
                                     {/* <h3 className="title-style">Description</h3> */}
                                     <p>{this.state.jam.description}</p>
@@ -71,3 +89,16 @@ export class JamDetails extends Component {
     }
 }
 
+
+const mapStateToProps   = state => {
+    return {
+        loggedInUser: state.userModule.loggedInUser,
+        jams: state.jamModule.jams
+    }
+}
+const mapDispatchToProps = {
+    loadJams,
+    updateJamGoing
+  }
+  
+  export const JamDetails = connect(mapStateToProps, mapDispatchToProps)(_JamDetails)
