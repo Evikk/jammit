@@ -6,17 +6,18 @@ import { loadUsers } from "../store/actions/userActions.js";
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import { JamScroll } from "../cmps/JamScroll.jsx";
 import { JamList } from "../cmps/JamList.jsx";
+import { JamPreview } from "../cmps/JamPreview.jsx";
 
 const mapStyles = {
-    width: "100%",
+    width: "76%",
     height: "100%",
 };
 
-const containerStyle = {
-    position: 'absolute',  
-    width: '100%',
-    height: '500px'
-}
+// const containerStyle = {
+//     position: 'static',  
+//     width: '100%',
+//     height: '100%'
+// }
 
 const mapStyle = [
     {
@@ -155,9 +156,9 @@ class _JamExplore extends Component {
         console.log(markers);
         return (
             <>
-            <section className="explore-container pos-relative">
-                <h1 className="jams-explore-title" >Jams In Current Area</h1>
-                <JamScroll jams={this.props.jams} onJamClick={this.onJamClick}/>
+            <section className="flex explore-container pos-relative">
+                {/* <h1 className="jams-explore-title">Jams In Current Area</h1> */}
+                {/* <JamScroll jams={this.props.jams} onJamClick={this.onJamClick}/> */}
                 <button onClick={()=>{
                     const selectedPlaceCopy = {...selectedPlace}
                     selectedPlaceCopy.position.lat = userPos.position.lat
@@ -166,7 +167,7 @@ class _JamExplore extends Component {
                     }}>Center</button>
                 <Map
                     ref={this.mapRef}
-                    containerStyle={containerStyle}
+                    // containerStyle={containerStyle}
                     google={this.props.google}
                     zoom={mapZoom}
                     style={mapStyles}
@@ -189,9 +190,14 @@ class _JamExplore extends Component {
                 </div>
                 </InfoWindow>
             </Map>
+            <ul className="jams-explore-list">
+                {jams.map((jam) => (
+                    <JamPreview key={jam._id} jam={jam} onJamClick={this.onJamClick}/>
+                ))}
+            </ul>
+            {/* <JamList jams={jams} onJamClick={this.onJamClick}/> */}
             </section>
             <h1 className="jams-explore-title">All Jams</h1>
-            <JamList jams={jams} onJamClick={this.onJamClick}/>
             </>
         );
     }

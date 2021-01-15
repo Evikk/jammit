@@ -21,14 +21,19 @@ class _JamDetails extends Component {
         jam: null
     }
 
-    async componentDidMount() {
-        await this.props.loadJams()
-        //var jam = await jamService.getById(this.props.match.params.id);
+
+    componentDidMount() {
+        this.props.loadJams()
+        console.log(this.props);
+        const jam = jamService.getById(this.props.match.params.id);
+        this.setState({jam})
     }
 
     componentDidUpdate(prevProps) {
         if(this.props.jams !== prevProps.jams) 
         {
+            console.log(this.props);
+            
             this.setState({ jam:  this.props.jams.find(jam => jam._id === this.props.match.params.id) });
         }
       } 
@@ -43,7 +48,7 @@ class _JamDetails extends Component {
                         <div className="jam-title-img-con">
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
-                        <div className="jam-details-navbar">
+                        {this.props.loggedInUser && <div className="jam-details-navbar">
                             <JamNavbar user={ {
                                  fullname: this.props.loggedInUser.fullname,
                                  imgUrl: this.props.loggedInUser.imgUrl,
@@ -51,7 +56,7 @@ class _JamDetails extends Component {
                                  playing: ["Electric Guitar"]
                                 }} jam={this.state.jam}
                               updateJamGoing={this.props.updateJamGoing} />
-                        </div>
+                        </div>}
                         <div className="page-content">
                             <div className="left-page-details">
                                 <div className="details-con">
