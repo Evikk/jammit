@@ -8,7 +8,7 @@ class _Header extends Component {
     render() {
         const {loggedInUser} = this.props;
         return <header>
-            <div className="logo fs24 white">
+            <div className="logo fs24">
                 <NavLink to="/">
                     Jameet
                     <span>people&music</span>
