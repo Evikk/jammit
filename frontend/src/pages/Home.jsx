@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadJams } from '../store/actions/jamActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
-// import { JamList } from '../cmps/JamList.jsx'
 import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
 
@@ -19,7 +18,7 @@ class _Home extends Component {
   }
   render() {
     const { jams, users, loggedInUser } = this.props
-    if (!jams) return <h2>Loading...</h2>
+    if (jams.length === 0) return <h2>Loading...</h2>
     return (
     
       <div className="home">
