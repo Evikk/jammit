@@ -14,8 +14,8 @@ var jams = [
         "location": {
             "city": "Tel Aviv",
             "address": "Hayarkon 30",
-            "lat": -8.61308,
-            "lng": 41.1413
+            "lat": 32.0819020,
+            "lng": 34.8056000
         },
         "createdBy": {
             "_id": "u104",

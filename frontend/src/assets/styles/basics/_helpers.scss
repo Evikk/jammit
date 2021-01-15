@@ -26,6 +26,9 @@
     &.align-center {
         align-items: center;
     }
+    &.row {
+        flex-direction: row;
+    }
 }
 
 // Media helpers

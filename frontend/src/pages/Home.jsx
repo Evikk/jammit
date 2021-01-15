@@ -32,7 +32,6 @@ class _Home extends Component {
         </div>
         <div className="jam-previews-container">
           <p className="jam-previews-title"></p>
-          <h1>hello</h1>
           <JamList jams={jams}/>
         </div>
         <UserList users={users}/>

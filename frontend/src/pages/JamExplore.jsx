@@ -1,18 +1,168 @@
 import React, { Component } from "react";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { connect } from "react-redux";
 import { loadJams } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
-import { MapContainer } from "../cmps/MapContainer.jsx";
+import jamThumb from "../assets/img/jam-thumb.jpg"
+import { JamScroll } from "../cmps/JamScroll.jsx";
 // import { JamList } from '../cmps/JamList.jsx'
+const mapStyles = {
+    width: "50%",
+    height: "50%",
+};
 
+const mapStyle = [
+    {
+      featureType: 'landscape.man_made',
+      elementType: 'geometry.fill',
+      stylers: [
+        {
+          color: '#dceafa'
+        }
+      ]
+    },
+    {
+        elementType: "labels.text",
+        stylers: [
+            {
+                visibility: "off"
+            }
+        ]
+    },
+    {
+        featureType: "road.highway",
+        elementType: "labels",
+        stylers: [
+            {
+                visibility: "on"
+            }
+        ]
+    },
+    {
+        featureType: "road.arterial",
+        elementType: "labels.text",
+        stylers: [
+            {
+                visibility: "on"
+            }
+        ]
+    },
+    {
+        featureType: "road.local",
+        elementType: "labels.text",
+        stylers: [
+            {
+                visibility: "on"
+            }
+        ]
+    },
+    ]
 class _JamExplore extends Component {
-    state = {};
+    state = {
+        userPos: null,
+        mapZoom: 14,
+        showingInfoWindow: false, // Hides or shows the InfoWindow
+        activeMarker: {}, // Shows the active marker upon click
+        selectedPlace: null, // Shows the InfoWindow to the selected place upon a marker
+    };
 
+    componentDidMount() {
+        this.props.loadJams()
+        navigator.geolocation.getCurrentPosition(pos =>{
+            const userPos = {position: {lat: null, lng: null}}
+            userPos.position.lat = pos.coords.latitude
+            userPos.position.lng = pos.coords.longitude
+            this.setState({selectedPlace: userPos, userPos: userPos})
+            return pos.coords
+        })
+    }
+
+    onMarkerClick = (props, marker) => {
+        this.setState({
+            activeMarker: marker,
+            showingInfoWindow: true,
+            selectedPlace: props,
+            mapZoom: 17
+        });
+    }
+
+    onClose = props => {
+        if (this.state.showingInfoWindow) {
+          this.setState({
+            showingInfoWindow: false,
+            activeMarker: null
+          });
+        }
+      };
+    displayMarkers = () => {
+        return this.props.jams.map(jam => {
+                return  <Marker key={jam._id} 
+                    position={{
+                        lat: jam.location.lat,
+                        lng: jam.location.lng
+                    }} 
+                    onMousedown={this.onMarkerClick}
+                    name={jam.title}
+                    currMembers={jam.usersGoing.length}
+                    capacity={jam.capacity}
+                    icon={{
+                        url: jamThumb,
+                        anchor: new this.props.google.maps.Point(32,32),
+                        scaledSize:  new this.props.google.maps.Size(50,50)
+                    }}
+                />
+            });
+    }
+      
+    //   centerMoved(mapProps, map) {
+    //       console.log(map.center.lat());
+          
+    //   }
+    _mapLoaded(mapProps, map) {
+        map.setOptions({
+           styles: mapStyle
+        })
+     }
+    
     render() {
-
-       return (
-           <MapContainer/>
-       );
+        const {userPos, selectedPlace, mapZoom} = this.state
+        if (!selectedPlace || this.props.jams.length === 0) return <h2>Loading...</h2>
+        console.log(selectedPlace);
+        
+        return (
+            <section>
+                <JamScroll/>
+                <button onClick={()=>{
+                    const selectedPlaceCopy = {...selectedPlace}
+                    selectedPlaceCopy.position.lat = userPos.position.lat
+                    selectedPlaceCopy.position.lng = userPos.position.lng
+                    this.setState({selectedPlace: selectedPlaceCopy, mapZoom: 15})
+                    }}>Center</button>
+                <Map
+                    google={this.props.google}
+                    zoom={mapZoom}
+                    style={mapStyles}
+                    // centerAroundCurrentLocation={true}
+                    initialCenter={{lat: selectedPlace.position.lat, lng: selectedPlace.position.lng}}
+                    center={{lat: selectedPlace.position.lat, lng: selectedPlace.position.lng}}
+                    onReady={(mapProps, map) => this._mapLoaded(mapProps, map)}
+                    disableDefaultUI= {true}
+                    // onDragend={this.centerMoved}
+                >
+                {this.displayMarkers()}
+                <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}
+                onClose={this.onClose}
+              >
+                <div>
+                    <h2>{this.state.selectedPlace.name}</h2>
+                    <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
+                </div>
+              </InfoWindow>
+                </Map>
+            </section>
+        );
     }
 }
 
@@ -27,7 +177,6 @@ const mapDispatchToProps = {
     loadUsers,
 };
 
-export const JamExplore = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(_JamExplore);
+export const JamExplore = GoogleApiWrapper({
+    apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
+})(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
