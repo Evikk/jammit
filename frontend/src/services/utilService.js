@@ -2,7 +2,8 @@
 export const utilService = {
     delay,
     getRandomInt,
-    makeId
+    makeId,
+    getFormattedDate
 }
 
 function delay(ms = 1500) {
@@ -25,3 +26,17 @@ function makeId(length = 5) {
     }
     return txt;
 }
+
+function getFormattedDate(timestamp) {
+
+    var a = new Date(timestamp);
+    var year = a.getFullYear();
+    var month = a.getMonth() + 1;
+    var date = a.getDate();
+    var hour = a.getHours(); 
+    var minute = a.getMinutes(); 
+
+    var time = date + '/' + month + '/' + year + ' ' + hour + ':' + minute; 
+    return time;
+  
+  }

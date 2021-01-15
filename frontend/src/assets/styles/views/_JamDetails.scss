@@ -1,3 +1,6 @@
+.page-con {
+    color: rgb(158, 154, 154);
+}
 
 .jam-title-img-con {
     width: 100%;
@@ -6,9 +9,41 @@
         url("../../img/What-is-a-jam-session.jpg");
 }
 
-.jam-title{
+.jam-title {
     color: rgb(247, 240, 240);
     position: relative;
     top: 300px;
-    font-weight: bold; 
+    left: 50px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.icon-style {
+    color: rgb(158, 154, 154);
+}
+
+.title-style {
+    color: rgb(92, 91, 91);
+}
+
+.page-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.left-page-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-con {
+    margin-top: 20px;
+}
+
+.about-con {
+    margin-top: 20px;
+}
+
+.location-con {
+    margin-top: 20px;
 }
