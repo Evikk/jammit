@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
- 
+
 // list of items
 const list = [
   { name: 'item1' },
@@ -24,7 +24,7 @@ const MenuItem = ({text, selected}) => {
 
 // All items component
 // Important! add unique key
-export const Menu = (list, selected) =>
+const Menu = (list, selected) =>
   list.map(el => {
     const {name} = el;
     return <MenuItem text={name} key={name} selected={selected} />;
@@ -59,9 +59,7 @@ export class JamScroll extends Component {
   render() {
     const { selected } = this.state;
     // Create menu from items
-    console.log(this.menuItems);
-    
-    const menu = Menu(list, selected);
+    const menu = Menu(this.props.jams, selected);
  
     return (
       <div>

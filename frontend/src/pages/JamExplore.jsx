@@ -5,10 +5,10 @@ import { loadJams } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import { JamScroll } from "../cmps/JamScroll.jsx";
-// import { JamList } from '../cmps/JamList.jsx'
+
 const mapStyles = {
-    width: "50%",
-    height: "50%",
+    width: "100%",
+    height: "100%",
 };
 
 const mapStyle = [
@@ -131,7 +131,7 @@ class _JamExplore extends Component {
         
         return (
             <section>
-                <JamScroll/>
+                <JamScroll jams={this.props.jams}/>
                 <button onClick={()=>{
                     const selectedPlaceCopy = {...selectedPlace}
                     selectedPlaceCopy.position.lat = userPos.position.lat
