@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { loadJams } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
 import jamThumb from "../assets/img/jam-thumb.jpg"
+import { JamScroll } from "../cmps/JamScroll.jsx";
 // import { JamList } from '../cmps/JamList.jsx'
-
 const mapStyles = {
     width: "50%",
     height: "50%",
@@ -131,10 +131,9 @@ class _JamExplore extends Component {
         
         return (
             <section>
+                <JamScroll/>
                 <button onClick={()=>{
                     const selectedPlaceCopy = {...selectedPlace}
-                    console.log('selected',selectedPlaceCopy, 'userpos',userPos);
-                    
                     selectedPlaceCopy.position.lat = userPos.position.lat
                     selectedPlaceCopy.position.lng = userPos.position.lng
                     this.setState({selectedPlace: selectedPlaceCopy, mapZoom: 15})
