@@ -28,6 +28,10 @@ class _UserProfile extends Component {
     this.props.loadJams()
   }
 
+  onJamClick = (jamId)=> {
+    this.props.history.push(`../jam/${jamId}`)
+  }
+
   render() {
     const { user } = this.state
     const {jams} = this.props
@@ -95,7 +99,7 @@ class _UserProfile extends Component {
                    return userGoing._id === user._id
                   }) 
                   if(userFound){
-                    return <JamPreview key={jam._id} jam={jam}/> 
+                    return <JamPreview key={jam._id} jam={jam} onJamClick={()=>this.onJamClick(jam._id)}/> 
                   }
                 })}
               </div>
