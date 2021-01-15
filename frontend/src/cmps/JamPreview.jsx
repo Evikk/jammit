@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventIcon from '@material-ui/icons/Event';
@@ -6,7 +5,6 @@ import Bass from '../assets/img/inst-icons/Bass.svg'
 
 
 export function JamPreview({ jam, onJamClick }) {
-    const history = useHistory()
     return (
         <li className="jam-card flex" onClick={()=>onJamClick(jam._id)}>
             <div className="thumb flex column">
@@ -14,7 +12,7 @@ export function JamPreview({ jam, onJamClick }) {
                 <img className="jam-inst" src={Bass} alt=""/>
             </div>
             <div className="jam-card-content flex column" >
-                <h2 onClick={()=>history.push(`/jam/${jam._id}`)}>{jam.title}</h2>
+                <h2>{jam.title}</h2>
             
             <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                 return <li key={idx}>{tag}</li> })}
