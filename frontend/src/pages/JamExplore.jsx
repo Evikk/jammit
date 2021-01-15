@@ -5,11 +5,18 @@ import { loadJams } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import { JamScroll } from "../cmps/JamScroll.jsx";
+import { JamList } from "../cmps/JamList.jsx";
 
 const mapStyles = {
     width: "100%",
     height: "100%",
 };
+
+const containerStyle = {
+    position: 'absolute',  
+    width: '100%',
+    height: '500px'
+}
 
 const mapStyle = [
     {
@@ -59,13 +66,14 @@ const mapStyle = [
     ]
 class _JamExplore extends Component {
     state = {
+        markers: null,
         userPos: null,
         mapZoom: 14,
         showingInfoWindow: false, // Hides or shows the InfoWindow
         activeMarker: {}, // Shows the active marker upon click
         selectedPlace: null, // Shows the InfoWindow to the selected place upon a marker
     };
-
+    mapRef = React.createRef();
     componentDidMount() {
         this.props.loadJams()
         navigator.geolocation.getCurrentPosition(pos =>{
@@ -75,12 +83,28 @@ class _JamExplore extends Component {
             this.setState({selectedPlace: userPos, userPos: userPos})
             return pos.coords
         })
+        this.setState({markers: this.displayMarkers()})
     }
 
     onMarkerClick = (props, marker) => {
+        console.log('props', props);
+        
         this.setState({
             activeMarker: marker,
             showingInfoWindow: true,
+            selectedPlace: props,
+            mapZoom: 17
+        });
+    }
+
+    onJamClick = (jamId) => {
+        console.log(jamId);
+        const marker  = this.state.markers.find(marker => {
+            return marker.key === jamId
+        })
+        const props = marker.props
+        console.log(marker, props);
+        this.setState({
             selectedPlace: props,
             mapZoom: 17
         });
@@ -122,16 +146,18 @@ class _JamExplore extends Component {
         map.setOptions({
            styles: mapStyle
         })
-     }
-    
+    }    
+
     render() {
-        const {userPos, selectedPlace, mapZoom} = this.state
-        if (!selectedPlace || this.props.jams.length === 0) return <h2>Loading...</h2>
-        console.log(selectedPlace);
-        
+        const { jams } = this.props
+        const {userPos, selectedPlace, mapZoom, markers} = this.state
+        if (!selectedPlace || jams.length === 0) return <h2>Loading...</h2>
+        console.log(markers);
         return (
-            <section>
-                <JamScroll jams={this.props.jams}/>
+            <>
+            <section className="explore-container pos-relative">
+                <h1 className="jams-explore-title" >Jams In Current Area</h1>
+                <JamScroll jams={this.props.jams} onJamClick={this.onJamClick}/>
                 <button onClick={()=>{
                     const selectedPlaceCopy = {...selectedPlace}
                     selectedPlaceCopy.position.lat = userPos.position.lat
@@ -139,6 +165,8 @@ class _JamExplore extends Component {
                     this.setState({selectedPlace: selectedPlaceCopy, mapZoom: 15})
                     }}>Center</button>
                 <Map
+                    ref={this.mapRef}
+                    containerStyle={containerStyle}
                     google={this.props.google}
                     zoom={mapZoom}
                     style={mapStyles}
@@ -147,9 +175,9 @@ class _JamExplore extends Component {
                     center={{lat: selectedPlace.position.lat, lng: selectedPlace.position.lng}}
                     onReady={(mapProps, map) => this._mapLoaded(mapProps, map)}
                     disableDefaultUI= {true}
-                    // onDragend={this.centerMoved}
+                    // onBoundsChanged={this.centerMoved}
                 >
-                {this.displayMarkers()}
+                {markers}
                 <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
@@ -159,9 +187,12 @@ class _JamExplore extends Component {
                     <h2>{this.state.selectedPlace.name}</h2>
                     <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
                 </div>
-              </InfoWindow>
-                </Map>
+                </InfoWindow>
+            </Map>
             </section>
+            <h1 className="jams-explore-title">All Jams</h1>
+            <JamList jams={jams} onJamClick={this.onJamClick}/>
+            </>
         );
     }
 }
