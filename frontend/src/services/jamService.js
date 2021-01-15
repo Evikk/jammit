@@ -84,6 +84,12 @@ var jams = [
                 "fullname": "Moshik Afia",
                 "imgUrl": "http://some-img",
                 "playing": ["Singer"]
+            },
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "http://some-img",
+                "playing": ["Drums", "Electric-Guitar", "Singer"]
             }
         ]
     },

@@ -15,7 +15,7 @@ class _Header extends Component {
                 </div>}
                 <nav className="fs24">
                     <NavLink to="/jams">Jams</NavLink>
-                    <NavLink to="/users">Members</NavLink>
+                    <NavLink to="/members">Members</NavLink>
                     <NavLink to="/login">Login</NavLink>
                 </nav>
             </div>
