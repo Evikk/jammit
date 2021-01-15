@@ -33,13 +33,23 @@ var users = [
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            },
+            {
+                "_id": "u111",
+                "fullname": "Shiri Mimon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairNotTooLong&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&facialHairColor=Platinum&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Skull&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Concerned&skinColor=DarkBrown"
+            },
+            {
+                "_id": "u112",
+                "fullname": "Dana Brger",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Kurt&hairColor=Black&facialHairType=BeardLight&facialHairColor=Black&clotheType=ShirtCrewNeck&clotheColor=White&eyeType=Surprised&eyebrowType=AngryNatural&mouthType=Tongue&skinColor=Pale"
             }
         ],
         "following": [
             {
                 "_id": "u107",
                 "fullname": "Kobi Oz",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Eyepatch&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Red&eyeType=Wink&eyebrowType=RaisedExcitedNatural&mouthType=Concerned&skinColor=Light'"
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Eyepatch&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Red&eyeType=Wink&eyebrowType=RaisedExcitedNatural&mouthType=Concerned&skinColor=Light"
             }
         ]
     },
@@ -62,14 +72,19 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "http://some-img"
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            },
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
             }
         ],
         "following": [
             {
                 "_id": "u107",
                 "fullname": "Kobi Oz",
-                "imgUrl": "http://some-img"
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
             }
         ]
     }

@@ -41,6 +41,7 @@
     padding: 2px;
     color: white;
     border-radius: 2px;
+    font-family: Helvetica;
 }
 
 .user-img{
@@ -70,6 +71,7 @@
 }
 .user-about{
     height: 70px;
+    border-bottom: 2px solid whitesmoke;
 }
 .talents-title{
     background-color: #72bb53;
@@ -85,3 +87,33 @@
 .user-right-box .titel{
     padding-bottom:20px;
 }
+
+.followers{
+    position: relative;
+    display: inline-block;
+    margin-top: 27px;
+    // display: inline-block;
+//   border-radius: 50%;
+//   overflow: hidden;
+//   width: 100px;
+}
+
+.followers:not(:first-child) {
+    // margin-left: -60px;
+    // mask:radial-gradient(circle 55px at 5px 50%,transparent 99%,#fff 100%);
+    // clip-path: circle(50% at 50% 50%);
+}
+
+  .followers img:nth-child(2) {
+      left:10% ;
+  }
+  .followers img:nth-child(3) {
+      left:20% ;
+  }
+  .followers img{
+    position: absolute;
+    width:15%;
+    display: block;
+  }
+  
+  
