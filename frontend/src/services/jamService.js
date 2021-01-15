@@ -15,8 +15,8 @@ var jams = [
         "location": {
             "city": "Tel Aviv",
             "address": "Hayarkon 30",
-            "lat": 32.0819020,
-            "lng": 34.8056000
+            "lat": 32.085300,
+            "lng": 34.781769
         },
         "createdBy": {
             "_id": "u104",
@@ -62,8 +62,8 @@ var jams = [
         "location": {
             "city": "Bat Yam",
             "address": "Nisenbaum 38",
-            "lat": 31.61308,
-            "lng": 34.1413
+            "lat": 32.016499,
+            "lng": 34.750278
         },
         "createdBy": {
             "_id": "u102",
@@ -97,8 +97,8 @@ var jams = [
         "location": {
             "city": "Haifa",
             "address": "Hakarish 23",
-            "lat": 35.61308,
-            "lng": 33.1413
+            "lat": 32.794044,
+            "lng": 34.989571
         },
         "createdBy": {
             "_id": "u103",
