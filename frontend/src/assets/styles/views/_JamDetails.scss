@@ -66,3 +66,34 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+
+.jammers{
+    position: relative;
+    display: inline-block;
+    margin-top: 27px;
+    // display: inline-block;
+//   border-radius: 50%;
+//   overflow: hidden;
+//   width: 100px;
+}
+
+// .jammers:not(:first-child) {
+    // margin-left: -60px;
+    // mask:radial-gradient(circle 55px at 5px 50%,transparent 99%,#fff 100%);
+    // clip-path: circle(50% at 50% 50%);
+// }
+
+  .jammers img:nth-child(2) {
+      left:10% ;
+  }
+  .jammers img:nth-child(3) {
+      left:20% ;
+  }
+  .jammers img{
+    position: absolute;
+    width:15%;
+    display: block;
+  }
+  
