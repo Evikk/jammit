@@ -20,6 +20,7 @@ class _LoginSignup extends React.Component {
     };
 
     componentDidMount(){
+        if (this.props.loggedInUser) this.props.history.push('/')
     }
 
     loginHandleChange = (ev) => {
@@ -50,6 +51,8 @@ class _LoginSignup extends React.Component {
         }
         const userCreds = { username, password };
         this.props.login(userCreds)
+        this.setState({loggedInUser: this.props.loggedInUser})
+        this.props.history.push('/')
     };
 
     doSignup = async (ev) => {
