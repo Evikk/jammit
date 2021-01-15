@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadJams } from '../store/actions/jamActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
-import { Link } from 'react-router-dom'
-import { JamList } from '../cmps/JamList.jsx'
+// import { JamList } from '../cmps/JamList.jsx'
 import { UserList } from '../cmps/UserList.jsx'
+import { JamScroll } from '../cmps/JamScroll.jsx'
 
 class _Home extends Component {
   state = {
@@ -28,14 +28,12 @@ class _Home extends Component {
             <h1 className="hero-title fs40">Find a Jam. Make Music</h1>
             <h3 className="hero-subtitle">Search and explore the best jam sessions around!</h3>
             <div className="call-to-action">
-              <button className="call-to-action-btn">Let's Find a Jam!</button>
+              <button className="call-to-action-btn" onClick={()=>this.props.history.push('/search')}>Let's Find a Jam!</button>
             </div>
           </div>
         </div>
-        <div className="jam-previews-container">
-          <p className="jam-previews-title"></p>
-          <JamList jams={jams} onJamClick={this.onJamClick}/>
-        </div>
+        
+        <JamScroll jams={jams} onJamClick={this.onJamClick}/>
         <UserList users={users}/>
       </div>
     )
