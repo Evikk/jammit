@@ -14,7 +14,9 @@ class _Home extends Component {
     this.props.loadJams()
     this.props.loadUsers()
   }
-
+  onJamClick = ()=> {
+    return
+  }
   render() {
     const { jams, users, loggedInUser } = this.props
     if (!jams) return <h2>Loading...</h2>
@@ -32,7 +34,7 @@ class _Home extends Component {
         </div>
         <div className="jam-previews-container">
           <p className="jam-previews-title"></p>
-          <JamList jams={jams}/>
+          <JamList jams={jams} onJamClick={this.onJamClick}/>
         </div>
         <UserList users={users}/>
       </div>
