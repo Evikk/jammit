@@ -1,0 +1,24 @@
+.menu-item {
+    padding: 0 40px;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+}
+.menu-item-wrapper.active {
+    // border: 1px blue solid;
+}
+.menu-item.active {
+    border: 1px green solid;
+}
+
+.menu-item-wrapper {
+    padding: 8px;
+    margin: 10px;
+}
+
+.scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+    background-color: #606060;
+    color: white;
+}

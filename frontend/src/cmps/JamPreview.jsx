@@ -5,10 +5,10 @@ import EventIcon from '@material-ui/icons/Event';
 import Bass from '../assets/img/inst-icons/Bass.svg'
 
 
-export function JamPreview({ jam }) {
+export function JamPreview({ jam, onJamClick }) {
     const history = useHistory()
     return (
-        <li className="jam-card flex">
+        <li className="jam-card flex" onClick={()=>onJamClick(jam._id)}>
             <div className="thumb flex column">
                 <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
                 <img className="jam-inst" src={Bass} alt=""/>

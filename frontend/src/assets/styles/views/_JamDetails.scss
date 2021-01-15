@@ -40,10 +40,25 @@
     margin-top: 20px;
 }
 
-.about-con {
+.description-con {
     margin-top: 20px;
 }
 
 .location-con {
     margin-top: 20px;
+}
+
+.jam-details-navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-right{
+    display: flex;
+    justify-content: space-between;
 }

@@ -4,7 +4,7 @@ export function JamUserPreview({ user }) {
     const history = useHistory()
     return (
         <li onClick={() => history.push(`/user/${user._id}`)}>
-            <h3 >{user.fullname}</h3>
+            <h3>{user.fullname}</h3>
             <div >
                 <img src={user.imgUrl} alt="" />
             </div>
