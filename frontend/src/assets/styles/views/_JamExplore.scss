@@ -14,10 +14,10 @@
 }
 .jams-explore-list {
     position: relative;
-    width: 24%;
+    width: 50%;
     z-index: 99;
     height: 100%;
-    padding: 10px 0;
+    // padding: 10px 0;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: repeat(auto-fill, 130px);

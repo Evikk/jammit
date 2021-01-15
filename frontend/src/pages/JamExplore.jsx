@@ -9,7 +9,7 @@ import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
 
 const mapStyles = {
-    width: "76%",
+    width: "50%",
     height: "100%",
 };
 
