@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import { withRouter, NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
+import logo from '../assets/img/logo.svg'
 
 class _Header extends Component {
     render() {
         const {loggedInUser} = this.props;
         return <header>
-            <div className="logo">
-                <NavLink to="/"><h1>Jammit 2000</h1></NavLink>
+            <div className="logo fs24">
+                <NavLink to="/">
+                    Jameet
+                    <span>people&music</span>
+                </NavLink>
             </div>
             <div className="flex nav-right-side">
                 {loggedInUser ? <div className="user-greet flex align-center">
