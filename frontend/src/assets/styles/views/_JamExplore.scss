@@ -1,0 +1,18 @@
+.explore-container {
+    height: 760px;
+}
+.jams-explore-title {
+    font-size: rem(40px);
+    text-align: center;
+}
+.jams-explore-list {
+    position: relative;
+    z-index: 99;
+    height: 100%;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    
+}

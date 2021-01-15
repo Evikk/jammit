@@ -10,6 +10,12 @@
         }
     }
 
+    @include for-mobile-layout {
+        grid-template-columns: 
+            minmax(20px, 1fr)
+            minmax(auto, $mobile-breakpoint)
+            minmax(20px, 1fr);
+    }
     @include for-narrow-layout {
         grid-template-columns: 
             minmax(20px, 1fr)
@@ -26,6 +32,12 @@
         grid-template-columns: 
             minmax(20px, 1fr)
             minmax(auto, $wide-breakpoint)
+            minmax(20px, 1fr);
+    }
+    @include for-full-layout {
+        grid-template-columns: 
+            minmax(20px, 1fr)
+            minmax(auto, $full-breakpoint)
             minmax(20px, 1fr);
     }
 }
