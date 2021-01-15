@@ -14,7 +14,7 @@ export function JamPreview({ jam, onJamClick }) {
                 <img className="jam-inst" src={Bass} alt=""/>
             </div>
             <div className="jam-card-content flex column" >
-                <h2 onClick={()=>history.push(`/jam/${jam._id}`)}>{jam.title}</h2>
+                <h2>{jam.title}</h2>
             
             <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                 return <li key={idx}>{tag}</li> })}
