@@ -1,5 +1,6 @@
 header {
-    background-color: $clr5;
+    // background-color: $clr5;
+    background-color: darkslategray;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -27,7 +28,8 @@ nav {
     justify-content: space-evenly;
     a {
         padding: 0 10px;
-        color: #606060;
+        // color: #606060;
+        color: whitesmoke;
     }
     a:not(:last-child){
         border-right: 1px solid grey;
