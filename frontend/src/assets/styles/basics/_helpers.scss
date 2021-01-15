@@ -45,3 +45,6 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+.white{
+    color:white;
+}
