@@ -1,4 +1,4 @@
-import { httpService } from './httpService'
+// import { httpService } from './httpService'
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
 // import { utilService } from './utilService'
@@ -137,7 +137,9 @@ function query() {
 }
 
 function getById(jamId) {
-    return jams[0];
+    return jams.find(jam => jam._id === jamId)
     // return storageService.get('jam', jamId)
     //return httpService.get(`jam/${jamId}`)
 }
+
+
