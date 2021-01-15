@@ -44,12 +44,6 @@ var jams = [
                 "fullname": "Rami Fortis",
                 "imgUrl": "http://some-img",
                 "playing": ["Bass", "Singer"]
-            },
-            {
-                "_id": "u101",
-                "fullname": "Tomer Yosef",
-                "imgUrl": "http://some-img",
-                "playing": ["Drums", "Electric-Guitar", "Singer"]
             }
         ]
     },
@@ -134,7 +128,7 @@ var jams = [
 export const jamService = {
     query,
     getById,
-    joinJam,
+    updateJamGoing,
     getOutJam
 }
 
@@ -152,16 +146,14 @@ function getById(jamId) {
 }
 
 
-function joinJam(userId) {
-    const jammerToAdd =
-    {
-        id: userId,
-        fullname: 'mickie',
-        imgURL: 'img/some.pic',
-        playing: 'guitar'
-    };
-    jams.usersGoing.push(jammerToAdd);
-    // jams.usersGoing[jammerToAdd, ...jams];
+function updateJamGoing(jamId, user) {
+
+    //UPDATE THE SERVER USER IS NOT GOING
+
+    //jams.find(jam => jam._id === jamId).usersGoing.push(user);
+    // jams.usersGoing.push(jammerToAdd);
+     //return httpService.put(`jam/${jamId}`, user)
+  
 }
 
 function getOutJam(userId) {
