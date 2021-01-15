@@ -2,6 +2,7 @@
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
 // import { utilService } from './utilService'
+// import { userService } from './userService'
 
 
 var jams = [
@@ -125,15 +126,17 @@ var jams = [
 ]
 
 export const jamService = {
-  query, 
-  getById 
+    query,
+    getById,
+    joinJam,
+    getOutJam
 }
 
 function query() {
-//   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-//   return httpService.get(`review${queryStr}`)
-  // return storageService.query('review')
-  return jams
+    //   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+    //   return httpService.get(`review${queryStr}`)
+    // return storageService.query('review')
+    return jams
 }
 
 function getById(jamId) {
@@ -141,5 +144,25 @@ function getById(jamId) {
     // return storageService.get('jam', jamId)
     //return httpService.get(`jam/${jamId}`)
 }
+
+
+function joinJam(userId) {
+    const jammerToAdd =
+    {
+        id: userId,
+        fullname: 'mickie',
+        imgURL: 'img/some.pic',
+        playing: 'guitar'
+    };
+    jams.usersGoing.push(jammerToAdd);
+    // jams.usersGoing[jammerToAdd, ...jams];
+}
+
+function getOutJam(userId) {
+    jams.usersGoing = jams.usersGoing.filter(userGoing => userGoing.id !== userId);
+}
+
+
+
 
 
