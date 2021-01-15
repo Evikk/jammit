@@ -21,7 +21,6 @@ class _JamDetails extends Component {
         jam: null
     }
 
-    
 
     componentDidMount() {
         this.props.loadJams()
@@ -64,7 +63,7 @@ class _JamDetails extends Component {
                                     <h3 className="title-style"> Details </h3>
                                     <p><span><AudiotrackRoundedIcon /></span><span>{this.state.jam.capacity}</span> jammers capacity</p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span><span>{this.state.jam.usersGoing.length}</span> people going</p>
-                                    <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span>Event by <Link to="/user/:_id" > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
+                                    <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span>Event by <Link to="/user/:id" > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
                                     <p><span className="icon-style"><RoomRoundedIcon /></span>{this.state.jam.location.address}, {this.state.jam.location.city}</p>
                                     <p> <span className="icon-style"><AccessTimeRoundedIcon /></span>{utilService.getFormattedDate(this.state.jam.startsAt)}- Duration </p>
                                 <div className="description-con">

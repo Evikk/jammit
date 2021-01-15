@@ -37,7 +37,7 @@ var jams = [
                 "_id": "u104",
                 "fullname": "Haim Romano",
                 "imgUrl": "http://some-img",
-                "playing": ["Electric-Guitar"]
+                "playing": ["ElectricGuitar"]
             },
             {
                 "_id": "u103",
@@ -84,7 +84,7 @@ var jams = [
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
                 "imgUrl": "http://some-img",
-                "playing": ["Drums", "Electric-Guitar", "Singer"]
+                "playing": ["Drums", "ElectricGuitar", "Singer"]
             }
         ]
     },
@@ -119,7 +119,7 @@ var jams = [
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "http://some-img",
-                "playing": ["Electric-Guitar"]
+                "playing": ["ElectricGuitar"]
             }
         ]
     }
