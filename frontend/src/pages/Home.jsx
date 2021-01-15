@@ -14,8 +14,8 @@ class _Home extends Component {
     this.props.loadJams()
     this.props.loadUsers()
   }
-  onJamClick = ()=> {
-    return
+  onJamClick = (jamId)=> {
+    this.props.history.push(`jam/${jamId}`)
   }
   render() {
     const { jams, users, loggedInUser } = this.props
