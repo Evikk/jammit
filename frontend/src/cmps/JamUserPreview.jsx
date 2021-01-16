@@ -7,7 +7,7 @@ export function JamUserPreview({ user }) {
             <div className="jammers" >
                 <img  src={user.imgUrl} alt="" />
             </div>
-            <h4>{user.fullname}</h4>
+            <h4 className="jammers-list-name">{user.fullname}</h4>
             {/* <div>
             {user.playing.map(function (instrument, index) {
                   return <span key={index}> {instrument}</span>

@@ -21,7 +21,7 @@ var jams = [
         "createdBy": {
             "_id": "u104",
             "fullname": "Haim Romano",
-            "imgUrl": "http://some-img"
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Blank&hatColor=PastelYellow&facialHairType=MoustacheMagnum&facialHairColor=Blonde&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Tanned"
         },
         "startsAt": 12122212134,
         "tags": ["60's", "70's", "Blues", "Rock"],
@@ -36,7 +36,7 @@ var jams = [
             {
                 "_id": "u104",
                 "fullname": "Haim Romano",
-                "imgUrl": "http://some-img",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Blank&hatColor=PastelYellow&facialHairType=MoustacheMagnum&facialHairColor=Blonde&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Tanned",
                 "playing": ["ElectricGuitar"]
             },
             {
@@ -129,7 +129,6 @@ export const jamService = {
     query,
     getById,
     updateJamGoing,
-    // getOutJam
 }
 
 function query() {
@@ -149,14 +148,10 @@ function getById(jamId) {
 function updateJamGoing(jamId, user) {
     //UPDATE THE SERVER USER IS NOT GOING
     // jams.find(jam => jam._id === jamId).usersGoing.push(user);
-    // jams.usersGoing.push(jammerToAdd);
      //return httpService.put(`jam/${jamId}`, user)
   
 }
 
-// function getOutJam(userId) {
-//     jams.usersGoing = jams.usersGoing.filter(userGoing => userGoing.id !== userId);
-// }
 
 
 
