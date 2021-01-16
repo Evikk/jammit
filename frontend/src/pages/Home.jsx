@@ -4,7 +4,6 @@ import { loadJams } from '../store/actions/jamActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
-import { Header } from '../cmps/Header.jsx'
 
 class _Home extends Component {
   state = {
