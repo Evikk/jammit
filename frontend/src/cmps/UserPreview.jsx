@@ -4,10 +4,10 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 export function UserPreview({ user }) {
     const history = useHistory()
     return (
-        <li className="jam-card flex column">
-            <h2 onClick={()=>history.push(`/user/${user._id}`)}>{user.username}</h2>
-            <div className="flex ">
+        <li className="jam-card flex column" onClick={()=>history.push(`/user/${user._id}`)}>
+            <h2>{user.username}</h2>
                 <img className="jam-card thumb" src={user.imgUrl} className="jamThumb" alt="user-thumbnail"/>
+            <div className="flex ">
                 <div className="jam-card-content flex column">
                     
                     <ul className="jam-card-tags flex">{user.tags.map((tag, idx) => {
