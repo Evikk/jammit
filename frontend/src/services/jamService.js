@@ -83,13 +83,8 @@ var jams = [
             {
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
-<<<<<<< HEAD
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
                 "playing": ["Drums", "Electric-Guitar", "Singer"]
-=======
-                "imgUrl": "http://some-img",
-                "playing": ["Drums", "ElectricGuitar", "Singer"]
->>>>>>> ac541906f1d4be4af46b50a252ad5daf3d36de75
             }
         ]
     },
