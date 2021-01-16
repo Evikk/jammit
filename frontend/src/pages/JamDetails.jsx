@@ -65,7 +65,7 @@ class _JamDetails extends Component {
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span><span>{this.state.jam.usersGoing.length}</span> people going</p>
                                     <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span>Event by <Link to={"/user/" + this.state.jam.createdBy._id} > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
                                     <p><span className="icon-style"><RoomRoundedIcon /></span>{this.state.jam.location.address}, {this.state.jam.location.city}</p>
-                                    <p> <span className="icon-style"><AccessTimeRoundedIcon /></span>{utilService.getFormattedDate(this.state.jam.startsAt)}- Duration </p>
+                                    <p> <span className="icon-style"><AccessTimeRoundedIcon /></span>{utilService.getFormattedDate(this.state.jam.startsAt)}</p>
                                     <div className="description-con">
                                         {/* <h3 className="title-style">Description</h3> */}
                                         <p>{this.state.jam.description}</p>

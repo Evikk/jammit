@@ -129,7 +129,7 @@ export const jamService = {
     query,
     getById,
     updateJamGoing,
-    getOutJam
+    // getOutJam
 }
 
 function query() {
@@ -148,15 +148,15 @@ function getById(jamId) {
 
 function updateJamGoing(jamId, user) {
     //UPDATE THE SERVER USER IS NOT GOING
-    jams.find(jam => jam._id === jamId).usersGoing.push(user);
+    // jams.find(jam => jam._id === jamId).usersGoing.push(user);
     // jams.usersGoing.push(jammerToAdd);
      //return httpService.put(`jam/${jamId}`, user)
   
 }
 
-function getOutJam(userId) {
-    jams.usersGoing = jams.usersGoing.filter(userGoing => userGoing.id !== userId);
-}
+// function getOutJam(userId) {
+//     jams.usersGoing = jams.usersGoing.filter(userGoing => userGoing.id !== userId);
+// }
 
 
 
