@@ -39,7 +39,7 @@ class _JamDetails extends Component {
     }
 
     render() {
-
+        const { jam } = this.state
         return (
             <section className="jam-details">
                 {!this.state.jam && <div> Loading... </div>}
@@ -62,22 +62,36 @@ class _JamDetails extends Component {
                                 <div className="details-con">
                                     <h3 className="title-style"> Details </h3>
                                     <p><span><AudiotrackRoundedIcon /></span><span>{this.state.jam.capacity}</span> jammers capacity</p>
-                                    <p><span className="icon-style"><PeopleAltRoundedIcon /></span><span>{this.state.jam.usersGoing.length}</span> people going</p>
-                                    <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span>Event by <Link to={"/user/" + this.state.jam.createdBy._id} > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
-                                    <p><span className="icon-style"><RoomRoundedIcon /></span>{this.state.jam.location.address}, {this.state.jam.location.city}</p>
-                                    <p> <span className="icon-style"><AccessTimeRoundedIcon /></span>{utilService.getFormattedDate(this.state.jam.startsAt)}</p>
+                                    <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length}</span> <span className="details-style">people going</span></p>
+                                    <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Event by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span>{this.state.jam.createdBy.fullname}</span></Link></p>
+                                    <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
+                                    <p> <span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{utilService.getFormattedDate(this.state.jam.startsAt)}</span></p>
                                     <div className="description-con">
-                                        {/* <h3 className="title-style">Description</h3> */}
+                                        <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
+                                    </div>
+                                    <div className="jam-tags">
+                                        <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                                            return <li key={idx}>{tag}</li>
+                                        })}
+                                        </ul>
                                     </div>
                                 </div>
 
-                                <ul className="users-going-con">
+                                <div className="users-going-con followers">
+                                    {jam.usersGoing.map((userGoing, idx) => {
+                                        return <img className="follower-avatar" src={userGoing.imgUrl} key={idx} />
+                                    })}
+                                    <JamGoingListModal /> 
+                                </div>
+
+
+                                {/* <ul className="users-going-con">
                                     {this.state.jam.usersGoing.map(function (user, index) {
                                         return <JamUserPreview key={index} user={user} />
                                     })}
-                                 <li> <JamGoingListModal/> </li>
-                                </ul>
+                                    <li> <JamGoingListModal /> </li>
+                                </ul> */}
                             </div>
                             <div className="location-con">
                                 <h3 className="title-style"> Location </h3>
