@@ -12,8 +12,9 @@ export function App() {
   return (
     <div className="app main-container">
       <Router>
-        <Header></Header>
+        
         <main>
+        <Header></Header>
           <Switch>
             <Route path="/members" component={MembersList} />
             <Route path="/jam/:id" component={JamDetails} />

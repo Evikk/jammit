@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter, NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
-import logo from '../assets/img/logo.svg'
 
 class _Header extends Component {
     render() {
