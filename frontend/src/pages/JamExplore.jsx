@@ -7,6 +7,7 @@ import jamThumb from "../assets/img/jam-thumb.jpg"
 import { JamScroll } from "../cmps/JamScroll.jsx";
 import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
+// import jamMarker from "../assets/img/jam-marker.png"
 
 const mapStyles = {
     width: "50%",
@@ -131,7 +132,7 @@ class _JamExplore extends Component {
                     currMembers={jam.usersGoing.length}
                     capacity={jam.capacity}
                     icon={{
-                        url: jamThumb,
+                        url: jamMarker,
                         anchor: new this.props.google.maps.Point(32,32),
                         scaledSize:  new this.props.google.maps.Size(50,50)
                     }}
