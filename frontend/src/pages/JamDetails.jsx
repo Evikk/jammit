@@ -25,15 +25,12 @@ class _JamDetails extends Component {
 
     componentDidMount() {
         this.props.loadJams()
-        console.log(this.props);
         const jam = jamService.getById(this.props.match.params.id);
         this.setState({ jam })
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.jams !== prevProps.jams) {
-            console.log(this.props);
-
             this.setState({ jam: this.props.jams.find(jam => jam._id === this.props.match.params.id) });
         }
     }
@@ -76,13 +73,6 @@ class _JamDetails extends Component {
                                         })}
                                         </ul>
                                     </div>
-                                </div>
-
-                                <div className="users-going-con followers">
-                                    {jam.usersGoing.map((userGoing, idx) => {
-                                        return <img className="follower-avatar" src={userGoing.imgUrl} key={idx} />
-                                    })}
-                                    <JamGoingListModal /> 
                                 </div>
                                 <div className="users-going-con-section">
                                 <ul className="users-going-con">
