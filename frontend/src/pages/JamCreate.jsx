@@ -6,15 +6,27 @@ import { JamCreateForm } from '../cmps/JamCreateForm'
 class _JamCreate extends Component {
     state={
         jam: {
-            title: '',
-            description: ''
+            title: "",
+        description: "",
+        imgUrl: "http://some-img",
+        capacity: null,
+        location: {
+            region: "",
+            city: "",
+            address: "",
+            lat: null,
+            lng: null
+        },
+        createdBy: {},
+        startsAt: null,
+        tags: [],
+        createdAt: null,
+        usersGoing: []
         }
     }
 
-    handleChange = (ev) => {
-        const jamCopy = { ...this.state.jam };
-        jamCopy[ev.target.name] = ev.target.value;
-        this.setState({ jam: jamCopy });
+    handleChange = (jam) => {
+        this.setState({ jam });
     };
 
 
@@ -23,8 +35,8 @@ class _JamCreate extends Component {
 
     render() {
         
-        return <div>
-                <JamCreateForm onTitleChange={this.handleChange} onDescriptionChange={this.handleChange} />
+        return <div className="create-container pos-relative">
+                <JamCreateForm changeForm={this.handleChange} />
                 <JamDetails isEditMode={true} jam={this.state.jam}/>
             </div>
     }

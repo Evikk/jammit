@@ -16,25 +16,6 @@ import { updateJamGoing, loadJams } from '../store/actions/jamActions.js';
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 
-const emptyJam = {
-        title: "",
-        description: "",
-        imgUrl: "http://some-img",
-        capacity: null,
-        location: {
-            region: "",
-            city: "",
-            address: "",
-            lat: null,
-            lng: null
-        },
-        createdBy: {},
-        startsAt: null,
-        tags: [],
-        createdAt: null,
-        usersGoing: []
-}
-
 class _JamDetails extends Component {
     state = {
         jam: null,
@@ -46,7 +27,7 @@ class _JamDetails extends Component {
     componentDidMount() {
         this.props.loadJams()
         if (this.props.isEditMode){
-            this.setState({jam: emptyJam, isEditMode: true, isUserAdmin: true})
+            this.setState({jam: this.props.jam, isEditMode: true, isUserAdmin: true})
         }
         else {
             const jam = jamService.getById(this.props.match.params.id);
@@ -54,6 +35,10 @@ class _JamDetails extends Component {
                 this.checkIfUserHost()
             })
         }
+    }
+
+    componentWillReceiveProps(props){
+        this.setState({jam: props.jam})
     }
 
     componentDidUpdate(prevProps) {
@@ -78,14 +63,6 @@ class _JamDetails extends Component {
                 {this.state.jam &&
                     <div className="page-con">
                         <div className="jam-title-img-con">
-                        {isUserAdmin && <button className="jam-save-btn"
-                        onClick={() =>{
-                            if (this.state.isEditMode) this.onSaveChanges()
-                            this.setState({ isEditMode: !isEditMode })
-                        }}
-                        >
-                        {isEditMode ? "Save Changes" : "Edit Details"}
-                        </button>}
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         {!this.state.isEditMode && this.props.loggedInUser && <div>
@@ -99,8 +76,8 @@ class _JamDetails extends Component {
                         <div className="page-content">
                             <div className="left-page-details">
                                 <div className="details-con">
-                                    <h3 className="title-style"> Details </h3>
-                                    <p><span><AudiotrackRoundedIcon /></span><span>{this.state.jam.capacity}</span> jammers capacity</p>
+                                    <h3 className="title-style">Details</h3>
+                                    <p><span><AudiotrackRoundedIcon /></span><span>{this.state.jam.capacity}</span>Capacity</p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length}</span> <span className="details-style">people going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span>{this.state.jam.createdBy.fullname}</span></Link></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
