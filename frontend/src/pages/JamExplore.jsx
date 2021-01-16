@@ -7,8 +7,7 @@ import jamThumb from "../assets/img/jam-thumb.jpg"
 import { JamScroll } from "../cmps/JamScroll.jsx";
 import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
-// import jamMarker from "../assets/img/marker.png"
-import jamMarker from "../assets/img/green.png"
+import jamMarker from "../assets/img/green-only.png"
 
 const mapStyles = {
     width: "50%",
