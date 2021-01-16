@@ -29,19 +29,21 @@
 .page-content {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .left-page-details {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 250px;
-    background-color: rgb(222, 228, 222);
-    border-radius: 10px;
+    width: 45% ;
 }
 
 .details-con {
     margin-top: 20px;
+    background-color: rgb(222, 228, 222);
+    border-radius: 10px;
+    padding: 20px; 
+
 }
 
 .description-con {
@@ -50,50 +52,63 @@
 
 .location-con {
     margin-top: 20px;
+    background-color: rgb(222, 228, 222);
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.jam-details-navbar{
+.jam-details-navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.navbar-left {
     display: flex;
     justify-content: space-between;
 }
 
-.navbar-left{
+.navbar-left li {
+margin: 10px;
+}
+
+.navbar-right {
     display: flex;
     justify-content: space-between;
 }
 
-.navbar-right{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-
-.jammers{
-    position: relative;
-    display: inline-block;
-    margin-top: 27px;
-    // display: inline-block;
-//   border-radius: 50%;
-//   overflow: hidden;
-//   width: 100px;
-}
-
-// .jammers:not(:first-child) {
-    // margin-left: -60px;
-    // mask:radial-gradient(circle 55px at 5px 50%,transparent 99%,#fff 100%);
-    // clip-path: circle(50% at 50% 50%);
-// }
-
-  .jammers img:nth-child(2) {
-      left:10% ;
-  }
-  .jammers img:nth-child(3) {
-      left:20% ;
-  }
-  .jammers img{
-    position: absolute;
-    width:15%;
-    display: block;
-  }
+.navbar-right li{
+    margin: 10px;
   
+}
+
+.navbar-right button{
+    border-radius: 5px;
+    border:transparent;
+    padding: 10px;
+    color: rgb(92, 91, 91) ;
+}
+
+.users-going-con {
+    background-color: rgb(222, 228, 222);
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    padding: 20px; 
+}
+
+.jammers {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px; 
+}
+
+.jammers img {
+    width: 50%;
+}
