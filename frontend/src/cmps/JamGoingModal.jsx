@@ -4,7 +4,7 @@
 // import Modal from 'react-modal';
 import ReactModal from 'react-modal';
 import React from 'react';
-// import {JamUserPreview} from './JamUserPreview '
+ import {JamUserPreview} from './JamUserPreview'
 
 
 export default class JamGoingListModal extends React.Component {
@@ -47,8 +47,14 @@ export default class JamGoingListModal extends React.Component {
              style={customStyles}
              shouldCloseOnEsc={true}
              >
-            <button onClick={this.handleCloseModal}>X</button>
-               <p>modal content</p>
+            <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
+          <ul className="users-going-con">
+               {this.props.usersGoing.map(function (user, index) {
+                              return <JamUserPreview key={index} user={user} />
+               })}
+                                
+           </ul>
+           
           </ReactModal>
         </div>
       );

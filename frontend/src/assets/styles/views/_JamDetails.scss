@@ -119,12 +119,11 @@
     border-radius: 10px;
     margin-top: 20px;
     display: flex;
-    padding: 20px;
+    padding: 10px;
     position: relative;
 }
 
 .jammers {
-    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -184,4 +183,21 @@
     width:200px;
     background-color: transparent;
     border: solid cadetblue 2px;
+}
+
+.users-going-con-section {
+    position:relative;
+}
+
+.users-going-actions {
+    position:absolute;
+    top: 15px;
+    right: 10px;
+}
+
+.esc-btn-modal{
+    border-radius: 5px;
+    border: transparent;
+    position: absolute;
+    left: 300px;
 }
