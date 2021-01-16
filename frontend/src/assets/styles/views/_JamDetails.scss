@@ -31,7 +31,7 @@
     color: rgb(92, 91, 91);
 }
 .details-style{
-    color: #15182c
+    color: rgb(92, 91, 91);
 }
 
 .page-content {
@@ -44,6 +44,7 @@
     display: flex;
     flex-direction: column;
     width: 46%;
+
 }
 
 .details-con {
@@ -53,6 +54,7 @@
     padding: 20px;
     font-size: 18px;
     line-height: 30px;
+
 }
 
 .description-con {
@@ -206,5 +208,13 @@
     border-radius: 5px;
     border: transparent;
     position: absolute;
-    left: 300px;
+    left:160px;
+}
+
+.users-going-con{
+    color: rgb(159, 161, 161);
+}
+
+.createdBy-link{
+    color: rgb(70, 70, 184);
 }
