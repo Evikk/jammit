@@ -7,7 +7,7 @@ import {instIcons} from '../assets/img/inst-icons/icons.js'
 export function JamPreview({ jam, onJamClick }) {
     const slotsLeft = jam.capacity - jam.usersGoing.length
     return (
-        <li className="jam-card flex" onClick={()=>onJamClick(jam._id)}>
+        <li className="jam-card flex column" onClick={()=>onJamClick(jam._id)}>
             <div className="thumb flex column pos-relative">
                 <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">

@@ -200,11 +200,33 @@ class _JamExplore extends Component {
                 </div>
                 </InfoWindow>
             </Map>
-            <ul className="jams-explore-list">
-                {jams.map((jam) => (
-                    <JamPreview key={jam._id} jam={jam} onJamClick={this.onJamClick}/>
-                ))}
-            </ul>
+            <div className="jams-explore-container">
+                <div className="jams-explore-filter flex column">
+                    <h1>Filter Jams</h1>
+                    <div className="filter-inputs">
+                        <select name="filterByInst">
+                            <option value="">By Instrument Missing</option>
+                            <option value="">Singer</option>
+                            <option value="">Guitar</option>
+                            <option value="">Drums</option>
+                            <option value="">Bass</option>
+                            <option value="">Keyboard</option>
+                        </select>
+                        <select name="filterByRegion">
+                            <option value="">By Region</option>
+                            <option value="">North</option>
+                            <option value="">Center</option>
+                            <option value="">South</option>
+                        </select>
+                        <input type="text" name="name" id=""/>
+                    </div>
+                </div>
+                <ul className="jams-explore-list">
+                    {jams.map((jam) => (
+                        <JamPreview key={jam._id} jam={jam} onJamClick={this.onJamClick}/>
+                    ))}
+                </ul>
+            </div>
             {/* <JamList jams={jams} onJamClick={this.onJamClick}/> */}
             </section>
             </>
