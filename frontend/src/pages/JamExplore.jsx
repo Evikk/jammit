@@ -9,6 +9,9 @@ import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
 import jamMarker from "../assets/img/green-marker.png"
 
+
+
+
 const mapStyles = {
     width: "50%",
     height: "100%",
@@ -99,7 +102,7 @@ class _JamExplore extends Component {
         });
     }
 
-    onJamClick = (jamId) => {
+    onJamCenter = (jamId) => {
         const marker  = this.state.markers.find(marker => {
             return marker.key === jamId
         })
@@ -108,6 +111,10 @@ class _JamExplore extends Component {
             selectedPlace: props,
             mapZoom: 17
         });
+    }
+
+    onJamClick = (jamId) => {
+        this.props.history.push(`jam/${jamId}`)
     }
 
     onClose = props => {
