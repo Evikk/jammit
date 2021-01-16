@@ -15,14 +15,14 @@ export const userService = {
 var users = [
     {
         "_id": "u101",
-        "createdAt": 12122134434,
         "fullname": "Tomer Yosef",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
+        "createdAt": 12122134434,
         "username": "TomerTheCreator",
         "password": "123456",
-        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
         "tags": ["Funk", "Rock", "Hip-Hop", "World"],
         "about": "Really open for all kinds of jams and collaborations ;)",
-        "talents": ["Singer", "Drums","Guitar"],
+        "talents": ["Singer", "Drums", "Guitar"],
         "location": {
             "region" : "Center",
             "city": "Tel Aviv",
@@ -88,6 +88,32 @@ var users = [
                 "fullname": "Kobi Oz",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
             }
+        ]
+    },
+    {
+        "_id": "u103",
+        "createdAt": 12122134434,
+        "fullname": "Rami Fortis",
+        "username": "rami666rOcK",
+        "password": "123",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
+        "tags": ["Rock", "Indie"],
+        "about": "Bring it onnn!!!",
+        "talents": [ "Singer", "ElectricGuitar"],
+        "location": {
+            "city": "Raanana",
+            "region" : "Center",
+            "lat": 32.61308,
+            "lng": 34.1413
+        },
+        "followers": [
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light"
+            }
+        ],
+        "following": [
         ]
     }
 ]
