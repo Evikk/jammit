@@ -42,7 +42,7 @@ var jams = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "http://some-img",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
                 "playing": ["Bass", "Singer"]
             }
         ]
@@ -62,7 +62,7 @@ var jams = [
         "createdBy": {
             "_id": "u102",
             "fullname": "Moshik Afia",
-            "imgUrl": "http://some-img"
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light"
         },
         "startsAt": 56822212134,
         "tags": ["Meditternean", "Happy"],
@@ -77,13 +77,13 @@ var jams = [
             {
                 "_id": "u102",
                 "fullname": "Moshik Afia",
-                "imgUrl": "http://some-img",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
                 "playing": ["Singer"]
             },
             {
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
-                "imgUrl": "http://some-img",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
                 "playing": ["Drums", "Electric-Guitar", "Singer"]
             }
         ]
@@ -103,7 +103,7 @@ var jams = [
         "createdBy": {
             "_id": "u103",
             "fullname": "Rami Fortis",
-            "imgUrl": "http://some-img"
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
         },
         "startsAt": 56872212134,
         "tags": ["Blues", "Jazz"],
@@ -118,7 +118,7 @@ var jams = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "http://some-img",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
                 "playing": ["Electric-Guitar"]
             }
         ]
@@ -147,10 +147,8 @@ function getById(jamId) {
 
 
 function updateJamGoing(jamId, user) {
-
     //UPDATE THE SERVER USER IS NOT GOING
-
-    //jams.find(jam => jam._id === jamId).usersGoing.push(user);
+    jams.find(jam => jam._id === jamId).usersGoing.push(user);
     // jams.usersGoing.push(jammerToAdd);
      //return httpService.put(`jam/${jamId}`, user)
   

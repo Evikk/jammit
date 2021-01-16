@@ -4,10 +4,10 @@ export function JamUserPreview({ user }) {
     const history = useHistory()
     return (
         <li onClick={() => history.push(`/user/${user._id}`)}>
-            <h3>{user.fullname}</h3>
-            <div >
+            <div className="jammers" >
                 <img  src={user.imgUrl} alt="" />
             </div>
+            <h4>{user.fullname}</h4>
             {/* <div>
             {user.playing.map(function (instrument, index) {
                   return <span key={index}> {instrument}</span>
