@@ -150,10 +150,10 @@ class _JamExplore extends Component {
     }    
 
     render() {
-        const { jams } = this.props
+        const { jams, loggedInUser } = this.props
         const {userPos, selectedPlace, mapZoom, markers} = this.state
         if (!selectedPlace || jams.length === 0) return <h2>Loading...</h2>
-        console.log(markers);
+        console.log(userPos);
         return (
             <>
             <section className="flex explore-container pos-relative">
@@ -179,6 +179,15 @@ class _JamExplore extends Component {
                     // onBoundsChanged={this.centerMoved}
                 >
                 {markers}
+                <Marker
+                    name={'Your position'}
+                    position={userPos.position}
+                    icon={{
+                    url: loggedInUser.imgUrl,
+                    anchor: new this.props.google.maps.Point(32,32),
+                    scaledSize:  new this.props.google.maps.Size(50,50)
+                    }} 
+                    />
                 <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
@@ -197,7 +206,6 @@ class _JamExplore extends Component {
             </ul>
             {/* <JamList jams={jams} onJamClick={this.onJamClick}/> */}
             </section>
-            <h1 className="jams-explore-title">All Jams</h1>
             </>
         );
     }
@@ -207,6 +215,7 @@ const mapStateToProps = (state) => {
     return {
         jams: state.jamModule.jams,
         users: state.userModule.users,
+        loggedInUser: state.userModule.loggedInUser 
     };
 };
 const mapDispatchToProps = {
