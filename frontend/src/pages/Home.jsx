@@ -19,22 +19,62 @@ class _Home extends Component {
   }
   render() {
     const { jams, users, loggedInUser } = this.props
+    console.log(loggedInUser);
+    
     if (jams.length === 0) return <h2>Loading...</h2>
     return (
       
       <div className="home">
         <div className="hero-section">
           <div className="hero-content flex column">
-            <h1 className="hero-title fs40">Find a Jam. Make Music</h1>
-            <h3 className="hero-subtitle">Search and explore the best jam sessions around!</h3>
+            <h1 className="hero-title fs40">Make Music. Make Friends.</h1>
+            <h3 className="hero-subtitle fs40">Search and explore the best jam sessions around!</h3>
             <div className="call-to-action">
               <button className="call-to-action-btn" onClick={()=>this.props.history.push('/search')}>Let's Find a Jam!</button>
             </div>
           </div>
         </div>
+        <main className="flex space-between">
         
-        <JamScroll jams={jams} onJamClick={this.onJamClick}/>
-        <UserList users={users}/>
+        {loggedInUser ? 
+        <div className="user-filtered-container">
+           <div className="inst-filtered section"><h1>Jams Without {loggedInUser.talents[0]}</h1>
+            <JamScroll jams={jams.filter(jam=>{
+                  const user = jam.usersGoing.find(user=> {
+                    return user.playing.some(inst=>{
+                      return inst === loggedInUser.talents[0]
+                    })
+                  })
+                  if (!user) return jam
+            })} onJamClick={this.onJamClick}/>
+          </div>
+          <div className="region-filtered section"><h1>Jams Around {loggedInUser.location.region} Region</h1>
+            <JamScroll jams={jams.filter(jam=>{
+                  return jam.location.region === loggedInUser.location.region
+            })} onJamClick={this.onJamClick}/>
+          </div>
+        </div>
+          :
+        <div className="user-filtered-container">
+          <div className="jams section">
+            <h1>Most Popular Jams</h1>
+            <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+          </div>
+          <div className="jams section">
+            <h1>Recently Added Jams</h1>
+            <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+          </div>
+        </div>
+        }
+        
+        <div className="members-container">
+          <div className="members-list-preview">
+          <h1>Featured Members</h1>
+            <UserList users={users}/>
+          </div>
+        </div>
+        
+        </main>
       </div>
     )
   }

@@ -34,6 +34,9 @@
     &.row {
         flex-direction: row;
     }
+    &.space-between {
+        justify-content: space-between;
+    }
 }
 
 // Media helpers

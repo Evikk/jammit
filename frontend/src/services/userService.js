@@ -22,8 +22,9 @@ var users = [
         "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
         "tags": ["Funk", "Rock", "Hip-Hop", "World"],
         "about": "Really open for all kinds of jams and collaborations ;)",
-        "talents": ["Guitar", "Singer", "Drums"],
+        "talents": ["Singer", "Drums","Guitar"],
         "location": {
+            "region" : "Center",
             "city": "Tel Aviv",
             "lat": 32.61308,
             "lng": 34.1413
@@ -64,7 +65,8 @@ var users = [
         "about": "Open to any kind of offer",
         "talents": [ "Singer", "Darbocka"],
         "location": {
-            "city": "Tel Aviv",
+            "city": "Beer Sheva",
+            "region" : "South",
             "lat": 32.61308,
             "lng": 34.1413
         },

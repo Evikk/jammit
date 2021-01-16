@@ -4,6 +4,7 @@
 // import Modal from 'react-modal';
 import ReactModal from 'react-modal';
 import React from 'react';
+ import {JamUserPreview} from './JamUserPreview'
 
 
 export default class JamGoingListModal extends React.Component {
@@ -39,14 +40,21 @@ export default class JamGoingListModal extends React.Component {
           };
       return (
         <div>
-          <button onClick={this.handleOpenModal}>See All</button>
+          <button className="see-all-btn" onClick={this.handleOpenModal}>See All</button>
           <ReactModal 
              isOpen={this.state.showModal}
              contentLabel="Minimal Modal Example"
              style={customStyles}
+             shouldCloseOnEsc={true}
              >
-                  <p>Modal Content</p>
-            <button onClick={this.handleCloseModal}>X</button>
+            <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
+          <ul className="users-going-con">
+               {this.props.usersGoing.map(function (user, index) {
+                              return <JamUserPreview key={index} user={user} />
+               })}
+                                
+           </ul>
+           
           </ReactModal>
         </div>
       );

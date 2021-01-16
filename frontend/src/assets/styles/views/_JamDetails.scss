@@ -1,12 +1,14 @@
 .page-con {
-    color: rgb(158, 154, 154);
+    color: rgb(159, 161, 161);
 }
 
 .jam-title-img-con {
     width: 100%;
-    height: 400px;
-    background-image: linear-gradient(to bottom, rgba(228, 224, 224, 0.056), rgba(255, 255, 255, 0.714)),
-        url("../../img/What-is-a-jam-session.jpg");
+    height: 450px;
+    background-image: 
+        url("../../img/jam-hero2.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%
 }
 
 .jam-title {
@@ -19,7 +21,10 @@
 }
 
 .icon-style {
-    color: #929292
+    color: rgb(159, 161, 161);
+    position: relative;
+    top:4px;
+    margin-right: 3px;
 }
 
 .title-style {
@@ -32,33 +37,35 @@
 .page-content {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .left-page-details {
     display: flex;
     flex-direction: column;
-    width: 45% ;
+    width: 46%;
 }
 
 .details-con {
-    margin-top: 20px;
-    background-color: rgb(222, 228, 222);
+    margin-top: 10px;
+    background-color: rgb(249, 249, 250);
     border-radius: 10px;
-    padding: 20px; 
-
+    padding: 20px;
+    font-size: 18px;
+    line-height: 30px;
 }
 
 .description-con {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .location-con {
-    margin-top: 20px;
-    background-color: rgb(222, 228, 222);
+    margin-top: 10px;
+    background-color: rgb(249, 249, 250);
     border-radius: 10px;
+    // border-left: 1px solid gainsboro;
     width: 50%;
-    padding: 20px; 
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -67,7 +74,7 @@
 .jam-details-navbar {
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .navbar-left {
@@ -76,42 +83,124 @@
 }
 
 .navbar-left li {
-margin: 10px;
+    margin: 10px;
+    font-size: 20px;
+    margin: auto 20px;
+    cursor: pointer;
+    padding: 15px;
 }
+
+.navbar-left li:hover{
+    background-color: rgb(249, 249, 250); 
+    border-radius: 10px;
+
+}
+
 
 .navbar-right {
     display: flex;
     justify-content: space-between;
 }
 
-.navbar-right li{
+.navbar-right li {
     margin: 10px;
-  
 }
 
-.navbar-right button{
+.navbar-right button {
     border-radius: 5px;
-    border:transparent;
+    // border: transparent;
     padding: 10px;
-    color: rgb(92, 91, 91) ;
+    font-size: 20px;
+    font-family: "Source-Sans";
+    cursor: pointer;
+    background-color: rgb(249, 249, 250);
+    color: rgb(159, 161, 161);
 }
 
 .users-going-con {
-    background-color: rgb(222, 228, 222);
+    background-color: rgb(249, 249, 250);
     border-radius: 10px;
     margin-top: 20px;
     display: flex;
-    padding: 20px; 
+    padding: 10px;
+    position: relative;
 }
 
 .jammers {
-    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 20px; 
+    padding: 20px;
+    text-align: center;
 }
 
 .jammers img {
     width: 100px;
+    cursor: pointer;
+}
+
+.see-all-btn{
+    border: transparent;
+    background-color:transparent;
+    border-radius: 5px;
+    padding: 10px;
+  
+    font-size: 20px;
+    font-family: "Source-Sans";
+    cursor: pointer;
+    // position: absolute;
+    // top:5px;
+    // left: 150px;
+    text-decoration: underline;
+    color: rgb(70, 70, 184);
+
+}
+
+.see-all-btn:hover{
+    color: rgb(92, 91, 91);
+}
+
+
+.jammers-list-name{
+    text-align: center;
+}
+
+.join-jam-btn{
+    width:200px;
+    background-color: transparent;
+    border: solid cadetblue 2px;
+}
+
+.join-jam-btn:hover{
+    background-color: cadetblue;
+    color:white;
+}
+
+.invite-jam-btn{
+    border:transparent;
+    background-color: rgb(249, 249, 250);
+    width:100px;
+}
+
+.leave-jam-btn{
+    width:200px;
+    background-color: transparent;
+    border: solid cadetblue 2px;
+}
+
+.users-going-con-section {
+    position:relative;
+}
+
+.users-going-actions {
+    position:absolute;
+    top: 15px;
+    right: 10px;
+}
+
+.esc-btn-modal{
+    border-radius: 5px;
+    border: transparent;
+    position: absolute;
+    left: 300px;
 }
