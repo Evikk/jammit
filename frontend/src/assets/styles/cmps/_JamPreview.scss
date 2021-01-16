@@ -1,9 +1,17 @@
 .jam-card {
-    background-color: #e8e4e4;
+    background-color: #dee4de;
+    width: 200px;
+    border-radius: 4px;
+    h2{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 1.1em;
+    }
     .jamThumb{
         height: 100%;
-        width: 130px;
-        margin-right: 5px;
+        // width: 130px;
+        // margin-right: 5px;
     }
 }
 .inst-icons-wrapper {
@@ -25,7 +33,7 @@
 
 .jam-card-content {
     width: 100%;
-    padding: 0 10px 10px 2px;
+    // padding: 0 10px 10px 2px;
     p {
         display: flex;
         align-items: center;
