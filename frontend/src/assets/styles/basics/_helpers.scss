@@ -11,6 +11,8 @@
 .pos-relative {position: relative;}
 .red {color: red;}
 .green {color: rgb(86, 181, 86);}
+.white{color:white;}
+.gray{ color: #929292}
 // flex helpers
 
 .flex {
@@ -47,7 +49,4 @@
 }
 .portrait-ratio {
     @include aspect-ratio(9, 16);
-}
-.white{
-    color:white;
 }
