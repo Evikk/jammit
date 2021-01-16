@@ -7,6 +7,7 @@ import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import { JamPreview } from '../cmps/JamPreview'
+import { JamScroll } from '../cmps/JamScroll'
 
 class _UserProfile extends Component {
 
@@ -31,11 +32,21 @@ class _UserProfile extends Component {
   onJamClick = (jamId)=> {
     this.props.history.push(`../jam/${jamId}`)
   }
+  
+  findSelectedJams =()=> {
+   return this.props.jams.filter(jam =>{
+      return jam.usersGoing.find(userGoing => {
+        return userGoing._id === this.state.user._id
+      })
+      
+    })
+  }
 
   render() {
     const { user } = this.state
     const {jams} = this.props
-    if (!user) return <div>Loding..</div>
+    // if (!user) return <div>Loding..</div>
+    if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
       <>
         <section className="user-box flex">
@@ -103,14 +114,15 @@ class _UserProfile extends Component {
 
         <section className="user-jams-list">
               <div>
-                {jams.map(jam => {
+              <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
+                {/* {jams.map(jam => {
                   const userFound = jam.usersGoing.find(userGoing =>{
                    return userGoing._id === user._id
                   }) 
                   if(userFound){
                     return <JamPreview key={jam._id} jam={jam} onJamClick={()=>this.onJamClick(jam._id)}/> 
                   }
-                })}
+                })} */}
               </div>
         </section>
       </>
