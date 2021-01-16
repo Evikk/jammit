@@ -31,9 +31,9 @@ nav {
         // color: #606060;
         color: whitesmoke;
     }
-    a:not(:last-child){
-        border-right: 1px solid grey;
-    }
+    // a:not(:last-child){
+    //     border-right: 1px solid grey;
+    // }
 }
 
 nav .active {
@@ -57,4 +57,15 @@ nav .active {
 }
 .logo span{
     font-family: 'Poiret One', cursive;
+}
+.loggedin-avatar{
+    align-items: flex-end;
+}
+
+.loggedin-avatar img{
+    width: 15%;
+    align-items: flex-end;
+}
+.cursor-pointer{
+    cursor: pointer;
 }

@@ -4,25 +4,39 @@ import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 
 class _Header extends Component {
+
+    // onAvatarClick = (userId)=> {
+    //     this.props.history.push(`user/${userId}`)
+    //   }
+
     render() {
         const {loggedInUser} = this.props;
+        console.log(loggedInUser,'logdinuser')
         return <header>
+            
             <div className="logo fs24">
                 <NavLink to="/">
                     Jameet
                     <span>people&music</span>
                 </NavLink>
             </div>
+            
             <div className="flex nav-right-side white">
-                {loggedInUser ? <div className="user-greet flex align-center white">
+                {/* {loggedInUser ? <div className="user-greet flex align-center white">
                     <Link to={`user/${loggedInUser._id}`}><h2>Welcome {loggedInUser.fullname.split(' ')[0]}</h2></Link>
                     <span onClick={()=>this.props.logout()}>Sign out</span></div>
-                    : <div className="user-greet flex align-center">Welcome Guest</div>}
-                <nav className="fs24">
+                    : <div className="user-greet flex align-center">Welcome Guest</div>} */}
+                <nav className="fs20">
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
-                    <NavLink to="/login">Login</NavLink>
+                  { loggedInUser ? <span className="cursor-pointer" onClick={()=>this.props.logout()}>Sign out</span> :<NavLink to="/login">Login</NavLink> }
                 </nav>
+                {loggedInUser ? <div className="loggedin-avatar flex fs12">
+                <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={()=>this.props.history.push(`/user/${loggedInUser._id}`)}/>
+                    {/* <Link to={`user/${loggedInUser._id}`}></Link> */}
+                    {/* <span onClick={()=>this.props.logout()}>Sign out</span> */}
+                    </div>
+                    : <div className="user-greet flex align-center">Hi there Guest</div>}
             </div>
             
         </header>
