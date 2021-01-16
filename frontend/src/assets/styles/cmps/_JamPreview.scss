@@ -5,16 +5,27 @@
         width: 130px;
         margin-right: 5px;
     }
-    .jam-inst {
+}
+.inst-icons-wrapper {
+
+    .inst-icon {
         position: absolute;
-        width: 30px;
+        width: 40px;
         border-radius: 50%;
-        background-color: rgb(184, 184, 184);
+        background-color: rgb(216, 210, 210);
+        border: 1px solid black;
         bottom: 0;
+    }
+    *:nth-child(2){
+        left:20%;
+    }
+    *:nth-child(3){
+        left:35%;
     }
 }
 
 .jam-card-content {
+    padding: 0 10px 10px 2px;
     p {
         display: flex;
         align-items: center;
@@ -29,7 +40,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        p {
+        span {
             display: flex;
             align-items: center;
         }

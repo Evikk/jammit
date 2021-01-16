@@ -1,5 +1,12 @@
 .explore-container {
     height: 760px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+        position: absolute;
+        left:0;
+        z-index: 98;
+    }
 }
 .jams-explore-title {
     font-size: rem(40px);
@@ -7,12 +14,22 @@
 }
 .jams-explore-list {
     position: relative;
+    width: 24%;
     z-index: 99;
     height: 100%;
     padding: 10px 0;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(auto-fill, 130px);
     grid-gap: 10px;
-    
+    * {
+        padding: 0;
+        font-size: 0.8rem;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+    .jamThumb {
+        // height: 83%;
+    }
 }
