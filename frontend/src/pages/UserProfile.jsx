@@ -65,6 +65,7 @@ class _UserProfile extends Component {
             <div className="user-about">
               <span>{user.about}</span>
             </div>
+            
             <div className="followers">
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />

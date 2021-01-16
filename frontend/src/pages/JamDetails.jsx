@@ -78,12 +78,6 @@ class _JamDetails extends Component {
                                     </div>
                                 </div>
 
-                                <div className="users-going-con followers">
-                                    {jam.usersGoing.map((userGoing, idx) => {
-                                        return <img className="follower-avatar" src={userGoing.imgUrl} key={idx} />
-                                    })}
-                                    <JamGoingListModal /> 
-                                </div>
                                 <div className="users-going-con-section">
                                 <ul className="users-going-con">
                                     {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
