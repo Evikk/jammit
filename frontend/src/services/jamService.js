@@ -13,6 +13,7 @@ var jams = [
         "imgUrl": "http://some-img",
         "capacity": 12,
         "location": {
+            "region": "Center",
             "city": "Tel Aviv",
             "address": "Hayarkon 30",
             "lat": 32.085300,
@@ -54,6 +55,7 @@ var jams = [
         "imgUrl": "http://some-img",
         "capacity": 200,
         "location": {
+            "region": "Center",
             "city": "Bat Yam",
             "address": "Nisenbaum 38",
             "lat": 32.016499,
@@ -95,6 +97,7 @@ var jams = [
         "imgUrl": "http://some-img",
         "capacity": 9,
         "location": {
+            "region": "North",
             "city": "Haifa",
             "address": "Hakarish 23",
             "lat": 32.794044,

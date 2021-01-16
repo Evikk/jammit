@@ -1,19 +1,24 @@
 import React, { Component } from "react";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 import { JamPreview } from "./JamPreview";
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const Arrow = ({ text, className }) => {
     return <div className={className}>{text}</div>;
 };
 
-const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" });
-const ArrowRight = Arrow({ text: ">", className: "arrow-next" });
+const ArrowLeft = Arrow({ text: <ArrowBackIosIcon/>, className: "arrow-prev" });
+const ArrowRight = Arrow({ text: <ArrowForwardIosIcon/>, className: "arrow-next" });
 
 // const selected = "item1";
 
 export class JamScroll extends Component {
     state = {
-        menu: null
+        menu: null,
+        hideArrows: true,
+        alignCenter: true,
+        hideSingleArrow: true
         // selected,
     };
 
@@ -29,13 +34,16 @@ export class JamScroll extends Component {
     // };
 
     render() {
-        const { selected, menu } = this.state;
+        const { selected, menu, hideArrows, hideSingleArrow, alignCenter } = this.state;
         const { jams } = this.props;
         if (!jams) return <h2>Loading...</h2>
     
         return (
             <div>
                 <ScrollMenu
+                    hideArrows={hideArrows}
+                    hideSingleArrow={hideSingleArrow}
+                    alignCenter={alignCenter}
                     data={menu}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}
