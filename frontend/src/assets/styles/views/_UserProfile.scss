@@ -12,10 +12,17 @@
     border-bottom: 2px solid whitesmoke;
 }
 .user-right-box{
-    // width: 300px;
-    // height: 130px;
-    padding-top: 37px;
-    padding-left: 100px;
+    // width: 500px;
+    // height: 200px;
+    // padding-top: 37px;
+    // padding-left: 100px;
+    // background-color: rgb(249, 249, 250);
+    // border-radius: 10px;
+    // margin-top: 20px;
+    // margin-left: 100px;
+    // display: flex;
+    // padding: 10px;
+    // position: relative;
 }
 .user-basic-info{
     margin-bottom: 15px;
@@ -86,6 +93,12 @@
 }
 .user-right-box .titel{
     padding-bottom:20px;
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    padding: 10px;
+    position: relative;
 }
 
 .followers{
@@ -96,6 +109,13 @@
 //   border-radius: 50%;
 //   overflow: hidden;
 //   width: 100px;
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
+    margin-top: 50px;
+    display: flex;
+    // padding: 10px;
+    position: relative;
+    height: 100px;
 }
 
 // .followers:not(:first-child) {
@@ -105,15 +125,43 @@
 // }
 
   .followers img:nth-child(2) {
-      left:10% ;
+      left:9% ;
   }
   .followers img:nth-child(3) {
-      left:20% ;
+      left:18% ;
   }
   .followers img{
     position: absolute;
-    width:15%;
+    width:12%;
     display: block;
+  }
+
+  .top-card{
+    width: 500px;
+    height: 200px;
+    padding-top: 37px;
+    padding-left: 100px;
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 100px;
+    // display: flex;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .bottom-card{
+    width: 500px;
+    height: 100px;
+    padding-top: 37px;
+    padding-left: 100px;
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 100px;
+    // display: flex;
+    padding: 10px;
+    position: relative;
   }
   
   

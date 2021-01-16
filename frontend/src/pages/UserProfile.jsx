@@ -66,11 +66,11 @@ class _UserProfile extends Component {
               <span>{user.about}</span>
             </div>
             
-            <div className="followers">
+            {/* <div className="followers">
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
               })}
-            </div>
+            </div> */}
 
             <div className="reaction-icon">
               <ChatRoundedIcon />
@@ -80,6 +80,7 @@ class _UserProfile extends Component {
           </div>
 
           <div className="user-right-box flex column">
+            <div className="top-card">
             <div className="titel flex">
               <span className="talents-title fs18">Talents</span>
             </div>
@@ -88,9 +89,16 @@ class _UserProfile extends Component {
                 return <li key={idx}>{talent}</li>
               })}</ul>
             </div>
+            </div>
+            {/* <div className="bottom-card"> */}
+               <div className="followers bottom-card">
+              {user.followers.map((follower, idx) => {
+                return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
+              })}
+            </div>
+            {/* </div> */}
 
           </div>
-
         </section>
 
         <section className="user-jams-list">
