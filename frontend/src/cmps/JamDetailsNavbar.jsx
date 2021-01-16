@@ -1,6 +1,6 @@
 // import { useHistory } from "react-router-dom";
 import React from 'react'
-import JamGoingListModal from './JamGoingModal'
+
 
 export function JamNavbar({updateJamGoing, jam, user}) {
     return (
@@ -10,11 +10,10 @@ export function JamNavbar({updateJamGoing, jam, user}) {
                 <li>Discussion</li>
             </div>
             <div className="navbar-right">
-                {jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  &&
+                {user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  &&
                   <li><button onClick={() => updateJamGoing (jam, user, true)}>Join Jam</button></li> }
-                  {jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length !== 0  &&
+                  {user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length !== 0  &&
                   <li><button onClick={() => updateJamGoing (jam, user, false)}>Leave Jam</button></li> }
-                <li> <JamGoingListModal/> </li>
                 <li><button>Invite</button></li>
             </div>
         </ul>

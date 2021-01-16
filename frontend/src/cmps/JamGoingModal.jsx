@@ -39,7 +39,7 @@ export default class JamGoingListModal extends React.Component {
           };
       return (
         <div>
-          <button onClick={this.handleOpenModal}>Going</button>
+          <button onClick={this.handleOpenModal}>See All</button>
           <ReactModal 
              isOpen={this.state.showModal}
              contentLabel="Minimal Modal Example"
