@@ -7,7 +7,6 @@
     }
 }
 .inst-icons-wrapper {
-
     .inst-icon {
         position: absolute;
         width: 40px;
@@ -25,6 +24,7 @@
 }
 
 .jam-card-content {
+    width: 100%;
     padding: 0 10px 10px 2px;
     p {
         display: flex;
@@ -40,9 +40,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-right: 5px;
         span {
             display: flex;
             align-items: center;
+
         }
     }
 }
