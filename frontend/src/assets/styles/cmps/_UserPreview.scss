@@ -3,6 +3,7 @@
     width: 200px;
     border-radius: 4px;
     justify-content: center;
+    transition: .3s;
     h2{
         overflow: hidden;
         text-overflow: ellipsis;
@@ -15,6 +16,11 @@
     }
     .userThumb{
         width: 50%;
+    }
+    &:hover{
+        position: relative;
+        top: 3px;
+        cursor: pointer;
     }
 }
 .inst-icons-wrapper {

@@ -16,11 +16,33 @@ class _Home extends Component {
   onJamClick = (jamId)=> {
     this.props.history.push(`jam/${jamId}`)
   }
+
+  filterMembersByFollow = () =>{
+    return this.props.users.filter(user=> {
+      return user.followers.find(user=> user._id === this.props.loggedInUser._id)
+    })
+  }
+
+  filterJamsByInst = ()=> {
+    return this.props.jams.filter(jam=>{
+      const user = jam.usersGoing.find(user=> {
+        return user.playing.some(inst=>{
+          return inst === this.props.loggedInUser.talents[0]
+        })
+      })
+      if (!user) return jam
+    })
+  }
+
+  filterJamsByRegion = ()=> {
+    return this.props.jams.filter(jam=>{
+      return jam.location.region === this.props.loggedInUser.location.region
+    })
+  }
+
   render() {
     const { jams, users, loggedInUser } = this.props
-    console.log(loggedInUser);
-    
-    if (jams.length === 0) return <h2>Loading...</h2>
+    if (jams.length === 0 || users.length === 0) return <h2>Loading...</h2>
     return (
     
       <div className="home">
@@ -38,19 +60,10 @@ class _Home extends Component {
         {loggedInUser ? 
         <div className="user-filtered-container">
            <div className="inst-filtered section"><h1>Jams Without {loggedInUser.talents[0]}</h1>
-            <JamScroll jams={jams.filter(jam=>{
-                  const user = jam.usersGoing.find(user=> {
-                    return user.playing.some(inst=>{
-                      return inst === loggedInUser.talents[0]
-                    })
-                  })
-                  if (!user) return jam
-            })} onJamClick={this.onJamClick}/>
+            <JamScroll jams={this.filterJamsByInst()} onJamClick={this.onJamClick}/>
           </div>
           <div className="region-filtered section"><h1>Jams Around {loggedInUser.location.region} Region</h1>
-            <JamScroll jams={jams.filter(jam=>{
-                  return jam.location.region === loggedInUser.location.region
-            })} onJamClick={this.onJamClick}/>
+            <JamScroll jams={this.filterJamsByRegion()} onJamClick={this.onJamClick}/>
           </div>
         </div>
           :
@@ -65,14 +78,21 @@ class _Home extends Component {
           </div>
         </div>
         }
-        
+      {loggedInUser && loggedInUser.following.length > 0 ?
+        <div className="members-container">
+        <div className="members-list-preview">
+        <h1>Members You Follow</h1>
+          <UserList users={this.filterMembersByFollow()}/>
+        </div>
+      </div>
+        :
         <div className="members-container">
           <div className="members-list-preview">
           <h1>Featured Members</h1>
             <UserList users={users}/>
           </div>
         </div>
-        
+      }
         </main>
       </div>
     )
