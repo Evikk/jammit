@@ -71,13 +71,16 @@ class _JamDetails extends Component {
                                         <p>{this.state.jam.description}</p>
                                     </div>
                                 </div>
-
+                                <div className="users-going-con-section">
                                 <ul className="users-going-con">
-                                    {this.state.jam.usersGoing.map(function (user, index) {
+                                    {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
                                         return <JamUserPreview key={index} user={user} />
                                     })}
-                                 <li> <JamGoingListModal/> </li>
+                                
                                 </ul>
+                                <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing}/> </div>
+                                </div>
+                               
                             </div>
                             <div className="location-con">
                                 <h3 className="title-style"> Location </h3>
