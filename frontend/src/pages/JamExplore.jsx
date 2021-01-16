@@ -100,12 +100,10 @@ class _JamExplore extends Component {
     }
 
     onJamClick = (jamId) => {
-        console.log(jamId);
         const marker  = this.state.markers.find(marker => {
             return marker.key === jamId
         })
         const props = marker.props
-        console.log(marker, props);
         this.setState({
             selectedPlace: props,
             mapZoom: 17
@@ -204,6 +202,7 @@ class _JamExplore extends Component {
                 <div className="jams-explore-filter flex column">
                     <h1>Filter Jams</h1>
                     <div className="filter-inputs">
+                        <input type="text" name="name" id=""/>
                         <select name="filterByInst">
                             <option value="">By Instrument Missing</option>
                             <option value="">Singer</option>
@@ -218,7 +217,6 @@ class _JamExplore extends Component {
                             <option value="">Center</option>
                             <option value="">South</option>
                         </select>
-                        <input type="text" name="name" id=""/>
                     </div>
                 </div>
                 <ul className="jams-explore-list">
