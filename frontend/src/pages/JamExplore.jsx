@@ -180,15 +180,15 @@ class _JamExplore extends Component {
                     // onBoundsChanged={this.centerMoved}
                 >
                 {markers}
-                <Marker
+                {loggedInUser && <Marker
                     name={'Your position'}
                     position={userPos.position}
                     icon={{
                     url: loggedInUser.imgUrl,
                     anchor: new this.props.google.maps.Point(32,32),
                     scaledSize:  new this.props.google.maps.Size(50,50)
-                    }} 
-                    />
+                    }}
+                    />}
                 <InfoWindow
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
