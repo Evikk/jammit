@@ -1,25 +1,31 @@
 import jamThumb from "../assets/img/jam-thumb.jpg"
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import EventIcon from '@material-ui/icons/Event';
-// import Bass from '../assets/img/inst-icons/Bass.svg'
 import {instIcons} from '../assets/img/inst-icons/icons.js'
 
+
 export function JamPreview({ jam, onJamClick }) {
+
+    function showIcons (){
+        return instIcons.map(icon=>{
+            const user = jam.usersGoing.find(user => {
+                return user.playing.some(inst=>{
+                    const instName = Object.keys(icon)[0]
+                    return instName === inst
+                })
+            })
+            if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
+        })
+    }
+
     const slotsLeft = jam.capacity - jam.usersGoing.length
+    
     return (
         <li className="jam-card flex column" onClick={()=>onJamClick(jam._id)}>
             <div className="thumb flex column pos-relative">
                 <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
-                    {instIcons.map(icon=>{
-                        const user = jam.usersGoing.find(user => {
-                            return user.playing.some(inst=>{
-                                const instName = Object.keys(icon)[0]
-                                return instName === inst
-                            })
-                        })
-                        if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
-                    })}
+                    {showIcons()}
                 </div>
             </div>
             <div className="jam-card-content flex column" >

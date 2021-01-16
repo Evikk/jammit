@@ -2,6 +2,7 @@
     background-color: #fff;
     width: 200px;
     border-radius: 4px;
+    transition: all 0.5s ease-in-out;
     h2{
         overflow: hidden;
         text-overflow: ellipsis;
@@ -9,23 +10,21 @@
         font-size: 1.1em;
         text-align: center;
     }
+    &:hover{
+        position: relative;
+        top: 3px;
+        cursor: pointer;
+    }
 }
-.inst-icons-wrapper {
-    margin-left: 6px;
-    .inst-icon {
-        position: absolute;
-        width: 40px;
-        border-radius: 50%;
-        background-color: rgb(216, 210, 210);
-        border: 1px solid black;
-        bottom: 0;
-    }
-    *:nth-child(2){
-        left:12%;
-    }
-    *:nth-child(3){
-        left:24%;
-    }
+
+.user-inst-icon {
+    left: 7px;
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgb(216, 210, 210);
+    border: 1px solid black;
+    bottom: 0;
 }
 
 .jam-card-content {
