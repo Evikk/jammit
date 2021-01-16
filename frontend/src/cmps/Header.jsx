@@ -17,7 +17,7 @@ class _Header extends Component {
             <div className="logo fs24">
                 <NavLink to="/">
                     Jameet
-                    <span>people&music</span>
+                    <span> people&music</span>
                 </NavLink>
             </div>
             
