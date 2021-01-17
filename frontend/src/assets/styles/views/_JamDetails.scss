@@ -9,7 +9,7 @@
     background-image: 
         url("../../img/jam-hero2.jpg");
         background-repeat: no-repeat;
-        background-size: 100% 100%
+        background-size: cover;
 }
 
 .jam-title {
@@ -32,7 +32,7 @@
     color: rgb(92, 91, 91);
 }
 .details-style{
-    color: #15182c
+    color: rgb(92, 91, 91);
 }
 
 .page-content {
@@ -216,5 +216,13 @@
     border-radius: 5px;
     border: transparent;
     position: absolute;
-    left: 300px;
+    left:160px;
+}
+
+.users-going-con{
+    color: rgb(159, 161, 161);
+}
+
+.createdBy-link{
+    color: rgb(70, 70, 184);
 }

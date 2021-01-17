@@ -46,6 +46,7 @@ export default class JamGoingListModal extends React.Component {
              contentLabel="Minimal Modal Example"
              style={customStyles}
              shouldCloseOnEsc={true}
+             ariaHideApp={false}
              >
             <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
           <ul className="users-going-con">
