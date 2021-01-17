@@ -16,6 +16,25 @@ import { updateJamGoing, loadJams, saveJam } from '../store/actions/jamActions.j
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 
+const emptyJam = {
+    title: "",
+    description: "",
+    imgUrl: "http://some-img",
+    capacity: null,
+    location: {
+        region: "",
+        city: "",
+        address: "",
+        lat: null,
+        lng: null
+    },
+    createdBy: {},
+    startsAt: null,
+    tags: [],
+    createdAt: null,
+    usersGoing: []
+}
+
 class _JamDetails extends Component {
     state = {
         jam: null,
@@ -26,12 +45,12 @@ class _JamDetails extends Component {
 
     componentDidMount() {
         this.props.loadJams()
-        if (this.props.isEditMode){
-            this.setState({jam: this.props.jam, isEditMode: true, isUserAdmin: true})
+        if (this.props.isEditMode) {
+            this.setState({ jam: emptyJam, isEditMode: true, isUserAdmin: true })
         }
         else {
             const jam = jamService.getById(this.props.match.params.id);
-            this.setState({ jam }, ()=>{
+            this.setState({ jam }, () => {
                 this.checkIfUserHost()
             })
         }
@@ -59,8 +78,8 @@ class _JamDetails extends Component {
 
     checkIfUserHost = () => {
         if (!this.props.loggedInUser) return
-        if (this.props.loggedInUser._id === this.state.jam.createdBy._id){
-            this.setState({isUserAdmin: true})
+        if (this.props.loggedInUser._id === this.state.jam.createdBy._id) {
+            this.setState({ isUserAdmin: true })
         }
     }
 
@@ -72,23 +91,31 @@ class _JamDetails extends Component {
                 {this.state.jam &&
                     <div className="page-con">
                         <div className="jam-title-img-con">
+                            {isUserAdmin && <button className="jam-save-btn"
+                                onClick={() => {
+                                    if (this.state.isEditMode) this.onSaveChanges()
+                                    this.setState({ isEditMode: !isEditMode })
+                                }}
+                            >
+                                {isEditMode ? "Save Changes" : "Edit Details"}
+                            </button>}
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         {!this.state.isEditMode && this.props.loggedInUser && <div>
-                            <JamNavbar 
-                            user={this.props.loggedInUser} 
-                            jam={this.state.jam}
-                            updateJamGoing={this.props.updateJamGoing}
-                            isUserAdmin={this.state.isUserAdmin}
+                            <JamNavbar
+                                user={this.props.loggedInUser}
+                                jam={this.state.jam}
+                                updateJamGoing={this.props.updateJamGoing}
+                                isUserAdmin={this.state.isUserAdmin}
                             />
                         </div>}
                         <div className="page-content">
                             <div className="left-page-details">
                                 <div className="details-con">
                                     <h3 className="title-style">Details</h3>
-                                    <p><HomeIcon/>{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</p>
+                                    <p><span className="icon-style"><HomeIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} </span><span className="details-style">Slots Available</span></p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length}</span> <span className="details-style">people going</span></p>
-                                    {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span>{this.state.jam.createdBy.fullname}</span></Link></p>}
+                                    {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span className="details-style">{this.state.jam.createdBy.fullname}</span></Link></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
                                     <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{utilService.getFormattedDate(this.state.jam.startsAt)}</span></p>
                                     <div className="description-con">
@@ -103,15 +130,15 @@ class _JamDetails extends Component {
                                     </div>
                                 </div>
                                 {!isEditMode && <div className="users-going-con-section">
-                                <ul className="users-going-con">
-                                    {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
-                                        return <JamUserPreview key={index} user={user} />
-                                    })}
-                                
-                                </ul>
-                                <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing}/> </div>
+                                    <ul className="users-going-con">
+                                        {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
+                                            return <JamUserPreview key={index} user={user} />
+                                        })}
+
+                                    </ul>
+                                    <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
                                 </div>}
-                               
+
                             </div>
                             <div className="location-con">
                                 <h3 className="title-style">Location</h3>
