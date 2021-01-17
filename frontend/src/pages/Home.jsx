@@ -18,6 +18,10 @@ class _Home extends Component {
     this.props.history.push(`jam/${jamId}`)
   }
 
+  scrollDown = ()=> {
+    
+  }
+
   filterMembersByFollow = () =>{
     return this.props.users.filter(user=> {
       return user.followers.find(user=> user._id === this.props.loggedInUser._id)
@@ -44,21 +48,11 @@ class _Home extends Component {
   render() {
     const { jams, users, loggedInUser } = this.props
     if (jams.length === 0 || users.length === 0) return <h2>Loading...</h2>
-    return (
-      
+    return ( 
       <div className="home">
-        <HeroSection/>
-        {/* <div className="hero-section">
-          <div className="hero-content flex column">
-            <h1 className="hero-title fs40">Make Music. Make Friends.</h1>
-            <h3 className="hero-subtitle fs40">Search and explore the best jam sessions around!</h3>
-            <div className="call-to-action">
-              <button className="call-to-action-btn" onClick={()=>this.props.history.push('/search')}>Let's Find a Jam!</button>
-            </div>
-          </div>
-        </div> */}
-        <main className="flex space-between">
+        <HeroSection onDownScrollClick={this.scrollDown}/>
         
+        <main className="main-content flex space-between">
         {loggedInUser ? 
         <div className="user-filtered-container">
            <div className="inst-filtered section"><h1>Jams Without {loggedInUser.talents[0]}</h1>
