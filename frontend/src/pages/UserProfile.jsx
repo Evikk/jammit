@@ -49,7 +49,7 @@ class _UserProfile extends Component {
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
       <>
-        <section className="user-box flex">
+        <section className="user-box flex justify-center">
 
           <div className="user-left-box flex column">
 
@@ -113,16 +113,9 @@ class _UserProfile extends Component {
         </section>
 
         <section className="user-jams-list">
+              <h1>Jams Attending</h1>
               <div>
-              <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
-                {/* {jams.map(jam => {
-                  const userFound = jam.usersGoing.find(userGoing =>{
-                   return userGoing._id === user._id
-                  }) 
-                  if(userFound){
-                    return <JamPreview key={jam._id} jam={jam} onJamClick={()=>this.onJamClick(jam._id)}/> 
-                  }
-                })} */}
+                <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
               </div>
         </section>
       </>

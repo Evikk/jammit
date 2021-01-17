@@ -1,6 +1,8 @@
 .jam-card {
-    background-color: #fff;
+    background-color: $clr-card;
+    justify-content: space-between;
     width: 200px;
+    height: 267px;
     border-radius: 4px;
     transition: all 0.5s ease-in-out;
     h2{

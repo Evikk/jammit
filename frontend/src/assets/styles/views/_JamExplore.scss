@@ -21,7 +21,7 @@
 }
 
 .jams-explore-filter {
-    background-color: #dee4de;
+    background-color: $clr-container;
     border-radius: 10px;
     padding: 20px;
     height: 18%;
@@ -50,11 +50,12 @@
 }
 
 .jams-explore-list {
+    overflow-y: scroll;
     height: 82%;
-    background-color: #dee4de;
+    background-color: $clr-container;
     border-radius: 10px;
     padding: 20px;
-    justify-items: center;
+    justify-content: center;
     display: grid;
     grid-template-rows: repeat(auto-fill,265px);
     grid-template-columns: repeat(auto-fill,200px);
