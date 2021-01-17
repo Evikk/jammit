@@ -6,6 +6,8 @@ import { loadJams } from '../store/actions/jamActions'
 import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
+import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import { JamPreview } from '../cmps/JamPreview'
 import { JamScroll } from '../cmps/JamScroll'
 
@@ -13,13 +15,20 @@ class _UserProfile extends Component {
 
   state = {
     user: null,
-    currUser: false
+    currUser: false,
+    followToggle:false
   }
 
   // async componentDidMount() {
   //   const user = await userService.getById(this.props.match.params.id)
   //   this.setState({user})
   // }
+  onFollowIconClick =()=>{
+    const followToggle = this.state
+    console.log(followToggle, 'followToggleonFollowIconClick');
+    this.setState({followToggle: !this.state.followToggle})
+
+  }
 
   componentDidMount() {
     const user = userService.getById(this.props.match.params.id)
@@ -29,22 +38,23 @@ class _UserProfile extends Component {
     this.props.loadJams()
   }
 
-  onJamClick = (jamId)=> {
+  onJamClick = (jamId) => {
     this.props.history.push(`../jam/${jamId}`)
   }
-  
-  findSelectedJams =()=> {
-   return this.props.jams.filter(jam =>{
+
+  findSelectedJams = () => {
+    return this.props.jams.filter(jam => {
       return jam.usersGoing.find(userGoing => {
         return userGoing._id === this.state.user._id
       })
-      
+
     })
   }
 
   render() {
     const { user } = this.state
-    const {jams} = this.props
+    const { jams } = this.props
+    const {followToggle } = this.state
     // if (!user) return <div>Loding..</div>
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
@@ -76,7 +86,7 @@ class _UserProfile extends Component {
             <div className="user-about">
               <span>{user.about}</span>
             </div>
-            
+
             {/* <div className="followers">
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
@@ -85,7 +95,10 @@ class _UserProfile extends Component {
 
             <div className="reaction-icon">
               <ChatRoundedIcon style={{fontSize: 40}}/>
-              <FavoriteBorderRoundedIcon style={{fontSize: 40}}/>
+              {!followToggle ? <FavoriteBorderRoundedIcon style={{fontSize: 40}} onClick={()=>this.onFollowIconClick()}/>
+               : <FavoriteRoundedIcon style={{fontSize: 40}} onClick={()=>this.onFollowIconClick()}/>}
+              
+              <AddRoundedIcon onClick={()=>this.props.history.push("/jam/create")} style={{fontSize: 40}} />
             </div>
 
           </div>
