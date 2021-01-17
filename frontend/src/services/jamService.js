@@ -255,6 +255,12 @@ var jams = [
                 "fullname": "Daniel Salomon",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown",
                 "playing": ["Keyboard"]
+            },
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
+                "playing": ["Drums"]
             }
         ]
     }
