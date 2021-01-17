@@ -91,6 +91,83 @@ var users = [
         ]
     },
     {
+        "_id": "u104",
+        "createdAt": 12122134434,
+        "fullname": "Daniel Salomon",
+        "username": "fishfish",
+        "password": "123",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown",
+        "tags": ["Rock", "Indie"],
+        "about": "having a relationship with My Piano",
+        "talents": [ "Singer", "ElectricGuitar"],
+        "location": {
+            "city": "Holon",
+            "region" : "Center",
+            "lat": null,
+            "lng": null
+        },
+        "followers": [
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light"
+            },
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
+            },
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            }
+        ],
+        "following": [
+        ]
+    },
+    {
+        "_id": "u105",
+        "createdAt": 12122134434,
+        "fullname": "Yehoram Gaon",
+        "username": "Yehoram Hacham",
+        "password": "123",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light",
+        "tags": ["Oldies"],
+        "about": "chilling with young musicians",
+        "talents": [ "Singer", "Songwriter"],
+        "location": {
+            "city": "kfar-Saba",
+            "region" : "Center",
+            "lat": null,
+            "lng": null
+        },
+        "followers": [
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light"
+            },
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
+            },
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            },
+            {
+                "_id": "u104",
+                "fullname": "Daniel Salomon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown"
+            }
+        ],
+        "following": [
+        ]
+    },
+    {
         "_id": "u103",
         "createdAt": 12122134434,
         "fullname": "Rami Fortis",
@@ -111,11 +188,67 @@ var users = [
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light"
+            },
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
+            },
+            {
+                "_id": "u103",
+                "fullname": "Yehoram Gaon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light"
+            },
+            {
+                "_id": "u104",
+                "fullname": "Daniel Salomon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown"
             }
         ],
         "following": [
         ]
-    }
+    },
+    {
+        "_id": "u108",
+        "createdAt": 12122134434,
+        "fullname": "Idan Raichel",
+        "username": "Rasta",
+        "password": "123",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Wayfarers&hatColor=Black&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Side&eyebrowType=Default&mouthType=Tongue&skinColor=Black",
+        "tags": ["World"],
+        "about": "producer, keyboardist, lyricist, composer and performer. During a career spanning a mere 17 years, Idan has become not only one of the most successful artists in Israel but also one of Israel’s leading music ambassadors abroad, with tours which included performances at some of the leading festivals as well as shows in the most prestigious venues",
+        "talents": [ "Singer", "Songwriter","ElectricGuitar","Rock", "Indie"],
+        "location": {
+            "city": "Tel-Aviv",
+            "region" : "Center",
+            "lat": null,
+            "lng": null
+        },
+        "followers": [
+            {
+                "_id": "u101",
+                "fullname": "Tomer Yosef",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light"
+            },
+            {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
+            },
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            },
+            {
+                "_id": "u104",
+                "fullname": "Daniel Salomon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown"
+            }
+        ],
+        "following": [
+        ]
+    },
 ]
 
 window.userService = userService
