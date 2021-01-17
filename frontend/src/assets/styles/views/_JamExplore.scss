@@ -4,8 +4,11 @@
     justify-content: flex-end;
     button {
         position: absolute;
-        left:0;
+        left: 10px;
+        top: 10px;
+        border: none;
         z-index: 98;
+        padding: 4px 8px;
     }
 }
 .jams-explore-title {
@@ -21,8 +24,7 @@
 }
 
 .jams-explore-filter {
-    // background-color: #dee4de;
-    background-color: rgb(249, 249, 250);
+    background-color: $clr-container;
     border-radius: 10px;
     padding: 20px;
     height: 18%;
@@ -51,12 +53,12 @@
 }
 
 .jams-explore-list {
+    overflow-y: scroll;
     height: 82%;
-    background-color: #dee4de;
-    // background-color: rgb(249, 249, 250);
+    background-color: $clr-container;
     border-radius: 10px;
     padding: 20px;
-    justify-items: center;
+    justify-content: center;
     display: grid;
     grid-template-rows: repeat(auto-fill,265px);
     grid-template-columns: repeat(auto-fill,200px);

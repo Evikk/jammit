@@ -6,10 +6,10 @@
 .user-box{
     // margin-top: 40px;
     // margin-left: 40px;
-    margin: 40px 40px 40px 40px;
     // width: 800px;
     height: 400px;
     border-bottom: 2px solid whitesmoke;
+    margin-top: 40px;
 }
 // .user-right-box{
     // width: 500px;
@@ -136,6 +136,7 @@
     position: absolute;
     width:12%;
     display: block;
+    bottom: 10px;
   }
 
   .top-card{
@@ -143,27 +144,43 @@
     height: 200px;
     padding-top: 37px;
     padding-left: 100px;
-    background-color: rgb(249, 249, 250);
+    background-color: $clr-container;
     border-radius: 10px;
     margin-top: 20px;
     margin-left: 100px;
     // display: flex;
     padding: 10px;
     position: relative;
+    h1{
+        text-align: center;
+        font-size: rem(40px);
+    }
   }
   
   .bottom-card{
     width: 500px;
-    height: 100px;
+    height: 120px;
     padding-top: 37px;
     padding-left: 100px;
-    background-color: rgb(249, 249, 250);
+    background-color: $clr-container;
     border-radius: 10px;
     margin-top: 20px;
     margin-left: 100px;
     // display: flex;
     padding: 10px;
     position: relative;
+    h1 {
+        font-size: rem(26px);
+    }
   }
-  
-  
+
+.user-jams-list {
+    background-color: $clr-container;
+    h1 {
+        font-size: rem(40px);
+        text-align: center;
+    }
+}
+.user-talents ul li{
+    font-size: rem(26px);
+}
