@@ -37,12 +37,12 @@ var users = [
             },
             {
                 "_id": "u111",
-                "fullname": "Shiri Mimon",
+                "fullname": "Shiri Maimon",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairNotTooLong&accessoriesType=Round&hairColor=Platinum&facialHairType=Blank&facialHairColor=Platinum&clotheType=GraphicShirt&clotheColor=PastelBlue&graphicType=Skull&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Concerned&skinColor=DarkBrown"
             },
             {
                 "_id": "u112",
-                "fullname": "Dana Brger",
+                "fullname": "Dana Berger",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Kurt&hairColor=Black&facialHairType=BeardLight&facialHairColor=Black&clotheType=ShirtCrewNeck&clotheColor=White&eyeType=Surprised&eyebrowType=AngryNatural&mouthType=Tongue&skinColor=Pale"
             }
         ],
@@ -128,16 +128,16 @@ var users = [
     },
     {
         "_id": "u105",
-        "createdAt": 12122134434,
         "fullname": "Yehoram Gaon",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light",
+        "createdAt": 12122134434,
         "username": "Yehoram Hacham",
         "password": "123",
-        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light",
         "tags": ["Oldies"],
         "about": "chilling with young musicians",
         "talents": [ "Singer", "Songwriter"],
         "location": {
-            "city": "kfar-Saba",
+            "city": "Kfar-Saba",
             "region" : "Center",
             "lat": null,
             "lng": null
@@ -210,11 +210,11 @@ var users = [
     },
     {
         "_id": "u108",
-        "createdAt": 12122134434,
         "fullname": "Idan Raichel",
+        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Wayfarers&hatColor=Black&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Side&eyebrowType=Default&mouthType=Tongue&skinColor=Black",
+        "createdAt": 12122134434,
         "username": "Rasta",
         "password": "123",
-        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Wayfarers&hatColor=Black&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Side&eyebrowType=Default&mouthType=Tongue&skinColor=Black",
         "tags": ["World"],
         "about": "producer, keyboardist, lyricist, composer and performer. During a career spanning a mere 17 years, Idan has become not only one of the most successful artists in Israel but also one of Israel’s leading music ambassadors abroad, with tours which included performances at some of the leading festivals as well as shows in the most prestigious venues",
         "talents": [ "Singer", "Songwriter","ElectricGuitar","Rock", "Indie"],
