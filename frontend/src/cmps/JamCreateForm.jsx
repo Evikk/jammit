@@ -12,89 +12,129 @@ export class JamCreateForm extends Component {
                 city: "",
                 address: "",
                 lat: null,
-                lng: null
+                lng: null,
             },
             createdBy: {},
             startsAt: null,
             tags: [],
             createdAt: null,
-            usersGoing: []
-    }
+            usersGoing: [],
+        },
+        time: []
+    };
+
+    handleTime = (ev) => {
+        if (ev.target.name === 'date') this.state.time.splice(0, 1, ev.target.value)
+        if (ev.target.name === 'time') this.state.time.splice(1, 1, ev.target.value)
+        console.log(...this.state.time);
+        const parsedTime = Date.parse(...this.state.time)
+        console.log(parsedTime);
+        const jamCopy = { ...this.state.jam };
+        jamCopy.startsAt = parsedTime
+        this.setState({jam: jamCopy})
     }
 
     handleChange = (ev) => {
         const jamCopy = { ...this.state.jam };
         jamCopy[ev.target.name] = ev.target.value;
-        this.setState({ jam: jamCopy }, ()=>{
-            this.props.changeForm(this.state.jam)
+        this.setState({ jam: jamCopy }, () => {
+            this.props.changeForm(this.state.jam);
         });
+    };
 
+    handleLocation = (ev) => {
+        const jamCopy = { ...this.state.jam };
+        const jamLocation = { ...this.state.jam.location };
+        jamLocation[ev.target.name] = ev.target.value;
+        jamCopy.location = jamLocation
+        this.setState({ jam: jamCopy }, () => {
+            this.props.changeForm(this.state.jam);
+        });
+    };
+
+    onSubmit = (ev)=> {
+        ev.preventDefault()
+        this.props.onSubmitForm()
     }
 
-
     render() {
-        const { jam } = this.state
+        const { jam } = this.state;
         // console.log(jam);
         return (
-                <div class="create-form-container">
-                        <h1>Create New Jam</h1>
-                    <form>
-                        <div class="item">
-                            <p>Jam Title</p>
-                            <div class="name-item">
-                                <input
-                                    type="text"
-                                    name="title"
-                                    placeholder="Title"
-                                    onChange={this.handleChange}
-                                    value={jam.title}
-                                />
-                                
-                            </div>
-                        </div>
-                        <div class="item">
-                            <p>Capacity</p>
-                            <input type="number" name="capacity" min="1" max="100" />
-                        </div>
-                        <div class="item">
-                            <p>Jam Address</p>
+            <div className="create-form-container">
+                <h1>Create New Jam</h1>
+                <form onSubmit={this.onSubmit}>
+                    <div className="item">
+                        <p>Jam Title</p>
+                        <div className="name-item">
                             <input
                                 type="text"
-                                name="name"
-                                placeholder="Street address"
+                                name="title"
+                                placeholder="Title"
+                                onChange={this.handleChange}
+                                value={jam.title}
                             />
-                            <div class="city-item">
-                                <input type="text" name="name" placeholder="City" />
-                                <select name="region">
-                                    <option value="">Region</option>
-                                    <option value="1">North</option>
-                                    <option value="2">Center</option>
-                                    <option value="3">South</option>
-                                </select>
-                            </div>
                         </div>
-                        <div class="item">
-                            <p>Date</p>
-                            <input type="date" name="date" />
-                            <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div className="item">
+                        <p>Description</p>
+                        <textarea onChange={this.handleChange} name="description"
+                            value={jam.description} rows="3"></textarea>
+                    </div>
+                    <div className="item">
+                        <p>Capacity</p>
+                        <input
+                            type="number"
+                            name="capacity"
+                            min="1"
+                            max="100"
+                            onChange={this.handleChange}
+                            value={jam.capacity}
+                        />
+                    </div>
+                    <div className="item">
+                        <p>Jam Address</p>
+                        <input
+                            type="text"
+                            name="address"
+                            placeholder="Street address"
+                            onChange={this.handleLocation}
+                            value={jam.location.address}
+                        />
+                        <div className="city-item">
+                            <input
+                                type="text"
+                                name="city"
+                                placeholder="City"
+                                onChange={this.handleLocation}
+                                value={jam.location.city}
+                            />
+                            <select
+                                name="region"
+                                onChange={this.handleLocation}
+                                value={jam.location.region}
+                            >
+                                <option value="">Region</option>
+                                <option value="North">North</option>
+                                <option value="Center">Center</option>
+                                <option value="South">South</option>
+                            </select>
                         </div>
-                        <div class="item">
-                            <p>Time</p>
-                            <input type="time" name="time" />
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="item">
-                            <p>Description</p>
-                            <textarea rows="3"></textarea>
-                        </div>
-                        
-                       
-                    </form>
-                            <button className="form-submit-btn">
-                                SAVE
-                            </button>
-                </div>
-            
+                    </div>
+                    <div className="item">
+                        <p>Date</p>
+                        <input type="date" name="date" onChange={this.handleTime}/>
+                        <i className="fas fa-calendar-alt"></i>
+                    </div>
+                    <div className="item">
+                        <p>Time</p>
+                        <input type="time" name="time" onChange={this.handleTime} />
+                        <i className="fas fa-clock"></i>
+                    </div>
+                    
+                <button className="form-submit-btn">SAVE</button>
+                </form>
+            </div>
         );
     }
 }
