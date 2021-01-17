@@ -7,9 +7,11 @@
     // margin-top: 40px;
     // margin-left: 40px;
     // width: 800px;
-    height: 400px;
+    // height: 400px;
     border-bottom: 2px solid whitesmoke;
     margin-top: 40px;
+    width: 60%;
+    margin: 50px auto;
 }
 // .user-right-box{
     // width: 500px;
@@ -69,17 +71,18 @@
 
 .reaction-icon{
     color: #606060;
-    padding-left: 26px;
+    // padding-left: 26px;
     cursor: pointer;
 }
 
 
 .user-about span{
-    margin-left: 26px;
+    // margin-left: 26px;
+    width: 60%;
     color: rgb(21, 24, 44);
 }
 .user-about{
-    height: 70px;
+    width: 70%;
     border-bottom: 2px solid whitesmoke;
 }
 .talents-title{
@@ -140,14 +143,12 @@
   }
 
   .top-card{
-    width: 500px;
-    height: 200px;
     padding-top: 37px;
     padding-left: 100px;
     background-color: $clr-container;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 100px;
+    // margin-top: 20px;
+    // margin-left: 100px;
     // display: flex;
     padding: 10px;
     position: relative;
@@ -164,8 +165,8 @@
     padding-left: 100px;
     background-color: $clr-container;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 100px;
+    // margin-top: 20px;
+    // margin-left: 100px;
     // display: flex;
     padding: 10px;
     position: relative;
@@ -176,6 +177,7 @@
 
 .user-jams-list {
     background-color: $clr-container;
+    margin-top: 60px;
     h1 {
         font-size: rem(40px);
         text-align: center;

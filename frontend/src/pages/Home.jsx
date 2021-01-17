@@ -4,6 +4,7 @@ import { loadJams } from '../store/actions/jamActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
+import { HeroSection } from '../cmps/HeroSection.jsx'
 
 class _Home extends Component {
   state = {
@@ -46,7 +47,8 @@ class _Home extends Component {
     return (
       
       <div className="home">
-        <div className="hero-section">
+        <HeroSection/>
+        {/* <div className="hero-section">
           <div className="hero-content flex column">
             <h1 className="hero-title fs40">Make Music. Make Friends.</h1>
             <h3 className="hero-subtitle fs40">Search and explore the best jam sessions around!</h3>
@@ -54,7 +56,7 @@ class _Home extends Component {
               <button className="call-to-action-btn" onClick={()=>this.props.history.push('/search')}>Let's Find a Jam!</button>
             </div>
           </div>
-        </div>
+        </div> */}
         <main className="flex space-between">
         
         {loggedInUser ? 

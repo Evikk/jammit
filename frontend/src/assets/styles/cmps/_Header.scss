@@ -1,5 +1,5 @@
 header {
-    background-color: $clr-nav;
+    background-color: #596f9c;
     padding: 10px 10px 0 10px;
     display: flex;
     justify-content: space-between;
@@ -35,15 +35,15 @@ nav {
         align-items: center;
         border-bottom: 5px solid transparent;
         &:hover{
-            border-bottom: 5px solid $clr-container;
-            color: $clr-container;
+            border-bottom: 5px solid white;
+            color: white;
         }
     }
     
 }
 
 nav .active {
-    color: orange;
+    color: rgb(255, 253, 249);
 }
 
 .nav-right-side {
