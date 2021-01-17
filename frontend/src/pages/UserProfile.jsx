@@ -6,6 +6,7 @@ import { loadJams } from '../store/actions/jamActions'
 import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import { JamPreview } from '../cmps/JamPreview'
 import { JamScroll } from '../cmps/JamScroll'
 
@@ -29,22 +30,22 @@ class _UserProfile extends Component {
     this.props.loadJams()
   }
 
-  onJamClick = (jamId)=> {
+  onJamClick = (jamId) => {
     this.props.history.push(`../jam/${jamId}`)
   }
-  
-  findSelectedJams =()=> {
-   return this.props.jams.filter(jam =>{
+
+  findSelectedJams = () => {
+    return this.props.jams.filter(jam => {
       return jam.usersGoing.find(userGoing => {
         return userGoing._id === this.state.user._id
       })
-      
+
     })
   }
 
   render() {
     const { user } = this.state
-    const {jams} = this.props
+    const { jams } = this.props
     // if (!user) return <div>Loding..</div>
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
@@ -76,7 +77,7 @@ class _UserProfile extends Component {
             <div className="user-about">
               <span>{user.about}</span>
             </div>
-            
+
             {/* <div className="followers">
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
@@ -86,23 +87,25 @@ class _UserProfile extends Component {
             <div className="reaction-icon">
               <ChatRoundedIcon />
               <FavoriteBorderRoundedIcon />
+              {/* <button onClick={() => this.props.history.push("/user/create")}><AddRoundedIcon /></button> */}
+              <AddRoundedIcon onClick={() => this.props.history.push("/jam/create")} />
             </div>
 
           </div>
 
           <div className="user-right-box flex column">
             <div className="top-card">
-            <div className="titel flex">
-              <span className="talents-title fs18">Talents</span>
-            </div>
-            <div className="user-talents">
-              <ul className="flex column">{user.talents.map((talent, idx) => {
-                return <li key={idx}>{talent}</li>
-              })}</ul>
-            </div>
+              <div className="titel flex">
+                <span className="talents-title fs18">Talents</span>
+              </div>
+              <div className="user-talents">
+                <ul className="flex column">{user.talents.map((talent, idx) => {
+                  return <li key={idx}>{talent}</li>
+                })}</ul>
+              </div>
             </div>
             {/* <div className="bottom-card"> */}
-               <div className="followers bottom-card">
+            <div className="followers bottom-card">
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
               })}
@@ -113,9 +116,9 @@ class _UserProfile extends Component {
         </section>
 
         <section className="user-jams-list">
-              <div>
-              <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
-                {/* {jams.map(jam => {
+          <div>
+            <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick} />
+            {/* {jams.map(jam => {
                   const userFound = jam.usersGoing.find(userGoing =>{
                    return userGoing._id === user._id
                   }) 
@@ -123,7 +126,7 @@ class _UserProfile extends Component {
                     return <JamPreview key={jam._id} jam={jam} onJamClick={()=>this.onJamClick(jam._id)}/> 
                   }
                 })} */}
-              </div>
+          </div>
         </section>
       </>
 
