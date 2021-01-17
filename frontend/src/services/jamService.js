@@ -132,6 +132,7 @@ export const jamService = {
     query,
     getById,
     updateJamGoing,
+    save
 }
 
 function query() {
@@ -139,6 +140,13 @@ function query() {
     //   return httpService.get(`review${queryStr}`)
     // return storageService.query('review')
     return jams
+}
+
+function save(jam) {
+    jams.push(jam)
+    console.log('jam', jam);
+    console.log('jams', jams);
+    
 }
 
 function getById(jamId) {

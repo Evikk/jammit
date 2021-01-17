@@ -4,7 +4,7 @@ import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
-import AudiotrackRoundedIcon from '@material-ui/icons/AudiotrackRounded';
+import HomeIcon from '@material-ui/icons/Home';
 import { MapContainer } from '../cmps/MapContainer';
 import { JamUserPreview } from '../cmps/JamUserPreview';
 import { utilService } from '../services/utilService';
@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
 import JamGoingListModal from '../cmps/JamGoingModal';
 import { connect } from 'react-redux';
-import { updateJamGoing, loadJams } from '../store/actions/jamActions.js';
+import { updateJamGoing, loadJams, saveJam } from '../store/actions/jamActions.js';
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 
@@ -54,6 +54,19 @@ class _JamDetails extends Component {
                 this.checkIfUserHost()
             })
         }
+    }
+
+    componentWillReceiveProps(props){
+        if (props.isSubmit) {
+            const miniUser = {}
+            miniUser._id = this.props.loggedInUser._id
+            miniUser.fullname = this.props.loggedInUser.fullname
+            miniUser.imgUrl = this.props.loggedInUser.imgUrl
+            miniUser.playing = this.props.loggedInUser.talents
+            this.props.saveJam(this.state.jam, miniUser)
+            this.props.jamSaved()
+        }
+        this.setState({jam: props.jam})
     }
 
     componentDidUpdate(prevProps) {
@@ -99,8 +112,8 @@ class _JamDetails extends Component {
                         <div className="page-content">
                             <div className="left-page-details">
                                 <div className="details-con">
-                                    <h3 className="title-style"> Details </h3>
-                                    <p><span><AudiotrackRoundedIcon /></span><span className="details-style">{this.state.jam.capacity}</span> <span className="details-style">jammers capacity</span></p>
+                                    <h3 className="title-style">Details</h3>
+                                    <p><HomeIcon/>{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length}</span> <span className="details-style">people going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span className="details-style">{this.state.jam.createdBy.fullname}</span></Link></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
@@ -128,9 +141,9 @@ class _JamDetails extends Component {
 
                             </div>
                             <div className="location-con">
-                                <h3 className="title-style"> Location </h3>
-                                <div> <MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div>
-                                <p>Our event will be held at the <strong>{this.state.jam.location.address}, {this.state.jam.location.city}</strong></p></div>
+                                <h3 className="title-style">Location</h3>
+                                <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
+                            </div>
                         </div>
                     </div>}
             </section>
@@ -147,6 +160,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
     loadJams,
+    saveJam,
     updateJamGoing
 }
 

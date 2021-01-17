@@ -36,15 +36,14 @@
 
 .page-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
 .left-page-details {
     display: flex;
     flex-direction: column;
-    width: 46%;
-
+    width: 49%;
 }
 
 .details-con {
@@ -66,7 +65,7 @@
     background-color: rgb(249, 249, 250);
     border-radius: 10px;
     // border-left: 1px solid gainsboro;
-    width: 50%;
+    width: 49%;
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -6,26 +6,49 @@ import { JamCreateForm } from '../cmps/JamCreateForm'
 class _JamCreate extends Component {
     state={
         jam: {
-            title: '',
-            description: ''
-        }
+            title: "",
+            description: "",
+            imgUrl: "http://some-img",
+            capacity: null,
+            location: {
+                region: "",
+                city: "",
+                address: "",
+                lat: null,
+                lng: null
+            },
+            createdBy: {},
+            startsAt: null,
+            tags: [],
+            createdAt: null,
+            usersGoing: []
+        },
+        isSubmit: false
     }
 
-    handleChange = (ev) => {
-        const jamCopy = { ...this.state.jam };
-        jamCopy[ev.target.name] = ev.target.value;
-        this.setState({ jam: jamCopy });
+    handleChange = (jam) => {
+        this.setState({ jam });
     };
 
+    handleSubmit = ()=> {
+        this.setState({isSubmit: true}, ()=> {
+            this.setState({isSubmit: false})
+        })
+    }
+
+    jamSaved = ()=> {
+        alert('Jam Saved!')
+        this.props.history.push(`/user/${this.props.loggedInUser._id}`)
+    }
 
     componentDidMount() {
     }
 
     render() {
         
-        return <div>
-                <JamCreateForm onTitleChange={this.handleChange} onDescriptionChange={this.handleChange} />
-                <JamDetails isEditMode={true} jam={this.state.jam}/>
+        return <div className="create-container pos-relative">
+                <JamCreateForm changeForm={this.handleChange} onSubmitForm={this.handleSubmit} />
+                <JamDetails isEditMode={true} jam={this.state.jam} isSubmit={this.state.isSubmit} jamSaved={this.jamSaved}/>
             </div>
     }
 }

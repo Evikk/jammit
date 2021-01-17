@@ -17,8 +17,8 @@ const initialState = {
            ) }  
       case 'SET_JAMS':
         return { ...state, jams: action.jams }
-      case 'ADD_REVIEW':
-        return { ...state, reviews: [...state.reviews, action.review] }
+      case 'ADD_JAM':
+        return { ...state, jams: [...state.jams, action.jam] }
       case 'REMOVE_REVIEW':
         return { ...state, reviews: state.reviews.filter(review => review._id !== action.reviewId) }
       case 'UPDATE_REVIEW':
