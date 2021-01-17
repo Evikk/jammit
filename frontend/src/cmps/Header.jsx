@@ -29,14 +29,14 @@ class _Header extends Component {
                 <nav className="fs24">
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
-                  { loggedInUser ? <span className="cursor-pointer" onClick={()=>this.props.logout()}>Sign out</span> :<NavLink to="/login">Login</NavLink> }
-                </nav>
                 {loggedInUser ? <div className="loggedin-avatar flex fs12">
                 <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={()=>this.props.history.push(`/user/${loggedInUser._id}`)}/>
                     {/* <Link to={`user/${loggedInUser._id}`}></Link> */}
                     {/* <span onClick={()=>this.props.logout()}>Sign out</span> */}
                     </div>
-                    : <div className="user-greet flex align-center">Guest</div>}
+                    : <div className="user-greet flex align-center">Hi Guest</div>}
+                  {/* { loggedInUser ? <span className="cursor-pointer" onClick={()=>this.props.logout()}>Sign out</span> :<NavLink to="/login">Login</NavLink> } */}
+                </nav>
             </div>
             
         </header>
