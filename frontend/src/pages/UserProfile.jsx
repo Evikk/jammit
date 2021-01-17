@@ -87,6 +87,7 @@ class _UserProfile extends Component {
             <div className="reaction-icon">
               <ChatRoundedIcon style={{fontSize: 40}}/>
               <FavoriteBorderRoundedIcon style={{fontSize: 40}}/>
+              <AddRoundedIcon onClick={()=>this.props.history.push("/jam/create")} style={{fontSize: 40}}/>
             </div>
 
           </div>
