@@ -8,14 +8,15 @@ import { Header } from './cmps/Header'
 import { JamExplore } from './pages/JamExplore'
 import { MembersList } from './pages/MembersList'
 import { JamCreate } from './pages/JamCreate'
+import { MainNav } from './cmps/MainNav'
 
 export function App() {
   return (
     <div className="app main-container">
       <Router>
-        
+        <MainNav/>
         <main>
-        <Header></Header>
+        {/* <Header></Header> */}
           <Switch>
             <Route path="/jam/create" component={JamCreate} />
             <Route path="/jam/:id" component={JamDetails} />
