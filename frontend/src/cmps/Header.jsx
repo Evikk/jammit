@@ -14,7 +14,7 @@ class _Header extends Component {
         console.log(loggedInUser,'logdinuser')
         return <header>
             
-            <div className="logo fs24">
+            <div className="logo fs40">
                 <NavLink to="/">
                     Jameet
                     <span> people&music</span>
@@ -26,7 +26,7 @@ class _Header extends Component {
                     <Link to={`user/${loggedInUser._id}`}><h2>Welcome {loggedInUser.fullname.split(' ')[0]}</h2></Link>
                     <span onClick={()=>this.props.logout()}>Sign out</span></div>
                     : <div className="user-greet flex align-center">Welcome Guest</div>} */}
-                <nav className="fs20">
+                <nav className="fs24">
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
                   { loggedInUser ? <span className="cursor-pointer" onClick={()=>this.props.logout()}>Sign out</span> :<NavLink to="/login">Login</NavLink> }
@@ -36,7 +36,7 @@ class _Header extends Component {
                     {/* <Link to={`user/${loggedInUser._id}`}></Link> */}
                     {/* <span onClick={()=>this.props.logout()}>Sign out</span> */}
                     </div>
-                    : <div className="user-greet flex align-center">Hi there Guest</div>}
+                    : <div className="user-greet flex align-center">Guest</div>}
             </div>
             
         </header>

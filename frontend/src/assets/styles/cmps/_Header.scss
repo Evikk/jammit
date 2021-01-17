@@ -1,18 +1,17 @@
 header {
-    // background-color: $clr5;
-    background-color: cadetblue;
+    background-color: $clr-secondary;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     .loggedin-user {
-        background-color: $clr1;
+        background-color: $clr-primary;
         padding: 2px 8px;
         border-radius: 1em;
         align-self: flex-end;
         color: whitesmoke;
         span{
-            background-color: $clr2;
+            background-color: $clr-secondary;
             padding: 4px;
             margin: 10px;
             border-radius: 50%;
@@ -22,27 +21,25 @@ header {
 
 nav {
     font-family: Source-Sans;
-    
+    width: 100%;
     padding: 5px 0;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     a {
         padding: 0 10px;
-        // color: #606060;
         color: whitesmoke;
     }
-    // a:not(:last-child){
-    //     border-right: 1px solid grey;
-    // }
 }
 
 nav .active {
-    color: $clr1;
+    color: $clr-primary;
 }
 
 .nav-right-side {
     grid-gap: 10px;
     justify-content: space-between;
+    width: 32%;
 }
 
 .user-greet {
@@ -58,12 +55,10 @@ nav .active {
 .logo span{
     font-family: 'Poiret One', cursive;
 }
-.loggedin-avatar{
-    align-items: flex-end;
-}
 
-.loggedin-avatar img{
-    width: 15%;
+
+.loggedin-avatar{
+    width: 20%;
     align-items: flex-end;
 }
 .cursor-pointer{
