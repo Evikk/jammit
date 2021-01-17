@@ -14,7 +14,7 @@ class _Header extends Component {
         console.log(loggedInUser,'logdinuser')
         return <header>
             
-            <div className="logo fs30">
+            <div className="logo fs40">
                 <NavLink to="/">
                     Jameet
                     <span className="fs20"> people&music</span>
