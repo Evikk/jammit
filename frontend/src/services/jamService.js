@@ -140,9 +140,9 @@ var jams = [
             "lng": 34.803082
         },
         "createdBy": {
-            "_id": "u103",
-            "fullname": "Rami Fortis",
-            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            "_id": "u108",
+            "fullname": "Idan Raichel",
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Wayfarers&hatColor=Black&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Side&eyebrowType=Default&mouthType=Tongue&skinColor=Black"
         },
         "startsAt": Date.now()-90000,
         "tags": ["World", "Ethnic"],
@@ -155,10 +155,10 @@ var jams = [
         ],
         "usersGoing": [
             {
-                "_id": "u103",
-                "fullname": "Rami Fortis",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
-                "playing": ["ElectricGuitar"]
+                "_id": "u108",
+                "fullname": "Idan Raichel",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Turban&accessoriesType=Wayfarers&hatColor=Black&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelYellow&eyeType=Side&eyebrowType=Default&mouthType=Tongue&skinColor=Black",
+                "playing": ["Keyboard"]
             }
         ]
     },
@@ -167,7 +167,7 @@ var jams = [
         "title": "Lucid Dreams",
         "description": "Let's all get together and jammm...",
         "imgUrl": "http://some-img",
-        "capacity": 12,
+        "capacity": 5,
         "location": {
             "region": "Center",
             "city": "Jerusalem",
@@ -176,9 +176,9 @@ var jams = [
             "lng": 35.213711
         },
         "createdBy": {
-            "_id": "u103",
-            "fullname": "Rami Fortis",
-            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+            "_id": "u107",
+            "fullname": "Kobi Oz",
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale"
         },
         "startsAt": Date.now()-1000000,
         "tags": ["Electronic", "Freestyle"],
@@ -191,10 +191,70 @@ var jams = [
         ],
         "usersGoing": [
             {
+                "_id": "u107",
+                "fullname": "Kobi Oz",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Blank&hairColor=Blonde&facialHairType=MoustacheMagnum&facialHairColor=BlondeGolden&clotheType=BlazerSweater&eyeType=Close&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Pale",
+                "playing": ["Singer"]
+            },
+            {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
                 "playing": ["ElectricGuitar"]
+            },
+            {
+                "_id": "u104",
+                "fullname": "Daniel Salomon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown",
+                "playing": ["Keyboard"]
+            }
+        ]
+    },
+    {
+        "_id": "e506",
+        "title": "Old Eretz Israel",
+        "description": "Only oldies but goldies",
+        "imgUrl": "http://some-img",
+        "capacity": 13,
+        "location": {
+            "region": "North",
+            "city": "Afula",
+            "address": "Agripas 16",
+            "lat": 32.609692,
+            "lng": 35.287731
+        },
+        "createdBy": {
+            "_id": "u105",
+            "fullname": "Yehoram Gaon",
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light",
+        },
+        "startsAt": Date.now()-1000000,
+        "tags": ["Oldies", "Folk"],
+        "createdAt": 121221453343,
+        "msgs": [
+            {
+                txt: "Welcome!",
+                sentBy: "david"
+            }
+        ],
+        "usersGoing": [
+            {
+                "_id": "u105",
+                "fullname": "Yehoram Gaon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Blank&hatColor=PastelGreen&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Platinum&clotheType=BlazerSweater&clotheColor=PastelGreen&eyeType=Wink&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=Light",
+                "playing": ["Singer"]
+            },
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
+                "playing": ["ElectricGuitar"]
+            },
+            {
+                "_id": "u104",
+                "fullname": "Daniel Salomon",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=LongHairCurly&accessoriesType=Wayfarers&hairColor=Black&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=White&graphicType=Bat&eyeType=Happy&eyebrowType=UnibrowNatural&mouthType=Disbelief&skinColor=DarkBrown",
+                "playing": ["Keyboard"]
             }
         ]
     }
