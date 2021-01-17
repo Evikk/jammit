@@ -113,8 +113,8 @@ class _JamDetails extends Component {
                             <div className="left-page-details">
                                 <div className="details-con">
                                     <h3 className="title-style">Details</h3>
-                                    <p><span className="icon-style"><HomeIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} </span><span className="details-style">Slots Available</span></p>
-                                    <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length}</span> <span className="details-style">people going</span></p>
+                                    <p><span className="icon-style"><HomeIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
+                                    <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length} People going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by</span> <Link to={"/user/" + this.state.jam.createdBy._id} > <span className="details-style">{this.state.jam.createdBy.fullname}</span></Link></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
                                     <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{utilService.getFormattedDate(this.state.jam.startsAt)}</span></p>
