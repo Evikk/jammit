@@ -5,6 +5,7 @@
     width: 100%;
     display: block;
     transition: top 0.3s;
+    z-index: 99;
 }
   
 .navbar a {
@@ -16,7 +17,9 @@
     text-decoration: none;
     font-size: 17px;
 }
-  
+.loggedin-avatar {
+    width: 3%;
+}
 .navbar a:hover {
     background-color: #ddd;
     color: black;
