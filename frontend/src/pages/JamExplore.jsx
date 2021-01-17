@@ -8,7 +8,7 @@ import { JamScroll } from "../cmps/JamScroll.jsx";
 import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
 import jamMarker from "../assets/img/green-marker.png"
-
+import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 
 
 
@@ -170,7 +170,7 @@ class _JamExplore extends Component {
                     selectedPlaceCopy.position.lat = userPos.position.lat
                     selectedPlaceCopy.position.lng = userPos.position.lng
                     this.setState({selectedPlace: selectedPlaceCopy, mapZoom: 15})
-                    }}>Center</button>
+                    }}><GpsFixedIcon style={{fontSize: 40}}/></button>
                 <Map
                     ref={this.mapRef}
                     // containerStyle={containerStyle}

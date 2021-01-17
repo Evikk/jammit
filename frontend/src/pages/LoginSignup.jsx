@@ -125,7 +125,7 @@ class _LoginSignup extends React.Component {
 
         return (
             <div>
-                <div className="container">
+                <div className="form-container">
                     <div className="form">
                         {this.state.isSignUp ? signupSection : loginSection}
                     </div>

@@ -49,7 +49,7 @@ class _UserProfile extends Component {
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
       <>
-        <section className="user-box flex">
+        <section className="user-box flex justify-center">
 
           <div className="user-left-box flex column">
 
@@ -84,17 +84,15 @@ class _UserProfile extends Component {
             </div> */}
 
             <div className="reaction-icon">
-              <ChatRoundedIcon />
-              <FavoriteBorderRoundedIcon />
+              <ChatRoundedIcon style={{fontSize: 40}}/>
+              <FavoriteBorderRoundedIcon style={{fontSize: 40}}/>
             </div>
 
           </div>
 
           <div className="user-right-box flex column">
             <div className="top-card">
-            <div className="titel flex">
-              <span className="talents-title fs18">Talents</span>
-            </div>
+              <h1>Talents</h1>
             <div className="user-talents">
               <ul className="flex column">{user.talents.map((talent, idx) => {
                 return <li key={idx}>{talent}</li>
@@ -103,6 +101,7 @@ class _UserProfile extends Component {
             </div>
             {/* <div className="bottom-card"> */}
                <div className="followers bottom-card">
+                <h1>Followers</h1>
               {user.followers.map((follower, idx) => {
                 return <img className="follower-avatar" src={follower.imgUrl} key={idx} />
               })}
@@ -113,16 +112,9 @@ class _UserProfile extends Component {
         </section>
 
         <section className="user-jams-list">
+              <h1>Jams Attending</h1>
               <div>
-              <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
-                {/* {jams.map(jam => {
-                  const userFound = jam.usersGoing.find(userGoing =>{
-                   return userGoing._id === user._id
-                  }) 
-                  if(userFound){
-                    return <JamPreview key={jam._id} jam={jam} onJamClick={()=>this.onJamClick(jam._id)}/> 
-                  }
-                })} */}
+                <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
               </div>
         </section>
       </>
