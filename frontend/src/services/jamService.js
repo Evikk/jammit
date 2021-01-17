@@ -125,6 +125,78 @@ var jams = [
                 "playing": ["ElectricGuitar"]
             }
         ]
+    },
+    {
+        "_id": "e504",
+        "title": "The Great Gig in the Sky",
+        "description": "Lucy in the sky with diamonds",
+        "imgUrl": "http://some-img",
+        "capacity": 15,
+        "location": {
+            "region": "South",
+            "city": "Mitzpe Ramon",
+            "address": "Habanai 24a",
+            "lat": 30.612890,
+            "lng": 34.803082
+        },
+        "createdBy": {
+            "_id": "u103",
+            "fullname": "Rami Fortis",
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+        },
+        "startsAt": Date.now()-90000,
+        "tags": ["World", "Ethnic"],
+        "createdAt": 121221453343,
+        "msgs": [
+            {
+                txt: "Welcome!",
+                sentBy: "shimon"
+            }
+        ],
+        "usersGoing": [
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
+                "playing": ["ElectricGuitar"]
+            }
+        ]
+    },
+    {
+        "_id": "e505",
+        "title": "Lucid Dreams",
+        "description": "Let's all get together and jammm...",
+        "imgUrl": "http://some-img",
+        "capacity": 12,
+        "location": {
+            "region": "Center",
+            "city": "Jerusalem",
+            "address": "Agripas 16",
+            "lat": 31.768318,
+            "lng": 35.213711
+        },
+        "createdBy": {
+            "_id": "u103",
+            "fullname": "Rami Fortis",
+            "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+        },
+        "startsAt": Date.now()-1000000,
+        "tags": ["Electronic", "Freestyle"],
+        "createdAt": 121221453343,
+        "msgs": [
+            {
+                txt: "Welcome!",
+                sentBy: "david"
+            }
+        ],
+        "usersGoing": [
+            {
+                "_id": "u103",
+                "fullname": "Rami Fortis",
+                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
+                "playing": ["ElectricGuitar"]
+            }
+        ]
     }
 ]
 
