@@ -1,5 +1,7 @@
 // import { useHistory } from "react-router-dom";
 import React from 'react'
+import {LoginModal} from './LoginModal'
+
 
 
 export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
@@ -10,7 +12,7 @@ export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
                 <li>Discussion</li>
             </div>
             <div className="navbar-right">
-                {user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  &&
+                { !user && user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  && 
                   <li><button className="join-jam-btn" onClick={() => updateJamGoing (jam, user, true)}>Join Jam</button></li> }
                   {!isUserAdmin && user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length !== 0  &&
                   <li><button className="leave-jam-btn" onClick={() => updateJamGoing (jam, user, false)}>Leave Jam</button></li> }
@@ -20,3 +22,15 @@ export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
         </ul>
     );
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         loggedInUser: state.userModule.loggedInUser
+//     }
+// }
+// const mapDispatchToProps = {
+//     logout
+// }
+
+
+// export const navBar = withRouter(connect(mapStateToProps, mapDispatchToProps)(JamNavbar))

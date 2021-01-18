@@ -3,7 +3,7 @@ import React from "react";
 import { authService } from "../services/authService.js";
 import { login } from '../store/actions/userActions.js'
 
-class _LoginSignup extends React.Component {
+export class _LoginSignup extends React.Component {
     state = {
         msg: "",
         loggedinUser: null,
