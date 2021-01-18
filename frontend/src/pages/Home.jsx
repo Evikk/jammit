@@ -18,41 +18,17 @@ class _Home extends Component {
     this.props.history.push(`jam/${jamId}`)
   }
 
-  filterMembersByFollow = () =>{
-    return this.props.users.filter(user=> {
-      return user.followers.find(user=> user._id === this.props.loggedInUser._id)
-    })
-  }
-
-  filterJamsByInst = ()=> {
-    return this.props.jams.filter(jam=>{
-      const user = jam.usersGoing.find(user=> {
-        return user.playing.some(inst=>{
-          return inst === this.props.loggedInUser.talents[0]
-        })
-      })
-      if (!user) return jam
-    })
-  }
-
-  filterJamsByRegion = ()=> {
-    return this.props.jams.filter(jam=>{
-      return jam.location.region === this.props.loggedInUser.location.region
-    })
-  }
-
   render() {
     const { jams, users, loggedInUser } = this.props
     if (jams.length === 0 || users.length === 0) return <h2>Loading...</h2>
     return ( 
       <div className="home">
         <HeroSection/>
-        
         <main className="main-content flex column space-between">
           <div className="jams section"><h1>Most Popular Jams</h1>
               <JamScroll jams={jams} onJamClick={this.onJamClick}/>
           </div>
-          <div className="jams section"><h1>Recently Added Jams</h1>
+          <div className="jams section"><h1>Upcoming Jams</h1>
               <JamScroll jams={jams} onJamClick={this.onJamClick}/>
           </div>
 
@@ -65,14 +41,6 @@ class _Home extends Component {
             </div>
           </div>
 
-          {/* <div className="user-filtered-container">
-            <div className="inst-filtered section"><h1>Jams Without {loggedInUser.talents[0]}</h1>
-              <JamScroll jams={this.filterJamsByInst()} onJamClick={this.onJamClick}/>
-            </div>
-            <div className="region-filtered section"><h1>Jams Around {loggedInUser.location.region} Region</h1>
-              <JamScroll jams={this.filterJamsByRegion()} onJamClick={this.onJamClick}/>
-            </div>
-          </div> */}
           
         </main>
       </div>
