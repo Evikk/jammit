@@ -1,14 +1,11 @@
 .jam-card {
     background-color: $clr-card;
     justify-content: space-between;
-    width: 200px;
-    height: 267px;
-    border-radius: 4px;
+    width: 480px;
+    height: 300px;
     transition: all 0.5s ease-in-out;
     h2{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        
         font-size: 1.1em;
         text-align: center;
     }
@@ -17,6 +14,12 @@
         top: 3px;
         cursor: pointer;
     }
+    .thumb-wrapper {
+        border-radius: 6px;
+        height: 60%;
+        @include aspect-ratio(488, 150)
+    }
+    
 }
 
 .user-inst-icon {
