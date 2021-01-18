@@ -41,9 +41,10 @@ export class JamScroll extends Component {
         return (
             <div>
                 <ScrollMenu
-                    hideArrows={hideArrows}
-                    hideSingleArrow={hideSingleArrow}
-                    alignCenter={alignCenter}
+                    hideArrows={true}
+                    hideSingleArrow={true}
+                    alignCenter={true}
+                    arrowDisabledClass={'scroll-menu-arrow'}
                     data={menu}
                     arrowLeft={ArrowLeft}
                     arrowRight={ArrowRight}

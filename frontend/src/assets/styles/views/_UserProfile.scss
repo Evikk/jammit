@@ -4,28 +4,13 @@
 // }
 
 .user-box{
-    // margin-top: 40px;
-    // margin-left: 40px;
-    // width: 800px;
-    // height: 400px;
     border-bottom: 2px solid whitesmoke;
     margin-top: 40px;
     width: 60%;
     margin: 50px auto;
+    justify-content: space-between;
 }
-// .user-right-box{
-    // width: 500px;
-    // height: 200px;
-    // padding-top: 37px;
-    // padding-left: 100px;
-    // background-color: rgb(249, 249, 250);
-    // border-radius: 10px;
-    // margin-top: 20px;
-    // margin-left: 100px;
-    // display: flex;
-    // padding: 10px;
-    // position: relative;
-// }
+
 .user-basic-info{
     margin-bottom: 15px;
 }
@@ -35,30 +20,24 @@
     color: #929292;
 }
 
-.user-box p{
-    display: inline;
-    
-}
-
 .user-box li {
     display: inline;
     margin: 3px;
 }
-
-.user-tags-name .tags {
-    background-color: #999999;
-    padding: 2px;
-    color: white;
-    border-radius: 2px;
-    font-family: Helvetica;
+.user-tags {
+    margin: 5px;
+    grid-gap: 4px;
+    * {
+        border-radius: 4px;
+        background-color: #e9bd5b;
+        padding: 3px;
+        color: black;
+        border: 1px solid grey;
+        font-size: rem(14px);
+    }
 }
-
-.user-img{
-    width: 173px;
-    height: 183px;
-}
-.user-location{
-    margin-bottom: 20px;
+.user-img img{
+    border-radius: 50%;
 }
 
 .user-location span{
@@ -69,12 +48,15 @@
     color: rgb(37, 36, 43);
 }
 
+.user-tags-name {
+    justify-content: flex-start;
+}
+
 .reaction-icon{
     color: #606060;
     // padding-left: 26px;
     cursor: pointer;
 }
-
 
 .user-about span{
     // margin-left: 26px;
@@ -95,15 +77,6 @@
     border-radius: 2px;
     line-height: 27px;
    
-}
-.user-right-box .titel{
-    padding-bottom:20px;
-    background-color: rgb(249, 249, 250);
-    border-radius: 10px;
-    margin-top: 20px;
-    display: flex;
-    padding: 10px;
-    position: relative;
 }
 
 .followers{
