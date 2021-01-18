@@ -101,8 +101,9 @@ class _JamDetails extends Component {
                             </button>}
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
-                        {!this.state.isEditMode && <div>
+                        {!this.state.isEditMode &&  <div>
                             <JamNavbar
+                                history={this.props.history}
                                 user={this.props.loggedInUser}
                                 jam={this.state.jam}
                                 updateJamGoing={this.props.updateJamGoing}

@@ -1,6 +1,6 @@
 import ReactModal from 'react-modal';
 import React from 'react';
-import {_LoginSignup} from '../pages/LoginSignup'
+import {LoginSignup} from '../pages/LoginSignup'
  
 export  class LoginModal extends React.Component {
   constructor () {
@@ -26,7 +26,19 @@ export  class LoginModal extends React.Component {
     
     });
   }
-  
+  componentWillReceiveProps(nextProps){
+    if(nextProps.showModal!==this.state.showModal){
+      //Perform some operation
+      this.setState({showModal: nextProps.showModal });
+      
+    }
+  }
+
+  componentDidMount(){
+    document.addEventListener('keyup', (e) => {
+        if (e.keyCode === 27) this.handleCloseModal();
+    });
+}
   render () {
       const customStyles = {
           content : {
@@ -39,8 +51,8 @@ export  class LoginModal extends React.Component {
           }
         };
     return (
-      <div>
-        <button onClick={this.handleOpenModal}></button>
+
+       
         <ReactModal 
            isOpen={this.state.showModal}
            contentLabel="login-modal"
@@ -50,11 +62,11 @@ export  class LoginModal extends React.Component {
            >
           <button onClick={this.handleCloseModal}>X</button>
         
-          <_LoginSignup/>
+          <LoginSignup history={this.props.history}/>
         
          
         </ReactModal>
-      </div>
+
     );
   }
 }

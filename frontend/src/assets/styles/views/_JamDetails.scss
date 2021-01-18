@@ -71,6 +71,7 @@
     border-radius: 10px;
     // border-left: 1px solid gainsboro;
     width: 49%;
+    height: 49%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -133,7 +134,7 @@
 }
 
 .jammers {
-    display: flex;
+   
     flex-wrap: wrap;
     flex-direction: row;
     padding: 20px;
@@ -221,8 +222,13 @@
 
 .users-going-con{
     color: rgb(159, 161, 161);
+    
 }
 
 .createdBy-link{
     color: rgb(70, 70, 184);
+}
+
+.instrument-title{
+    text-align: center;
 }

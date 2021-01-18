@@ -6,13 +6,15 @@ export function JamUserPreview({ user }) {
         <li onClick={() => history.push(`/user/${user._id}`)}>
             <div className="jammers" >
                 <img  src={user.imgUrl} alt="" />
-            </div>
+            
             <h4 className="jammers-list-name">{user.fullname}</h4>
-            {/* <div>
+            <div>
             {user.playing.map(function (instrument, index) {
-                  return <span key={index}> {instrument}</span>
+                  return <span key={index} className="instrument-title"> {instrument}</span>
              })}    
-             </div> */}
+             </div>
+             </div>
+          
         </li>
     );
 }
