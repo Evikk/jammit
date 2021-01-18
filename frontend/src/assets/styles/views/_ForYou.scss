@@ -1,0 +1,29 @@
+.for-you-section {
+
+}
+
+.for-you-content {
+    width: 100%;
+}
+
+.profile-container-side {
+    // flex-grow: 0;
+}
+
+.main-custom-content {
+    background-color: aquamarine;
+    flex-grow: 1;
+}
+
+.section {
+    h1 {
+        text-align: center;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 3rem;
+        font-weight: 400
+    }
+    background-color: $clr-container;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 10px;
+}

@@ -16,9 +16,6 @@ const ArrowRight = Arrow({ text: <ArrowForwardIosIcon/>, className: "arrow-next"
 export class JamScroll extends Component {
     state = {
         menu: null,
-        hideArrows: true,
-        alignCenter: true,
-        hideSingleArrow: true
         // selected,
     };
 
@@ -34,7 +31,7 @@ export class JamScroll extends Component {
     // };
 
     render() {
-        const { selected, menu, hideArrows, hideSingleArrow, alignCenter } = this.state;
+        const { selected, menu} = this.state;
         const { jams } = this.props;
         if (!jams) return <h2>Loading...</h2>
     

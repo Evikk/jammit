@@ -1,5 +1,5 @@
 .explore-container {
-    height: 785px;
+    height: calc(100vh - 70px);
     display: flex;
     justify-content: flex-end;
     button {
@@ -48,7 +48,7 @@
 .filter-inputs {
     margin-top: 20px;
     display: flex;
-    width: 80%;
+    width: 60%;
     justify-content: space-around;
 }
 
@@ -60,15 +60,10 @@
     padding: 20px;
     justify-content: center;
     display: grid;
-    grid-template-rows: repeat(auto-fill,265px);
-    grid-template-columns: repeat(auto-fill,200px);
-    grid-gap: 10px;
-    * {
-        padding: 0;
-        font-size: 1rem;
+    grid-template-rows: repeat(auto-fill,300px);
+    grid-template-columns: repeat(auto-fill,400px);
+    grid-gap: 30px;
+    .jam-card {
+        width: 400px;
     }
-    h2{
-        font-size: 1.3rem;
-    }
-    
 }

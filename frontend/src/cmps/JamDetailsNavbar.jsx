@@ -2,8 +2,6 @@
 import React from 'react'
 import {LoginModal} from './LoginModal'
 
-
-
 export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
     return (
         <ul className="jam-details-navbar">
