@@ -1,8 +1,15 @@
 // import { useHistory } from "react-router-dom";
-import React from 'react'
+import React , { Component }from 'react'
 import {LoginModal} from './LoginModal'
 
-export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
+
+
+class _JamNavbar extends Component {
+    state = {
+        showLoginModal: false 
+    }
+    render() {
+    let  {updateJamGoing, jam, user, isUserAdmin} = this.props;
     return (
         <ul className="jam-details-navbar">
             <div className="navbar-left">
@@ -10,8 +17,13 @@ export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
                 <li>Discussion</li>
             </div>
             <div className="navbar-right">
-                { !user && user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  && 
-                  <li><button className="join-jam-btn" onClick={() => updateJamGoing (jam, user, true)}>Join Jam</button></li> }
+                <LoginModal history={this.props.history} showModal={this.state.showLoginModal}/>
+            {  !user  && 
+                  <li><button className="join-jam-btn" onClick={ () =>  this.setState({
+                    showLoginModal: true
+                })}>Join Jam</button></li> }
+                {  user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length === 0  && 
+                  <li><button className="join-jam-btn" onClick={() => updateJamGoing (jam, {...user, playing: ['Singer']}, true)}>Join Jam</button></li> }
                   {!isUserAdmin && user && jam.usersGoing.filter( (userGoing) => userGoing._id === user._id).length !== 0  &&
                   <li><button className="leave-jam-btn" onClick={() => updateJamGoing (jam, user, false)}>Leave Jam</button></li> }
                 {isUserAdmin && <li><button className="edit-jam-btn">Edit Details</button></li>}
@@ -19,8 +31,10 @@ export function JamNavbar({updateJamGoing, jam, user, isUserAdmin}) {
             </div>
         </ul>
     );
+                  }
 }
 
+export const JamNavbar = _JamNavbar;
 // const mapStateToProps = state => {
 //     return {
 //         loggedInUser: state.userModule.loggedInUser

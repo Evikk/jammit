@@ -32,7 +32,11 @@ export default class JamGoingListModal extends React.Component {
       
       });
     }
-    
+    componentDidMount(){
+      document.addEventListener('keyup', (e) => {
+          if (e.keyCode === 27) this.handleCloseModal();
+      });
+  }
     render () {
         const customStyles = {
             content : {
@@ -51,7 +55,7 @@ export default class JamGoingListModal extends React.Component {
              isOpen={this.state.showModal}
              contentLabel="Minimal Modal Example"
              style={customStyles}
-             shouldCloseOnEsc={true}
+             closeOnEsc={true}
              ariaHideApp={false}
              >
             <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
