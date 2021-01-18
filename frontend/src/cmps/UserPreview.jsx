@@ -24,15 +24,12 @@ export function UserPreview({ user }) {
                     </div>
                 </div>
             </div>
-            <h2>{user.username}</h2>
-            <div className="flex">
-                <div className="user-card-content flex column">
-                    
-                    <ul className="user-card-tags flex">{user.tags.map((tag, idx) => {
-                        if (idx < 3) return <li key={idx}>{tag}</li> })}
-                    </ul>
-                    <p><LocationOnIcon/>{user.location.city}</p>
-                </div>
+            <div className="user-card-content flex column">
+                <h2>{user.username}</h2>
+                <ul className="user-card-tags flex">{user.tags.map((tag, idx) => {
+                    if (idx < 3) return <li key={idx}>{tag}</li> })}
+                </ul>
+                <p><LocationOnIcon/>{user.location.city}</p>
             </div>
         </li>
     );

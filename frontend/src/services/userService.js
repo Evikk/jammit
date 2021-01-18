@@ -16,7 +16,7 @@ var users = [
     {
         "_id": "u101",
         "fullname": "Tomer Yosef",
-        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
+        "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970986/jameet/man5_n02f9u.png",
         "createdAt": 12122134434,
         "username": "TomerTheCreator",
         "password": "123456",
@@ -33,7 +33,7 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+                "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970985/jameet/man1_krvjky.png",
             },
             {
                 "_id": "u111",
@@ -60,7 +60,7 @@ var users = [
         "fullname": "Moshik Afia",
         "username": "MoshikTheTerminator",
         "password": "1234567",
-        "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
+        "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970986/jameet/man6_zgo7be.png",
         "tags": ["Israeli", "Yam-Tichoni"],
         "about": "Open to any kind of offer",
         "talents": [ "Singer", "Darbocka"],
@@ -74,7 +74,7 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+                "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970985/jameet/man1_krvjky.png",
             },
             {
                 "_id": "u107",
@@ -120,7 +120,7 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+                "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970985/jameet/man1_krvjky.png",
             }
         ],
         "following": [
@@ -156,7 +156,7 @@ var users = [
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
-                "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale"
+                "imgUrl" : "https://res.cloudinary.com/dhplco0k4/image/upload/v1610970985/jameet/man1_krvjky.png",
             },
             {
                 "_id": "u104",

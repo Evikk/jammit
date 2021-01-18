@@ -79,7 +79,7 @@ class _JamExplore extends Component {
         selectedPlace: null, // Shows the InfoWindow to the selected place upon a marker
     };
     mapRef = React.createRef();
-    componentDidMount() {
+    componentDidMount() {     
         this.props.loadJams()
         navigator.geolocation.getCurrentPosition(pos =>{
             const userPos = {position: {lat: null, lng: null}}

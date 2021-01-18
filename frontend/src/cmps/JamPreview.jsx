@@ -28,24 +28,34 @@ export function JamPreview({ jam, onJamClick }) {
                     {showIcons()}
                 </div>
             </div>
-            <div className="jam-card-content flex column" >
-                <h2>{jam.title}</h2>
-            
-            <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
-                return <li key={idx}>{tag}</li> })}
-            </ul>
-            
-                <div><p><LocationOnIcon/>{jam.location.city}</p></div>
-                <div className="date-slots">
-                    <div className="date">
-                        <EventIcon/>
-                        {new Date(jam.startsAt).toLocaleString('he-IL',{month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'})}
+            <div className="jam-card-content flex">
+                <div className="date-wrapper">
+                    <div className="date-month">
+                        {new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(jam.startsAt))}
                     </div>
-                    {slotsLeft < 10 ? <span className="red">
-                        {slotsLeft} Slots Left
-                    </span>: <span className="green">Open</span> }
+                    <div className="date-day">
+                        {new Date(jam.startsAt).toLocaleString('he-IL',{day: '2-digit'})}
+                    </div>
                 </div>
+                <div className="jam-details-wrapper">
+                    <h2>{jam.title}</h2>
                 
+                    <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                        return <li key={idx}>{tag}</li> })}
+                    </ul>
+                
+                    <div>
+                        <p><LocationOnIcon/>{jam.location.city}</p>
+                    </div>
+                    <div className="going-wrapper flex">
+                        <span>
+                            {jam.usersGoing.length} People Are Going
+                        </span>
+                        <span className={slotsLeft < 10 ? 'red' : 'green'}>
+                              {slotsLeft} Slots Left
+                        </span>
+                    </div>
+                </div>
             </div>
         </li>
     );

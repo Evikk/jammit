@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import { updateJamGoing, loadJams, saveJam } from '../store/actions/jamActions.js';
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
+import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
 
 const emptyJam = {
     title: "",
@@ -114,7 +115,7 @@ class _JamDetails extends Component {
                             <div className="left-page-details">
                                 <div className="details-con">
                                     <h3 className="title-style">Details</h3>
-                                    <p><span className="icon-style"><HomeIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
+                                    <p><span className="icon-style"><HourglassEmptyRoundedIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length} People going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + this.state.jam.createdBy._id} > {this.state.jam.createdBy.fullname}</Link></span></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>

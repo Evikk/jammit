@@ -9,19 +9,21 @@ import { JamExplore } from './pages/JamExplore'
 import { MembersList } from './pages/MembersList'
 import { JamCreate } from './pages/JamCreate'
 import { MainNav } from './cmps/MainNav'
+import { ForYou } from './pages/ForYou'
 
 export function App() {
   return (
     <div className="app main-container">
       <Router>
         <MainNav/>
-        <main>
+        <main className="main-content-container">
         {/* <Header></Header> */}
           <Switch>
             <Route path="/jam/create" component={JamCreate} />
             <Route path="/jam/:id" component={JamDetails} />
             <Route path="/user/:id" component={UserProfile} />
             <Route path="/members" component={MembersList} />
+            <Route path="/foryou" component={ForYou} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/search" component={JamExplore} />
             <Route path="/" component={Home} />
