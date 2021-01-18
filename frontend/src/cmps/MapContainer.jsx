@@ -9,7 +9,7 @@ export class _MapContainer extends Component {
         const containerStyle = {
             position: 'relative',
             width: '400px',
-            height: '400px'
+            height: '200px'
         }
 
         return (
