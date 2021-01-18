@@ -44,13 +44,14 @@ class _JamDetails extends Component {
     }
 
 
-    componentDidMount() {
+    async componentDidMount() {
         this.props.loadJams()
         if (this.props.isEditMode) {
             this.setState({ jam: emptyJam, isEditMode: true, isUserAdmin: true })
         }
         else {
-            const jam = jamService.getById(this.props.match.params.id);
+            const jam = await jamService.getById(this.props.match.params.id);
+            console.log(jam);
             this.setState({ jam }, () => {
                 this.checkIfUserHost()
             })

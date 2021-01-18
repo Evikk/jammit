@@ -26,11 +26,9 @@ class _UserProfile extends Component {
 
   }
 
-  componentDidMount() {
-    const user = userService.getById(this.props.match.params.id)
-    // console.log('userDits cmp didM', user);
+  async componentDidMount() {
+    const user = await userService.getById(this.props.match.params.id)
     this.setState({ user })
-    // this.props.loadUsers()
     this.props.loadJams()
   }
 
@@ -50,7 +48,7 @@ class _UserProfile extends Component {
   render() {
     const { user } = this.state
     const { jams } = this.props
-    const {followToggle } = this.state
+    const { followToggle } = this.state
     // if (!user) return <div>Loding..</div>
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
