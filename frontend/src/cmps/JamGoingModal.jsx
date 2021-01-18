@@ -13,6 +13,8 @@ export default class JamGoingListModal extends React.Component {
       super();
       this.state = {
         showModal: false
+
+
       };
       
       this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -20,11 +22,15 @@ export default class JamGoingListModal extends React.Component {
     }
     
     handleOpenModal () {
-      this.setState({ showModal: true });
+      this.setState({ showModal: true 
+      });
     }
     
     handleCloseModal () {
-      this.setState({ showModal: false });
+      this.setState({ showModal: false 
+      
+      
+      });
     }
     
     render () {
