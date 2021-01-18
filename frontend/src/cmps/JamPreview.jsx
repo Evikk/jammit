@@ -22,8 +22,8 @@ export function JamPreview({ jam, onJamClick }) {
     
     return (
         <li className="jam-card flex column" onClick={()=>onJamClick(jam._id)}>
-            <div className="thumb flex column pos-relative">
-                <img className="jam-card thumb" src={jamThumb} className="jamThumb" alt="jam-thumbnail"/>
+            <div className="thumb-wrapper flex column pos-relative">
+                <img className="jam-thumb" src="https://res.cloudinary.com/dhplco0k4/image/upload/v1610961691/jameet/jam1_cgx6jw.jpg" alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
                     {showIcons()}
                 </div>
