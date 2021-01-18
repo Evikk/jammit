@@ -8,8 +8,8 @@ export class _MapContainer extends Component {
     render() {
         const containerStyle = {
             position: 'relative',
-            width: '400px',
-            height: '200px'
+            width: '547px',
+            height: '230px'
         }
 
         return (

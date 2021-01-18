@@ -141,7 +141,7 @@ class _JamDetails extends Component {
                                 </div>}
 
                             </div>
-                            <div className="location-con">
+                            <div className="location-con ">
                                 <h3 className="title-style">Location</h3>
                                 <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
                             </div>
