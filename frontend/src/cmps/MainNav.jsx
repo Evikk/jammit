@@ -33,8 +33,8 @@ class _MainNav extends Component {
                     <NavLink to="/">Jameet<span className="fs20"> people&music</span></NavLink>
                 </div>
                 <div>
-                    <NavLink to="/search">Jams</NavLink>
-                    <NavLink to="/members">Members</NavLink>
+                    <NavLink to="/search" className="jams-nav-link">Jams</NavLink>
+                    <NavLink to="/members" className="members-nav-link">Members</NavLink>
                     {loggedInUser && <div className="loggedin-avatar flex fs12">
                         <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={() => this.props.history.push(`/user/${loggedInUser._id}`)} />
                     </div>
