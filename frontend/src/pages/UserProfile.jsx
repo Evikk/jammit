@@ -59,7 +59,7 @@ class _UserProfile extends Component {
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
       <>
-        <section className="user-box flex justify-center">
+        <section className="user-box flex">
 
           <div className="user-left-box flex column">
 
@@ -71,14 +71,16 @@ class _UserProfile extends Component {
 
               <div className="user-tags-name flex column justify-center">
                 <span className="user-stage-name fs30">{user.username}</span>
-                <br />
                 <div className="user-location">
                   <LocationOnOutlinedIcon className="location-icon" />
                   <span>{user.location.city}</span>
                 </div>
-                <ul >{user.tags.map((tag, idx) => {
+                <ul className="user-tags flex">{user.tags.map((tag, idx) => {
+                        return <li key={idx}>{tag}</li> })}
+                </ul>
+                {/* <ul>{user.tags.map((tag, idx) => {
                   return <li className="tags fs12" key={idx}>{tag}</li>
-                })}</ul>
+                })}</ul> */}
               </div>
 
             </div>
