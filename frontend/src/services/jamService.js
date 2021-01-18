@@ -38,13 +38,13 @@ var jams = [
                 "_id": "u104",
                 "fullname": "Haim Romano",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Blank&hatColor=PastelYellow&facialHairType=MoustacheMagnum&facialHairColor=Blonde&clotheType=Hoodie&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Tanned",
-                "playing": ["ElectricGuitar"]
+                "playing": ["Electric-Guitar"]
             },
             {
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
-                "playing": ["Bass", "Singer"]
+                "playing": ["Bass ", ", Singer"]
             }
         ]
     },
@@ -80,13 +80,13 @@ var jams = [
                 "_id": "u102",
                 "fullname": "Moshik Afia",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
-                "playing": ["Singer"]
+                "playing": ["Singer", "Electric-Guitar"]
             },
             {
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
-                "playing": ["Drums", "Electric-Guitar", "Singer"]
+                "playing": ["Drums ", "Singer"]
             }
         ]
     },
@@ -122,7 +122,7 @@ var jams = [
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
-                "playing": ["ElectricGuitar"]
+                "playing": ["Electric-Guitar"]
             }
         ]
     },
@@ -200,7 +200,7 @@ var jams = [
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
-                "playing": ["ElectricGuitar"]
+                "playing": ["Electric-Guitar"]
             },
             {
                 "_id": "u104",
@@ -248,7 +248,7 @@ var jams = [
                 "_id": "u103",
                 "fullname": "Rami Fortis",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairTheCaesar&accessoriesType=Round&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Pink&graphicType=Skull&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Pale",
-                "playing": ["ElectricGuitar"]
+                "playing": ["Electric-Guitar"]
             },
             {
                 "_id": "u104",
