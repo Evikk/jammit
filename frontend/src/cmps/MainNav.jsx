@@ -2,9 +2,14 @@ import { withRouter, NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 import React, { Component } from 'react'
+import {mainNavService} from '../services/mainNavService.js'
 
 class _MainNav extends Component {
 
+    componentDidMount() {
+        mainNavService.navPos()
+    }
+    
     render() {
         const {loggedInUser} = this.props;
         return (
@@ -15,10 +20,10 @@ class _MainNav extends Component {
                 <div>
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
-                    {loggedInUser ? <div className="loggedin-avatar flex fs12">
+                    {loggedInUser && <div className="loggedin-avatar flex fs12">
                 <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={()=>this.props.history.push(`/user/${loggedInUser._id}`)}/>
                     </div>
-                    : <div>Hi Guest</div>}
+                   }
                 </div>
             </nav>
         )

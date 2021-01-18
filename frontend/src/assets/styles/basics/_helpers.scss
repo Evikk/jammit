@@ -53,3 +53,8 @@
 .portrait-ratio {
     @include aspect-ratio(9, 16);
 }
+ 
+//cursor-pointer
+.cursor-pointer{
+    cursor: pointer;
+}
