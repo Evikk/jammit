@@ -14,7 +14,7 @@ async function getUser(req, res) {
 async function getUsers(req, res) {
     try {
         const filterBy = {
-            txt: req.query?.txt || '',
+            username: req.query?.username || '',
         }
         const users = await userService.query(filterBy)
         res.send(users)
@@ -45,9 +45,21 @@ async function updateUser(req, res) {
     }
 }
 
+async function addUser(req, res) {
+    try {
+        const user = req.body
+        const savedUser = await userService.add(user)
+        res.send(savedUser)
+    } catch (err) {
+        logger.error('Failed to update user', err)
+        res.status(500).send({ err: 'Failed to update user' })
+    }
+}
+
 module.exports = {
     getUser,
     getUsers,
     deleteUser,
-    updateUser
+    updateUser,
+    addUser
 }

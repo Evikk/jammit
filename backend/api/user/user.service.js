@@ -67,7 +67,11 @@ async function update(user) {
             _id: ObjectId(user._id),
             username: user.username,
             fullname: user.fullname,
-            score: user.score
+            imgUrl: user.imgUrl,
+            tags: user.tags,
+            about: user.about,
+            talents: user.talents,
+            location: user.location,
         }
         const collection = await dbService.getCollection('user')
         await collection.updateOne({ '_id': userToSave._id }, { $set: userToSave })
@@ -80,13 +84,19 @@ async function update(user) {
 
 async function add(user) {
     try {
-        // peek only updatable fields!
         const userToAdd = {
             username: user.username,
-            password: user.password,
             fullname: user.fullname,
-            score: user.score || 0
+            imgUrl: user.imgUrl,
+            createdAt: user.createdAt,
+            tags: user.tags,
+            about: user.about,
+            talents: user.talents,
+            location: user.location,
+            followers: [],
+            following: [],
         }
+
         const collection = await dbService.getCollection('user')
         await collection.insertOne(userToAdd)
         return userToAdd
@@ -98,20 +108,15 @@ async function add(user) {
 
 function _buildCriteria(filterBy) {
     const criteria = {}
-    if (filterBy.txt) {
-        const txtCriteria = { $regex: filterBy.txt, $options: 'i' }
-        criteria.$or = [
-            {
-                username: txtCriteria
-            },
-            {
-                fullname: txtCriteria
-            }
-        ]
+    if (filterBy.username) {
+        const usernameCriteria = { $regex: filterBy.username, $options: 'i' }
+        criteria = { username: usernameCriteria }
     }
-    if (filterBy.minBalance) {
-        criteria.balance = { $gte: filterBy.minBalance }
+    if (filterBy.fullname) {
+        const fullnameCriteria = { $regex: filterBy.fullname, $options: 'i' }
+        criteria = { fullname: fullnameCriteria }
     }
+
     return criteria
 }
 

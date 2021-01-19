@@ -65,10 +65,14 @@ async function update(jam) {
         // peek only updatable fields!
         const jamToSave = {
             _id: ObjectId(jam._id),
-            name: jam.name,
-            type: jam.type,
-            price: jam.price,
-            inStock: jam.inStock
+            title : jam.title,
+            description :jam.description,
+            imgUrl :jam.imgUrl,
+            capacity : jam.capacity,
+            location : jam.location,
+            startsAt :jam.startsAt,
+            tags : jam.tags,
+            usersGoing : jam.usersGoing
         }
         const collection = await dbService.getCollection('jam')
         await collection.updateOne({ '_id': jamToSave._id }, { $set: jamToSave })
@@ -83,12 +87,17 @@ async function add(jam) {
     try {
         // peek only updatable fields!
         const jamToAdd = {
-            name: jam.name,
-            type: jam.type,
-            price: jam.price,
-            createdAt: Date.now(),
-            inStock: jam.inStock,
-            img_url: jam.img_url
+            title : jam.title,
+            description :jam.description,
+            imgUrl :jam.imgUrl,
+            capacity : jam.capacity,
+            location : jam.location,
+            createdBy : jam.createdBy,
+            startsAt :jam.startsAt,
+            tags : [],
+            createdAt : jam.createdAt,
+            msgs : [],
+            usersGoing : jam.usersGoing
         }
         const collection = await dbService.getCollection('jam')
         await collection.insertOne(jamToAdd)
@@ -101,20 +110,21 @@ async function add(jam) {
 
 function _buildCriteria(filterBy) {
     const criteria = {}
-    if (filterBy.name) {
-        const nameCriteria = { $regex: filterBy.name, $options: 'i' }
-        criteria.name = nameCriteria
+    if (filterBy.title) {
+        const titleCriteria = { $regex: filterBy.title, $options: 'i' }
+        criteria.title = titleCriteria
     }
-    if (filterBy.type) {
-        const typeCriteria = { $regex: filterBy.type, $options: 'i' }
-        criteria.type = typeCriteria
+    if (filterBy.region) {
+        const regionCriteria = { $regex: filterBy.region, $options: 'i' }
+        criteria.region = regionCriteria
     }
-    if (filterBy.inStock) {
+    if (filterBy.instrument) {
         criteria.inStock = { $eq: filterBy.inStock }
     }
     
     return criteria
 }
+//jam.userGOing 
 
 function _buildSort(sortBy) {
     const sort = {}
