@@ -12,18 +12,14 @@ class _UserProfile extends Component {
   state = {
     user: null,
     currUser: false,
-    followToggle:false
+    followToggle:false,
+    userJams: []
   }
 
-  // async componentDidMount() {
-  //   const user = await userService.getById(this.props.match.params.id)
-  //   this.setState({user})
-  // }
   onFollowIconClick =()=>{
     const followToggle = this.state
     console.log(followToggle, 'followToggleonFollowIconClick');
     this.setState({followToggle: !this.state.followToggle})
-
   }
 
   async componentDidMount() {
@@ -32,20 +28,28 @@ class _UserProfile extends Component {
     this.props.loadJams()
   }
 
-  findSelectedJams = () => {
+  getUserJams = () => {
     return this.props.jams.filter(jam => {
-      return jam.usersGoing.find(userGoing => {
-        return userGoing._id === this.state.user._id
-      })
-
+     return jam.title.includes('Magnivim')
     })
   }
+  // getUserJams = () => {
+  //   return this.props.jams.filter(jam => {
+  //     return jam.usersGoing.find(userGoing => {
+  //       return userGoing._id === this.state.user._id
+  //     })
+  //   })
+  // }
+
+
 
   render() {
-    const { user } = this.state
+    const { user, userJams } = this.state
     const { jams } = this.props
     const { followToggle } = this.state
-    // if (!user) return <div>Loding..</div>
+    console.log('user',this.getUserJams());
+    console.log('jams',jams);
+    
     if (jams.length === 0 || !user) return <h2>Loading...</h2>
     return (
       <>
@@ -57,12 +61,12 @@ class _UserProfile extends Component {
           />
           <UserTalents user={user}/>
         </section>
-        <section className="user-jams-list">
-              <h1>Jams Attending</h1>
-              <div>
-                <JamScroll jams={this.findSelectedJams()}/>
-              </div>
-        </section>
+        <main className="main-content flex column space-between">
+          <div className="jams section">
+              <h1>Most Popular Jams</h1>
+              <JamScroll jams={this.getUserJams()}/>
+          </div>
+        </main>
       </>
     )
   }

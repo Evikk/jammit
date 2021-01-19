@@ -12,6 +12,11 @@
 
 .user-details-aside {
     padding: 20px;
+    align-items: center;
+    button {
+        width: 200px;
+        font-size: 1.5rem;
+    }
 }
 
 .user-section-toolbar {
@@ -27,13 +32,14 @@
         font-size: 20px;
         cursor: pointer;
         padding: 15px;
-        background-color: $clr-container;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
+        background-color: rgb(223, 221, 221);
         &.active {
-            background-color: rgb(124, 128, 128);
+            background-color: $clr-container;
         }
         &:hover{
+            background-color: rgb(186, 181, 181);
         }
     }
 }

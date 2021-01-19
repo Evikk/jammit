@@ -59,18 +59,17 @@ class _UserSection extends Component {
                 <div className="user-details-aside flex column">
                     <UserInfo user={loggedInUser} isUserAdmin={true} />
                     <UserTalents user={loggedInUser} isUserAdmin={true} />
+                    <button>Start A New Jam</button>
                 </div>
                 <div className="filtered-jams section">
                     <div className="user-section-toolbar">
                         <ul className="toolbar-left">
-                            <li onClick={()=>this.onTabChoose('events')} className={activeTab === 'events' ? 'active' : ''}>Explore Events</li>
+                            <li onClick={()=>this.onTabChoose('events')} className={activeTab === 'events' ? 'active' : ''}>Explore Jams</li>
                             <li onClick={()=>this.onTabChoose('members')} className={activeTab === 'members' ? 'active' : ''}>Members</li>
-                            <li onClick={()=>this.onTabChoose('manage')} className={activeTab === 'manage' ? 'active' : ''}>Manage Your Events</li>
+                            <li onClick={()=>this.onTabChoose('manage')} className={activeTab === 'manage' ? 'active' : ''}>Manage Your Jams</li>
                         </ul>
-                        <ul className="toolbar-right">
-                            <li><button>Create Event</button></li>
-                            <li><button>Manage Events</button></li>
-                        </ul>
+                        
+                        
                     </div>
                    {activeTab === 'events' && <div>
                         <h1>Jams Without {loggedInUser.talents[0]}</h1>
