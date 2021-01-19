@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 import React, { Component } from 'react'
 import { mainNavService } from '../services/mainNavService.js'
-import recordlogo from '../assets/record-logo.png'
+import recordlogo from '../assets/recordlogo.png'
 class _MainNav extends Component {
 
 
