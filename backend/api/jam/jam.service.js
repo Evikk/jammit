@@ -68,7 +68,8 @@ async function update(jam) {
             name: jam.name,
             type: jam.type,
             price: jam.price,
-            inStock: jam.inStock
+            inStock: jam.inStock,
+            usersGoing: jam.usersGoing
         }
         const collection = await dbService.getCollection('jam')
         await collection.updateOne({ '_id': jamToSave._id }, { $set: jamToSave })

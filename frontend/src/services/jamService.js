@@ -28,10 +28,10 @@ function getById(jamId) {
 }
 
 
-function updateJamGoing(jamId, user) {
+function updateJamGoing(jamId, user, isGoing) {
     //UPDATE THE SERVER USER IS NOT GOING
     // jams.find(jam => jam._id === jamId).usersGoing.push(user);
-     //return httpService.put(`jam/${jamId}`, user)
+     return httpService.put(`jam/${jamId}/isGoing`, {user:  {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, playing: user.playing} , isGoing: isGoing})
   
 }
 
