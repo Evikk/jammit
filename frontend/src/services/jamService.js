@@ -80,13 +80,13 @@ var jams = [
                 "_id": "u102",
                 "fullname": "Moshik Afia",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=EyeRoll&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
-                "playing": ["Singer", "Electric-Guitar"]
+                "playing": ["Singer", ", Electric-Guitar"]
             },
             {
                 "_id": "u101",
                 "fullname": "Tomer Yosef",
                 "imgUrl": "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Blank&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=CollarSweater&clotheColor=Gray02&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light",
-                "playing": ["Drums ", "Singer"]
+                "playing": ["Drums ", ", Singer"]
             }
         ]
     },

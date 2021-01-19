@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: column;
     width: 49%;
+    
 }
 
 .details-con {
@@ -52,8 +53,12 @@
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 44px;
+    height: 105vh;
+
+
+   
     p {
         color: #15182c;
         display: flex;
@@ -70,8 +75,7 @@
     background-color: white;
     border-radius: 10px;
     // border-left: 1px solid gainsboro;
-    width: 49%;
-    height: 49%;
+  
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -231,4 +235,16 @@
 
 .instrument-title{
     text-align: center;
+}
+
+.left-page-con{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.tags-jam-list{
+    position: relative;
+    bottom: 200px;
+    left: 20px;
 }

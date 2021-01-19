@@ -124,14 +124,27 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
+                                   
+                                    </div>
+                                    <div className="tags-jam-list">
                                     <div className="jam-tags">
                                         <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
                                     </div>
-                                </div>
-                                {!isEditMode && <div className="users-going-con-section">
+                                    </div>
+                                  
+                              
+                            
+
+                            </div>
+                            <div className="left-page-con">
+                            <div className="location-con">
+                                <h3 className="title-style">Location</h3>
+                                <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
+                            </div>
+                            {!isEditMode && <div className="users-going-con-section">
                                     <ul className="users-going-con">
                                         {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
                                             return <JamUserPreview key={index} user={user} />
@@ -140,12 +153,7 @@ class _JamDetails extends Component {
                                     </ul>
                                     <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
                                 </div>}
-
-                            </div>
-                            <div className="location-con">
-                                <h3 className="title-style">Location</h3>
-                                <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
-                            </div>
+                                </div>
                         </div>
                     </div>}
             </section>
