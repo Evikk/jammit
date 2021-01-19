@@ -102,7 +102,7 @@
 }
 
 .navbar-left li:hover{
-    background-color: rgb(249, 249, 250); 
+    background-color: rgb(255, 255, 255); 
     border-radius: 10px;
 
 }
@@ -247,4 +247,9 @@
     position: relative;
     bottom: 200px;
     left: 20px;
+}
+
+.invite-jam-btn:hover{
+    background-color: rgb(255, 255, 255); 
+    border-radius: 10px;
 }
