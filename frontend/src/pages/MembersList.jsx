@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { UserList } from '../cmps/UserList'
 import { loadUsers } from '../store/actions/userActions'
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import Loader from 'react-loader-spinner';
 
 class _MembersList extends Component {
 
@@ -14,6 +15,10 @@ class _MembersList extends Component {
 
     render() {
         const { users } = this.props
+        if (!users) {
+            return <div className="loader main-content pos-relative">
+              <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+           </div>}
         return (
             <section>
                 <div className="search-area flex justify-center">

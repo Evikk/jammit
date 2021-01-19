@@ -6,13 +6,15 @@ import { loadJams } from '../store/actions/jamActions'
 import { JamScroll } from '../cmps/JamScroll'
 import { UserInfo } from '../cmps/UserProfile/UserInfo'
 import { UserTalents } from '../cmps/UserProfile/UserTalents'
+import Loader from 'react-loader-spinner'
 
 class _UserProfile extends Component {
 
   state = {
     user: null,
     currUser: false,
-    followToggle:false
+    followToggle:false,
+    yoyo:{}
   }
 
   // async componentDidMount() {
@@ -50,7 +52,11 @@ class _UserProfile extends Component {
     const { jams } = this.props
     const { followToggle } = this.state
     // if (!user) return <div>Loding..</div>
-    if (jams.length === 0 || !user) return <h2>Loading...</h2>
+   if (jams.length === 0 || !user) {
+     return <div className="loader main-content pos-relative">
+       <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+    </div>}
+    // if (jams.length === 0 || !user) return  <Loader type="Audio" color="#00BFFF" height={80} width={80} timeout={100000}/>
     return (
       <>
         <section className="user-box flex">

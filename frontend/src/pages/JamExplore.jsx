@@ -10,6 +10,7 @@ import { JamPreview } from "../cmps/JamPreview.jsx";
 import jamMarker from "../assets/img/green-marker.png"
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 import { LoaderSpinner } from "../cmps/LoaderSpinner.jsx";
+import Loader from "react-loader-spinner";
 
 
 
@@ -159,7 +160,11 @@ class _JamExplore extends Component {
     render() {
         const { jams, loggedInUser } = this.props
         const {userPos, selectedPlace, mapZoom, markers} = this.state
-        if (!selectedPlace || jams.length === 0) return <LoaderSpinner></LoaderSpinner>
+        if (!selectedPlace || jams.length === 0) {
+            return <div className="loader main-content pos-relative">
+            <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+         </div>
+        } 
         return (
             <>
             <section className="flex explore-container pos-relative">
