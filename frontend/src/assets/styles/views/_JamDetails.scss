@@ -96,7 +96,7 @@
 }
 
 .navbar-left li:hover{
-    background-color: rgb(249, 249, 250); 
+    background-color: rgb(255, 255, 255); 
     border-radius: 10px;
 
 }
@@ -168,6 +168,7 @@
 
 .jammers-list-name{
     text-align: center;
+  
 }
 
 .join-jam-btn{
@@ -236,3 +237,33 @@
     flex-direction: column;
     width: 49%;
 }
+<<<<<<< HEAD
+=======
+
+.tags-jam-list{
+    position: relative;
+    bottom: 200px;
+    left: 20px;
+}
+
+.invite-jam-btn:hover{
+    background-color: rgb(255, 255, 255); 
+    border-radius: 10px;
+}
+
+.invite-list{
+   display: flex; 
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.invite-list-img{
+    width: 80px;
+    cursor: pointer;
+}
+
+.invite-list-name{
+    position: absolute;
+    font-size: 12px;
+}
+>>>>>>> 3e9143677a06cbd970e25c914cf78c955768a54f

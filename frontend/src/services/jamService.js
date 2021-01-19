@@ -14,6 +14,7 @@ export const jamService = {
 function query() {
     // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=${sortBy}`
     return httpService.get(`jam`)
+    // return jams;
 }
 
 function save(jam) {
