@@ -32,10 +32,6 @@ class _UserProfile extends Component {
     this.props.loadJams()
   }
 
-  onJamClick = (jamId) => {
-    this.props.history.push(`../jam/${jamId}`)
-  }
-
   findSelectedJams = () => {
     return this.props.jams.filter(jam => {
       return jam.usersGoing.find(userGoing => {
@@ -64,7 +60,7 @@ class _UserProfile extends Component {
         <section className="user-jams-list">
               <h1>Jams Attending</h1>
               <div>
-                <JamScroll jams={this.findSelectedJams()} onJamClick={this.onJamClick}/>
+                <JamScroll jams={this.findSelectedJams()}/>
               </div>
         </section>
       </>

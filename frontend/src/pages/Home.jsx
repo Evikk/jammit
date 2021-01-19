@@ -14,9 +14,7 @@ class _Home extends Component {
     this.props.loadJams()
     this.props.loadUsers()
   }
-  onJamClick = (jamId)=> {
-    this.props.history.push(`jam/${jamId}`)
-  }
+  
 
   render() {
     const { jams, users, loggedInUser } = this.props
@@ -27,18 +25,18 @@ class _Home extends Component {
         <main className="main-content flex column space-between">
           <div className="jams section">
               <h1>Most Popular Jams</h1>
-              <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+              <JamScroll jams={jams} />
           </div>
           <div className="jams section">
               <h1>Upcoming Jams</h1>
-              <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+              <JamScroll jams={jams} />
           </div>
 
           <div className="members-container section">
             <div className="members-list-preview">
               <h1>Featured Members</h1>
               <UserList users={users.filter((user,idx)=>{
-                if (idx < 4) return user
+                if (idx < 4) return user // user.slice
                 })}/>
             </div>
           </div>

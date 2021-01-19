@@ -17,6 +17,7 @@
 .user-section-toolbar {
     display: flex;
     justify-content: space-between;
+    background-color: #f6f9fc;
 }
 
 .toolbar-left {
@@ -26,9 +27,12 @@
         font-size: 20px;
         cursor: pointer;
         padding: 15px;
-        background-color: rgb(159, 161, 161);
+        background-color: $clr-container;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
+        &.active {
+            background-color: rgb(124, 128, 128);
+        }
         &:hover{
         }
     }

@@ -38,16 +38,13 @@ export function JamScroll({ jams }) {
             }
           ]
     };
-    function onJamClick(jamId) {
-        history.push(`jam/${jamId}`);
-    }
+    
     return (
         <Slider {...settings}>
             {jams.map((jam) => (
                 <JamPreview
                     key={jam._id}
                     jam={jam}
-                    onJamClick={() => onJamClick(jam._id)}
                 />
             ))}
         </Slider>
