@@ -61,10 +61,30 @@ async function updateJam(req, res) {
     }
 }
 
+async function updateJamIsGoing(req, res) {
+    try {
+        const jamGoingData = req.body
+        logger.debug("jamid" + req.params.id);
+        const jam = await jamService.getById(req.params.id);
+        if (jamGoingData.isGoing) {
+            jam.usersGoing.push(jamGoingData.user);
+        } else {
+            logger.debug(jamGoingData.user._id);
+            jam.usersGoing = jam.usersGoing.filter( (user) => user._id != jamGoingData.user._id );
+        }
+    
+        const savedJam = await jamService.update(jam)
+        res.send(savedJam)
+    } catch (err) {
+        logger.error('Failed to update jam', err)
+        res.status(500).send({ err: 'Failed to update jam' })
+    }
+}
 module.exports = {
     getJam,
     getJams,
     deleteJam,
     addJam,
-    updateJam
+    updateJam,
+    updateJamIsGoing
 }

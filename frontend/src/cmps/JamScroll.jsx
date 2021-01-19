@@ -2,15 +2,13 @@ import Slider from "react-slick";
 import { JamPreview } from "./JamPreview";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useHistory } from "react-router";
 
 
 export function JamScroll({ jams }) {
-    const history = useHistory()
     if (!jams) return <h2>Loading...</h2>
     var settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,

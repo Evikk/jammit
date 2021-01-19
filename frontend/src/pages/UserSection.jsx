@@ -6,6 +6,7 @@ import { UserInfo } from "../cmps/UserProfile/UserInfo";
 import { UserTalents } from "../cmps/UserProfile/UserTalents";
 import { JamList } from "../cmps/JamList";
 import { UserList } from "../cmps/UserList";
+import { JamCreate } from "./JamCreate";
 
 class _UserSection extends Component {
 
@@ -49,6 +50,10 @@ class _UserSection extends Component {
         });
     };
 
+    filterUserCreatedJams = () => {
+        return this.props.jams.filter(jam => jam.createdBy._id === this.props.loggedInUser._id)
+    }
+
     render() {
         const { jams, loggedInUser } = this.props
         const { activeTab } = this.state
@@ -59,7 +64,7 @@ class _UserSection extends Component {
                 <div className="user-details-aside flex column">
                     <UserInfo user={loggedInUser} isUserAdmin={true} />
                     <UserTalents user={loggedInUser} isUserAdmin={true} />
-                    <button>Start A New Jam</button>
+                    <button onClick={()=>this.onTabChoose('create')}>Start A New Jam</button>
                 </div>
                 <div className="filtered-jams section">
                     <div className="user-section-toolbar">
@@ -81,6 +86,18 @@ class _UserSection extends Component {
                         <h1>Members You Follow</h1>
                         <UserList users={this.filterMembersByFollow()}/>
                     </div>}
+                    {activeTab === 'manage' && this.filterUserCreatedJams().length > 0 && 
+                        <div>
+                            <h1>Jams Dashboard</h1>
+                            <JamList users={this.this.filterUserCreatedJams()}/>
+                    </div>}
+                    {activeTab === 'manage' && <h1>You haven't created any jams yet... </h1>
+                    }
+                    {activeTab === 'create' &&
+                        <div>
+                            <JamCreate/>
+                        </div>
+                    }
                 </div>
           </main>
         </>)

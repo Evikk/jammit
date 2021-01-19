@@ -28,9 +28,7 @@ export  class LoginModal extends React.Component {
   }
   componentWillReceiveProps(nextProps){
     if(nextProps.showModal!==this.state.showModal){
-      //Perform some operation
       this.setState({showModal: nextProps.showModal });
-      
     }
   }
 
@@ -61,10 +59,7 @@ export  class LoginModal extends React.Component {
            ariaHideApp={false}
            >
           <button onClick={this.handleCloseModal}>X</button>
-        
           <LoginSignup history={this.props.history}/>
-        
-         
         </ReactModal>
 
     );

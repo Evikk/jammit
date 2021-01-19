@@ -1,6 +1,6 @@
 const express = require('express')
 // const {requireAuth, requireAdmin} = require('../../middlewares/requireAuth.middleware')
-const { getJams, getJam, updateJam, addJam, deleteJam } = require('./jam.controller')
+const { getJams, getJam, updateJam, addJam, deleteJam, updateJamIsGoing } = require('./jam.controller')
 const router = express.Router()
 
 // middleware that is specific to this router
@@ -8,6 +8,7 @@ const router = express.Router()
 
 router.get('/', getJams)
 router.get('/:id', getJam)
+router.put('/:id/isGoing', updateJamIsGoing)
 router.put('/:id', updateJam)
 router.post('/', addJam)
 router.delete('/:id', deleteJam)

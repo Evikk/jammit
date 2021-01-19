@@ -18,8 +18,6 @@ class _UserProfile extends Component {
   }
 
   onFollowIconClick =()=>{
-    const followToggle = this.state
-    console.log(followToggle, 'followToggleonFollowIconClick');
     this.setState({followToggle: !this.state.followToggle})
   }
 
@@ -28,34 +26,26 @@ class _UserProfile extends Component {
     this.setState({ user })
     this.props.loadJams()
   }
-
+  
   getUserJams = () => {
     return this.props.jams.filter(jam => {
-     return jam.title.includes('Magnivim')
+      return jam.usersGoing.find(userGoing => {
+        return userGoing._id === this.state.user._id
+      })
     })
   }
-  // getUserJams = () => {
-  //   return this.props.jams.filter(jam => {
-  //     return jam.usersGoing.find(userGoing => {
-  //       return userGoing._id === this.state.user._id
-  //     })
-  //   })
-  // }
 
 
 
   render() {
-    const { user, userJams } = this.state
+    const { user, followToggle } = this.state
     const { jams } = this.props
-    const { followToggle } = this.state
-    // if (!user) return <div>Loding..</div>
    if (jams.length === 0 || !user) {
      return <div className="loader main-content pos-relative">
        <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
     </div>}
-    // if (jams.length === 0 || !user) return  <Loader type="Audio" color="#00BFFF" height={80} width={80} timeout={100000}/>
     return (
-      <>
+      <main className="main-content">
         <section className="user-box flex">
           <UserInfo 
             user={user} 
@@ -64,13 +54,11 @@ class _UserProfile extends Component {
           />
           <UserTalents user={user}/>
         </section>
-        <main className="main-content flex column space-between">
-          <div className="jams section">
-              <h1>Most Popular Jams</h1>
+        {this.getUserJams().length > 0 && <div className="jams section">
+              <h1>Jams Attending</h1>
               <JamScroll jams={this.getUserJams()}/>
-          </div>
-        </main>
-      </>
+        </div>}
+      </main>
     )
   }
 }

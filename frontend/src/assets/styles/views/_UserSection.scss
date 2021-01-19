@@ -8,14 +8,28 @@
     background-color: $clr-container;
     border-radius: 10px;
     flex-grow: 1;
+    padding: 13px 0;
 }
 
 .user-details-aside {
     padding: 20px;
     align-items: center;
     button {
+        margin-top: 30px;
         width: 200px;
         font-size: 1.5rem;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: "Source-Sans";
+        cursor: pointer;
+        background-color: rgb(249, 249, 250);
+        color: rgb(159, 161, 161);
+        border: solid $clr3 2px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            background-color: $clr3;
+            color: whitesmoke;
+        }
     }
 }
 

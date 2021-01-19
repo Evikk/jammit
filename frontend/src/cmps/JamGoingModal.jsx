@@ -53,7 +53,7 @@ export default class JamGoingListModal extends React.Component {
           <button className="see-all-btn" onClick={this.handleOpenModal}>See All</button>
           <ReactModal 
              isOpen={this.state.showModal}
-             contentLabel="Minimal Modal Example"
+             contentLabel="jammers-going-list"
              style={customStyles}
              closeOnEsc={true}
              ariaHideApp={false}

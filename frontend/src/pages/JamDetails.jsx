@@ -96,14 +96,7 @@ class _JamDetails extends Component {
                 {this.state.jam &&
                     <div className="page-con">
                         <div className="jam-title-img-con">
-                            {isUserAdmin && <button className="jam-save-btn"
-                                onClick={() => {
-                                    if (this.state.isEditMode) this.onSaveChanges()
-                                    this.setState({ isEditMode: !isEditMode })
-                                }}
-                            >
-                                {isEditMode ? "Save Changes" : "Edit Details"}
-                            </button>}
+                            
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         {!this.state.isEditMode && <div>
@@ -128,20 +121,11 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
-
-                                </div>
-                                <div className="tags-jam-list">
-                                    <div className="jam-tags">
                                         <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
-                                        </ul>
-                                    </div>
+                                        </ul>                               
                                 </div>
-
-
-
-
                             </div>
                             <div className="left-page-con">
                                 <div className="location-con">

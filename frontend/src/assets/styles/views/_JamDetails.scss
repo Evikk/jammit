@@ -55,10 +55,7 @@
     padding: 20px;
     font-size: 20px;
     line-height: 44px;
-    height: 105vh;
-
-
-   
+    height: 100%;
     p {
         color: #15182c;
         display: flex;
@@ -74,12 +71,9 @@
     margin-top: 10px;
     background-color: white;
     border-radius: 10px;
-    // border-left: 1px solid gainsboro;
-  
     padding: 20px;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
 }
 
 .jam-details-navbar {
@@ -102,7 +96,7 @@
 }
 
 .navbar-left li:hover{
-    background-color: rgb(249, 249, 250); 
+    background-color: rgb(255, 255, 255); 
     border-radius: 10px;
 
 }
@@ -174,6 +168,7 @@
 
 .jammers-list-name{
     text-align: center;
+  
 }
 
 .join-jam-btn{
@@ -247,4 +242,25 @@
     position: relative;
     bottom: 200px;
     left: 20px;
+}
+
+.invite-jam-btn:hover{
+    background-color: rgb(255, 255, 255); 
+    border-radius: 10px;
+}
+
+.invite-list{
+   display: flex; 
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.invite-list-img{
+    width: 80px;
+    cursor: pointer;
+}
+
+.invite-list-name{
+    position: absolute;
+    font-size: 12px;
 }

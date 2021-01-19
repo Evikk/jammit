@@ -3,20 +3,18 @@
     width: $user-card-width;
     border-radius: 4px;
     justify-content: center;
-    transition: 0.3s;
-
+    border: 2px solid rgba(128, 128, 128, 0.337);
+    transition: all 0.3s ease-in-out;
     .img-wrapper {
         @include aspect-ratio(194, 194);
     }
-    &:hover {
-        position: relative;
-        top: 3px;
+    &:hover{
+        box-shadow: 0 16px 64px 6px rgba(46, 55, 77, 0.318);
         cursor: pointer;
     }
 }
 
 .user-inst-icons-wrapper {
-   
     .user-inst-icon {
         left: 0;
         position: absolute;
