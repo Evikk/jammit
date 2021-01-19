@@ -1,12 +1,14 @@
 // import { useHistory } from "react-router-dom";
 import React, { Component } from 'react'
 import { LoginModal } from './LoginModal'
+import { InviteModal} from  './InviteModal'
 
 
 
 class _JamNavbar extends Component {
     state = {
-        showLoginModal: false
+        showLoginModal: false,
+        showInviteModal: false
     }
     render() {
         let { updateJamGoing, jam, user, isUserAdmin } = this.props;
@@ -17,7 +19,8 @@ class _JamNavbar extends Component {
                     <li>Discussion</li>
                 </div>
                 <div className="navbar-right">
-                    <LoginModal history={this.props.history} showModal={this.state.showLoginModal} />
+                    <LoginModal history={this.props.history} showModal={this.state.showLoginModal}/>
+                    <InviteModal history={this.props.history} following={this.props.user.following} showModal={this.state.showInviteModal} />
                     {!user &&
                         <li><button className="join-jam-btn" onClick={() => this.setState({
                             showLoginModal: true
@@ -33,7 +36,7 @@ class _JamNavbar extends Component {
                         })}>Invite</button></li>}
                     {user && 
                         <li><button className="invite-jam-btn" onClick={() => this.setState({
-                            showLoginModal: true
+                            showInviteModal: true
                         })}>Invite</button></li>}
 
                 </div>

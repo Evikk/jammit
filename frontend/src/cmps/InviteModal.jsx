@@ -1,16 +1,14 @@
 import ReactModal from 'react-modal';
 import React from 'react';
-import { JamUserPreview } from './JamUserPreview'
+import { FriendsInvitePreview } from './InviteFriends'
 
 
-export default class InviteModal extends React.Component {
+export  class InviteModal extends React.Component {
 
     constructor() {
         super();
         this.state = {
             showModal: false
-
-
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -30,6 +28,11 @@ export default class InviteModal extends React.Component {
 
         });
     }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.showModal!==this.state.showModal){
+          this.setState({showModal: nextProps.showModal });
+        }
+      }
     componentDidMount() {
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
@@ -47,8 +50,7 @@ export default class InviteModal extends React.Component {
             }
         };
         return (
-            <div>
-                <button  onClick={this.handleOpenModal}>Invite</button>
+
                 <ReactModal
                     isOpen={this.state.showModal}
                     contentLabel="invite-modal"
@@ -57,15 +59,17 @@ export default class InviteModal extends React.Component {
                     ariaHideApp={false}
                 >
                     <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
+                    <h3>Invite your friends!</h3>
+                    <input type="checkbox" name="select-all-box" id="select-all-box"></input>
+                    <label for="select-all-box">Select All</label>
                     <ul className="following-list-con">
                         {this.props.following.map(function (user, index) {
-                            return <JamUserPreview key={index} user={user} />
+                            return <FriendsInvitePreview key={index} user={user} />
                         })}
 
                     </ul>
-
                 </ReactModal>
-            </div>
+    
         );
     }
 }
