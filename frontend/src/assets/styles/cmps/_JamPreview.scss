@@ -1,8 +1,9 @@
 .jam-card {
+    margin: 20px auto;
     background-color: $clr-card;
     justify-content: space-between;
-    width: 480px;
-    height: 300px;
+    width: $jam-card-width;
+    height: $jam-card-height;
     transition: all 0.3s ease-in-out;
     h2 {
         font-size: 1.5rem;

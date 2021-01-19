@@ -1,29 +1,38 @@
 .user-card {
     background-color: #fff;
-    width: 200px;
+    width: $user-card-width;
     border-radius: 4px;
     justify-content: center;
-    transition: .3s;
-    
+    transition: 0.3s;
+
     .img-wrapper {
-        @include aspect-ratio(194, 194)
+        @include aspect-ratio(194, 194);
     }
-    &:hover{
+    &:hover {
         position: relative;
         top: 3px;
         cursor: pointer;
     }
 }
-.user-inst-icon {
-    left: 0;
-    position: absolute;
-    width: 40px;
-    border-radius: 50%;
-    background-color: rgb(216, 210, 210);
-    border: 1px solid black;
-    bottom: 0;
-}
 
+.user-inst-icons-wrapper {
+   
+    .user-inst-icon {
+        left: 0;
+        position: absolute;
+        width: 40px;
+        border-radius: 50%;
+        background-color: rgb(216, 210, 210);
+        border: 1px solid black;
+        bottom: 0;
+    }
+    *:nth-child(2){
+        left:10%;
+    }
+    *:nth-child(3){
+        left:20%;
+    }
+}
 .user-card-content {
     width: 100%;
     background-color: $clr-card;
@@ -34,7 +43,7 @@
         font-size: rem(16px);
         margin-bottom: 5px;
     }
-    h2{
+    h2 {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

@@ -25,10 +25,12 @@ class _Home extends Component {
       <div className="home">
         <HeroSection/>
         <main className="main-content flex column space-between">
-          <div className="jams section"><h1>Most Popular Jams</h1>
+          <div className="jams section">
+              <h1>Most Popular Jams</h1>
               <JamScroll jams={jams} onJamClick={this.onJamClick}/>
           </div>
-          <div className="jams section"><h1>Upcoming Jams</h1>
+          <div className="jams section">
+              <h1>Upcoming Jams</h1>
               <JamScroll jams={jams} onJamClick={this.onJamClick}/>
           </div>
 
