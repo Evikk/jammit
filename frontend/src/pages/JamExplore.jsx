@@ -232,7 +232,6 @@ class _JamExplore extends Component {
                     ))}
                 </ul>
             </div>
-            {/* <JamList jams={jams} onJamClick={this.onJamClick}/> */}
             </section>
             </>
         );

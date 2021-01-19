@@ -1,7 +1,8 @@
 .jams-list {
-    height: 200px;
+    justify-content: center;
     padding: 10px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    grid-template-rows: repeat(auto-fill,$jam-card-height);
+    grid-template-columns: repeat(auto-fit,$jam-card-width);
+    grid-gap: 30px;
 }

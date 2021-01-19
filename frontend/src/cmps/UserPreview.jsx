@@ -19,7 +19,7 @@ export function UserPreview({ user }) {
             <div className="thumb flex column pos-relative">
                 <div className="img-wrapper flex justify-center">
                     <img className="user-card thumb" src={user.imgUrl} className="userThumb" alt="user-thumbnail"/>
-                    <div className="inst-icons-wrapper">
+                    <div className="user-inst-icons-wrapper">
                         {showIcons()}
                     </div>
                 </div>
