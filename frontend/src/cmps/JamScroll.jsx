@@ -1,54 +1,55 @@
-import React, { Component } from "react";
-import ScrollMenu from "react-horizontal-scrolling-menu";
+import Slider from "react-slick";
 import { JamPreview } from "./JamPreview";
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useHistory } from "react-router";
 
-const Arrow = ({ text, className }) => {
-    return <div className={className}>{text}</div>;
-};
 
-const ArrowLeft = Arrow({ text: <ArrowBackIosIcon/>, className: "arrow-prev" });
-const ArrowRight = Arrow({ text: <ArrowForwardIosIcon/>, className: "arrow-next" });
-
-// const selected = "item1";
-
-export class JamScroll extends Component {
-    state = {
-        menu: null,
-        // selected,
+export function JamScroll({ jams }) {
+    const history = useHistory()
+    if (!jams) return <h2>Loading...</h2>
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 1680,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+            }
+            },
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 860,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     };
-
-    componentDidMount() {
-        const menu = this.props.jams.map((jam) => {
-                return <JamPreview key={jam._id} jam={jam} onJamClick={this.props.onJamClick} />;
-        });
-        this.setState({menu})
+    function onJamClick(jamId) {
+        history.push(`jam/${jamId}`);
     }
-
-    // onSelect = (key) => {
-    //     this.setState({ selected: key });
-    // };
-
-    render() {
-        const { selected, menu} = this.state;
-        const { jams } = this.props;
-        if (!jams) return <h2>Loading...</h2>
-    
-        return (
-            <div>
-                <ScrollMenu
-                    hideArrows={true}
-                    hideSingleArrow={true}
-                    alignCenter={true}
-                    arrowDisabledClass={'scroll-menu-arrow'}
-                    data={menu}
-                    arrowLeft={ArrowLeft}
-                    arrowRight={ArrowRight}
-                    selected={selected}
-                    onSelect={this.onSelect}
+    return (
+        <Slider {...settings}>
+            {jams.map((jam) => (
+                <JamPreview
+                    key={jam._id}
+                    jam={jam}
+                    onJamClick={() => onJamClick(jam._id)}
                 />
-            </div>
-        );
-    }
+            ))}
+        </Slider>
+    );
 }

@@ -10,7 +10,10 @@ import { JamScroll } from "../cmps/JamScroll";
 class _ForYou extends Component {
     
     state = {}
-
+    componentDidMount() {
+        this.props.loadJams()
+        this.props.loadUsers()
+    }
     filterMembersByFollow = () => {
         return this.props.users.filter((user) => {
             return user.followers.find(
@@ -38,7 +41,7 @@ class _ForYou extends Component {
         });
     };
     render() {
-        const { loggedInUser } = this.props;
+        const { loggedInUser, jams } = this.props;
         if (!loggedInUser) return <h2>Loading...</h2>;
         return (
             <div className="for-you-section">
@@ -53,7 +56,7 @@ class _ForYou extends Component {
                         <UserInfo user={loggedInUser} isUserAdmin={true} />
                         <UserTalents user={loggedInUser} isUserAdmin={true} />
                     </div>
-                    
+                    <JamScroll jams={jams}/>
                 </div>
             </div>
         );
