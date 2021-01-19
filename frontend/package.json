@@ -15,11 +15,6 @@
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-<<<<<<< HEAD
-    "react-horizontal-scrolling-menu": "^0.7.8",
-    "react-loader-spinner": "^3.1.14",
-=======
->>>>>>> 4171b2a42fd1624a107afacd2bfe3737244de5a3
     "react-login-modal": "^1.2.1",
     "react-modal": "^3.12.1",
     "react-modal-login": "^1.4.5",
