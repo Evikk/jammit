@@ -1,10 +1,8 @@
-import jamThumb from "../assets/img/jam-thumb.jpg"
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import EventIcon from '@material-ui/icons/Event';
 import {instIcons} from '../assets/img/inst-icons/icons.js'
+import { Link } from "react-router-dom";
 
-
-export function JamPreview({ jam, onJamClick }) {
+export function JamPreview({ jam }) {
 
     function showIcons (){
         return instIcons.map(icon=>{
@@ -21,7 +19,7 @@ export function JamPreview({ jam, onJamClick }) {
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
-        <li className="jam-card flex column" onClick={()=>onJamClick(jam._id)}>
+        <Link to={`/jam/${jam._id}`}><li className="jam-card flex column">
             <div className="thumb-wrapper flex column pos-relative">
                 <img className="jam-thumb" src="https://res.cloudinary.com/dhplco0k4/image/upload/v1610961691/jameet/jam1_cgx6jw.jpg" alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
@@ -57,6 +55,6 @@ export function JamPreview({ jam, onJamClick }) {
                     </div>
                 </div>
             </div>
-        </li>
+        </li></Link> 
     );
 }

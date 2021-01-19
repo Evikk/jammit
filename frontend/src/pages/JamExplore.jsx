@@ -115,10 +115,6 @@ class _JamExplore extends Component {
         });
     }
 
-    onJamClick = (jamId) => {
-        this.props.history.push(`jam/${jamId}`)
-    }
-
     onClose = props => {
         if (this.state.showingInfoWindow) {
           this.setState({
@@ -168,8 +164,6 @@ class _JamExplore extends Component {
         return (
             <>
             <section className="flex explore-container pos-relative">
-                {/* <h1 className="jams-explore-title">Jams In Current Area</h1> */}
-                {/* <JamScroll jams={this.props.jams} onJamClick={this.onJamClick}/> */}
                 <button onClick={()=>{
                     const selectedPlaceCopy = {...selectedPlace}
                     selectedPlaceCopy.position.lat = userPos.position.lat
@@ -233,7 +227,7 @@ class _JamExplore extends Component {
                 </div>
                 <ul className="jams-explore-list">
                     {jams.map((jam) => (
-                        <JamPreview key={jam._id} jam={jam} onJamClick={this.onJamClick}/>
+                        <JamPreview key={jam._id} jam={jam}/>
                     ))}
                 </ul>
             </div>

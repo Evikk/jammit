@@ -17,11 +17,10 @@ export function saveJam(jam, creatingUser) {
     try {
       jam.createdAt = Date.now()
       jam.createdBy = creatingUser
-      jam._id = makeId()
       jam.usersGoing.push(creatingUser)
       console.log(creatingUser);
       
-      await jamService.save(jam)
+      jam = await jamService.save(jam)
       dispatch({ type: 'ADD_JAM', jam })
     } catch (err) {
       console.log('JamActions: err in saveJam', err)
