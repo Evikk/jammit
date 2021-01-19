@@ -1,6 +1,6 @@
-// import { httpService } from './httpService'
+import { httpService } from './httpService'
 // import { storageService } from './asyncStorageService'
-// import userService from './userService'
+import userService from './userService'
 // import { utilService } from './utilService'
 // import { userService } from './userService'
 
@@ -274,23 +274,18 @@ export const jamService = {
 }
 
 function query() {
-    //   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-    //   return httpService.get(`review${queryStr}`)
-    // return storageService.query('review')
-    return jams
+    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=${sortBy}`
+    return httpService.get(`jam`)
 }
 
 function save(jam) {
-    jams.push(jam)
-    console.log('jam', jam);
-    console.log('jams', jams);
-    
+    return httpService.post(`jam`, jam)
 }
 
 function getById(jamId) {
-    return jams.find(jam => jam._id === jamId)
+    // return jams.find(jam => jam._id === jamId)
     // return storageService.get('jam', jamId)
-    //return httpService.get(`jam/${jamId}`)
+    return httpService.get(`jam/${jamId}`)
 }
 
 

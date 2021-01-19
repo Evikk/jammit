@@ -33,6 +33,12 @@
         font-size: rem(14px);
     }
 }
+
+.user-img {
+    @include aspect-ratio(194, 194);
+    width: 100px;
+}
+
 .user-img img {
     border-radius: 50%;
 }
