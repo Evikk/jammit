@@ -3,13 +3,16 @@
     width: 60%;
     margin: 50px auto;
     justify-content: space-between;
-    &*{
-        width: 50%;
-    }
+    
 }
 
 .user-basic-info {
     margin-bottom: 15px;
+}
+
+.user-left-box,
+.user-right-box {
+    width: 100%;
 }
 
 .location-icon {
@@ -37,10 +40,9 @@
 .user-img {
     @include aspect-ratio(194, 194);
     width: 100px;
-}
-
-.user-img img {
-    border-radius: 50%;
+    img {
+        border-radius: 50%;
+    }
 }
 
 .user-location span {
@@ -57,12 +59,10 @@
 
 .reaction-icon {
     color: #606060;
-    // padding-left: 26px;
     cursor: pointer;
 }
 
 .user-about span {
-    // margin-left: 26px;
     width: 60%;
     color: rgb(21, 24, 44);
 }
@@ -75,8 +75,6 @@
     font-family: Helvetica;
     color: white;
     text-align: center;
-    height: 25px;
-    width: 90px;
     border-radius: 2px;
     line-height: 27px;
 }
@@ -108,8 +106,6 @@
 }
 
 .top-card {
-    padding-top: 37px;
-    padding-left: 100px;
     background-color: $clr-container;
     border-radius: 10px;
     padding: 10px;

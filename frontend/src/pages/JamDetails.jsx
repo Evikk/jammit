@@ -16,6 +16,7 @@ import { updateJamGoing, loadJams, saveJam } from '../store/actions/jamActions.j
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
+import Loader from 'react-loader-spinner';
 
 const emptyJam = {
     title: "",
@@ -58,7 +59,7 @@ class _JamDetails extends Component {
         }
     }
 
-    componentWillReceiveProps(props){
+    componentWillReceiveProps(props) {
         if (props.isSubmit) {
             const miniUser = {}
             miniUser._id = this.props.loggedInUser._id
@@ -68,7 +69,7 @@ class _JamDetails extends Component {
             this.props.saveJam(this.state.jam, miniUser)
             this.props.jamSaved()
         }
-        this.setState({jam: props.jam})
+        this.setState({ jam: props.jam })
     }
 
     componentDidUpdate(prevProps) {
@@ -89,7 +90,9 @@ class _JamDetails extends Component {
         const { jam, isEditMode, isUserAdmin } = this.state
         return (
             <section className="jam-details">
-                {!this.state.jam && <div> Loading... </div>}
+                {!this.state.jam && <div className="loader main-content pos-relative">
+                    <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+                </div>}
                 {this.state.jam &&
                     <div className="page-con">
                         <div className="jam-title-img-con">
@@ -103,7 +106,7 @@ class _JamDetails extends Component {
                             </button>}
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
-                        {!this.state.isEditMode &&  <div>
+                        {!this.state.isEditMode && <div>
                             <JamNavbar
                                 history={this.props.history}
                                 user={this.props.loggedInUser}
@@ -116,7 +119,7 @@ class _JamDetails extends Component {
                             <div className="left-page-details">
                                 <div className="details-con">
                                     <h3 className="title-style">Details</h3>
-                                    <p><span className="icon-style"><HourglassEmptyRoundedIcon/></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
+                                    <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length} People going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + this.state.jam.createdBy._id} > {this.state.jam.createdBy.fullname}</Link></span></p>}
                                     <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
@@ -125,27 +128,27 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
-                                   
-                                    </div>
-                                    <div className="tags-jam-list">
+
+                                </div>
+                                <div className="tags-jam-list">
                                     <div className="jam-tags">
                                         <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
                                     </div>
-                                    </div>
-                                  
-                              
-                            
+                                </div>
+
+
+
 
                             </div>
                             <div className="left-page-con">
-                            <div className="location-con">
-                                <h3 className="title-style">Location</h3>
-                                <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
-                            </div>
-                            {!isEditMode && <div className="users-going-con-section">
+                                <div className="location-con">
+                                    <h3 className="title-style">Location</h3>
+                                    <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div>
+                                </div>
+                                {!isEditMode && <div className="users-going-con-section">
                                     <ul className="users-going-con">
                                         {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
                                             return <JamUserPreview key={index} user={user} />
@@ -154,7 +157,7 @@ class _JamDetails extends Component {
                                     </ul>
                                     <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
                                 </div>}
-                                </div>
+                            </div>
                         </div>
                     </div>}
             </section>

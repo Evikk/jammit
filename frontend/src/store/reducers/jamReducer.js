@@ -1,5 +1,6 @@
 const initialState = {
     jams: [],
+    jam: null
   }
   
   export function jamReducer(state = initialState, action = {}) {
@@ -19,14 +20,6 @@ const initialState = {
         return { ...state, jams: action.jams }
       case 'ADD_JAM':
         return { ...state, jams: [...state.jams, action.jam] }
-      case 'REMOVE_REVIEW':
-        return { ...state, reviews: state.reviews.filter(review => review._id !== action.reviewId) }
-      case 'UPDATE_REVIEW':
-        return {
-          ...state,
-          reviews: state.reviews.map(review =>
-            review._id === action.review._id ? action.review : review
-          )}
       default:
         return state
     }

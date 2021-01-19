@@ -3,24 +3,19 @@ import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 import React, { Component } from 'react'
 import { mainNavService } from '../services/mainNavService.js'
-
+import recordlogo from "../assets/img/recordlogo.png"
 class _MainNav extends Component {
 
 
     componentDidMount() {
-        console.log(this.props.location.pathname, 'componentDidMount');
-        console.log(this.props ,'props componentDidMount');
         mainNavService.setHomePageNavStyle()
     }
 
     componentDidUpdate() {
         // let {locationPathName }= this.props.location.pathname
         if( this.props.location.pathname !== '/'){
-            console.log(this.props.location.pathname, 'otherpathname');
             mainNavService.setNavStyle()
         }else{
-            console.log(this.props.location.pathname, 'homepagepathname');
-            console.log(this.props.location, 'homepagepathname');
             mainNavService.setHomePageNavStyle()
         }
     }
@@ -28,17 +23,20 @@ class _MainNav extends Component {
     render() {
         const { loggedInUser } = this.props;
         return (
-            <nav className="navbar">
-                <div className="logo fs30">
-                    <NavLink to="/">Jameet<span className="fs20"> people&music</span></NavLink>
+            <nav className="navbar flex">
+                <div className="nav-links">
+                    <NavLink to="/" className="top-nav-logo"><img src={recordlogo} alt="logo"/></NavLink>
+                    <NavLink to="/search">Jams</NavLink>
+                    <NavLink to="/members">Members</NavLink>
                 </div>
-                <div>
-                    <NavLink to="/search" className="jams-nav-link">Jams</NavLink>
-                    <NavLink to="/members" className="members-nav-link">Members</NavLink>
-                    {loggedInUser && <div className="loggedin-avatar flex fs12">
-                        <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={() => this.props.history.push(`/user/${loggedInUser._id}`)} />
-                    </div>
-                    }
+                <div className="user-nav">
+                    {loggedInUser ? <NavLink to="/user">
+                        <div className="avatar-wrapper">
+                            <img src={loggedInUser.imgUrl} />
+                        </div>
+                    </NavLink>
+                    :
+                    <NavLink to="/login">Login</NavLink>}
                 </div>
             </nav>
         )

@@ -5,6 +5,7 @@ import { loadUsers } from '../store/actions/userActions.js'
 import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
+import Loader from 'react-loader-spinner'
 
 class _Home extends Component {
   state = {
@@ -14,31 +15,32 @@ class _Home extends Component {
     this.props.loadJams()
     this.props.loadUsers()
   }
-  onJamClick = (jamId)=> {
-    this.props.history.push(`jam/${jamId}`)
-  }
+  
 
   render() {
     const { jams, users, loggedInUser } = this.props
-    if (jams.length === 0 || users.length === 0) return <h2>Loading...</h2>
+    if (jams.length === 0 || users.length === 0) 
+    {return <div className="loader main-content pos-relative">
+    <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+</div>}
     return ( 
       <div className="home">
         <HeroSection/>
         <main className="main-content flex column space-between">
           <div className="jams section">
               <h1>Most Popular Jams</h1>
-              <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+              <JamScroll jams={jams} />
           </div>
           <div className="jams section">
               <h1>Upcoming Jams</h1>
-              <JamScroll jams={jams} onJamClick={this.onJamClick}/>
+              <JamScroll jams={jams} />
           </div>
 
           <div className="members-container section">
             <div className="members-list-preview">
               <h1>Featured Members</h1>
               <UserList users={users.filter((user,idx)=>{
-                if (idx < 4) return user
+                if (idx < 4) return user // user.slice
                 })}/>
             </div>
           </div>
