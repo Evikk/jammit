@@ -15,7 +15,7 @@ export function JamPreview({ jam }) {
             if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
         })
     }
-
+    console.log(jam);
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (

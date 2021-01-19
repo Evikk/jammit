@@ -32,7 +32,6 @@ export function UserInfo({user, followToggle, onFollowIconClick, isUserAdmin}) {
                 <ChatRoundedIcon style={{fontSize: 40}}/>
                 {!followToggle ? <FavoriteBorderRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>
                 : <FavoriteRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>}  
-                <AddRoundedIcon onClick={()=>history.push("/jam/create")} style={{fontSize: 40}} />
             </div>}
         </div>
         

@@ -55,10 +55,7 @@
     padding: 20px;
     font-size: 20px;
     line-height: 44px;
-    height: 105vh;
-
-
-   
+    height: 100%;
     p {
         color: #15182c;
         display: flex;
@@ -74,12 +71,9 @@
     margin-top: 10px;
     background-color: white;
     border-radius: 10px;
-    // border-left: 1px solid gainsboro;
-  
     padding: 20px;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
 }
 
 .jam-details-navbar {
