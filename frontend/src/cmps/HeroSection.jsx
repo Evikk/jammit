@@ -4,9 +4,12 @@ export function HeroSection() {
     return (
         <div className="container">
             <div className="hero">
+                    <div className="hero-title">
+                        <p>Make Music.</p> 
+                        <p>Make Friends.</p> 
+                        </div>
                 <div className="hero__image">
                 {/* <div className="hero__image--overlay"></div> */}
-                    <p className="hero-title">Make Music. Make Friends.</p>
                     {/* <p className="hero-subtitle">Search and explore the best jam sessions around!</p> */}
                     <ScrollTo selector={'.main-content'} smooth={true}>
                         <svg className="arrows">

@@ -1,60 +1,80 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadJams } from '../store/actions/jamActions.js'
-import { loadUsers, login } from '../store/actions/userActions.js'
+import { loadUsers } from '../store/actions/userActions.js'
 import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
+import { Link } from 'react-router-dom'
+import { JamList } from '../cmps/JamList.jsx'
 
 class _Home extends Component {
-  state = {
-    upcomingJams: []
-  }
+  state = {}
+
   componentDidMount() {
     this.props.loadJams()
     this.props.loadUsers()
-    this.getUpcomingJams()
   }
 
-  getUpcomingJams = ()=> {
-    const upcomingJams = this.props.jams.filter(jam => {
+  getPopularJams = ()=> {
+    return this.props.jams.filter(jam => {
       const weekFromNow = new Date().getTime()+86400000*7
       return jam.startsAt > Date.now() && jam.startsAt < weekFromNow
     })
-    this.setState({upcomingJams})
+  }
+  getUpcomingJams = () => {
+    return this.props.jams.filter(jam => {
+      const slotsLeft = jam.capacity - jam.usersGoing.length
+      return slotsLeft < 10
+    })
+  }
+
+  getFeaturedMembers = ()=> {
+    return this.props.users.slice(0,3)
   }
 
   render() {
+<<<<<<< HEAD
     const { jams, users, loggedInUser } = this.props
     const { upcomingJams } = this.state
+=======
+    const { jams, users } = this.props
+    const { upcomingJams, popularJams } = this.state
+>>>>>>> dffccce46a19a859b9aa11175604326ac59c07d3
     if (jams.length === 0 || users.length === 0) 
       return  <div className="loader main-content pos-relative">
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
               </div>
+              
+    console.log(upcomingJams, popularJams);          
     return ( 
       <div className="home">
         <HeroSection/>
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
-              <h1>Most Popular Jams</h1>
-              <JamScroll jams={jams} />
+              <div className="title-row">
+                <h1>Most Popular Jams</h1>
+                <Link to="/search">See All</Link>
+              </div>
+              <JamScroll jams={this.getPopularJams()} />
           </div>
           <div className="jams section">
-              <h1>Upcoming This Week</h1>
-              <JamScroll jams={upcomingJams} />
+          <div className="title-row">
+                <h1>Upcoming This Week</h1>
+                <Link to="/search">See All</Link>
+              </div>
+              <JamScroll jams={this.getUpcomingJams()} />
           </div>
-          <div className="jams section">
+          {/* <div className="jams section">
               <h1>Jams</h1>
-              <JamScroll jams={upcomingJams} />
-          </div>
+              <JamList jams={jams} />
+          </div> */}
 
           <div className="members-container section">
             <div className="members-list-preview">
               <h1>Featured Members</h1>
-              <UserList users={users.filter((user,idx)=>{
-                if (idx < 4) return user // user.slice
-                })}/>
+              <UserList users={this.getFeaturedMembers()}/>
             </div>
           </div>
         </main>

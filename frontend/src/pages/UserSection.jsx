@@ -7,6 +7,7 @@ import { UserTalents } from "../cmps/UserProfile/UserTalents";
 import { JamList } from "../cmps/JamList";
 import { UserList } from "../cmps/UserList";
 import { JamCreate } from "./JamCreate";
+import { JamScroll } from "../cmps/JamScroll";
 
 class _UserSection extends Component {
 

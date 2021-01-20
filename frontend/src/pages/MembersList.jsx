@@ -6,12 +6,24 @@ import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import Loader from 'react-loader-spinner';
 
 class _MembersList extends Component {
+    
+    state = {
+        filterBy: {
+            username: ''
+        }
+    }
 
     componentDidMount() {
         this.props.loadUsers()
     }
 
-
+    handleChange = (ev) => {
+        const filterBy = { ...this.state.filterBy };
+        filterBy[ev.target.name] = ev.target.value;
+        this.setState({ filterBy }, ()=> {
+            this.props.loadUsers(this.state.filterBy)
+        });
+    };
 
     render() {
         const { users } = this.props
@@ -24,7 +36,12 @@ class _MembersList extends Component {
                 <div className="search-area flex justify-center">
                     <div className="input-box">
                         <SearchRoundedIcon className="search-icon" />
-                        <input type="text" className="fs18" placeholder="Looking for someone?" />
+                        <input name="username" 
+                                type="text" 
+                                className="fs18" 
+                                placeholder="Looking for someone?" 
+                                name="username"
+                                onChange={this.handleChange}/>
                     </div>
                 </div>
                 <div className="members-container">
