@@ -4,6 +4,7 @@ import { logout } from '../store/actions/userActions.js'
 import React, { Component } from 'react'
 import { mainNavService } from '../services/mainNavService.js'
 import recordlogo from "../assets/img/recordlogo.png"
+import logoM from "../assets/img/logo-m.png"
 class _MainNav extends Component {
 
 
@@ -25,13 +26,13 @@ class _MainNav extends Component {
         return (
             <nav className="navbar flex">
                 <div className="nav-links">
-                    <NavLink to="/" className="top-nav-logo"><img src={recordlogo} alt="logo"/></NavLink>
+                    <NavLink to="/" className="top-nav-logo"><img src={logoM} alt="logo"/></NavLink>
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
                 </div>
                 <div className="user-nav">
-                    {loggedInUser ? <NavLink to="/user">
-                        <div className="avatar-wrapper">
+                    {loggedInUser ? <NavLink className="user-avater-link" to="/user">
+                        <div className="avatar-wrapper pdding">
                             <img src={loggedInUser.imgUrl} />
                         </div>
                     </NavLink>

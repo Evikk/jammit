@@ -12,6 +12,7 @@ module.exports = {
 }
 
 async function query(filterBy = {}) {
+    console.log('zzzz');
     const criteria = _buildCriteria(filterBy)
     try {
         const collection = await dbService.getCollection('user')
@@ -107,9 +108,13 @@ async function add(user) {
 }
 
 function _buildCriteria(filterBy) {
-    const criteria = {}
+    let criteria = {}
+    console.log('@',filterBy);
     if (filterBy.username) {
-        const usernameCriteria = { $regex: filterBy.username, $options: 'i' }
+    console.log('@',filterBy.username);
+        const usernameCriteria = { "$regex": filterBy.username, "$options": 'i' }
+    console.log('@@');
+
         criteria = { username: usernameCriteria }
     }
     if (filterBy.fullname) {

@@ -6,10 +6,11 @@ import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import Loader from 'react-loader-spinner';
 
 class _MembersList extends Component {
-    
+
     state = {
         filterBy: {
-            username: ''
+            username: '',
+            fullname: ''
         }
     }
 
@@ -17,31 +18,61 @@ class _MembersList extends Component {
         this.props.loadUsers()
     }
 
-    handleChange = (ev) => {
-        const filterBy = { ...this.state.filterBy };
-        filterBy[ev.target.name] = ev.target.value;
-        this.setState({ filterBy }, ()=> {
-            this.props.loadUsers(this.state.filterBy)
-        });
-    };
+    // handleChange = (ev) => {
+    //     const filterBy = { ...this.state.filterBy };
+    //     filterBy[ev.target.name] = ev.target.value;
+    //     this.setState({ filterBy }, ()=> {
+    //         this.props.loadUsers(this.state.filterBy)
+    //     });
+    // };
+    onHandleInputChange = ({ target }) => {
+        const field = target.name
+        // let value = (target.type === 'number') ? +target.value : target.value
+
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                filterBy: {
+                    ...prevState.filterBy,
+                    [field]: target.value
+                }
+            }
+        }, () => {
+            const { filterBy } = this.state
+            this.props.loadUsers(filterBy)
+        })
+    }
+
+
+
+    onSetFilter = (ev) => {
+        ev.preventDefault();
+        // const { filterBy } = this.state
+        this.props.loadUsers(this.state.filterBy)
+    }
 
     render() {
         const { users } = this.props
+        const { username, fullname } = this.state.filterBy
         if (!users) {
             return <div className="loader main-content pos-relative">
-              <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
-           </div>}
+                <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+            </div>
+        }
         return (
             <section>
                 <div className="search-area flex justify-center">
                     <div className="input-box">
                         <SearchRoundedIcon className="search-icon" />
-                        <input name="username" 
-                                type="text" 
-                                className="fs18" 
-                                placeholder="Looking for someone?" 
-                                name="username"
-                                onChange={this.handleChange}/>
+                        <form onSubmit={this.onSetFilter}>
+                            <input name="username"
+                                type="text"
+                                id="username"
+                                className="fs18"
+                                placeholder="Looking for someone?"
+                                value={username}
+                                onChange={this.onHandleInputChange} />
+                        </form>
                     </div>
                 </div>
                 <div className="members-container">
@@ -56,6 +87,7 @@ const mapStateToProps = state => {
     return {
         //   jams: state.jamModule.jams,
         users: state.userModule.users,
+        filterBy: state.userModule.filterBy
         // loggedInUser: state.userModule.loggedInUser
     }
 }

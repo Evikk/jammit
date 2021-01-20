@@ -3,7 +3,11 @@ if (sessionStorage.loggedinUser) localLoggedinUser = JSON.parse(sessionStorage.l
 
 const initialState = {
   loggedInUser: localLoggedinUser,
-  users: []
+  users: [],
+  filterBy:{
+    username:'',
+    fullname:''
+  }
 }
 
 export function userReducer(state = initialState, action = {}) {
@@ -16,7 +20,9 @@ export function userReducer(state = initialState, action = {}) {
         users: state.users.filter(user => user._id !== action.userId)
       }
     case 'SET_USERS':
+      console.log("action.users ",action.users );
       return { ...state, users: action.users }
+    
     case 'SET_SCORE':
       return { ...state, loggedInUser: { ...state.loggedInUser, score: action.score } }
     default:
