@@ -140,6 +140,8 @@
 }
 
 .jammers img {
+    padding: 10px;
+    height: 100px;
     width: 100px;
     cursor: pointer;
     border-radius: 50%;
@@ -257,7 +259,9 @@
 }
 
 .invite-list-img{
-    width: 80px;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
     cursor: pointer;
     border-radius: 50%;
 }
