@@ -94,8 +94,6 @@ class _JamExplore extends Component {
     }
 
     onMarkerClick = (props, marker) => {
-        console.log('props', props);
-        
         this.setState({
             activeMarker: marker,
             showingInfoWindow: true,

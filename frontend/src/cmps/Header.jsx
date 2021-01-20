@@ -11,7 +11,6 @@ class _Header extends Component {
 
     render() {
         const {loggedInUser} = this.props;
-        console.log(loggedInUser,'logdinuser')
         return <header>
             
             <div className="logo fs40">

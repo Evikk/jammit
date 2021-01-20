@@ -15,13 +15,12 @@ export function JamPreview({ jam }) {
             if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
         })
     }
-    console.log(jam);
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
         <Link to={`/jam/${jam._id}`}><li className="jam-card flex column">
             <div className="thumb-wrapper flex column pos-relative">
-                <img className="jam-thumb" src="https://res.cloudinary.com/dhplco0k4/image/upload/v1610961691/jameet/jam1_cgx6jw.jpg" alt="jam-thumbnail"/>
+                <img className="jam-thumb" src={jam.imgUrl} alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
                     {showIcons()}
                 </div>
