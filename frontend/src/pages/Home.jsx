@@ -49,14 +49,14 @@ class _Home extends Component {
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
               <div className="title-row">
-                <h1>Most Popular Jams</h1>
+                <h1 className="staatliches">Most Popular Jams</h1>
                 <Link to="/search">See All</Link>
               </div>
               <JamScroll jams={this.getPopularJams()} />
           </div>
           <div className="jams section">
           <div className="title-row">
-                <h1>Upcoming This Week</h1>
+                <h1 className="staatliches">Upcoming This Week</h1>
                 <Link to="/search">See All</Link>
               </div>
               <JamScroll jams={this.getUpcomingJams()} />
@@ -68,7 +68,7 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="members-list-preview">
-              <h1>Featured Members</h1>
+              <h1 className="staatliches">Featured Members</h1>
               <UserList users={this.getFeaturedMembers()}/>
             </div>
           </div>
