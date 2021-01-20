@@ -33,7 +33,7 @@ export function saveJam(jam, creatingUser) {
 export function updateJamGoing(jam, user, isGoing) {
   return async dispatch => {
     try {
-     jamService.updateJamGoing(jam._id, user._id, isGoing);
+     jamService.updateJamGoing(jam._id, user, isGoing);
       if (isGoing) {
         dispatch({ type: 'UPDATE_JAM_IS_GOING', data:  {jam: jam, user: user} });
       } else {
