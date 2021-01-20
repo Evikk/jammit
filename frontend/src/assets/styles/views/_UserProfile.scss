@@ -29,10 +29,10 @@
     gap: 5px;
     * {
         border-radius: 4px;
-        background-color: #e9bd5b;
+        background-color:#bb92c5;
         padding: 3px;
-        color: black;
-        border: 1px solid grey;
+        color: rgb(255, 255, 255);
+        // border: 1px solid grey;
         font-size: rem(14px);
     }
 }
@@ -92,13 +92,16 @@
 }
 
 .followers img:nth-child(2) {
-    left: 9%;
+    left: 12%;
+    z-index: 1;
 }
 .followers img:nth-child(3) {
-    left: 18%;
+    left: 22%;
+    z-index: 2;
 }
 .followers img {
     position: absolute;
+    width: 10%;
     width: 60px;
     display: block;
     bottom: 10px;

@@ -28,7 +28,7 @@ class _Home extends Component {
   render() {
     const { jams, users, loggedInUser } = this.props
     const { upcomingJams } = this.state
-    if (jams.length === 0 || users.length === 0 || upcomingJams.length === 0) 
+    if (jams.length === 0 || users.length === 0) 
       return  <div className="loader main-content pos-relative">
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
               </div>
