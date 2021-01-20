@@ -18,8 +18,9 @@ window.userService = userService
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
 
-function getUsers() {
-    return httpService.get(`user`)
+function getUsers(filterBy) {
+    console.log(filterBy);
+    return httpService.get(`user`,filterBy)
 }
 
 function getById(userId) {

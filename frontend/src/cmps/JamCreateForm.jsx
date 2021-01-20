@@ -26,9 +26,7 @@ export class JamCreateForm extends Component {
     handleTime = (ev) => {
         if (ev.target.name === 'date') this.state.time.splice(0, 1, ev.target.value)
         if (ev.target.name === 'time') this.state.time.splice(1, 1, ev.target.value)
-        console.log(...this.state.time);
         const parsedTime = Date.parse(...this.state.time)
-        console.log(parsedTime);
         const jamCopy = { ...this.state.jam };
         jamCopy.startsAt = parsedTime
         this.setState({jam: jamCopy})
@@ -59,7 +57,6 @@ export class JamCreateForm extends Component {
 
     render() {
         const { jam } = this.state;
-        // console.log(jam);
         return (
             <div className="create-form-container">
                 <h1>Create New Jam</h1>

@@ -7,6 +7,7 @@ import { UserTalents } from "../cmps/UserProfile/UserTalents";
 import { JamList } from "../cmps/JamList";
 import { UserList } from "../cmps/UserList";
 import { JamCreate } from "./JamCreate";
+import { JamScroll } from "../cmps/JamScroll";
 
 class _UserSection extends Component {
 
@@ -78,9 +79,9 @@ class _UserSection extends Component {
                     </div>
                    {activeTab === 'events' && <div>
                         <h1>Jams Without {loggedInUser.talents[0]}</h1>
-                        <JamList jams={this.filterJamsByInst()} />
+                        <JamScroll jams={this.filterJamsByInst()} />
                         <h1>Jams Around {loggedInUser.location.region} Region</h1>
-                        <JamList jams={this.filterJamsByRegion()} />
+                        <JamScroll jams={this.filterJamsByRegion()} />
                     </div>}
                     {activeTab === 'members' && <div>
                         <h1>Members You Follow</h1>

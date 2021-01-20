@@ -52,7 +52,6 @@ class _JamDetails extends Component {
         }
         else {
             const jam = await jamService.getById(this.props.match.params.id);
-            console.log(jam);
             this.setState({ jam }, () => {
                 this.checkIfUserHost()
             })

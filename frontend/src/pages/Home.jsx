@@ -6,6 +6,7 @@ import { UserList } from '../cmps/UserList.jsx'
 import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
+import { Link } from 'react-router-dom'
 
 class _Home extends Component {
   state = {
@@ -28,7 +29,7 @@ class _Home extends Component {
   render() {
     const { jams, users, loggedInUser } = this.props
     const { upcomingJams } = this.state
-    if (jams.length === 0 || users.length === 0 ) 
+    if (jams.length === 0 || users.length === 0) 
       return  <div className="loader main-content pos-relative">
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
               </div>
@@ -37,13 +38,19 @@ class _Home extends Component {
         <HeroSection/>
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
-              <h1>Most Popular Jams</h1>
+              <div className="title-row">
+                <h1>Most Popular Jams</h1>
+                <Link to="/search">See All</Link>
+              </div>
               <JamScroll jams={jams} />
           </div>
-          <div className="jams section">
-              <h1>Upcoming This Week</h1>
+          {upcomingJams.length > 0 && <div className="jams section">
+          <div className="title-row">
+                <h1>Upcoming This Week</h1>
+                <Link to="/search">See All</Link>
+              </div>
               <JamScroll jams={upcomingJams} />
-          </div>
+          </div>}
           <div className="jams section">
               <h1>Jams</h1>
               <JamScroll jams={upcomingJams} />
