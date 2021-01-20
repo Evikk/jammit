@@ -8,7 +8,7 @@ export const jamService = {
     query,
     getById,
     updateJamGoing,
-    save
+    // save
 }
 
 function query() {
@@ -17,9 +17,9 @@ function query() {
     // return jams;
 }
 
-function save(jam) {
-    return httpService.post(`jam`, jam)
-}
+// function save(jam) {
+//     return httpService.post(`jam`, jam)
+// }
 
 function getById(jamId) {
     // return jams.find(jam => jam._id === jamId)

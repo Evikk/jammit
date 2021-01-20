@@ -33,16 +33,17 @@
     }
     }
     .hero-title {
-        color: #fff;
-        font-family: Source-Sans;
-        font-size: 5.5rem;
+        color: #000;
+        font-family: 'Special Elite', cursive;
+        font-size: 5.8rem;
         text-align: center;
         z-index: 2;
-        font-family: 'Quicksand', sans-serif;
-        p {
-            background-color: cadetblue;
+        p,span {
+            background-color: rgba(255, 255, 255, 0.671);
             width: fit-content;
             margin: auto;
+            padding: 16px 16px 0px 16px;
+            margin-top: 14px;
         }
     }
 }
