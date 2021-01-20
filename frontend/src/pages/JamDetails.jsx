@@ -13,6 +13,7 @@ import { JamNavbar } from '../cmps/JamDetailsNavbar';
 import JamGoingListModal from '../cmps/JamGoingModal';
 import { connect } from 'react-redux';
 import { updateJamGoing, loadJams, saveJam } from '../store/actions/jamActions.js';
+import {StaticMap} from '../cmps/StaticMap'
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
@@ -65,7 +66,7 @@ class _JamDetails extends Component {
             miniUser.fullname = this.props.loggedInUser.fullname
             miniUser.imgUrl = this.props.loggedInUser.imgUrl
             miniUser.playing = this.props.loggedInUser.talents
-            this.props.saveJam(this.state.jam, miniUser)
+            // this.props.saveJam(this.state.jam, miniUser)
             this.props.jamSaved()
         }
         this.setState({ jam: props.jam })
@@ -93,9 +94,9 @@ class _JamDetails extends Component {
                     <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
                 </div>}
                 {this.state.jam &&
-                    <div className="page-con">
-                        <div className="jam-title-img-con">
-                            
+                    <div className="page-con main-container">
+                        <div className="jam-top full" >
+                             <img className="jam-title-img-con full" src={this.state.jam.imgUrl}/>
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         {!this.state.isEditMode && <div>
@@ -129,7 +130,8 @@ class _JamDetails extends Component {
                             <div className="left-page-con">
                                 <div className="location-con">
                                     <h3 className="title-style">Location</h3>
-                                    <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div>
+                                    {/* <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div> */}
+                                    <div><StaticMap/></div>
                                 </div>
                                 {!isEditMode && <div className="users-going-con-section">
                                     <ul className="users-going-con">
