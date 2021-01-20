@@ -44,7 +44,7 @@ export function JamPreview({ jam }) {
                     </ul>
                     <div className="going-wrapper flex">
                         <div>
-                            <p><LocationOnOutlinedIcon/>{jam.location.city}</p>
+                            <p><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>
                                 {jam.usersGoing.length}/{jam.capacity} Slots Free
