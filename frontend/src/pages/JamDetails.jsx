@@ -4,8 +4,7 @@ import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
-import HomeIcon from '@material-ui/icons/Home';
-import { MapContainer } from '../cmps/MapContainer';
+// import { MapContainer } from '../cmps/MapContainer';
 import { JamUserPreview } from '../cmps/JamUserPreview';
 import { utilService } from '../services/utilService';
 import { Link } from 'react-router-dom';
@@ -96,7 +95,9 @@ class _JamDetails extends Component {
                 {this.state.jam &&
                     <div className="page-con main-container">
                         <div className="jam-top full" >
-                             <img className="jam-title-img-con full" src={this.state.jam.imgUrl}/>
+                             <div className="jam-image" style={{
+                                 backgroundImage: 'url('+ this.state.jam.imgUrl +')'                     
+                             }} ></div>
                             <h1 className="jam-title">{this.state.jam.title}</h1>
                         </div>
                         {!this.state.isEditMode && <div>
@@ -131,7 +132,7 @@ class _JamDetails extends Component {
                                 <div className="location-con">
                                     <h3 className="title-style">Location</h3>
                                     {/* <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div> */}
-                                    <div><StaticMap/></div>
+                                    <div><StaticMap lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
                                 </div>
                                 {!isEditMode && <div className="users-going-con-section">
                                     <ul className="users-going-con">

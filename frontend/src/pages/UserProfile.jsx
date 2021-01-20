@@ -7,18 +7,21 @@ import { JamScroll } from '../cmps/JamScroll'
 import { UserInfo } from '../cmps/UserProfile/UserInfo'
 import { UserTalents } from '../cmps/UserProfile/UserTalents'
 import Loader from 'react-loader-spinner'
+import { JamList } from "../cmps/JamList";
+import { UserList } from "../cmps/UserList";
+
 
 class _UserProfile extends Component {
 
   state = {
     user: null,
     currUser: false,
-    followToggle:false,
+    followToggle: false,
     userJams: []
   }
 
-  onFollowIconClick =()=>{
-    this.setState({followToggle: !this.state.followToggle})
+  onFollowIconClick = () => {
+    this.setState({ followToggle: !this.state.followToggle })
   }
 
   async componentDidMount() {
@@ -26,7 +29,7 @@ class _UserProfile extends Component {
     this.setState({ user })
     this.props.loadJams()
   }
-  
+
   getUserJams = () => {
     return this.props.jams.filter(jam => {
       return jam.usersGoing.find(userGoing => {
@@ -38,27 +41,44 @@ class _UserProfile extends Component {
 
 
   render() {
-    const { user, followToggle } = this.state
-    const { jams } = this.props
-   if (jams.length === 0 || !user) {
-     return <div className="loader main-content pos-relative">
-       <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
-    </div>}
+    const { user, followToggle } = this.state;
+    const { jams } = this.props;
+    if (jams.length === 0 || !user) {
+      return <div className="loader main-content pos-relative">
+        <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+      </div>
+    }
     return (
-      <main className="main-content">
-        <section className="user-box flex">
-          <UserInfo 
-            user={user} 
-            followToggle={followToggle} 
-            onFollowIconClick={this.onFollowIconClick}
-          />
-          <UserTalents user={user}/>
+      // <main className="main-content">
+      //   <section className="user-box flex">
+      //     <UserInfo 
+      //       user={user} 
+      //       followToggle={followToggle} 
+      //       onFollowIconClick={this.onFollowIconClick}
+      //     />
+      //     <UserTalents user={user}/>
+      //    </section>
+      //   {this.getUserJams().length > 0 && <div className="jams section">
+      //         <h1>Jams Attending</h1>
+      //         <JamScroll jams={this.getUserJams()}/>
+      //   </div>}
+      // </main>
+      <main className="main-content user-section flex">
+        <section className="right-side user-details-aside flex column">
+            <UserInfo user={user}
+              followToggle={followToggle}
+              onFollowIconClick={this.onFollowIconClick} />
+            <UserTalents user={user} />
         </section>
-        {this.getUserJams().length > 0 && <div className="jams section">
+        <section className="toolbar-left left-side">
+          <div>
+            {this.getUserJams().length > 0 && <div className="jams section">
               <h1>Jams Attending</h1>
-              <JamScroll jams={this.getUserJams()}/>
-        </div>}
-      </main>
+              <JamScroll jams={this.getUserJams()} />
+            </div>}
+          </div>
+        </section>
+      </main >
     )
   }
 }

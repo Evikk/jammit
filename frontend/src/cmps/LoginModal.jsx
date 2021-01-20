@@ -58,7 +58,7 @@ export  class LoginModal extends React.Component {
            shouldCloseOnEsc={true}
            ariaHideApp={false}
            >
-          <button onClick={this.handleCloseModal}>X</button>
+          <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
           <LoginSignup history={this.props.history}/>
         </ReactModal>
 

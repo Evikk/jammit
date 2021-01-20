@@ -48,7 +48,9 @@ export  class InviteModal extends React.Component {
                 marginRight: '-50%',
                 transform: 'translate(-50%, -50%)',
                 width: '400px',
-                height: '400px'
+                height: '400px',
+             
+
             }
         };
         return (
@@ -64,12 +66,15 @@ export  class InviteModal extends React.Component {
                     <h3>Invite your friends!</h3>
                     <input type="checkbox" name="select-all-box" id="select-all-box"></input>
                     <label for="select-all-box">Select All</label>
+                    <div className="following-friends-list">
+                   
                     <ul className="following-list-con">
                         {this.props.following.map(function (user, index) {
                             return <FriendsInvitePreview key={index} user={user} />
                         })}
 
                     </ul>
+                    </div>
                 </ReactModal>
     
         );
