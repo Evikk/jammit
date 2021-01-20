@@ -66,7 +66,7 @@ class _JamDetails extends Component {
             miniUser.fullname = this.props.loggedInUser.fullname
             miniUser.imgUrl = this.props.loggedInUser.imgUrl
             miniUser.playing = this.props.loggedInUser.talents
-            this.props.saveJam(this.state.jam, miniUser)
+            // this.props.saveJam(this.state.jam, miniUser)
             this.props.jamSaved()
         }
         this.setState({ jam: props.jam })

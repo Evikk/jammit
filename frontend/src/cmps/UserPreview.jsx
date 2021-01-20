@@ -5,11 +5,11 @@ import {instIcons} from '../assets/img/inst-icons/icons.js'
 export function UserPreview({ user }) {
 
     function showIcons() {
-        return instIcons.map(icon=>{
+        return instIcons.map((icon, idx)=>{
             const talent = user.talents.find(talent=>{
                 return (talent === Object.keys(icon)[0])
             })
-            if (talent) return <img className="user-inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
+            if (talent) return <img key={idx} className="user-inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
         })
     }
 

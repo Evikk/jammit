@@ -15,7 +15,7 @@ async function getUsers(req, res) {
     console.log('req get users',req.query);
     try {
         const filterBy = {
-            username: req.query?.username || '',
+            username: req.query ?.username || '',
         }
         const users = await userService.query(filterBy)
         res.send(users)

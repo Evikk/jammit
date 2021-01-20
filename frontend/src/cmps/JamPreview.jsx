@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 export function JamPreview({ jam }) {
 
     function showIcons (){
+
         return instIcons.map(icon=>{
             const user = jam.usersGoing.find(user => {
+                console.log(jam, user.playing);
                 return user.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
@@ -25,31 +27,27 @@ export function JamPreview({ jam }) {
                     {showIcons()}
                 </div>
             </div>
+            <h2>{jam.title}</h2>
             <div className="jam-card-content flex">
                 <div className="date-wrapper">
                     <div className="date-month">
                         {new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(jam.startsAt))}
                     </div>
                     <div className="date-day">
+                        
                         {new Date(jam.startsAt).toLocaleString('he-IL',{day: '2-digit'})}
                     </div>
                 </div>
-                <div className="jam-details-wrapper">
-                    <h2>{jam.title}</h2>
-                
+                <div className="jam-details-wrapper">         
                     <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                         return <li key={idx}>{tag}</li> })}
                     </ul>
-                
-                    <div>
-                        <p><LocationOnIcon/>{jam.location.city}</p>
-                    </div>
                     <div className="going-wrapper flex">
-                        <span>
-                            {jam.usersGoing.length} People Are Going
-                        </span>
-                        <span className={slotsLeft < 10 ? 'red' : 'green'}>
-                              {slotsLeft} Slots Left
+                        <div>
+                            <p><LocationOnIcon/>{jam.location.city}</p>
+                        </div>
+                        <span className={slotsLeft < 5 ? 'red' : 'green'}>
+                                {jam.usersGoing.length}/{jam.capacity} Slots Free
                         </span>
                     </div>
                 </div>

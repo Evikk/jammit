@@ -13,7 +13,7 @@ function setHomePageNavStyle() {
 
             if (prevScrollpos > currentScrollPos && currentScrollPos > 0) {
                 document.querySelector('.navbar').style.top = "0";
-                document.querySelector('.navbar').style.backgroundColor = "#ffffff";
+                document.querySelector('.navbar').style.backgroundColor = "#ffffff9c";
             }
             else if (currentScrollPos === 0) {
                 document.querySelector('.navbar').style.top = "0";
@@ -21,7 +21,7 @@ function setHomePageNavStyle() {
 
             } else {
                 document.querySelector('.navbar').style.top = "-82px";
-                document.querySelector('.navbar').style.backgroundColor = "#ffffff";
+                document.querySelector('.navbar').style.backgroundColor = "##ffffff9c";
             }
             prevScrollpos = currentScrollPos;
         }

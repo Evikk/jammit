@@ -79,9 +79,9 @@ class _UserSection extends Component {
                     </div>
                    {activeTab === 'events' && <div>
                         <h1>Jams Without {loggedInUser.talents[0]}</h1>
-                        <JamScroll jams={this.filterJamsByInst()} />
+                        <JamList jams={this.filterJamsByInst()} />
                         <h1>Jams Around {loggedInUser.location.region} Region</h1>
-                        <JamScroll jams={this.filterJamsByRegion()} />
+                        <JamList jams={this.filterJamsByRegion()} />
                     </div>}
                     {activeTab === 'members' && <div>
                         <h1>Members You Follow</h1>
