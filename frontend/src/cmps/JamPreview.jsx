@@ -1,7 +1,7 @@
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {instIcons} from '../assets/img/inst-icons/icons.js'
 import { Link } from "react-router-dom";
-
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 export function JamPreview({ jam }) {
 
     function showIcons (){
@@ -44,7 +44,7 @@ export function JamPreview({ jam }) {
                     </ul>
                     <div className="going-wrapper flex">
                         <div>
-                            <p><LocationOnIcon/>{jam.location.city}</p>
+                            <p><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>
                                 {jam.usersGoing.length}/{jam.capacity} Slots Free
