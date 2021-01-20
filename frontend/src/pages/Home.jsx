@@ -35,13 +35,8 @@ class _Home extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const { jams, users, loggedInUser } = this.props
-    const { upcomingJams } = this.state
-=======
     const { jams, users } = this.props
     const { upcomingJams, popularJams } = this.state
->>>>>>> dffccce46a19a859b9aa11175604326ac59c07d3
     if (jams.length === 0 || users.length === 0) 
       return  <div className="loader main-content pos-relative">
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
