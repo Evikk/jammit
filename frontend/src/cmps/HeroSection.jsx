@@ -1,6 +1,6 @@
 import ScrollTo from "react-scroll-into-view";
 import recordlogo from "../assets/img/recordlogo.png"
-
+import { Link } from "react-router-dom"
 export function HeroSection() {
     return (
         <div className="container">
@@ -14,7 +14,7 @@ export function HeroSection() {
                             <p>Make Friends.</p> 
                     </div>
                     <div className="call-to-action">
-                        <button>Let's Find A Jam</button>
+                        <button><Link to="/jams">Let's Find A Jam</Link></button>
                     </div>
 
                 </div>
