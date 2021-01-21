@@ -113,10 +113,6 @@ class _JamExplore extends Component {
         this.setState({isPopupShow: true, selectedJam: props.jam})
     }
 
-    showPopupJam = (jam)=>{
-
-    }
-
     onJamCenter = (jamId) => {
         const marker  = this.state.markers.find(marker => {
             return marker.key === jamId
@@ -213,10 +209,9 @@ class _JamExplore extends Component {
                 marker={this.state.activeMarker}
                 visible={this.state.showingInfoWindow}
                 onClose={this.onClose}
-              >
+                >
                 <div>
                     <h2>{this.state.selectedPlace.title}</h2>
-                    <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
                 </div>
                 </InfoWindow>
             </Map>
