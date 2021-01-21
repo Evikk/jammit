@@ -19,40 +19,40 @@ header {
     }
 }
 
-nav {
-    font-family: Source-Sans;
-    width: 100%;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+// nav {
+//     font-family: Source-Sans;
+//     width: 100%;
+//     padding: 0;
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
     
-    a {
-        padding: 0 10px;
-        color: whitesmoke;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        border-bottom: 5px solid transparent;
-        &:hover{
-            border-bottom: 5px solid white;
-            color: white;
-        }
-    }
+//     a {
+//         padding: 0 10px;
+//         color: whitesmoke;
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         border-bottom: 5px solid transparent;
+//         &:hover{
+//             border-bottom: 5px solid white;
+//             color: white;
+//         }
+//     }
     
-}
+// }
 
-nav .active {
-    color: rgb(255, 253, 249);
-}
+// nav .active {
+//     color: rgb(255, 253, 249);
+// }
 
-.nav-right-side {
-    width: 25%;
-}
+// .nav-right-side {
+//     width: 25%;
+// }
 
-.user-greet {
-    grid-gap: 5px;
-}
+// .user-greet {
+//     grid-gap: 5px;
+// }
 // .logo{
 //     font-family: 'Monoton', cursive;
 // }

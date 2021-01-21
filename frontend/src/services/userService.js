@@ -20,7 +20,8 @@ window.userService = userService
 
 function getUsers(filterBy) {
     console.log(filterBy);
-    return httpService.get(`user`,filterBy)
+    var queryStr = (!filterBy) ? '' : `?username=${filterBy.username}`
+    return httpService.get(`user`+queryStr)
 }
 
 function getById(userId) {

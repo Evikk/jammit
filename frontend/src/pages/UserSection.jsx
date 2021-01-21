@@ -59,7 +59,7 @@ class _UserSection extends Component {
         const { jams, loggedInUser } = this.props
         const { activeTab } = this.state
         if (jams.length === 0 ) return <h2>loading...</h2>
-        return (<>
+        return (
             
             <main className="main-content user-section flex">
                 <div className="user-details-aside flex column">
@@ -101,7 +101,7 @@ class _UserSection extends Component {
                     }
                 </div>
           </main>
-        </>)
+       )
     }
 }
 const mapStateToProps = (state) => {

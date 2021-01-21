@@ -10,14 +10,14 @@ export function UserInfo({user, followToggle, onFollowIconClick, isUserAdmin}) {
     const history = useHistory()
     return (
         <div className="user-left-box flex column">
-            <div className="user-basic-info flex">
+            <div className="user-basic-info">
                 <div className="user-img">
                     <img src={user.imgUrl} />
                 </div>
                 <div className="user-tags-name flex column">
                     <span className="user-stage-name fs30">{user.username}</span>
                     <div className="user-location">
-                    <LocationOnOutlinedIcon className="location-icon" />
+                    <LocationOnOutlinedIcon style={{ fontSize: 15 }} className="location-icon" />
                     <span>{user.location.city}</span>
                     </div>
                     <ul className="user-tags flex">{user.tags.map((tag, idx) => {

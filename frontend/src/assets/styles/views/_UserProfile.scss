@@ -3,7 +3,6 @@
     width: 60%;
     margin: 50px auto;
     justify-content: space-between;
-    
 }
 
 .user-basic-info {
@@ -13,6 +12,10 @@
 .user-left-box,
 .user-right-box {
     width: 100%;
+}
+
+.user-left-box {
+    padding: 10px;
 }
 
 .location-icon {
@@ -29,11 +32,11 @@
     gap: 5px;
     * {
         border-radius: 4px;
-        background-color:#bb92c5;
+        background-color: #5f9ea0;
         padding: 3px;
         color: rgb(255, 255, 255);
         // border: 1px solid grey;
-        background-color: #fda3a3;
+        background-color: #5f9ea0;
         padding: 3px;
         color: white;
         border: transparent;
@@ -86,13 +89,16 @@
 .followers {
     position: relative;
     display: inline-block;
-    margin-top: 27px;
+    margin-top: 10px;
     background-color: rgb(249, 249, 250);
     border-radius: 10px;
-    margin-top: 50px;
     display: flex;
     position: relative;
     height: 100px;
+}
+
+.followers h1 {
+    font-size: 1.2rem;
 }
 
 .followers img:nth-child(2) {
@@ -113,25 +119,26 @@
 }
 
 .top-card {
-    background-color: $clr-container;
+    // background-color: $clr-container;
+    background-color: #f9f9fa;
     border-radius: 10px;
     padding: 10px;
     position: relative;
     h1 {
-        text-align: center;
-        font-size: 2rem;
+        // text-align: center;
+        font-size: 1.2rem;
     }
 }
 
 .bottom-card {
     min-height: 120px;
     padding-top: 37px;
-    background-color: $clr-container;
+    // background-color: $clr-container;
     border-radius: 10px;
     padding: 10px;
     position: relative;
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -144,5 +151,49 @@
     }
 }
 .user-talents ul li {
-    font-size: 1.3rem;
+    font-size: 0.875rem;
+}
+.user-nav .user-avater-link {
+    padding: 0 !important;
+}
+
+.attending-list {
+    width: 68vw;
+    height: 87vh;
+}
+
+.following {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    background-color: rgb(249, 249, 250);
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    height: 100px;
+}
+
+.following h1 {
+    font-size: 1.2rem;
+}
+
+.following img:nth-child(2) {
+    left: 12%;
+    z-index: 1;
+}
+.following img:nth-child(3) {
+    left: 22%;
+    z-index: 2;
+}
+
+.following img {
+    position: absolute;
+    width: 10%;
+    width: 60px;
+    display: block;
+    bottom: 10px;
+    border-radius: 50%;
+}
+
+.jam-attending-section {
 }

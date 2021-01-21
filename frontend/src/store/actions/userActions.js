@@ -4,6 +4,7 @@ import { userService } from '../../services/userService'
 // Work asynchronously with the service and dispatch actions to the reducers 
 
 export function loadUsers(filterBy) {
+  console.log('filterBy ',filterBy);
   return async dispatch => {
     try {
       dispatch({ type: 'LOADING_START' })
