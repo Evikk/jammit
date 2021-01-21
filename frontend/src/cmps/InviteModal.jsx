@@ -8,7 +8,8 @@ export  class InviteModal extends React.Component {
     constructor() {
         super();
         this.state = {
-            showModal: false
+            showModal: false,
+            selectAll: false
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -47,14 +48,14 @@ export  class InviteModal extends React.Component {
                 bottom: 'auto',
                 marginRight: '-50%',
                 transform: 'translate(-50%, -50%)',
-                width: '400px',
-                height: '400px',
+                width: '550px',
+                height: '450px'
+                
              
 
             }
         };
         return (
-
                 <ReactModal
                     isOpen={this.state.showModal}
                     contentLabel="invite-modal"
@@ -63,18 +64,22 @@ export  class InviteModal extends React.Component {
                     ariaHideApp={false}
                 >
                     <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
-                    <h3>Invite your friends!</h3>
-                    <input type="checkbox" name="select-all-box" id="select-all-box"></input>
-                    <label for="select-all-box">Select All</label>
+                    <div className="invite-modal-title">
+                    <h2>Invite Your Friends!</h2>
+                    </div>
+                    {/* <input type="checkbox" name="select-all-box" id="select-all-box"></input>
+                    <label for="select-all-box">Select All</label> */}
+                    <button className="select-all-btn" onClick={() => this.setState({selectAll: true})}>Select All</button>
                     <div className="following-friends-list">
                    
                     <ul className="following-list-con">
                         {this.props.following.map(function (user, index) {
-                            return <FriendsInvitePreview key={index} user={user} />
-                        })}
+                            return <FriendsInvitePreview key={index} isChecked={this.state.selectAll} user={user} />
+                        }.bind(this))}
 
                     </ul>
                     </div>
+                    <button className="send-invites-btn">Send Invites</button>
                 </ReactModal>
     
         );

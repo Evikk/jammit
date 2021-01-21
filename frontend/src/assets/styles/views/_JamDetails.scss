@@ -201,14 +201,15 @@
 
 .leave-jam-btn {
     width: 200px;
-    background-color: cadetblue;
-    color: white;
-    border: 2px transparent solid;
-}
-.leave-jam-btn:hover {
     background-color: transparent;
     border: solid cadetblue 2px;
     color: rgb(159, 161, 161);
+  
+}
+.leave-jam-btn:hover {
+    background-color: cadetblue;
+    color: white;
+    border: 2px transparent solid;
 }
 
 .users-going-con-section {
@@ -297,4 +298,53 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+
+.following-list-con{
+display:flex;
+flex-wrap: wrap;
+
+}
+.invite-modal-title{
+    border-bottom: rgb(204, 204, 204) solid 1px;
+}
+
+.send-invites-btn{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: cadetblue;
+    color: white;
+    border: 2px transparent solid;
+}
+
+.send-invites-btn:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border: solid cadetblue 2px;
+    color: rgb(159, 161, 161);
+}
+
+.select-all-btn{
+
+    border: transparent;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Source-Sans";
+    cursor: pointer;
+    color: rgb(70, 70, 184);
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.select-all-btn:hover{
+    cursor: pointer;
+    color: rgb(92, 91, 91);
+
 }
