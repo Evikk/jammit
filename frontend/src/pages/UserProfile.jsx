@@ -71,12 +71,11 @@ class _UserProfile extends Component {
             <UserTalents user={user} />
         </section>
         <section className="toolbar-left left-side">
-          <div>
-            {this.getUserJams().length > 0 && <div className="jams section">
+                     {this.getUserJams().length > 0 && <div className="jams section attending-list">
               <h1>Jams Attending</h1>
               <JamScroll jams={this.getUserJams()} />
             </div>}
-          </div>
+       
         </section>
       </main >
     )

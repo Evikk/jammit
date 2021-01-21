@@ -10,7 +10,7 @@ export function UserInfo({user, followToggle, onFollowIconClick, isUserAdmin}) {
     const history = useHistory()
     return (
         <div className="user-left-box flex column">
-            <div className="user-basic-info flex">
+            <div className="user-basic-info">
                 <div className="user-img">
                     <img src={user.imgUrl} />
                 </div>
