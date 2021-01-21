@@ -7,7 +7,7 @@ import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
-import { JamList } from '../cmps/JamList.jsx'
+
 
 class _Home extends Component {
   state = {}
@@ -23,6 +23,7 @@ class _Home extends Component {
       return jam.startsAt > Date.now() && jam.startsAt < weekFromNow
     })
   }
+
   getPopularJams = () => {
     return this.props.jams.filter(jam => {
       const slotsLeft = jam.capacity - jam.usersGoing.length
@@ -46,15 +47,15 @@ class _Home extends Component {
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
               <div className="title-row">
-                <h1 className="staatliches">Most Popular Jams</h1>
-                <Link to="/search">See All</Link>
+                <h1 className="staatliches">Added Recently</h1>
+                <Link to="/jams">See All</Link>
               </div>
               <JamScroll jams={this.getPopularJams()} />
           </div>
           <div className="jams section">
           <div className="title-row">
                 <h1 className="staatliches">Upcoming This Week</h1>
-                <Link to="/search">See All</Link>
+                <Link to="/jams">See All</Link>
               </div>
               <JamScroll jams={this.getUpcomingJams()} />
           </div>
@@ -87,6 +88,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   loadJams,
   loadUsers,
+  // sendMsg
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
