@@ -31,18 +31,15 @@ class _Home extends Component {
   }
 
   getFeaturedMembers = ()=> {
-    return this.props.users.slice(0,3)
+    return this.props.users.slice(0,4)
   }
 
   render() {
     const { jams, users } = this.props
-    const { upcomingJams, popularJams } = this.state
     if (jams.length === 0 || users.length === 0) 
       return  <div className="loader main-content pos-relative">
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
               </div>
-              
-    console.log(upcomingJams, popularJams);          
     return ( 
       <div className="home">
         <HeroSection/>
@@ -68,8 +65,10 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="members-list-preview">
+            <div className="title-row">
               <h1 className="staatliches">Featured Members</h1>
               <UserList users={this.getFeaturedMembers()}/>
+            </div>
             </div>
           </div>
         </main>
