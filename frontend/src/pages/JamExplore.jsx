@@ -3,19 +3,19 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { connect } from "react-redux";
 import { loadJams } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
-import jamThumb from "../assets/img/jam-thumb.jpg"
-import { JamScroll } from "../cmps/JamScroll.jsx";
-import { JamList } from "../cmps/JamList.jsx";
 import { JamPreview } from "../cmps/JamPreview.jsx";
 import jamMarker from "../assets/img/green-marker.png"
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
-import { LoaderSpinner } from "../cmps/LoaderSpinner.jsx";
 import Loader from "react-loader-spinner";
-
-
+import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
+import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
+import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
+import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
+import { Link } from "react-router-dom"
 
 const mapStyles = {
-    width: "50%",
+    width: "100%",
     height: "100%",
 };
 
@@ -79,7 +79,10 @@ class _JamExplore extends Component {
         showingInfoWindow: false, // Hides or shows the InfoWindow
         activeMarker: {}, // Shows the active marker upon click
         selectedPlace: null, // Shows the InfoWindow to the selected place upon a marker
+        isPopupShow: false,
+        selectedJam: null
     };
+
     mapRef = React.createRef();
     componentDidMount() {     
         this.props.loadJams()
@@ -100,6 +103,11 @@ class _JamExplore extends Component {
             selectedPlace: props,
             mapZoom: 17
         });
+        this.setState({isPopupShow: true, selectedJam: props.jam})
+    }
+
+    showPopupJam = (jam)=>{
+
     }
 
     onJamCenter = (jamId) => {
@@ -129,7 +137,9 @@ class _JamExplore extends Component {
                         lng: jam.location.lng
                     }} 
                     onMousedown={this.onMarkerClick}
-                    name={jam.title}
+                    jam={jam}
+                    title={jam.title}
+                    imgUrl={jam.imgUrl}
                     currMembers={jam.usersGoing.length}
                     capacity={jam.capacity}
                     icon={{
@@ -153,7 +163,8 @@ class _JamExplore extends Component {
 
     render() {
         const { jams, loggedInUser } = this.props
-        const {userPos, selectedPlace, mapZoom, markers} = this.state
+        const {userPos, selectedPlace, mapZoom, markers, isPopupShow} = this.state
+        const jam = this.state.selectedJam
         if (!selectedPlace || jams.length === 0) {
             return <div className="loader main-content pos-relative">
             <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
@@ -197,12 +208,57 @@ class _JamExplore extends Component {
                 onClose={this.onClose}
               >
                 <div>
-                    <h2>{this.state.selectedPlace.name}</h2>
+                    <h2>{this.state.selectedPlace.title}</h2>
                     <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
                 </div>
                 </InfoWindow>
             </Map>
-            <div className="jams-explore-container">
+            {isPopupShow && 
+                <div className="jam-popup">
+                    <div className="details-con">
+                        <div className="map-thumb-wrapper">
+                            <img src={jam.imgUrl} alt="jam-thumbnail"/>
+                        </div>
+                        <h3 className="title-style">Details</h3>
+                        <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
+                        <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
+                        <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + jam.createdBy._id} > {jam.createdBy.fullname}</Link></span></p>
+                        <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
+                        <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{jam.startsAt}</span></p>
+                        <div className="description-con">
+                            <h3 className="title-style">Description</h3>
+                            <p>{jam.description}</p>
+                        </div>
+                        <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                            return <li key={idx}>{tag}</li>
+                        })}
+                        </ul>                               
+                    </div>
+                </div>
+            }
+            </section>
+            </>
+        );
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        jams: state.jamModule.jams,
+        users: state.userModule.users,
+        loggedInUser: state.userModule.loggedInUser 
+    };
+};
+const mapDispatchToProps = {
+    loadJams,
+    loadUsers,
+};
+
+export const JamExplore = GoogleApiWrapper({
+    apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
+})(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
+
+{/* <div className="jams-explore-container">
                 <div className="jams-explore-filter flex column">
                     <h1>Filter Jams</h1>
                     <div className="filter-inputs">
@@ -228,25 +284,4 @@ class _JamExplore extends Component {
                         <JamPreview key={jam._id} jam={jam}/>
                     ))}
                 </ul>
-            </div>
-            </section>
-            </>
-        );
-    }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        jams: state.jamModule.jams,
-        users: state.userModule.users,
-        loggedInUser: state.userModule.loggedInUser 
-    };
-};
-const mapDispatchToProps = {
-    loadJams,
-    loadUsers,
-};
-
-export const JamExplore = GoogleApiWrapper({
-    apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
-})(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
+            </div> */}

@@ -1,9 +1,9 @@
 import { jamService } from '../../services/jamService'
 
-export function loadJams() {
+export function loadJams(filterBy) {
   return async dispatch => {
     try {
-      const jams = await jamService.query()
+      const jams = await jamService.query(filterBy)
       dispatch({ type: 'SET_JAMS', jams })
 
     } catch (err) {

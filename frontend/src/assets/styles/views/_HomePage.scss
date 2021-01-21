@@ -3,7 +3,8 @@
 }
 
 .main-content {
-    min-height: calc(100vh - $nav-height);
+    // min-height: calc(100vh - $nav-height);
+    min-height: calc(100vh - 82px);
 }
 
 .zebra-container {

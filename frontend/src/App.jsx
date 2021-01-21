@@ -9,6 +9,7 @@ import { MembersList } from './pages/MembersList'
 import { JamCreate } from './pages/JamCreate'
 import { MainNav } from './cmps/MainNav'
 import { UserSection } from './pages/UserSection'
+import { JamsList } from './pages/JamsList'
 
 export function App() {
   return (
@@ -21,6 +22,7 @@ export function App() {
             <Route path="/jam/:id" component={JamDetails} />
             <Route path="/user/:id" component={UserProfile} />
             <Route path="/members" component={MembersList} />
+            <Route path="/jams" component={JamsList} />
             <Route path="/user" component={UserSection} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/search" component={JamExplore} />

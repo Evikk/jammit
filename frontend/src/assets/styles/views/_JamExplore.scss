@@ -16,12 +16,18 @@
     text-align: center;
 }
 
+.jam-popup,
 .jams-explore-container {
     position: relative;
-    width: 50%;
     z-index: 99;
     height: 100%;
+    width: 400px;
 }
+.map-thumb-wrapper {
+    @include aspect-ratio(320, 150);
+    width: 100%;
+}
+
 
 .jams-explore-filter {
     background-color: $clr-container;

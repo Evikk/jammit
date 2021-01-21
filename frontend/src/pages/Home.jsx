@@ -17,13 +17,13 @@ class _Home extends Component {
     this.props.loadUsers()
   }
 
-  getPopularJams = ()=> {
+  getUpcomingJams = ()=> {
     return this.props.jams.filter(jam => {
       const weekFromNow = new Date().getTime()+86400000*7
       return jam.startsAt > Date.now() && jam.startsAt < weekFromNow
     })
   }
-  getUpcomingJams = () => {
+  getPopularJams = () => {
     return this.props.jams.filter(jam => {
       const slotsLeft = jam.capacity - jam.usersGoing.length
       return slotsLeft < 10

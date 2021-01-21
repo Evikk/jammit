@@ -11,9 +11,14 @@ export const jamService = {
     // save
 }
 
-function query() {
-    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=${sortBy}`
-    return httpService.get(`jam`)
+function query(filterBy={}) {
+    var queryStr = '?'
+    if(filterBy.title) queryStr += `&title=${filterBy.title}`
+    if(filterBy.region) queryStr += `&region=${filterBy.region}`
+    
+    console.log(queryStr);
+    
+    return httpService.get(`jam${queryStr}`)
     // return jams;
 }
 

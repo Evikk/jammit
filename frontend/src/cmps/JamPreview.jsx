@@ -8,7 +8,6 @@ export function JamPreview({ jam }) {
 
         return instIcons.map(icon=>{
             const user = jam.usersGoing.find(user => {
-                console.log(jam, user.playing);
                 return user.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
@@ -47,7 +46,7 @@ export function JamPreview({ jam }) {
                             <p><LocationOnIcon/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>
-                                {jam.usersGoing.length}/{jam.capacity} Slots Free
+                                {jam.usersGoing.length}/{jam.capacity} Slots
                         </span>
                     </div>
                 </div>

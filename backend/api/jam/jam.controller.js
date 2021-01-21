@@ -4,14 +4,12 @@ const logger = require('../../services/logger.service')
 async function getJams(req, res) {
     try {
         const filterBy = {
-            name: req.query?.name || '',
-            type: req.query?.region || '',
+            title: req.query?.title || '',
+            region: req.query?.region || '',
         }
-        const sortBy = {
-            sort: req.query?.sort || ''
-        }
-        console.log(filterBy, sortBy);
-        const jams = await jamService.query(filterBy, sortBy)
+        
+        console.log(filterBy, 'filterBy getJams');
+        const jams = await jamService.query(filterBy)
         res.send(jams)
     } catch (err) {
         logger.error('Failed to get jams', err)

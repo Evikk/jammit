@@ -13,15 +13,13 @@ module.exports = {
 
 async function query(filterBy = {}, sortBy = {}) {
     const criteria = _buildCriteria(filterBy)
-    const sort = {}
-    const sortParam = sortBy.sort
-    if (sortBy.sort) sort[sortParam] = 1
-    console.log(sort, criteria);
+    // const sort = {}
+    // const sortParam = sortBy.sort
+    // if (sortBy.sort) sort[sortParam] = 1
+    // console.log(sort, criteria);
     try {
         const collection = await dbService.getCollection('jam')
-        var jams = await collection.find(criteria).sort(sort).toArray()
-        // var jams = await collection.find().toArray()
-        console.log('jams',jams);
+        var jams = await collection.find(criteria).toArray()
         return jams
     } catch (err) {
         logger.error('cannot find jams', err)

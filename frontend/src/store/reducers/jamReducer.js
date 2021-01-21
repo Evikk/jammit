@@ -1,6 +1,7 @@
 const initialState = {
     jams: [],
-    jam: null
+    jam: null,
+    tags: ['Rock','Pop','Israeli','Chill','60\'s','70\'s','Blues','Jazz','Acoustic','Oldies','Folk','World','Ethnic','Indie','mediterranean']
   }
   
   export function jamReducer(state = initialState, action = {}) {
