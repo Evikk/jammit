@@ -3,7 +3,6 @@
     width: 60%;
     margin: 50px auto;
     justify-content: space-between;
-    
 }
 
 .user-basic-info {
@@ -15,7 +14,7 @@
     width: 100%;
 }
 
-.user-left-box{
+.user-left-box {
     padding: 10px;
 }
 
@@ -33,7 +32,7 @@
     gap: 5px;
     * {
         border-radius: 4px;
-        background-color:#5f9ea0;
+        background-color: #5f9ea0;
         padding: 3px;
         color: rgb(255, 255, 255);
         // border: 1px solid grey;
@@ -98,6 +97,10 @@
     height: 100px;
 }
 
+.followers h1 {
+    font-size: 1.2rem;
+}
+
 .followers img:nth-child(2) {
     left: 12%;
     z-index: 1;
@@ -123,7 +126,7 @@
     position: relative;
     h1 {
         // text-align: center;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -135,7 +138,7 @@
     padding: 10px;
     position: relative;
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -150,16 +153,16 @@
 .user-talents ul li {
     font-size: 0.875rem;
 }
-.user-nav .user-avater-link{
+.user-nav .user-avater-link {
     padding: 0 !important;
 }
 
-.attending-list{
+.attending-list {
     width: 68vw;
     height: 87vh;
 }
 
-.following{
+.following {
     position: relative;
     display: inline-block;
     margin-top: 10px;
@@ -170,6 +173,9 @@
     height: 100px;
 }
 
+.following h1 {
+    font-size: 1.2rem;
+}
 
 .following img:nth-child(2) {
     left: 12%;
@@ -189,6 +195,5 @@
     border-radius: 50%;
 }
 
-.jam-attending-section{
-   
+.jam-attending-section {
 }
