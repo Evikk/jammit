@@ -25,11 +25,8 @@ export  class InviteModal extends React.Component {
     }
 
     handleCloseModal() {
-        this.setState({
-            showModal: false
+        this.props.handleCloseModal()
 
-
-        });
     }
     componentWillReceiveProps(nextProps){
         if(nextProps.showModal!==this.state.showModal){
