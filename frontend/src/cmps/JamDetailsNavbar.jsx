@@ -14,10 +14,7 @@ class _JamNavbar extends Component {
         let { updateJamGoing, jam, user, isUserAdmin } = this.props;
         return (
             <ul className="jam-details-navbar">
-                {!this.props.showBasicActionsOnly &&<div className="navbar-left">
-                    <li>About</li>
-                    <li>Discussion</li>
-                </div>}
+                
                 <div className="navbar-right">
                     <LoginModal history={this.props.history} showModal={this.state.showLoginModal}/>
                     <InviteModal history={this.props.history} following={this.props.user?this.props.user.following:[]} showModal={this.state.showInviteModal} />

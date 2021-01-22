@@ -118,8 +118,6 @@ class _JamExplore extends Component {
         this.setState({ isPopupShow: true, selectedJam: props.jam })
     }
 
-<<<<<<< HEAD
-=======
     componentDidUpdate(prevProps) {
         if (this.props.jams !== prevProps.jams) {
             this.setState({ markers: this.displayMarkers() });
@@ -138,7 +136,6 @@ class _JamExplore extends Component {
 
     }
 
->>>>>>> 6a94a58b87dbdb08b3e6833e52677033a84ee194
     onJamCenter = (jamId) => {
         const marker = this.state.markers.find(marker => {
             return marker.key === jamId
@@ -220,44 +217,6 @@ class _JamExplore extends Component {
                         onReady={(mapProps, map) => this._mapLoaded(mapProps, map)}
                         disableDefaultUI={true}
                     // onBoundsChanged={this.centerMoved}
-<<<<<<< HEAD
-                >
-                {markers}
-                {loggedInUser && <Marker
-                    name={'Your position'}
-                    position={userPos.position}
-                    icon={{
-                    url: loggedInUser.imgUrl,
-                    anchor: new this.props.google.maps.Point(32,32),
-                    scaledSize:  new this.props.google.maps.Size(50,50)
-                    }}
-                    />}
-                <InfoWindow
-                marker={this.state.activeMarker}
-                visible={this.state.showingInfoWindow}
-                onClose={this.onClose}
-                >
-                <div>
-                    <h2>{this.state.selectedPlace.title}</h2>
-                </div>
-                </InfoWindow>
-            </Map>
-            {isPopupShow && 
-                <div className="jam-popup">
-                    <div className="details-con">
-                        <div className="map-thumb-wrapper" onClick={()=>this.props.history.push(`jam/${jam._id}`)}>
-                            <img src={jam.imgUrl} alt="jam-thumbnail" />
-                        </div>
-                        <h3 className="title-style">Details</h3>
-                        <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
-                        <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
-                        <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + jam.createdBy._id} > {jam.createdBy.fullname}</Link></span></p>
-                        <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
-                        <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{this.timeFormatter()}</span></p>
-                        <div className="description-con">
-                            <h3 className="title-style">Description</h3>
-                            <p>{jam.description}</p>
-=======
                     >
                         {markers}
                         {loggedInUser && <Marker
@@ -309,7 +268,6 @@ class _JamExplore extends Component {
                                 })}
                                 </ul>
                             </div>
->>>>>>> 6a94a58b87dbdb08b3e6833e52677033a84ee194
                         </div>
                     }
                 </section>

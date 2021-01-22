@@ -8,7 +8,7 @@ export const jamService = {
     query,
     getById,
     updateJamGoing,
-    // save
+    save
 }
 
 function query(filterBy={}) {
@@ -21,7 +21,21 @@ function query(filterBy={}) {
     return httpService.get(`jam${queryStr}`)
     // return jams;
 }
-
+function save(jam) {
+    if (jam._id) {
+        // UPDATE
+        return httpService.put(`jam/${jam._id}`, jam)
+        // return axios.put(`${baseUrl}/${jam._id}`, jam)
+        // .then(res => res.data)
+    } 
+    // else {
+    //     // CREATE
+    //     const newToy = { createdAt: Date.now(), ...jam }
+    //     return axios.post(baseUrl, newToy)
+    //         .then(res => res.data)
+            
+    // }
+}
 // function save(jam) {
 //     return httpService.post(`jam`, jam)
 // }

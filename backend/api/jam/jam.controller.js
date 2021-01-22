@@ -51,6 +51,8 @@ async function addJam(req, res) {
 async function updateJam(req, res) {
     try {
         const jam = req.body
+        console.log(jam, 'controller');
+        
         const savedJam = await jamService.update(jam)
         res.send(savedJam)
     } catch (err) {

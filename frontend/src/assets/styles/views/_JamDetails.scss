@@ -4,7 +4,7 @@
 
 .jam-top {
     width: 100%;
-    height: 90vh;
+    height: 50vh;
     background-attachment: fixed;
 }
 
@@ -80,6 +80,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .jam-details-navbar {
@@ -126,10 +127,10 @@
 .users-going-con {
     background-color: white;
     border-radius: 10px;
-    margin-top: 20px;
     display: flex;
     padding: 10px;
     position: relative;
+    height: 100%;
 }
 
 .jammers {
@@ -214,6 +215,8 @@
 
 .users-going-con-section {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .users-going-actions {
@@ -286,7 +289,7 @@
 .jam-image {
   
     width: 100%;
-    height: 90vh;
+    height: 100%;
     clip: rect(0, auto, auto, 0);
     
     background-attachment: fixed;
@@ -347,4 +350,34 @@ flex-wrap: wrap;
     cursor: pointer;
     color: rgb(92, 91, 91);
 
+}
+@media (max-width: 860px) {
+    .page-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-page-con,
+    .left-page-details {
+        width: 100%;
+    }
+    .main-container{
+        grid-column: 2;
+    }
+}
+
+.chat-container {
+    border: 2px solid #dedede;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    position: relative;
+    & form {
+        padding: 20px 5px;
+        border-top: 1px solid grey;
+    }
 }
