@@ -61,8 +61,29 @@ class _MembersList extends Component {
         }
         return (
             <section>
-                <div className="search-area flex justify-center">
-                    <div className="input-box">
+                <div className="search-area">
+                <div className="search-title">
+                        <h1 className="staatliches align-center">Member Search</h1>
+                    </div>
+                <div className="jam-filter-container flex justify-center">
+                    <div className="title-search">
+                        <SearchRoundedIcon className="search-icon" />
+                        <form onSubmit={this.onSetFilter}>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={username}
+                            onChange={this.onHandleInputChange} 
+                        />
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div className="members-container">
+                    <UserList users={users} />
+                </div>
+                {/* <div className="input-box">
                         <SearchRoundedIcon className="search-icon" />
                         <form onSubmit={this.onSetFilter}>
                             <input name="username"
@@ -73,11 +94,7 @@ class _MembersList extends Component {
                                 value={username}
                                 onChange={this.onHandleInputChange} />
                         </form>
-                    </div>
-                </div>
-                <div className="members-container">
-                    <UserList users={users} />
-                </div>
+                    </div> */}
             </section>
         )
     }
