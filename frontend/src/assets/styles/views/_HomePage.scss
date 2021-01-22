@@ -31,21 +31,25 @@
 }
 
 .title-row {
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     background-color: #695da2;
+    color: #ffffffab;
     a {
         font-size: 1.5rem;
         margin-right: 30px;
         font-family: 'Staatliches', cursive;
+        color: #ffffffab;
     }
     h1 {
     padding-left: 25px;   
     font-size: 3rem;
     }
     
+}
+.carousel-container {
+    margin: 40px auto;
 }
 .title-row-members{
     display: block;

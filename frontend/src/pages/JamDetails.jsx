@@ -96,12 +96,14 @@ class _JamDetails extends Component {
                 </div>}
                 {this.state.jam &&
                     <div className="page-con main-container">
+                        
                         <div className="jam-top full" >
                              <div className="jam-image" style={{
                                  backgroundImage: 'url('+ this.state.jam.imgUrl +')'                     
                              }} ></div>
-                            <h1 className="jam-title">{this.state.jam.title}</h1>
+                            
                         </div>
+                        <h1 className="jam-title">{this.state.jam.title}</h1>
                         {!this.state.isEditMode && <div>
                             <JamNavbar
                                 history={this.props.history}
@@ -128,9 +130,9 @@ class _JamDetails extends Component {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
-                                    <div>
+                                    {!this.state.isEditMode && <div>
                                         <JamChat jamId={jam._id} msgs={jam.msgs} jam={jam}/>
-                                    </div>                             
+                                    </div>}                           
                                 </div>
                             </div>
                             <div className="left-page-con">
