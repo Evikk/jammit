@@ -17,6 +17,7 @@ import {StaticMap} from '../cmps/StaticMap'
 // import { loadJams } from '../store/actions/jamActions'
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
 import Loader from 'react-loader-spinner';
+import { JamChat } from '../cmps/JamChat';
 
 const emptyJam = {
     title: "",
@@ -125,7 +126,10 @@ class _JamDetails extends Component {
                                         <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
-                                        </ul>                               
+                                        </ul>
+                                    <div>
+                                        <JamChat jamId={jam._id} msgs={jam.msgs} jam={jam}/>
+                                    </div>                             
                                 </div>
                             </div>
                             <div className="left-page-con">
@@ -142,6 +146,7 @@ class _JamDetails extends Component {
 
                                     </ul>
                                     <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
+                                    
                                 </div>}
                             </div>
                         </div>

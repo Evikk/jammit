@@ -70,8 +70,10 @@ async function update(jam) {
             location : jam.location,
             startsAt :jam.startsAt,
             tags : jam.tags,
-            usersGoing : jam.usersGoing
+            usersGoing : jam.usersGoing,
+            msgs: jam.msgs
         }
+        console.log(jamToSave, 'service');
         const collection = await dbService.getCollection('jam')
         await collection.updateOne({ '_id': jamToSave._id }, { $set: jamToSave })
         return jamToSave;

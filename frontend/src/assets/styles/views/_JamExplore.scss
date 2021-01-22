@@ -2,14 +2,7 @@
     height: calc(100vh - 70px);
     display: flex;
     justify-content: flex-end;
-    button {
-        position: absolute;
-        left: 10px;
-        top: 10px;
-        border: none;
-        z-index: 98;
-        padding: 4px 8px;
-    }
+    
 }
 .jams-explore-title {
     font-size: rem(40px);
@@ -19,7 +12,6 @@
 .jam-popup,
 .jams-explore-container {
     position: relative;
-    z-index: 99;
     height: 100%;
     width: 400px;
 }
@@ -69,5 +61,22 @@
     grid-template-rows: repeat(auto-fill, $jam-card-height);
     grid-template-columns: repeat(auto-fill, $jam-card-width);
     grid-gap: 30px;
+    
+}
+
+.center-map-btn{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border: none;
+    z-index: 98;
+    padding: 4px 8px;
+}
+
+.pop-up-join-btn{
+
+}
+
+.pop-up-invite-btn{
     
 }

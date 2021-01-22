@@ -47,14 +47,16 @@ export function updateJamGoing(jam, user, isGoing) {
   }
 }
 
+export function sendMsg(msg,jam) {
+  return async dispatch => {
+    try {
+      jam.msgs.push(msg)
+      console.log(jam.msgs);
+      const jamSaved = await jamService.save(jam)
+      dispatch({ type: 'SAVE_JAM', jam:jamSaved })
 
-function makeId(length = 6) {
-  var txt = '';
-  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-  for (var i = 0; i < length; i++) {
-      txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    } catch (err) {
+      console.log('JamActions: err in saveMsg', err)
+    }
   }
-
-  return txt;
 }
