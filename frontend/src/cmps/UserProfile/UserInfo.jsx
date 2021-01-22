@@ -17,22 +17,25 @@ export function UserInfo({user, followToggle, onFollowIconClick, isUserAdmin}) {
                 <div className="user-tags-name flex column">
                     <span className="user-stage-name fs30">{user.username}</span>
                     <div className="user-location">
-                    <LocationOnOutlinedIcon style={{ fontSize: 15 }} className="location-icon" />
-                    <span>{user.location.city}</span>
+                        <LocationOnOutlinedIcon style={{ fontSize: 15 }} className="location-icon" />
+                        <span>{user.location.city}</span>
                     </div>
-                    <ul className="user-tags flex">{user.tags.map((tag, idx) => {
-                            return <li key={idx}>{tag}</li> })}
-                    </ul>
+                    <div className="flex space-between align-center">
+                        <ul className="flex user-tags">{user.talents.map((talent, idx) => {
+                            return <li key={idx}>{talent}</li>
+                        })}
+                        </ul>
+                        {!isUserAdmin && <div className="reaction-icon">
+                            <ChatRoundedIcon style={{fontSize: 40}}/>
+                            {!followToggle ? <FavoriteBorderRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>
+                            : <FavoriteRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>}  
+                        </div>}
+                    </div>
                 </div>
             </div>
             <div className="user-about">
                 <span>{user.about}</span>
             </div>
-            {!isUserAdmin && <div className="reaction-icon">
-                <ChatRoundedIcon style={{fontSize: 40}}/>
-                {!followToggle ? <FavoriteBorderRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>
-                : <FavoriteRoundedIcon style={{fontSize: 40}} onClick={()=>onFollowIconClick()}/>}  
-            </div>}
         </div>
         
     )

@@ -30,18 +30,26 @@
     margin-left: 6px;
     .inst-icon {
         position: absolute;
-        width: 30px;
+        width: 38px;
+        padding: 3px;
         border-radius: 50%;
-        background-color: rgb(216, 210, 210);
+        background-color: rgb(238, 238, 238);
         border: 1px solid black;
         bottom: 0;
         right:0;
     }
-    *:nth-child(2){
-        right:8%;
+   
+    img:nth-child(odd){
+        right:20%;
+        z-index: 2;
     }
-    *:nth-child(3){
-        right:16%;
+    img:nth-child(even){
+        right:10%;
+        z-index: 3;
+    }
+    img:first-child {
+        right: 0;
+        z-index: 1;
     }
    
 }

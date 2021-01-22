@@ -11,13 +11,14 @@
     position: relative;
     input {
         outline: none;
-        padding: 8px;
+        padding: 8px 8px 8px 30px;
         width: 250px;
         border: 1px solid rgba(0, 0, 0, 0.324);
+        border-radius: 20px;
     }
     .search-icon {
         position: absolute;
-        right: 6px;
+        left: 6px;
         top: 5px;
     }
 }

@@ -1,13 +1,16 @@
 .section {
     background-color: $clr-container;
     border-radius: 10px;
+    height: 100%;
     flex-grow: 1;
 }
+.filtered-jams h1 {
+            padding: 30px;
+        }
 
 .user-details-aside {
+    width: 20vw;
     padding: 20px;
-    align-items: center;
-    width: 30vw;
     button {
         margin-top: 30px;
         width: 200px;

@@ -48,17 +48,21 @@ class _Home extends Component {
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
               <div className="title-row">
-                <h1 className="staatliches">Added Recently</h1>
+                <h1 className="staatliches">Added Recently >>></h1>
                 <Link to="/jams">See All</Link>
               </div>
-              <JamScroll jams={this.getPopularJams()} />
+              <div className="carousel-container">
+                <JamScroll jams={this.getPopularJams()} />
+              </div>
           </div>
           <div className="jams section">
           <div className="title-row">
-                <h1 className="staatliches">Upcoming This Week</h1>
+                <h1 className="staatliches">Upcoming This Week >>></h1>
                 <Link to="/jams">See All</Link>
               </div>
+              <div className="carousel-container">
               <JamScroll jams={this.getUpcomingJams()} />
+              </div>
           </div>
           {/* <div className="jams section">
               <h1>Jams</h1>
@@ -67,10 +71,12 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="title-row">
-                <h1 className="staatliches">Featured Members</h1>
+                <h1 className="staatliches">Featured Members >>></h1>
                 <Link to="/members">See All</Link>
             </div>
+            <div className="carousel-container">
             <UserList users={this.getFeaturedMembers()}/>
+            </div>
           </div>
         </main>
         <footer className="flex column align-center">

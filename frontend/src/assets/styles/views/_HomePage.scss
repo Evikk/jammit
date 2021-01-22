@@ -31,7 +31,6 @@
 }
 
 .title-row {
-    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -50,6 +49,9 @@
     color:#fdf9ff;
     }
     
+}
+.carousel-container {
+    margin: 40px auto;
 }
 .title-row-members{
     display: block;

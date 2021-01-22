@@ -49,20 +49,7 @@ class _UserProfile extends Component {
       </div>
     }
     return (
-      // <main className="main-content">
-      //   <section className="user-box flex">
-      //     <UserInfo 
-      //       user={user} 
-      //       followToggle={followToggle} 
-      //       onFollowIconClick={this.onFollowIconClick}
-      //     />
-      //     <UserTalents user={user}/>
-      //    </section>
-      //   {this.getUserJams().length > 0 && <div className="jams section">
-      //         <h1>Jams Attending</h1>
-      //         <JamScroll jams={this.getUserJams()}/>
-      //   </div>}
-      // </main>
+      
       <main className="main-content user-section flex">
         <section className="right-side user-details-aside flex column">
             <UserInfo user={user}
@@ -72,8 +59,11 @@ class _UserProfile extends Component {
         </section>
         <section className="left-side jam-attending-section">
                      {this.getUserJams().length > 0 && <div className="jams  section attending-list">
-              <h1>Jams Attending</h1>
+              <h1 className="align-center fs40">Jams Attending</h1>
+              { window.innerWidth > 830 ? <JamList jams={this.getUserJams()}/>
+              :
               <JamScroll jams={this.getUserJams()} />
+              }
             </div>}
        
         </section>
