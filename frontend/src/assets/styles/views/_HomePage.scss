@@ -32,13 +32,18 @@
 
 .title-row {
     margin-top: 30px;
-    // text-align: end;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    background-color: #695da2;
     a {
         font-size: 1.5rem;
         margin-right: 30px;
+        font-family: 'Staatliches', cursive;
+    }
+    h1 {
+    padding-left: 25px;   
+    font-size: 3rem;
     }
     
 }
@@ -62,8 +67,9 @@ footer{
 }
 @media (max-width: $narrow-breakpoint) {
     .hero .logo {
-        width: 350px;
+        width: 250px;
     }
+    .hero .hero-content,
     .home {
         margin: 0;
     }
@@ -74,5 +80,8 @@ footer{
     .hero button {
         width: 200px;
         font-size: 1.5rem;
+    }
+    .section h1 {
+        font-size: 2rem;
     }
 }

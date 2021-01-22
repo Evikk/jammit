@@ -43,8 +43,11 @@
         border: solid rgb(249, 249, 250) 2px;
         transition: all .3s ease-in-out;
         &:hover{
-            background-color: rgb(249, 249, 250);
-            color: $clr3;
+            background-color: white;
+            border: solid #7f6ed1 2px;
+            a{
+                color: #7f6ed1;
+            }
         }
         a{
             color: rgb(255, 255, 255);
@@ -60,15 +63,6 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center
-        &--overlay {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            background: linear-gradient(to bottom, rgba(111, 99, 95, 0) 0%,rgba(215, 193, 186, 0.17) 21%,rgba(255, 224, 224, 0.5) 80%);
-    }
     }
     .hero-title {
         color: #000;
