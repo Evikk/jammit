@@ -3,12 +3,13 @@
     border-radius: 10px;
     height: 100%;
     flex-grow: 1;
-    h1 {
-        padding: 30px;
-    }
 }
+.filtered-jams h1 {
+            padding: 30px;
+        }
 
 .user-details-aside {
+    width: 20vw;
     padding: 20px;
     button {
         margin-top: 30px;
