@@ -43,6 +43,15 @@ function connectSockets(http, session) {
             // emits only to sockets in the same room
             gIo.to(socket.currJam).emit('chat addMsg', msg)
             // socket.broadcast.to(socket.currJam).emit('chat addMsg', msg)
+        }) 
+        socket.on('invite', invite =>{
+            // if(socket.invite){
+            //     socket.leave(socket.jam)
+            // }
+            // socket.join(invite)
+            console.log(invite,'invite');
+            gIo.to(socket.currJam).emit('invite sendInvites', invite)
+            
         })
 
     })

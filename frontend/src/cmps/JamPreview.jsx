@@ -26,7 +26,7 @@ export function JamPreview({ jam }) {
                     {showIcons()}
                 </div>
             </div>
-            <h2>{jam.title}</h2>
+            {/* <h2>{jam.title}</h2> */}
             <div className="jam-card-content flex">
                 {/* <div className="date-wrapper">
                     <div className="date-month">
@@ -37,12 +37,13 @@ export function JamPreview({ jam }) {
                         {new Date(jam.startsAt).toLocaleString('he-IL',{day: '2-digit'})}
                     </div>
                 </div> */}
-                <div className="jam-details-wrapper">         
+                <div className="jam-details-wrapper">    
+                <h2>{jam.title}</h2>     
                     <ul className="jam-card-tags flex ">{jam.tags.map((tag, idx) => {
                         return <li key={idx}>{tag}</li> })}
                     </ul>
                     <div className="going-wrapper flex">
-                        <div>
+                        <div className="align-self">
                             <p className="gray-dark"><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>

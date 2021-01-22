@@ -1,6 +1,7 @@
 import ReactModal from 'react-modal';
 import React from 'react';
 import { FriendsInvitePreview } from './InviteFriends'
+import { socketService } from '../services/socketService';
 
 
 export  class InviteModal extends React.Component {
@@ -39,9 +40,14 @@ export  class InviteModal extends React.Component {
           }
       }
     componentDidMount() {
+        const {invited} = this.state
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
+        
+        socketService.setup()
+        socketService.emit('invite', invited)
+        socketService.on('invite sendInvites', this.sendInvites)
     }
 
     handleChange(user, invited) {
@@ -59,8 +65,10 @@ export  class InviteModal extends React.Component {
             return {...following, isChecked: true};
         }), invited: this.state.following.slice()});
     }
-    sendInvites() {
+
+    sendInvites =() => {
         console.log(this.state.invited);
+       
     }
     render() {
         const customStyles = {
