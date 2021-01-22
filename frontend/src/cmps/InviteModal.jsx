@@ -9,7 +9,9 @@ export  class InviteModal extends React.Component {
         super();
         this.state = {
             showModal: false,
-            selectAll: false
+            selectAll: false,
+            following: [],
+            invited: []
         };
 
         this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -23,21 +25,42 @@ export  class InviteModal extends React.Component {
     }
 
     handleCloseModal() {
-        this.setState({
-            showModal: false
+        this.props.handleCloseModal()
 
-
-        });
     }
     componentWillReceiveProps(nextProps){
         if(nextProps.showModal!==this.state.showModal){
           this.setState({showModal: nextProps.showModal });
         }
+        if(nextProps.following!==this.state.following){
+            this.setState({following: nextProps.following.map((following) => {
+                return {...following,  isChecked: false};
+            })})
+          }
       }
     componentDidMount() {
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
+    }
+
+    handleChange(user, invited) {
+        if (invited) {
+            let joined = this.state.invited.concat(user)
+            this.setState({invited: joined})
+        } else {
+            let removed = this.state.invited.filter( (userInvited)=> userInvited._id !== user._id)
+            this.setState({invited: removed})
+        }
+    }
+
+    selectAll () {
+        this.setState( {following: this.state.following.map((following) => {
+            return {...following, isChecked: true};
+        }), invited: this.state.following.slice()});
+    }
+    sendInvites() {
+        console.log(this.state.invited);
     }
     render() {
         const customStyles = {
@@ -69,17 +92,17 @@ export  class InviteModal extends React.Component {
                     </div>
                     {/* <input type="checkbox" name="select-all-box" id="select-all-box"></input>
                     <label for="select-all-box">Select All</label> */}
-                    <button className="select-all-btn" onClick={() => this.setState({selectAll: true})}>Select All</button>
+                    <button className="select-all-btn" onClick={() => this.selectAll()}>Select All</button>
                     <div className="following-friends-list">
                    
                     <ul className="following-list-con">
-                        {this.props.following.map(function (user, index) {
-                            return <FriendsInvitePreview key={index} isChecked={this.state.selectAll} user={user} />
+                        {this.state.following && this.state.following.map(function (user, index) {
+                            return <FriendsInvitePreview handleChange={this.handleChange.bind(this)}  key={index} user={user} />
                         }.bind(this))}
 
                     </ul>
                     </div>
-                    <button className="send-invites-btn">Send Invites</button>
+                    <button className="send-invites-btn" onClick={() => this.sendInvites()} >Send Invites</button>
                 </ReactModal>
     
         );
