@@ -11,6 +11,7 @@
     h2 {
         font-size: 1.125rem;
         margin-left: 6px;
+        color: #5f5b5b;
     }
     &:hover{
         box-shadow: 0 16px 64px 6px rgba(46, 55, 77, 0.118);
@@ -29,7 +30,7 @@
     margin-left: 6px;
     .inst-icon {
         position: absolute;
-        width: 50px;
+        width: 30px;
         border-radius: 50%;
         background-color: rgb(216, 210, 210);
         border: 1px solid black;
@@ -72,6 +73,10 @@
     }
     .going-wrapper {
         justify-content: space-between;
+        p{
+            margin-left: 6px;
+            color: gray;
+        }
     }
     .date-slots {
         display: flex;
@@ -89,11 +94,12 @@
 }
 
 .jam-card-tags {
-    margin: 5px;
+    margin: 8px;
     grid-gap: 4px;
     * {
         border-radius: 4px;
-        background-color:#5f9ea0;
+        background-color:#5f9ea0ed;
+        // background-color:#5f9ea0;
         padding: 3px;
         color: rgb(255, 255, 255);
         border:transparent;

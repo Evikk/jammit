@@ -37,7 +37,8 @@
         padding: 10px;
         font-family: "Source-Sans";
         cursor: pointer;
-        background-color: $clr3;
+        // background-color: $clr3;
+        background-color: #7f6ed1;
         color: whitesmoke;
         border: solid rgb(249, 249, 250) 2px;
         transition: all .3s ease-in-out;
@@ -45,7 +46,11 @@
             background-color: rgb(249, 249, 250);
             color: $clr3;
         }
+        a{
+            color: rgb(255, 255, 255);
+        }
     }
+    
     &__image {
         position: absolute;
         width: 100%;

@@ -9,10 +9,24 @@
 .fs40 { font-size: rem(40px); }
 
 .pos-relative {position: relative;}
-.red {color: red;}
-.green {color: rgb(86, 181, 86);}
+.red {color: red;
+    border: 0.8px solid;
+    border-radius: 20px;
+    padding: 3px;
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+
+.green {color: rgb(86, 181, 86);
+    border: 0.8px solid;
+    border-radius: 20px;
+    padding: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
 .white{color:white;}
 .gray{ color: #929292}
+
 // flex helpers
 
 .flex {

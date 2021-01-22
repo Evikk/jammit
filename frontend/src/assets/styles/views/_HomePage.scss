@@ -32,9 +32,31 @@
 
 .title-row {
     margin-top: 30px;
-    text-align: end;
+    // text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     a {
         font-size: 1.5rem;
         margin-right: 30px;
+    }
+    
+}
+.title-row-members{
+    display: block;
+    margin-top: 30px;
+    // text-align: end;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+.purple{
+    color: darkslateblue;
+}
+
+footer{
+ display: flex;
+    img{
+        width: 190px;
     }
 }

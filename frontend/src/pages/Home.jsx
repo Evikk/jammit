@@ -8,6 +8,7 @@ import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
 import { JamList } from '../cmps/JamList.jsx'
+import recordlogo from "../assets/img/recordlogo.png"
 
 class _Home extends Component {
   state = {}
@@ -65,13 +66,18 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="members-list-preview">
-            <div className="title-row">
+            <div className="title-row-members">
               <h1 className="staatliches">Featured Members</h1>
               <UserList users={this.getFeaturedMembers()}/>
             </div>
             </div>
           </div>
         </main>
+        <footer className="flex column align-center">
+          <img className="footer-logo" src={recordlogo}/>
+          <small>All RIGHT RESERVED TO JAMEET2020&copy;</small>
+
+        </footer>
       </div>
     )
   }

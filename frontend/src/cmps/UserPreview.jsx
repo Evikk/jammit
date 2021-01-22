@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {instIcons} from '../assets/img/inst-icons/icons.js'
-
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 export function UserPreview({ user }) {
 
     function showIcons() {
@@ -29,7 +28,7 @@ export function UserPreview({ user }) {
                 <ul className="user-card-tags flex">{user.tags.map((tag, idx) => {
                     if (idx < 3) return <li key={idx}>{tag}</li> })}
                 </ul>
-                <p><LocationOnIcon/>{user.location.city}</p>
+                <p className="gray"><LocationOnOutlinedIcon/>{user.location.city}</p>
             </div>
         </li>
     );

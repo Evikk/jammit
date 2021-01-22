@@ -28,7 +28,7 @@ export function JamPreview({ jam }) {
             </div>
             <h2>{jam.title}</h2>
             <div className="jam-card-content flex">
-                <div className="date-wrapper">
+                {/* <div className="date-wrapper">
                     <div className="date-month">
                         {new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(jam.startsAt))}
                     </div>
@@ -36,14 +36,14 @@ export function JamPreview({ jam }) {
                         
                         {new Date(jam.startsAt).toLocaleString('he-IL',{day: '2-digit'})}
                     </div>
-                </div>
+                </div> */}
                 <div className="jam-details-wrapper">         
-                    <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                    <ul className="jam-card-tags flex ">{jam.tags.map((tag, idx) => {
                         return <li key={idx}>{tag}</li> })}
                     </ul>
                     <div className="going-wrapper flex">
                         <div>
-                            <p><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
+                            <p className="gray-dark"><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>
                                 {jam.usersGoing.length}/{jam.capacity} Slots
