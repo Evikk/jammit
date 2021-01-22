@@ -66,12 +66,11 @@ class _Home extends Component {
           </div> */}
 
           <div className="members-container section">
-            <div className="members-list-preview">
-            <div className="title-row-members">
-              <h1 className="staatliches">Featured Members</h1>
-              <UserList users={this.getFeaturedMembers()}/>
+            <div className="title-row">
+                <h1 className="staatliches">Featured Members</h1>
+                <Link to="/members">See All</Link>
             </div>
-            </div>
+            <UserList users={this.getFeaturedMembers()}/>
           </div>
         </main>
         <footer className="flex column align-center">

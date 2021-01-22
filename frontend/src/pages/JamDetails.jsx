@@ -48,6 +48,7 @@ class _JamDetails extends Component {
 
 
     async componentDidMount() {
+        window.scrollTo(0,0)
         this.props.loadJams()
         if (this.props.isEditMode) {
             this.setState({ jam: emptyJam, isEditMode: true, isUserAdmin: true })

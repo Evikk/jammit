@@ -61,9 +61,10 @@ class _JamsList extends Component {
 
     getTags =()=> {
         if (this.state.tags){
-            return this.state.tags.map((tag,idx)=> {
-                return <li className="cursor-pointer" key={idx} value={tag} onClick={()=>this.onTagChoose(tag,idx)}>{tag}</li>
+            const tags = this.state.tags.map((tag,idx)=> {
+                return <li className="cursor-pointer filter-tags" key={idx} value={tag} onClick={()=>this.onTagChoose(tag,idx)}>{tag}</li>
             })
+            return tags.slice(0,6)
         }
         return
     }
@@ -86,6 +87,9 @@ class _JamsList extends Component {
            </div>}
         return (
             <section className="main-content">
+                    <div className="search-title">
+                        <h1 className="staatliches align-center">Jam Search</h1>
+                    </div>
                 <div className="jam-filter-container flex justify-center">
                     <div className="title-search">
                         <SearchRoundedIcon className="search-icon" />
@@ -101,7 +105,7 @@ class _JamsList extends Component {
                     </select>
                 </div>
                 <div className="flex justify-center">
-                    <ul className="jam-card-tags flex justify-center">
+                    <ul className="jam-card-tags flex filter-tags">
                         {this.getTags()}
                     </ul>
                 </div>
