@@ -2,10 +2,13 @@ import Slider from "react-slick";
 import { JamPreview } from "./JamPreview";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Loader from "react-loader-spinner";
 
 
 export function JamScroll({ jams }) {
-    if (!jams) return <h2>Loading...</h2>
+    if (!jams) return <div className="loader main-content pos-relative">
+    <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+  </div>
     var settings = {
         dots: false,
         infinite: false,

@@ -8,7 +8,6 @@ async function getJams(req, res) {
             region: req.query?.region || '',
         }
         
-        console.log(filterBy, 'filterBy getJams');
         const jams = await jamService.query(filterBy)
         res.send(jams)
     } catch (err) {
@@ -51,7 +50,6 @@ async function addJam(req, res) {
 async function updateJam(req, res) {
     try {
         const jam = req.body
-        console.log(jam, 'controller');
         
         const savedJam = await jamService.update(jam)
         res.send(savedJam)

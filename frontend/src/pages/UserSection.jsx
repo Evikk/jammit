@@ -8,6 +8,7 @@ import { JamList } from "../cmps/JamList";
 import { UserList } from "../cmps/UserList";
 import { JamCreate } from "./JamCreate";
 import { JamScroll } from "../cmps/JamScroll";
+import Loader from "react-loader-spinner";
 
 class _UserSection extends Component {
 
@@ -58,7 +59,11 @@ class _UserSection extends Component {
     render() {
         const { jams, loggedInUser } = this.props
         const { activeTab } = this.state
-        if (jams.length === 0 ) return <h2>loading...</h2>
+        if (jams.length === 0 )  {
+             return <div className="loader main-content pos-relative">
+             <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
+           </div>
+        }
         return (
             
             <main className="main-content user-section flex">
