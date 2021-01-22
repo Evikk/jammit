@@ -13,6 +13,7 @@ import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
 import { Link } from "react-router-dom"
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
 
@@ -257,7 +258,7 @@ class _JamExplore extends Component {
                                 <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
                                 <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
                                 <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + jam.createdBy._id} > {jam.createdBy.fullname}</Link></span></p>
-                                <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
+                                <p><span className="icon-style"><RoomOutlinedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
                                 <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{this.timeFormatter()}</span></p>
                                 <div className="description-con">
                                     <h3 className="title-style">Description</h3>
