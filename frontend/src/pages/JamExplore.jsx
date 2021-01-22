@@ -16,6 +16,10 @@ import { Link } from "react-router-dom"
 
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
 
+const shape = {
+    coords: [1, 1, 1, 20, 18, 20, 18, 1],
+    type: "poly",
+  };
 
 const mapStyles = {
     width: "100%",
@@ -132,10 +136,6 @@ class _JamExplore extends Component {
         }
     }
 
-    showPopupJam = (jam) => {
-
-    }
-
     onJamCenter = (jamId) => {
         const marker = this.state.markers.find(marker => {
             return marker.key === jamId
@@ -224,8 +224,10 @@ class _JamExplore extends Component {
                             position={userPos.position}
                             icon={{
                                 url: loggedInUser.imgUrl,
-                                anchor: new this.props.google.maps.Point(32, 32),
-                                scaledSize: new this.props.google.maps.Size(50, 50)
+                                // anchor: new this.props.google.maps.Point(32, 32),
+                                scaledSize: new this.props.google.maps.Size(50, 50),
+                                origin: new this.props.google.maps.Point(0, 0),
+                                anchor: new this.props.google.maps.Point(17, 34),
                             }}
                         />}
                         <InfoWindow

@@ -7,8 +7,7 @@ import { sendMsg } from '../store/actions/jamActions'
 class _JamChat extends Component {
   state = {
     msg: { txt: '' },
-    msgs: [],
-    topic: 'Love',
+    msgs: []
   }
 
   componentDidMount() {
@@ -26,7 +25,6 @@ class _JamChat extends Component {
 
   addMsg = newMsg => {
       this.props.sendMsg(newMsg, this.props.jam)
-    // this.setState(prevState => ({ msgs: [...prevState.msgs, newMsg] }))
   }
 
   sendMsg = ev => {
