@@ -50,17 +50,30 @@ class _JamChat extends Component {
     return (
       <div className="chat-container">
         <ul className="chat-msgs">
-          
-          {this.state.msgs.map((msg, idx) => (
-            <li key={idx}>{msg.from}: {msg.txt}</li>
+        {this.state.msgs.map((msg, idx) => (
+            <li key={idx} className={(idx % 2) ? 'bgc-gray' : 'bgc-white'}>
+              <p className="sender-name">{msg.from}<span className={(idx < 1) ? 'offline' : 'online'}>•</span></p>
+              <p className="msg-text">{msg.txt}</p>
+            </li>
           ))}
+
+          
         </ul>
+        {/* <ul className="chat-msgs">
+          {this.state.msgs.map((msg, idx) => (
+            <li key={idx}><span>{msg.from}:</span> <span className="msg-text">{msg.txt}</span></li>
+          ))}
+          
+        </ul> */}
+       
+
         <form onSubmit={this.sendMsg}>
           <input
             type="text"
             value={this.state.msg.txt}
             onChange={this.msgHandleChange}
             name="txt"
+            placeholder="Write a comment..."
             autoComplete="off"
           />
           <button>Send</button>
