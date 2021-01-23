@@ -126,18 +126,18 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
-                                        <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                                        <ul className="jam-card-tags big-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
                                     {!this.state.isEditMode && <div>
+                                        <h3 className="title-style">Jam Wall</h3>
                                         <JamChat jamId={jam._id} msgs={jam.msgs} jam={jam}/>
                                     </div>}                           
                                 </div>
                             </div>
                             <div className="left-page-con">
                                 <div className="location-con">
-                                    <h3 className="title-style">Location</h3>
                                     {/* <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div> */}
                                     <div><StaticMap lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
                                 </div>

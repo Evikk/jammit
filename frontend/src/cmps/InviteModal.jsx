@@ -43,8 +43,17 @@ class _InviteModal extends React.Component {
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
-        socketService.setup()
-        socketService.emit('user connection', this.props.loggedInUser._id);
+        if (this.props.loggedInUser){
+            socketService.setup()
+            socketService.emit('user connection', this.props.loggedInUser._id);
+        }
+    }
+
+    componentWillUnmount(){
+        if (this.props.loggedInUser){
+            socketService.off('user connection', this.props.loggedInUser._id)
+            clearTimeout(this.timeout)
+        }
     }
 
     handleChange(user, invited) {
@@ -63,11 +72,15 @@ class _InviteModal extends React.Component {
         }), invited: this.state.following.slice()});
     }
     sendInvites() {
-        console.log(this.state.invited);
+        const link = `jam/${this.props.jamId}`
+        const msg = 
+            `${this.props.loggedInUser.username} 
+            has invited you to ${this.props.jamTitle}!!!`
+
         this.state.invited.forEach(user=>{
             console.log(user._id);
             socketService.emit('user connection', user._id);
-            socketService.emit('invite','YESSSS')
+            socketService.emit('invite', { msg, link })
             socketService.emit('user connection', this.props.loggedInUser._id);
         })
     }

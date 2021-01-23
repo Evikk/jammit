@@ -32,7 +32,11 @@
 }
 
 .title-style {
-    color: rgb(92, 91, 91);
+    color: #ffffffbd;
+    background: #324b4f;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding-left: 20px;
 }
 .details-style {
     color: rgb(92, 91, 91);
@@ -54,7 +58,6 @@
     margin-top: 10px;
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
     font-size: 20px;
     line-height: 44px;
     height: 100%;
@@ -62,6 +65,7 @@
         color: #15182c;
         display: flex;
         align-items: center;
+        padding-left: 16px;
     }
 }
 
@@ -257,9 +261,9 @@
     left: 20px;
 }
 
-.jam-card-tags {
-    line-height: 1;
-}
+
+    
+
 
 .invite-jam-btn:hover {
     background-color: rgb(255, 255, 255);
@@ -376,5 +380,12 @@ flex-wrap: wrap;
     & form {
         padding: 20px 5px;
         border-top: 1px solid grey;
+    }
+}
+
+.big-tags {
+    line-height: 1;
+    li {
+        font-size: 1.5rem;
     }
 }

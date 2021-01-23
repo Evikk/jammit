@@ -53,6 +53,14 @@
     width: 50px;
 }
 
+.user-nav {
+    display: flex;
+    align-items: center;
+    a {
+        color: black;
+    }
+}
+
 .avatar-wrapper {
     
     @include aspect-ratio(80, 80);

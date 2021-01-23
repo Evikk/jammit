@@ -18,6 +18,7 @@
 .map-thumb-wrapper {
     @include aspect-ratio(320, 150);
     width: 100%;
+    margin-top: 20px;
 }
 
 
@@ -74,6 +75,17 @@
 }
 
 .close-details {
-    text-align: end;
-    font-size: 2rem;
+    position: relative;
+    span {
+        cursor: pointer;
+        position: absolute;
+        right: 7px;
+        font-size: 2rem;
+        color: black;
+        top: 0;
+    }
+    h3 {
+        margin-left: 8px;
+        text-align: center;
+    }
 }
