@@ -3,24 +3,17 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { connect } from "react-redux";
 import { loadJams, updateJamGoing } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
-import { JamPreview } from "../cmps/JamPreview.jsx";
-import jamMarker from "../assets/img/green-marker.png"
+// import jamMarker from "../assets/img/green-marker.png"
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 import Loader from "react-loader-spinner";
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
-import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+// import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
 import { Link } from "react-router-dom"
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
-
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
-
-const shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: "poly",
-  };
 
 const mapStyles = {
     width: "100%",
@@ -168,7 +161,8 @@ class _JamExplore extends Component {
                 currMembers={jam.usersGoing.length}
                 capacity={jam.capacity}
                 icon={{
-                    url: jamMarker,
+                    url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+                    // url: jamMarker,
                     anchor: new this.props.google.maps.Point(32, 32),
                     scaledSize: new this.props.google.maps.Size(50, 50)
                 }}
@@ -236,14 +230,16 @@ class _JamExplore extends Component {
                         >
                             <div>
                                 <h2>{this.state.selectedPlace.title}</h2>
-                                <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
                             </div>
                         </InfoWindow>
                     </Map>
                     {isPopupShow &&
                         <div className="jam-popup">
                             <div className="details-con">
-                                <div className="close-details" onClick={()=>this.setState({isPopupShow: false})}>&times;</div>
+                                <div className="close-details">
+                                    <h3 >{jam.title} </h3>
+                                    <span onClick={()=>this.setState({isPopupShow: false})}>&times;</span> 
+                                </div>
                                 <div className="map-thumb-wrapper" onClick={() => this.props.history.push(`jam/${jam._id}`)}>
                                     <img src={jam.imgUrl} alt="jam-thumbnail" />
                                 </div>
@@ -254,7 +250,7 @@ class _JamExplore extends Component {
                                 updateJamGoing={this.props.updateJamGoing}
                                 isUserAdmin={false}
                                 showBasicActionsOnly={true}
-                            />
+                                />
                                 <h3 className="title-style">Details</h3>
                                 <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
                                 <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
@@ -265,7 +261,7 @@ class _JamExplore extends Component {
                                     <h3 className="title-style">Description</h3>
                                     <p>{jam.description}</p>
                                 </div>
-                                <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                                <ul className="jam-card-tags big-tags flex">{jam.tags.map((tag, idx) => {
                                     return <li key={idx}>{tag}</li>
                                 })}
                                 </ul>
@@ -295,30 +291,30 @@ export const JamExplore = GoogleApiWrapper({
     apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
 })(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
 
-{/* <div className="jams-explore-container">
-                <div className="jams-explore-filter flex column">
-                    <h1>Filter Jams</h1>
-                    <div className="filter-inputs">
-                        <input type="text" name="name" id=""/>
-                        <select name="filterByInst">
-                            <option value="">By Instrument Missing</option>
-                            <option value="">Singer</option>
-                            <option value="">Guitar</option>
-                            <option value="">Drums</option>
-                            <option value="">Bass</option>
-                            <option value="">Keyboard</option>
-                        </select>
-                        <select name="filterByRegion">
-                            <option value="">By Region</option>
-                            <option value="">North</option>
-                            <option value="">Center</option>
-                            <option value="">South</option>
-                        </select>
-                    </div>
-                </div>
-                <ul className="jams-explore-list">
-                    {jams.map((jam) => (
-                        <JamPreview key={jam._id} jam={jam}/>
-                    ))}
-                </ul>
-            </div> */}
+// {/* <div className="jams-explore-container">
+//                 <div className="jams-explore-filter flex column">
+//                     <h1>Filter Jams</h1>
+//                     <div className="filter-inputs">
+//                         <input type="text" name="name" id=""/>
+//                         <select name="filterByInst">
+//                             <option value="">By Instrument Missing</option>
+//                             <option value="">Singer</option>
+//                             <option value="">Guitar</option>
+//                             <option value="">Drums</option>
+//                             <option value="">Bass</option>
+//                             <option value="">Keyboard</option>
+//                         </select>
+//                         <select name="filterByRegion">
+//                             <option value="">By Region</option>
+//                             <option value="">North</option>
+//                             <option value="">Center</option>
+//                             <option value="">South</option>
+//                         </select>
+//                     </div>
+//                 </div>
+//                 <ul className="jams-explore-list">
+//                     {jams.map((jam) => (
+//                         <JamPreview key={jam._id} jam={jam}/>
+//                     ))}
+//                 </ul>
+//             </div> */}

@@ -6,14 +6,14 @@ export function JamPreview({ jam }) {
 
     function showIcons (){
 
-        return instIcons.map(icon=>{
+        return instIcons.map((icon, idx)=>{
             const user = jam.usersGoing.find(user => {
                 return user.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
                 })
             })
-            if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
+            if (user) return <img key={idx} className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
         })
     }
     const slotsLeft = jam.capacity - jam.usersGoing.length
@@ -21,12 +21,12 @@ export function JamPreview({ jam }) {
     return (
         <Link to={`/jam/${jam._id}`}><li className="jam-card flex column">
             <div className="thumb-wrapper flex column pos-relative">
-                <img className="jam-thumb" src={jam.imgUrl} alt="jam-thumbnail"/>
+                <img className="jam-thumb" loading="lazy" src={jam.imgUrl} alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
                     {showIcons()}
                 </div>
             </div>
-            <h2>{jam.title}</h2>
+            {/* <h2>{jam.title}</h2> */}
             <div className="jam-card-content flex">
                 {/* <div className="date-wrapper">
                     <div className="date-month">
@@ -37,12 +37,13 @@ export function JamPreview({ jam }) {
                         {new Date(jam.startsAt).toLocaleString('he-IL',{day: '2-digit'})}
                     </div>
                 </div> */}
-                <div className="jam-details-wrapper">         
+                <div className="jam-details-wrapper">    
+                <h2>{jam.title}</h2>     
                     <ul className="jam-card-tags flex ">{jam.tags.map((tag, idx) => {
                         return <li key={idx}>{tag}</li> })}
                     </ul>
                     <div className="going-wrapper flex">
-                        <div>
+                        <div className="align-self">
                             <p className="gray-dark"><LocationOnOutlinedIcon style={{ fontSize: 15 }}/>{jam.location.city}</p>
                         </div>
                         <span className={slotsLeft < 5 ? 'red' : 'green'}>

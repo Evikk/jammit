@@ -16,12 +16,15 @@
     // padding-top: 0;
     text-decoration: none;
     font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: -18px -3px 18px #ffe7e7;
 }
 
 .navbar a:not(:first-child){
     position: relative;
     color: rgb(0, 0, 0);
     padding-top: 23px;
+    font-weight: bold;
 }
 .navbar a:not(:first-child):hover{
     color: rgb(24, 21, 21);
@@ -51,6 +54,14 @@
 }
 .top-nav-logo img{
     width: 50px;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+    a {
+        color: black;
+    }
 }
 
 .avatar-wrapper {

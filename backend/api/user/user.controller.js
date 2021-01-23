@@ -12,7 +12,6 @@ async function getUser(req, res) {
 }
 
 async function getUsers(req, res) {
-    console.log('req get users',req.query);
     try {
         const filterBy = {
             username: req.query ?.username || '',

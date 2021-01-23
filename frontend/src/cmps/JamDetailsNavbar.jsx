@@ -21,7 +21,7 @@ class _JamNavbar extends Component {
                 
                 <div className="navbar-right">
                     <LoginModal history={this.props.history} showModal={this.state.showLoginModal}/>
-                    <InviteModal history={this.props.history} following={this.props.user?this.props.user.following:[]} handleCloseModal={this.handleCloseInviteModal.bind(this)} showModal={this.state.showInviteModal} />
+                    <InviteModal jamTitle={jam.title} jamId={jam._id} history={this.props.history} following={this.props.user?this.props.user.following:[]} handleCloseModal={this.handleCloseInviteModal.bind(this)} showModal={this.state.showInviteModal} />
                     {!user &&
                         <li><button className="join-jam-btn" onClick={() => this.setState({
                             showLoginModal: true

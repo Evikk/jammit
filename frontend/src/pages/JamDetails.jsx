@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { jamService } from '../services/jamService'
-import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+// import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
@@ -127,11 +127,12 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
-                                        <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                                        <ul className="jam-card-tags big-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
                                     {!this.state.isEditMode && <div>
+                                        <h3 className="title-style">Jam Wall</h3>
                                         <JamChat jamId={jam._id} msgs={jam.msgs} jam={jam}/>
                                     </div>}                           
                                 </div>

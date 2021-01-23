@@ -25,6 +25,7 @@ class _JamChat extends Component {
 
   addMsg = newMsg => {
       this.props.sendMsg(newMsg, this.props.jam)
+      this.setState({msgs: this.props.msgs })
   }
 
   sendMsg = ev => {
@@ -50,7 +51,7 @@ class _JamChat extends Component {
     return (
       <div className="chat-container">
         <ul className="chat-msgs">
-          <h2>Jam Wall</h2>
+          
           {this.state.msgs.map((msg, idx) => (
             <li key={idx}>{msg.from}: {msg.txt}</li>
           ))}

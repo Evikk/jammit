@@ -1,9 +1,10 @@
+import { connect } from 'react-redux'
 import ReactModal from 'react-modal';
 import React from 'react';
 import { FriendsInvitePreview } from './InviteFriends'
+import { socketService } from '../services/socketService'
 
-
-export  class InviteModal extends React.Component {
+class _InviteModal extends React.Component {
 
     constructor() {
         super();
@@ -39,9 +40,21 @@ export  class InviteModal extends React.Component {
           }
       }
     componentDidMount() {
+        const {invited} = this.state
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
+        if (this.props.loggedInUser){
+            socketService.setup()
+            socketService.emit('user connection', this.props.loggedInUser._id);
+        }
+    }
+
+    componentWillUnmount(){
+        if (this.props.loggedInUser){
+            socketService.off('user connection', this.props.loggedInUser._id)
+            clearTimeout(this.timeout)
+        }
     }
 
     handleChange(user, invited) {
@@ -60,8 +73,19 @@ export  class InviteModal extends React.Component {
         }), invited: this.state.following.slice()});
     }
     sendInvites() {
-        console.log(this.state.invited);
+        const link = `jam/${this.props.jamId}`
+        const msg = 
+            `${this.props.loggedInUser.username} 
+            has invited you to ${this.props.jamTitle}!!!`
+
+        this.state.invited.forEach(user=>{
+            console.log(user._id);
+            socketService.emit('user connection', user._id);
+            socketService.emit('invite', { msg, link })
+            socketService.emit('user connection', this.props.loggedInUser._id);
+        })
     }
+    
     render() {
         const customStyles = {
             content: {
@@ -108,3 +132,12 @@ export  class InviteModal extends React.Component {
         );
     }
 }
+const mapStateToProps = state => {
+    return {
+      loggedInUser: state.userModule.loggedInUser
+    }
+  }
+  const mapDispatchToProps = {
+  }
+  
+  export const InviteModal = connect(mapStateToProps, mapDispatchToProps)(_InviteModal)
