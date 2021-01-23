@@ -198,10 +198,11 @@
 
 .invite-jam-btn {
     
-    border: transparent;
-    background-color: rgb(249, 249, 250);
+    background-color: cadetblue;
+    color: white;
+    border: 2px transparent solid;
     width: 100px;
-    color: rgb(159, 161, 161);
+
 }
 .edit-jam-btn {
     border: transparent;
@@ -265,8 +266,9 @@
 }
 
 .invite-jam-btn:hover {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
+    background-color: transparent;
+    border: solid cadetblue 2px;
+    color: rgb(159, 161, 161);
 }
 
 .invite-list {

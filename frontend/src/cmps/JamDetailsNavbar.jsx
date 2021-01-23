@@ -8,13 +8,20 @@ import { InviteModal} from  './InviteModal'
 class _JamNavbar extends Component {
     state = {
         showLoginModal: false,
-        showInviteModal: false
+        showInviteModal: false,
+       
     }
 
+ 
     handleCloseInviteModal() {
         this.setState({showInviteModal: false});
     }
+    isUserGoingToJam() {
+        return this.props.jam.usersGoing.filter((userGoing) => userGoing._id === this.props.user._id).length !== 0;
+
+    }
     render() {
+   
         let { updateJamGoing, jam, user, isUserAdmin } = this.props;
         return (
             <ul className="jam-details-navbar">
@@ -26,19 +33,20 @@ class _JamNavbar extends Component {
                         <li><button className="join-jam-btn" onClick={() => this.setState({
                             showLoginModal: true
                         })}>Join Jam</button></li>}
-                    {user && jam.usersGoing.filter((userGoing) => userGoing._id === user._id).length === 0 &&
-                        <li><button className="join-jam-btn" onClick={() => updateJamGoing(jam, { ...user, playing: ['Singer'] }, true)}>Join Jam</button></li>}
-                    {!isUserAdmin && user && jam.usersGoing.filter((userGoing) => userGoing._id === user._id).length !== 0 &&
+                    {user && !this.isUserGoingToJam()&&
+                        <li><button className="join-jam-btn" onClick={() => {updateJamGoing(jam, { ...user, playing: ['Singer'] }, true)}}>Join Jam</button></li>}
+                    {!isUserAdmin && user &&  this.isUserGoingToJam() &&
                         <li><button className="leave-jam-btn" onClick={() => updateJamGoing(jam, user, false)}>Leave Jam</button></li>}
                     {isUserAdmin && <li><button className="edit-jam-btn">Edit Details</button></li>}
                     {!user &&
                         <li><button className="invite-jam-btn" onClick={() => this.setState({
                             showLoginModal: false
                         })}>Invite</button></li>}
-                    {user && 
+                    {user && this.isUserGoingToJam() &&
                         <li><button className="invite-jam-btn" onClick={() => this.setState({
                             showInviteModal: true
                         })}>Invite</button></li>}
+
 
                 </div>
             </ul>
