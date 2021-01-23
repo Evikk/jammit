@@ -81,7 +81,7 @@ class _Home extends Component {
         </main>
         <footer className="flex column align-center">
           <img className="footer-logo" src={recordlogo}/>
-          <small>All RIGHT RESERVED TO JAMEET 2020&copy;</small>
+          <small>All RIGHT RESERVED TO JAMEET 2021&copy;</small>
         </footer>
       </div>
     )
