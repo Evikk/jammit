@@ -26,7 +26,15 @@
 }
 .white{color:white;}
 .gray{ color: #929292}
-
+.blue{color: blue;}
+.online{color: rgb(86, 181, 86);
+    vertical-align: super;
+    
+}
+.offline{
+    color: rgba(87, 83, 83, 0.89);
+    vertical-align: super;
+}
 // flex helpers
 
 .flex {
