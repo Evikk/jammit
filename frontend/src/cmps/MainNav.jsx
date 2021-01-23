@@ -3,13 +3,24 @@ import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 import React, { Component } from 'react'
 import { mainNavService } from '../services/mainNavService.js'
-import recordlogo from "../assets/img/recordlogo.png"
 import logoM from "../assets/img/logo-m.png"
+import { socketService } from '../services/socketService'
+
 class _MainNav extends Component {
 
 
     componentDidMount() {
+        if (this.props.loggedInUser) {
+            socketService.setup()
+            socketService.emit('user connection', this.props.loggedInUser._id);
+            socketService.on('send',this.func)
+            
+        }
         mainNavService.setHomePageNavStyle()
+    }
+
+    func = (data)=>{
+        alert(data)
     }
 
     componentDidUpdate() {
@@ -29,6 +40,7 @@ class _MainNav extends Component {
                     <NavLink to="/" className="top-nav-logo"><img src={logoM} alt="logo"/></NavLink>
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
+                    <button onClick={this.sendMsg}>Ahalan</button>
                 </div>
                 <div className="user-nav">
                     {loggedInUser ? <NavLink className="user-avater-link" to="/user">
@@ -54,3 +66,7 @@ const mapDispatchToProps = {
 
 
 export const MainNav = withRouter(connect(mapStateToProps, mapDispatchToProps)(_MainNav))
+
+
+// idan raichel id 6005e093bf4a64698823123e
+// tomer id 6005e093bf4a646988231239

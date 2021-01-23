@@ -1,9 +1,10 @@
+import { connect } from 'react-redux'
 import ReactModal from 'react-modal';
 import React from 'react';
 import { FriendsInvitePreview } from './InviteFriends'
+import { socketService } from '../services/socketService'
 
-
-export  class InviteModal extends React.Component {
+class _InviteModal extends React.Component {
 
     constructor() {
         super();
@@ -42,6 +43,8 @@ export  class InviteModal extends React.Component {
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
+        socketService.setup()
+        socketService.emit('user connection', this.props.loggedInUser._id);
     }
 
     handleChange(user, invited) {
@@ -61,7 +64,14 @@ export  class InviteModal extends React.Component {
     }
     sendInvites() {
         console.log(this.state.invited);
+        this.state.invited.forEach(user=>{
+            console.log(user._id);
+            socketService.emit('user connection', user._id);
+            socketService.emit('invite','YESSSS')
+            socketService.emit('user connection', this.props.loggedInUser._id);
+        })
     }
+    
     render() {
         const customStyles = {
             content: {
@@ -108,3 +118,12 @@ export  class InviteModal extends React.Component {
         );
     }
 }
+const mapStateToProps = state => {
+    return {
+      loggedInUser: state.userModule.loggedInUser
+    }
+  }
+  const mapDispatchToProps = {
+  }
+  
+  export const InviteModal = connect(mapStateToProps, mapDispatchToProps)(_InviteModal)
