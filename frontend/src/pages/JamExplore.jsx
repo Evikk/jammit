@@ -3,15 +3,16 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { connect } from "react-redux";
 import { loadJams, updateJamGoing } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
-import jamMarker from "../assets/img/green-marker.png"
+// import jamMarker from "../assets/img/green-marker.png"
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 import Loader from "react-loader-spinner";
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
-import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+// import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
 
 const mapStyles = {
@@ -254,7 +255,7 @@ class _JamExplore extends Component {
                                 <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
                                 <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
                                 <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + jam.createdBy._id} > {jam.createdBy.fullname}</Link></span></p>
-                                <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
+                                <p><span className="icon-style"><RoomOutlinedIcon /></span> <span className="details-style">{jam.location.address}, {jam.location.city}</span></p>
                                 <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{this.timeFormatter()}</span></p>
                                 <div className="description-con">
                                     <h3 className="title-style">Description</h3>
@@ -290,30 +291,30 @@ export const JamExplore = GoogleApiWrapper({
     apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
 })(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
 
-{/* <div className="jams-explore-container">
-                <div className="jams-explore-filter flex column">
-                    <h1>Filter Jams</h1>
-                    <div className="filter-inputs">
-                        <input type="text" name="name" id=""/>
-                        <select name="filterByInst">
-                            <option value="">By Instrument Missing</option>
-                            <option value="">Singer</option>
-                            <option value="">Guitar</option>
-                            <option value="">Drums</option>
-                            <option value="">Bass</option>
-                            <option value="">Keyboard</option>
-                        </select>
-                        <select name="filterByRegion">
-                            <option value="">By Region</option>
-                            <option value="">North</option>
-                            <option value="">Center</option>
-                            <option value="">South</option>
-                        </select>
-                    </div>
-                </div>
-                <ul className="jams-explore-list">
-                    {jams.map((jam) => (
-                        <JamPreview key={jam._id} jam={jam}/>
-                    ))}
-                </ul>
-            </div> */}
+// {/* <div className="jams-explore-container">
+//                 <div className="jams-explore-filter flex column">
+//                     <h1>Filter Jams</h1>
+//                     <div className="filter-inputs">
+//                         <input type="text" name="name" id=""/>
+//                         <select name="filterByInst">
+//                             <option value="">By Instrument Missing</option>
+//                             <option value="">Singer</option>
+//                             <option value="">Guitar</option>
+//                             <option value="">Drums</option>
+//                             <option value="">Bass</option>
+//                             <option value="">Keyboard</option>
+//                         </select>
+//                         <select name="filterByRegion">
+//                             <option value="">By Region</option>
+//                             <option value="">North</option>
+//                             <option value="">Center</option>
+//                             <option value="">South</option>
+//                         </select>
+//                     </div>
+//                 </div>
+//                 <ul className="jams-explore-list">
+//                     {jams.map((jam) => (
+//                         <JamPreview key={jam._id} jam={jam}/>
+//                     ))}
+//                 </ul>
+//             </div> */}
