@@ -28,6 +28,8 @@ class _MainNav extends Component {
                 <Link to={data.link}>Go To The Jam!</Link>
             </div>
         }
+        console.log(<Invite/>);
+        
         toast(<Invite/>, {
             position: "top-right",
             autoClose: 10000,
