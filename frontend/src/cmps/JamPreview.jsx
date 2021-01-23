@@ -24,7 +24,7 @@ export function JamPreview({ jam }) {
         <li className="jam-card flex column">
             <Link to={`/jam/${jam._id}`}>
             <div className="thumb-wrapper flex column pos-relative">
-                <img className="jam-thumb" loading="lazy" src={jam.imgUrl} alt="jam-thumbnail"/>
+                <img className="jam-thumb"  src={jam.imgUrl} alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
                     {showIcons()}
                 </div>

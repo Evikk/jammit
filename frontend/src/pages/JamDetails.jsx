@@ -133,6 +133,7 @@ class _JamDetails extends Component {
                                         })}
                                         </ul>
                                     </div>
+                                 
                                 </div>
                                 {!this.state.isEditMode && <div className="wall-container">
                                         <h3 className="title-style">Jam Wall</h3>
