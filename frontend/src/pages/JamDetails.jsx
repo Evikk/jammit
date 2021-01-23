@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { jamService } from '../services/jamService'
-import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
+// import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import PeopleAltRoundedIcon from '@material-ui/icons/PeopleAltRounded';
 import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
@@ -16,6 +16,7 @@ import {StaticMap} from '../cmps/StaticMap'
 // import { jamGoingListModal } from '../cmps/JamGoingModal'
 // import { loadJams } from '../store/actions/jamActions'
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import Loader from 'react-loader-spinner';
 import { JamChat } from '../cmps/JamChat';
 
@@ -120,7 +121,7 @@ class _JamDetails extends Component {
                                     <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{this.state.jam.capacity - this.state.jam.usersGoing.length} Slots Available</span></p>
                                     <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{this.state.jam.usersGoing.length} People going</span></p>
                                     {!isEditMode && <p><span className="icon-style"><EmojiPeopleRoundedIcon /></span> <span className="details-style">Created by <Link to={"/user/" + this.state.jam.createdBy._id} > {this.state.jam.createdBy.fullname}</Link></span></p>}
-                                    <p><span className="icon-style"><RoomRoundedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
+                                    <p><span className="icon-style"><RoomOutlinedIcon /></span> <span className="details-style">{this.state.jam.location.address}, {this.state.jam.location.city}</span></p>
                                     <p><span className="icon-style"><AccessTimeRoundedIcon /></span> <span className="details-style">{utilService.getFormattedDate(this.state.jam.startsAt)}</span></p>
                                     <div className="description-con">
                                         <h3 className="title-style">Description</h3>
@@ -141,7 +142,8 @@ class _JamDetails extends Component {
                                     </div>} 
                             </div>
                             <div className="left-page-con">
-                                <div className="location-con">
+                            <div className="location-con">
+                                    <h3 className="title-style">Location</h3>
                                     {/* <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div> */}
                                     <div><StaticMap lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
                                 </div>
@@ -155,6 +157,7 @@ class _JamDetails extends Component {
                                     <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
                                     
                                 </div>}
+                            
                             </div>
                         </div>
                     </div>}

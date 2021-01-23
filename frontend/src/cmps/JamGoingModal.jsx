@@ -4,74 +4,79 @@
 // import Modal from 'react-modal';
 import ReactModal from 'react-modal';
 import React from 'react';
- import {JamUserPreview} from './JamUserPreview'
+import { JamUserPreview } from './JamUserPreview'
 
 
 export default class JamGoingListModal extends React.Component {
 
-    constructor () {
-      super();
-      this.state = {
-        showModal: false
+  constructor() {
+    super();
+    this.state = {
+      showModal: false
 
 
-      };
-      
-      this.handleOpenModal = this.handleOpenModal.bind(this);
-      this.handleCloseModal = this.handleCloseModal.bind(this);
-    }
-    
-    handleOpenModal () {
-      this.setState({ showModal: true 
-      });
-    }
-    
-    handleCloseModal () {
-      this.setState({ showModal: false 
-      
-      
-      });
-    }
-    componentDidMount(){
-      document.addEventListener('keyup', (e) => {
-          if (e.keyCode === 27) this.handleCloseModal();
-      });
+    };
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
-    render () {
-        const customStyles = {
-            content : {
-              top                   : '50%',
-              left                  : '50%',
-              right                 : 'auto',
-              bottom                : 'auto',
-              marginRight           : '-50%',
-              transform             : 'translate(-50%, -50%)'
-            }
-          };
-      return (
-        <div>
-          <button className="see-all-btn" onClick={this.handleOpenModal}>See All</button>
-          <ReactModal 
-             isOpen={this.state.showModal}
-             contentLabel="jammers-going-list"
-             style={customStyles}
-             closeOnEsc={true}
-             ariaHideApp={false}
-             >
-            <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
+
+  handleOpenModal() {
+    this.setState({
+      showModal: true
+    });
+  }
+
+  handleCloseModal() {
+    this.setState({
+      showModal: false
+
+
+    });
+  }
+  componentDidMount() {
+    document.addEventListener('keyup', (e) => {
+      if (e.keyCode === 27) this.handleCloseModal();
+    });
+  }
+  render() {
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        display: 'grid',
+        height: '70%',
+        width: '70%'
+      }
+    };
+    return (
+      <div>
+        <button className="see-all-btn" onClick={this.handleOpenModal}>See All</button>
+        <ReactModal
+          isOpen={this.state.showModal}
+          contentLabel="jammers-going-list"
+          style={customStyles}
+          closeOnEsc={true}
+          ariaHideApp={false}
+        >
+          <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
           <ul className="users-going-con">
-               {this.props.usersGoing.map(function (user, index) {
-                              return <JamUserPreview key={index} user={user} />
-               })}
-                                
-           </ul>
-           
-          </ReactModal>
-        </div>
-      );
-    }
+            {this.props.usersGoing.map(function (user, index) {
+              return <JamUserPreview key={index} user={user} />
+            })}
+
+          </ul>
+
+        </ReactModal>
+      </div>
+    );
   }
-  
+}
+
 
 /*More features*/
 
