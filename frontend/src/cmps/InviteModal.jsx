@@ -84,6 +84,7 @@ class _InviteModal extends React.Component {
             socketService.emit('invite', { msg, link })
             socketService.emit('user connection', this.props.loggedInUser._id);
         })
+        this.handleCloseModal()
     }
     
     render() {
@@ -93,14 +94,14 @@ class _InviteModal extends React.Component {
                 left: '50%',
                 right: 'auto',
                 bottom: 'auto',
+                padding: '0',
                 marginRight: '-50%',
                 transform: 'translate(-50%, -50%)',
-                width: '550px',
-                height: '450px'
-                
-             
-
-            }
+                width: '370px',
+                background: '#efefef'
+            },
+            
+            overlay: {zIndex: 99}
         };
         return (
                 <ReactModal
@@ -110,13 +111,16 @@ class _InviteModal extends React.Component {
                     closeOnEsc={true}
                     ariaHideApp={false}
                 >
-                    <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
-                    <div className="invite-modal-title">
-                    <h2>Invite Your Friends!</h2>
+                <div className="align-center">
+                    <div className="invite-modal-title flex">
+                        <h2>Invite Your Friends!</h2>
+                        <button className="esc-btn-modal" onClick={this.handleCloseModal}>&times;</button>
+                    </div>
+                    <div className="align-end">
+                        <button className="select-all-btn" onClick={() => this.selectAll()}>Select All</button>
                     </div>
                     {/* <input type="checkbox" name="select-all-box" id="select-all-box"></input>
                     <label for="select-all-box">Select All</label> */}
-                    <button className="select-all-btn" onClick={() => this.selectAll()}>Select All</button>
                     <div className="following-friends-list">
                    
                     <ul className="following-list-con">
@@ -126,7 +130,10 @@ class _InviteModal extends React.Component {
 
                     </ul>
                     </div>
-                    <button className="send-invites-btn" onClick={() => this.sendInvites()} >Send Invites</button>
+                    <div className="mgb20">
+                        <button className="send-invites-btn" onClick={() => this.sendInvites()} >Send Invites</button>
+                    </div>
+                </div>
                 </ReactModal>
     
         );
