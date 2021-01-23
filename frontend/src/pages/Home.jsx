@@ -48,7 +48,7 @@ class _Home extends Component {
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
               <div className="title-row">
-                <h1 className="staatliches">Added Recently >>></h1>
+                <h1 className="staatliches">Added Recently &gt;&gt;&gt;</h1>
                 <Link to="/jams">See All</Link>
               </div>
               <div className="carousel-container">
@@ -57,7 +57,7 @@ class _Home extends Component {
           </div>
           <div className="jams section">
           <div className="title-row">
-                <h1 className="staatliches">Upcoming This Week >>></h1>
+                <h1 className="staatliches">Upcoming This Week &gt;&gt;&gt;</h1>
                 <Link to="/jams">See All</Link>
               </div>
               <div className="carousel-container">
@@ -71,7 +71,7 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="title-row">
-                <h1 className="staatliches"> Featured Members >>></h1>
+                <h1 className="staatliches"> Featured Members &gt;&gt;&gt;</h1>
                 <Link to="/members">See All</Link>
             </div>
             <div className="carousel-container">
