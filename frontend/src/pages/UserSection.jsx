@@ -92,12 +92,12 @@ class _UserSection extends Component {
                         <h1>Members You Follow</h1>
                         <UserList users={this.filterMembersByFollow()}/>
                     </div>}
-                    {activeTab === 'manage' && this.filterUserCreatedJams().length > 0 && 
+                    {activeTab === 'manage' && this.filterUserCreatedJams().length > 0 ?
                         <div>
                             <h1>Jams Dashboard</h1>
-                            <JamList users={this.this.filterUserCreatedJams()}/>
-                    </div>}
-                    {activeTab === 'manage' && <h1>You haven't created any jams yet... </h1>
+                            <JamList jams={this.filterUserCreatedJams()}/>
+                    </div>:
+                    activeTab === 'manage' && <h1>You haven't created any jams yet... </h1>
                     }
                     {activeTab === 'create' &&
                         <div>

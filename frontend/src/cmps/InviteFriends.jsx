@@ -5,7 +5,8 @@ import React from 'react';
  class _FriendsInvitePreview extends React.Component {
     
     state =  {
-        user: this.props.user
+        user: this.props.user,
+        isChoosed: false
     }
 
    
@@ -17,26 +18,22 @@ import React from 'react';
       }
     handleChange (e)  {
         this.props.handleChange(this.state.user , e.target.checked);
-        this.setState({ user: {...this.state.user, isChecked:e.target.checked} });
+        this.setState({ user: {...this.state.user, isChecked:e.target.checked}, isChoosed:!this.state.isChoosed });
     }
 
     render () {
         return (
-            <li >
-                <div className="jammers invite-list">
-                    <div>
-                        <img className="invite-list-img" onClick={() => this.props.history.push(`/user/${this.state.user._id}`)} src={this.state.user.imgUrl} alt="" />
-                        <h3 className="invite-list-name">{this.state.user.fullname}</h3>
+            <label htmlFor={this.props.key}>
+                <li className={this.state.isChoosed ? 'choosed' : ''}>
+                    <div className="jammers invite-list">
+                        <div>
+                            <input id={this.props.key} hidden type="checkbox" onChange={this.handleChange.bind(this)} checked={this.state.user.isChecked} ></input>
+                            <span className="invite-list-name">{this.state.user.fullname}</span>
+                        </div>
+                        <img className="invite-list-img" src={this.state.user.imgUrl} alt="user" />
                     </div>
-                    <input type="checkbox" onChange={this.handleChange.bind(this)} checked={this.state.user.isChecked} ></input>
-                    {/* <div>
-                        {user.playing.map(function (instrument, index) {
-                            return <span key={index} className="instrument-title"> {instrument}</span>
-                        })}
-                    </div> */}
-                </div>
-    
-            </li>
+                </li>
+            </label>
         );
     }
     
