@@ -71,7 +71,7 @@ class _Home extends Component {
 
           <div className="members-container section">
             <div className="title-row">
-                <h1 className="staatliches">Featured Members >>></h1>
+                <h1 className="staatliches"> Featured Members >>></h1>
                 <Link to="/members">See All</Link>
             </div>
             <div className="carousel-container">

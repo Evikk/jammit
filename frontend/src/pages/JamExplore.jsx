@@ -167,7 +167,8 @@ class _JamExplore extends Component {
                 currMembers={jam.usersGoing.length}
                 capacity={jam.capacity}
                 icon={{
-                    url: jamMarker,
+                    url: "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+                    // url: jamMarker,
                     anchor: new this.props.google.maps.Point(32, 32),
                     scaledSize: new this.props.google.maps.Size(50, 50)
                 }}
