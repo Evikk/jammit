@@ -77,7 +77,7 @@ class _JamChat extends Component {
             placeholder="Write a comment..."
             autoComplete="off"
           />
-          <button>Send</button>
+          {/* <button>Send</button> */}
         </form>
         
       </div>

@@ -33,7 +33,7 @@ class _JamNavbar extends Component {
                     {isUserAdmin && <li><button className="edit-jam-btn">Edit Details</button></li>}
                     {!user &&
                         <li><button className="invite-jam-btn" onClick={() => this.setState({
-                            showLoginModal: false
+                            showLoginModal: true
                         })}>Invite</button></li>}
                     {user && 
                         <li><button className="invite-jam-btn" onClick={() => this.setState({

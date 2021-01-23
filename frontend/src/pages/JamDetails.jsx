@@ -131,10 +131,7 @@ class _JamDetails extends Component {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
-                                    {/* {!this.state.isEditMode && <div className="wall-container">
-                                        <h3 className="title-style">Jam Wall</h3>
-                                        <JamChat jamId={jam._id} msgs={jam.msgs} jam={jam}/>
-                                    </div>}                            */}
+                                 
                                 </div>
                                 {!this.state.isEditMode && <div className="wall-container">
                                         <h3 className="title-style">Jam Wall</h3>
