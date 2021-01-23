@@ -25,6 +25,7 @@ class _JamChat extends Component {
 
   addMsg = newMsg => {
       this.props.sendMsg(newMsg, this.props.jam)
+      this.setState({msgs: this.props.msgs })
   }
 
   sendMsg = ev => {
