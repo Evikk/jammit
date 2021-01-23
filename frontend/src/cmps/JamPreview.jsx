@@ -6,14 +6,14 @@ export function JamPreview({ jam }) {
 
     function showIcons (){
 
-        return instIcons.map(icon=>{
+        return instIcons.map((icon, idx)=>{
             const user = jam.usersGoing.find(user => {
                 return user.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
                 })
             })
-            if (user) return <img className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
+            if (user) return <img key={idx} className="inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
         })
     }
     const slotsLeft = jam.capacity - jam.usersGoing.length

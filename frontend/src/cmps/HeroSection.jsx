@@ -13,9 +13,9 @@ export function HeroSection() {
                             <p>Make Music.</p> 
                             <p>Make Friends.</p> 
                     </div>
-                    <div className="call-to-action">
+                    {/* <div className="call-to-action">
                         <button><Link to="/jams">Let's Find A Jam</Link></button>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="hero__image">

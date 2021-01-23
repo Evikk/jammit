@@ -3,7 +3,6 @@ import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { connect } from "react-redux";
 import { loadJams, updateJamGoing } from "../store/actions/jamActions.js";
 import { loadUsers } from "../store/actions/userActions.js";
-import { JamPreview } from "../cmps/JamPreview.jsx";
 import jamMarker from "../assets/img/green-marker.png"
 import GpsFixedIcon from '@material-ui/icons/GpsFixed';
 import Loader from "react-loader-spinner";
@@ -12,14 +11,8 @@ import EmojiPeopleRoundedIcon from '@material-ui/icons/EmojiPeopleRounded';
 import RoomRoundedIcon from '@material-ui/icons/RoomRounded';
 import AccessTimeRoundedIcon from '@material-ui/icons/AccessTimeRounded';
 import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded';
-import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom";
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
-
-const shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: "poly",
-  };
 
 const mapStyles = {
     width: "100%",
@@ -236,14 +229,16 @@ class _JamExplore extends Component {
                         >
                             <div>
                                 <h2>{this.state.selectedPlace.title}</h2>
-                                <h3>Capacity: {this.state.selectedPlace.currMembers} / {this.state.selectedPlace.capacity}</h3>
                             </div>
                         </InfoWindow>
                     </Map>
                     {isPopupShow &&
                         <div className="jam-popup">
                             <div className="details-con">
-                                <div className="close-details" onClick={()=>this.setState({isPopupShow: false})}>&times;</div>
+                                <div className="close-details">
+                                    <h3 >{jam.title} </h3>
+                                    <span onClick={()=>this.setState({isPopupShow: false})}>&times;</span> 
+                                </div>
                                 <div className="map-thumb-wrapper" onClick={() => this.props.history.push(`jam/${jam._id}`)}>
                                     <img src={jam.imgUrl} alt="jam-thumbnail" />
                                 </div>
@@ -254,7 +249,7 @@ class _JamExplore extends Component {
                                 updateJamGoing={this.props.updateJamGoing}
                                 isUserAdmin={false}
                                 showBasicActionsOnly={true}
-                            />
+                                />
                                 <h3 className="title-style">Details</h3>
                                 <p><span className="icon-style"><HourglassEmptyRoundedIcon /></span><span className="details-style">{jam.capacity - jam.usersGoing.length} Slots Available</span></p>
                                 <p><span className="icon-style"><PeopleAltRoundedIcon /></span> <span className="details-style">{jam.usersGoing.length} People going</span></p>
@@ -265,7 +260,7 @@ class _JamExplore extends Component {
                                     <h3 className="title-style">Description</h3>
                                     <p>{jam.description}</p>
                                 </div>
-                                <ul className="jam-card-tags flex">{jam.tags.map((tag, idx) => {
+                                <ul className="jam-card-tags big-tags flex">{jam.tags.map((tag, idx) => {
                                     return <li key={idx}>{tag}</li>
                                 })}
                                 </ul>

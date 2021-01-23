@@ -33,8 +33,6 @@ function connectSockets(http, session) {
                 socket.leave(socket.currJam)
             }
             socket.join(jam)
-            // console.log(jam);
-            // logger.debug('Session ID is', socket.handshake.sessionID)
             socket.currJam = jam
         })
         socket.on('chat newMsg', msg => {
@@ -53,9 +51,22 @@ function connectSockets(http, session) {
             gIo.to(socket.currJam).emit('invite sendInvites', invite)
             
         })
-
+        socket.on('user connection', userId => {
+            console.log(userId)
+            if (socket.currUserId) {
+                socket.leave(socket.currUserId)
+            }
+            socket.join(userId)
+            socket.currUserId = userId
+        })
+        socket.on('invite', invite => {
+            // gIo.to(socket.currUserId).emit('send', invite)
+            socket.broadcast.to(socket.currUserId).emit('send', invite)
+        })
     })
+            
 }
+
 
 // Send to all sockets BUT not the current socket 
 function broadcast({ type, data }) {
