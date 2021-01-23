@@ -104,11 +104,9 @@ class _JamExplore extends Component {
         this.setState({ markers: this.displayMarkers() })
     }
 
-   
- 
     timeFormatter = () => {
         return <p>
-            <span>{new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(this.state.selectedJam.startsAt))}</span>
+            <span>{new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(this.state.selectedJam.startsAt))}</span><span>-</span>
             <span>{new Date(this.state.selectedJam.startsAt).toLocaleString('he-IL', { day: '2-digit', hour: '2-digit', minute: '2-digit' })}</span>
         </p>
     }
@@ -245,6 +243,7 @@ class _JamExplore extends Component {
                     {isPopupShow &&
                         <div className="jam-popup">
                             <div className="details-con">
+                                <div className="close-details" onClick={()=>this.setState({isPopupShow: false})}>&times;</div>
                                 <div className="map-thumb-wrapper" onClick={() => this.props.history.push(`jam/${jam._id}`)}>
                                     <img src={jam.imgUrl} alt="jam-thumbnail" />
                                 </div>
