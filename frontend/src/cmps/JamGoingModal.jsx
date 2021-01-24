@@ -40,19 +40,21 @@ export default class JamGoingListModal extends React.Component {
     });
   }
   render() {
-    const customStyles = {
+      const customStyles = {
       content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        display: 'grid',
-        height: '70%',
-        width: '70%'
-      }
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          padding: '0',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          width: '370px',
+          background: '#efefef'
+      },
+      overlay: {zIndex: 99}
     };
+
     return (
       <div>
         <button className="see-all-btn" onClick={this.handleOpenModal}>See All</button>
@@ -63,13 +65,17 @@ export default class JamGoingListModal extends React.Component {
           closeOnEsc={true}
           ariaHideApp={false}
         >
-          <button className="esc-btn-modal" onClick={this.handleCloseModal}>X</button>
-          <ul className="users-going-con">
-            {this.props.usersGoing.map(function (user, index) {
-              return <JamUserPreview key={index} user={user} />
-            })}
-
-          </ul>
+          <div className="invite-modal-title flex">
+              <h2>Members Going</h2>
+              <button className="esc-btn-modal" onClick={this.handleCloseModal}>&times;</button>
+          </div>
+          <div className="modal-content-pd">
+            <ul className="following-list-con">
+              {this.props.usersGoing.map(function (user, index) {
+                return <JamUserPreview key={index} user={user} />
+              })}
+            </ul>
+          </div>
 
         </ReactModal>
       </div>
@@ -77,26 +83,54 @@ export default class JamGoingListModal extends React.Component {
   }
 }
 
+// render() {
+//   const customStyles = {
+//       content: {
+//           top: '50%',
+//           left: '50%',
+//           right: 'auto',
+//           bottom: 'auto',
+//           padding: '0',
+//           marginRight: '-50%',
+//           transform: 'translate(-50%, -50%)',
+//           width: '370px',
+//           background: '#efefef'
+//       },
+      
+//       overlay: {zIndex: 99}
+//   };
+//   return (
+//           <ReactModal
+//               isOpen={this.state.showModal}
+//               contentLabel="invite-modal"
+//               style={customStyles}
+//               closeOnEsc={true}
+//               ariaHideApp={false}
+//           >
+//           <div className="align-center">
+//               <div className="invite-modal-title flex">
+//                   <h2>Invite Your Friends!</h2>
+//                   <button className="esc-btn-modal" onClick={this.handleCloseModal}>&times;</button>
+//               </div>
+//               <div className="align-end">
+//                   <button className="select-all-btn" onClick={() => this.selectAll()}>Select All</button>
+//               </div>
+//               {/* <input type="checkbox" name="select-all-box" id="select-all-box"></input>
+//               <label for="select-all-box">Select All</label> */}
+//               <div className="following-friends-list">
+             
+//               <ul className="following-list-con">
+//                   {this.state.following && this.state.following.map(function (user, index) {
+//                       return <FriendsInvitePreview handleChange={this.handleChange.bind(this)}  key={index} user={user} />
+//                   }.bind(this))}
 
-/*More features*/
+//               </ul>
+//               </div>
+//               <div className="mgb20">
+//                   <button className="send-invites-btn" onClick={() => this.sendInvites()} >Send Invites</button>
+//               </div>
+//           </div>
+//           </ReactModal>
 
-
-// onAfterOpen={
-//                 handleAfterOpenFunc
-//   /* Function that will be run after the modal has opened. */}
-
-// onAfterClose={
-//                 handleAfterCloseFunc
-//   /* Function that will be run after the modal has closed. */}
-
-// onRequestClose={
-//                 handleRequestCloseFunc
-//   /* Function that will be run when the modal is requested
-//      to be closed (either by clicking on overlay or pressing ESC).
-//      Note: It is not called if isOpen is changed by other means. */}
-
-// shouldCloseOnEsc={
-//                 true
-//   /* Boolean indicating if pressing the esc key should close the modal
-//      Note: By disabling the esc key from closing the modal
-//      you may introduce an accessibility issue. */}
+//   );
+// }

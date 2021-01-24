@@ -127,10 +127,12 @@ class _JamDetails extends Component {
                                         <h3 className="title-style">Description</h3>
                                         <p>{this.state.jam.description}</p>
                                     </div>
-                                        <ul className="jam-card-tags big-tags flex">{jam.tags.map((tag, idx) => {
+                                    <div>
+                                        <ul className="big-tags flex">{jam.tags.map((tag, idx) => {
                                             return <li key={idx}>{tag}</li>
                                         })}
                                         </ul>
+                                    </div>
                                  
                                 </div>
                                 {!this.state.isEditMode && <div className="wall-container">
@@ -140,18 +142,17 @@ class _JamDetails extends Component {
                             </div>
                             <div className="left-page-con">
                             <div className="location-con">
-                                    <h3 className="title-style">Location</h3>
                                     {/* <div><MapContainer lat={this.state.jam.location.lat} lng={this.state.jam.location.lng} /></div> */}
                                     <div><StaticMap lat={this.state.jam.location.lat} lng={this.state.jam.location.lng}/></div>
                                 </div>
-                                {!isEditMode && <div className="users-going-con-section">
+                                {!isEditMode && <div className="users-going-section">
+                                    <JamGoingListModal usersGoing={this.state.jam.usersGoing} />
                                     <ul className="users-going-con">
                                         {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
                                             return <JamUserPreview key={index} user={user} />
                                         })}
-
                                     </ul>
-                                    <div className="users-going-actions"> <JamGoingListModal usersGoing={this.state.jam.usersGoing} /> </div>
+                                   
                                     
                                 </div>}
                             

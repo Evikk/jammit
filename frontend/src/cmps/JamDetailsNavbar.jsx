@@ -2,7 +2,8 @@
 import React, { Component } from 'react'
 import { LoginModal } from './LoginModal'
 import { InviteModal} from  './InviteModal'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class _JamNavbar extends Component {
@@ -12,6 +13,19 @@ class _JamNavbar extends Component {
        
     }
 
+    sendJoinMsg = ()=> {
+        const joinMsg = 
+        `You Joined ${this.props.jam.title}!!`
+        toast(joinMsg, {
+            position: "bottom-right",
+            autoClose: 10000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
  
     handleCloseInviteModal() {
         this.setState({showInviteModal: false});
@@ -24,6 +38,8 @@ class _JamNavbar extends Component {
    
         let { updateJamGoing, jam, user, isUserAdmin } = this.props;
         return (
+            <>
+            <ToastContainer/>
             <ul className="jam-details-navbar">
                 
                 <div className="navbar-right">
@@ -34,7 +50,10 @@ class _JamNavbar extends Component {
                             showLoginModal: true
                         })}>Join Jam</button></li>}
                     {user && !this.isUserGoingToJam()&&
-                        <li><button className="join-jam-btn" onClick={() => {updateJamGoing(jam, { ...user, playing: ['Singer'] }, true)}}>Join Jam</button></li>}
+                        <li><button className="join-jam-btn" onClick={() => {
+                            updateJamGoing(jam, { ...user, playing: ['Singer'] }, true)
+                            this.sendJoinMsg()
+                            }}>Join Jam</button></li>}
                     {!isUserAdmin && user &&  this.isUserGoingToJam() &&
                         <li><button className="leave-jam-btn" onClick={() => updateJamGoing(jam, user, false)}>Leave Jam</button></li>}
                     {isUserAdmin && <li><button className="edit-jam-btn">Edit Details</button></li>}
@@ -50,6 +69,7 @@ class _JamNavbar extends Component {
 
                 </div>
             </ul>
+            </>
         );
     }
 }

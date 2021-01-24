@@ -20,58 +20,6 @@ const mapStyles = {
     height: "100%",
 };
 
-// const containerStyle = {
-//     position: 'static',  
-//     width: '100%',
-//     height: '100%'
-// }
-
-// const mapStyle = [
-//     {
-//         featureType: 'landscape.man_made',
-//         elementType: 'geometry.fill',
-//         stylers: [
-//             {
-//                 color: '#dceafa'
-//             }
-//         ]
-//     },
-//     {
-//         elementType: "labels.text",
-//         stylers: [
-//             {
-//                 visibility: "off"
-//             }
-//         ]
-//     },
-//     {
-//         featureType: "road.highway",
-//         elementType: "labels",
-//         stylers: [
-//             {
-//                 visibility: "on"
-//             }
-//         ]
-//     },
-//     {
-//         featureType: "road.arterial",
-//         elementType: "labels.text",
-//         stylers: [
-//             {
-//                 visibility: "on"
-//             }
-//         ]
-//     },
-//     {
-//         featureType: "road.local",
-//         elementType: "labels.text",
-//         stylers: [
-//             {
-//                 visibility: "on"
-//             }
-//         ]
-//     },
-// ]
 const mapStyle = [
     {
         "featureType": "administrative",
@@ -372,6 +320,11 @@ class _JamExplore extends Component {
         });
     }
 
+    getUserMarker = ()=>{
+        if (this.props.loggedInUser.markerImg) return this.props.loggedInUser.markerImg
+        return this.props.loggedInUser.imgUrl
+    }
+
     onClose = props => {
         if (this.state.showingInfoWindow) {
             this.setState({
@@ -449,7 +402,7 @@ class _JamExplore extends Component {
                             name={'Your position'}
                             position={userPos.position}
                             icon={{
-                                url: loggedInUser.imgUrl,
+                                url: this.getUserMarker(),
                                 // anchor: new this.props.google.maps.Point(32, 32),
                                 scaledSize: new this.props.google.maps.Size(50, 50),
                                 origin: new this.props.google.maps.Point(0, 0),

@@ -63,7 +63,6 @@
 .details-con {
     position: relative;
     z-index: 8;
-    margin-top: 10px;
     background-color: white;
     border-radius: 10px;
     font-size: 20px;
@@ -77,12 +76,7 @@
     }
 }
 
-.description-con {
-    margin-top: 15px;
-}
-
 .location-con {
-    margin-top: 10px;
     background-color: white;
     border-radius: 10px;
     padding: 20px;
@@ -132,29 +126,40 @@
     cursor: pointer;
 }
 
-.users-going-con {
+.users-going-section {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.users-going-con {  
     background-color: white;
     border-radius: 10px;
     padding: 10px;
     position: relative;
     height: 100%;
-    // margin-top: 10px;
     display: grid;
-    grid-template-rows: repeat(auto-fill, 160px);
-    grid-template-columns: repeat(auto-fit, 160px);
-    // justify-content: center;
-    li {
+    grid-template-rows: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fit, 150px);
+    ul {
         display: flex;
-        justify-content: center;
+        width: 100%;
+        justify-content: space-evenly;
+        li {
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 
-.jammers img {
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 50%;
+.jammers{
+    text-align: center;
+    img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 50%;
+    }
 }
 
 .see-all-btn {
@@ -165,9 +170,7 @@
     font-size: 20px;
     font-family: "Source-Sans";
     cursor: pointer;
-    // position: absolute;
-    // top:5px;
-    // left: 150px;
+    width: 100px;
     color: rgb(70, 70, 184);
     &:hover {
         text-decoration: underline;
@@ -190,19 +193,16 @@
 }
 
 .join-jam-btn:hover {
-  
     background-color: transparent;
     border: solid cadetblue 2px;
     color: rgb(159, 161, 161);
 }
 
-.invite-jam-btn {
-    
+.invite-jam-btn {   
     background-color: cadetblue;
     color: white;
     border: 2px transparent solid;
     width: 100px;
-
 }
 .edit-jam-btn {
     border: transparent;
@@ -222,11 +222,6 @@
     border: 2px transparent solid;
 }
 
-.users-going-con-section {
-    position: relative;
-    width: 100%;
-    height: 40vh;
-}
 
 .users-going-actions {
     position: absolute;
@@ -353,23 +348,8 @@
     color: rgb(92, 91, 91);
 
 }
-@media (max-width: 860px) {
-    .page-content{
-        flex-direction: column;
-        align-items: center;
-    }
-    .left-page-con,
-    .left-page-details {
-        width: 100%;
-    }
-    .main-container{
-        grid-column: 2;
-    }
-}
 
 .chat-container {
-    // border: 2px solid #dedede;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -380,12 +360,13 @@
     position: relative;
     & form {
         padding: 20px 5px;
-        // border-top: 1px solid grey;
     }
     
 }
 .wall-container{
     margin-top:20px;
+    padding-top: 10px;
+    background-color: white;
 }
 .bgc-gray{
     background-color: #eeeeee;
@@ -410,11 +391,17 @@
 }
 
 .big-tags {
+    padding-left: 16px;
     line-height: 1;
+    gap: 6px;
     margin-bottom: 15px;
     li {
-        font-size: 0.9rem;
-        padding: 4px;
+        font-size: 1.5rem;
+        border-radius: 4px;
+        background-color:#56919A;
+        padding: 3px;
+        color: rgb(255, 255, 255);
+        border:transparent;
     }
 }
 
@@ -432,4 +419,22 @@
     padding: 10px;
     outline: none;
     font-size: 1rem;
+}
+
+.modal-content-pd {
+    padding: 30px;
+}
+
+@media (max-width: 860px) {
+    .page-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-page-con,
+    .left-page-details {
+        width: 100%;
+    }
+    .main-container{
+        grid-column: 2;
+    }
 }

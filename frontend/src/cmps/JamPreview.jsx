@@ -5,10 +5,9 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 export function JamPreview({ jam }) {
 
     function showIcons (){
-
         return instIcons.map((icon, idx)=>{
-            const user = jam.usersGoing.find(user => {
-                return user.playing.some(inst=>{
+            const user = jam.usersGoing.find(currUser => {
+                return currUser.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
                 })
@@ -21,7 +20,8 @@ export function JamPreview({ jam }) {
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
-        <Link to={`/jam/${jam._id}`}><li className="jam-card flex column">
+        <li className="jam-card flex column">
+            <Link to={`/jam/${jam._id}`}>
             <div className="thumb-wrapper flex column pos-relative">
                 <img className="jam-thumb"  src={jam.imgUrl} alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
@@ -54,6 +54,7 @@ export function JamPreview({ jam }) {
                     </div>
                 </div>
             </div>
-        </li></Link> 
+        </Link>
+        </li> 
     );
 }
