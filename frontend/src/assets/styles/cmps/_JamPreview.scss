@@ -30,7 +30,7 @@
     margin-left: 6px;
     .inst-icon {
         position: absolute;
-        width: 38px;
+        width: 34px;
         padding: 3px;
         border-radius: 50%;
         background-color: rgb(238, 238, 238);
@@ -38,15 +38,15 @@
         bottom: 0;
         right:0;
         &:nth-child(4){
-            right:30%;
+            right:24%;
             z-index: 4;
         }
         &:nth-child(3){
-            right:20%;
+            right:16%;
             z-index: 3;
         }
         &:nth-child(2){
-            right:10%;
+            right:8%;
             z-index: 2;
         }
         &:first-child {

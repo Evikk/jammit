@@ -50,7 +50,7 @@ class _Home extends Component {
           <div className="jams section">
               <div className="title-row">
                 <h1 className="staatliches">Added Recently &gt;&gt;&gt;</h1>
-                <Link to="/jams">See All</Link>
+                <Link to="/search">Explore</Link>
               </div>
               <div className="carousel-container">
                 <JamScroll jams={this.getPopularJams()} />
@@ -59,7 +59,7 @@ class _Home extends Component {
           <div className="jams section">
           <div className="title-row">
                 <h1 className="staatliches">Upcoming This Week &gt;&gt;&gt;</h1>
-                <Link to="/jams">See All</Link>
+                <Link to="/search">Explore</Link>
               </div>
               <div className="carousel-container">
               <JamScroll jams={this.getUpcomingJams()} />

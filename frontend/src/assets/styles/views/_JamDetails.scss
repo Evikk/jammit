@@ -76,7 +76,6 @@
     }
 }
 
-
 .location-con {
     background-color: white;
     border-radius: 10px;
@@ -139,8 +138,8 @@
     position: relative;
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(auto-fill, 160px);
-    grid-template-columns: repeat(auto-fit, 160px);
+    grid-template-rows: repeat(auto-fill, 150px);
+    grid-template-columns: repeat(auto-fit, 150px);
     ul {
         display: flex;
         width: 100%;
@@ -194,19 +193,16 @@
 }
 
 .join-jam-btn:hover {
-  
     background-color: transparent;
     border: solid cadetblue 2px;
     color: rgb(159, 161, 161);
 }
 
-.invite-jam-btn {
-    
+.invite-jam-btn {   
     background-color: cadetblue;
     color: white;
     border: 2px transparent solid;
     width: 100px;
-
 }
 .edit-jam-btn {
     border: transparent;
@@ -352,23 +348,8 @@
     color: rgb(92, 91, 91);
 
 }
-@media (max-width: 860px) {
-    .page-content{
-        flex-direction: column;
-        align-items: center;
-    }
-    .left-page-con,
-    .left-page-details {
-        width: 100%;
-    }
-    .main-container{
-        grid-column: 2;
-    }
-}
 
 .chat-container {
-    // border: 2px solid #dedede;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -379,7 +360,6 @@
     position: relative;
     & form {
         padding: 20px 5px;
-        // border-top: 1px solid grey;
     }
     
 }
@@ -443,4 +423,18 @@
 
 .modal-content-pd {
     padding: 30px;
+}
+
+@media (max-width: 860px) {
+    .page-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-page-con,
+    .left-page-details {
+        width: 100%;
+    }
+    .main-container{
+        grid-column: 2;
+    }
 }

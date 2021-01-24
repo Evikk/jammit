@@ -5,10 +5,9 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 export function JamPreview({ jam }) {
 
     function showIcons (){
-
         return instIcons.map((icon, idx)=>{
-            const user = jam.usersGoing.find(user => {
-                return user.playing.some(inst=>{
+            const user = jam.usersGoing.find(currUser => {
+                return currUser.playing.some(inst=>{
                     const instName = Object.keys(icon)[0]
                     return instName === inst
                 })
