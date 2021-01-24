@@ -27,8 +27,9 @@ class _Home extends Component {
 
   getPopularJams = () => {
     return this.props.jams.filter(jam => {
-      const slotsLeft = jam.capacity - jam.usersGoing.length
-      return slotsLeft < 10
+      // const slotsLeft = jam.capacity - jam.usersGoing.length
+      const weekAgo = new Date().getTime()-86400000*7
+      return jam.createdAt < Date.now() && jam.createdAt > weekAgo
     })
   }
 
@@ -64,10 +65,6 @@ class _Home extends Component {
               <JamScroll jams={this.getUpcomingJams()} />
               </div>
           </div>
-          {/* <div className="jams section">
-              <h1>Jams</h1>
-              <JamList jams={jams} />
-          </div> */}
 
           <div className="members-container section">
             <div className="title-row">

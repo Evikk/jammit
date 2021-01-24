@@ -21,7 +21,8 @@ export function JamPreview({ jam }) {
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
-        <Link to={`/jam/${jam._id}`}><li className="jam-card flex column">
+        <li className="jam-card flex column">
+            <Link to={`/jam/${jam._id}`}>
             <div className="thumb-wrapper flex column pos-relative">
                 <img className="jam-thumb"  src={jam.imgUrl} alt="jam-thumbnail"/>
                 <div className="inst-icons-wrapper">
@@ -54,6 +55,7 @@ export function JamPreview({ jam }) {
                     </div>
                 </div>
             </div>
-        </li></Link> 
+        </Link>
+        </li> 
     );
 }

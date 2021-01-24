@@ -13,7 +13,7 @@ export function JamScroll({ jams }) {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [
             {
@@ -41,7 +41,9 @@ export function JamScroll({ jams }) {
               breakpoint: 860,
               settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false
               }
             }
           ]

@@ -51,7 +51,7 @@
     
 }
 .carousel-container {
-    margin: 40px auto;
+    margin: 40px 20px;
 }
 .title-row-members{
     display: block;
@@ -89,6 +89,10 @@ footer{
     }
     .section h1 {
         font-size: 2rem;
+    }
+    .title-row {
+        h1 {padding-left: 3px;}
+        a {margin-right: 3px}
     }
 }
 
