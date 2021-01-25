@@ -1,16 +1,8 @@
 import { useHistory } from "react-router-dom";
-import {instIcons} from '../assets/img/inst-icons/icons.js'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-export function UserPreview({ user }) {
+import { iconService } from '../services/iconService.js'
 
-    function showIcons() {
-        return instIcons.map((icon, idx)=>{
-            const talent = user.talents.find(talent=>{
-                return (talent === Object.keys(icon)[0])
-            })
-            if (talent) return <img key={idx} className="user-inst-icon" src={Object.values(icon)[0]} alt="instrument"/>
-        })
-    }
+export function UserPreview({ user }) {
 
     const history = useHistory()
     return (
@@ -19,7 +11,7 @@ export function UserPreview({ user }) {
                 <div className="img-wrapper flex justify-center">
                     <img className="user-card thumb" src={user.imgUrl} className="userThumb" alt="user-thumbnail"/>
                     <div className="user-inst-icons-wrapper">
-                        {showIcons()}
+                        {iconService.displayUserIcons(user)}
                     </div>
                 </div>
             </div>
