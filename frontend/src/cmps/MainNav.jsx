@@ -69,7 +69,7 @@ class _MainNav extends Component {
                 <div className="user-nav">
                     {loggedInUser ? <NavLink className="user-avater-link" to="/user">
                         <div className="avatar-wrapper pdding">
-                            <img src={loggedInUser.imgUrl} />
+                            <img alt="logged-user" src={loggedInUser.imgUrl} />
                         </div>
                     </NavLink>
                     :

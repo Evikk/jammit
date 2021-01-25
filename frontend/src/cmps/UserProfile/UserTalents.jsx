@@ -7,7 +7,7 @@ export function UserTalents({user}) {
                 <ul className="follow-list">
                   {user.followers.slice(0, 3).map((follower, idx) => {
                     return <li key={idx} className="follow-avatar">
-                              <img  src={follower.imgUrl}  />
+                              <img alt="follow-jammers" src={follower.imgUrl}  />
                           </li>
                   })}
                 </ul>}
@@ -18,7 +18,7 @@ export function UserTalents({user}) {
                 <ul className="follow-list">
                   {user.following.slice(0, 3).map((following, idx) => {
                     return <li key={idx} className="follow-avatar">
-                              <img  src={following.imgUrl}  />
+                              <img alt="following-jammers" src={following.imgUrl}  />
                           </li>
                   })}
                 </ul>}

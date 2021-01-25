@@ -7,7 +7,7 @@ import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
-import { JamList } from '../cmps/JamList.jsx'
+// import { JamList } from '../cmps/JamList.jsx'
 import recordlogo from "../assets/img/recordlogo.png"
 
 class _Home extends Component {
@@ -77,7 +77,7 @@ class _Home extends Component {
           </div>
         </main>
         <footer className="flex column align-center">
-          <img className="footer-logo" src={recordlogo}/>
+          <img className="footer-logo" src={recordlogo} alt="footer-logo"/>
           <small>All RIGHT RESERVED TO JAMEET 2021&copy;</small>
         </footer>
       </div>
