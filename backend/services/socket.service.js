@@ -42,17 +42,8 @@ function connectSockets(http, session) {
             gIo.to(socket.currJam).emit('chat addMsg', msg)
             // socket.broadcast.to(socket.currJam).emit('chat addMsg', msg)
         }) 
-        socket.on('invite', invite =>{
-            // if(socket.invite){
-            //     socket.leave(socket.jam)
-            // }
-            // socket.join(invite)
-            console.log(invite,'invite');
-            gIo.to(socket.currJam).emit('invite sendInvites', invite)
-            
-        })
+        
         socket.on('user connection', userId => {
-            console.log(userId)
             if (socket.currUserId) {
                 socket.leave(socket.currUserId)
             }
