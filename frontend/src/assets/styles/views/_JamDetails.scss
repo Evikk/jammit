@@ -299,9 +299,10 @@
 .following-list-con{
     display: grid;
     grid-template-columns: repeat(auto-fill, 130px);
-    grid-template-rows: repeat(auto-fill, 140px);
+    grid-template-rows: repeat(auto-fill, 117px);
     justify-content: center;
     align-content: center;
+    gap: 10px;
 }
 
 .invite-modal-title{
@@ -406,6 +407,11 @@
     }
 }
 
+.choosed {
+    background-color: rgba(95, 158, 160, 0.548);
+    border: 2px solid cadetblue;
+    border-radius: 6px;
+}
 
 .chat-container input{
     border: none;

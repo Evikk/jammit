@@ -67,12 +67,13 @@ class _InviteModal extends React.Component {
         const msg = `has invited you to ${this.props.jamTitle}!!!`
 
         this.state.invited.forEach(user=>{
-            console.log(user._id);
+            console.log(this.state.invited)
             socketService.emit('user connection', user._id);
             socketService.emit('invite', { msg, link, name })
-            socketService.emit('user connection', this.props.loggedInUser._id);
         })
+        socketService.emit('user connection', this.props.loggedInUser._id);
         this.handleCloseModal()
+        this.setState({invited: []})
     }
     
     render() {

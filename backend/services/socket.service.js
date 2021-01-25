@@ -36,11 +36,7 @@ function connectSockets(http, session) {
             socket.currJam = jam
         })
         socket.on('chat newMsg', msg => {
-            // emits to all sockets:
-            // gIo.emit('chat addMsg', msg)
-            // emits only to sockets in the same room
             gIo.to(socket.currJam).emit('chat addMsg', msg)
-            // socket.broadcast.to(socket.currJam).emit('chat addMsg', msg)
         }) 
         
         socket.on('user connection', userId => {

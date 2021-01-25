@@ -76,7 +76,7 @@ class _JamsFilter extends Component {
     getTagsChoosed = ()=> {
         if (this.state.filterBy.tags){
         return this.state.filterBy.tags.map((tag,idx)=> {
-            return <li className="cursor-pointer filter-tags choosed" key={idx} value={tag} onClick={()=>this.onTagUnChoose(tag,idx)}>{tag}</li>
+            return <li className="cursor-pointer filter-tags tag-choosed" key={idx} value={tag} onClick={()=>this.onTagUnChoose(tag,idx)}>{tag}</li>
         })}
         return
     }
