@@ -4,7 +4,7 @@ import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import LazyLoad from 'react-lazyload';
 
 export function JamPreview({ jam }) {
-
+    const icons = iconService.getJamIcons(jam)
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
@@ -15,7 +15,11 @@ export function JamPreview({ jam }) {
                 <img className="jam-thumb"  src={jam.thumbUrl} alt="jam-thumbnail"/>
                 </LazyLoad>
                 <div className="inst-icons-wrapper">
-                    {iconService.displayJamIcons(jam)}
+                    {icons.map((icon,idx)=>{
+                        return <div key={idx} className="inst-icon">
+                        <img src={icon} alt="instrument"/>
+                        </div>
+                    })}
                 </div>
             </div>
             <div className="jam-card-content flex">

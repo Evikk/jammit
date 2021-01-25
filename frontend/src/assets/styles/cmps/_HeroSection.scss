@@ -60,8 +60,9 @@
         background-image: url("../../img/jam-session.jpeg");
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center
+        background-size: 118%;
+        background-position-x: -315px;
+        background-position-y: -63px;
     }
     .hero-title {
         color: #000;
@@ -141,4 +142,43 @@
 .arrows path.a3 {
     animation-delay: 0s;
     -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+}
+
+@media (max-width: 1800px) {
+    .hero {
+        &__image {
+            background-size: 120%; 
+        }
+    }
+}
+@media (max-width: 1600px) {
+    .hero {
+        &__image {
+            background-size: 125%;
+        }
+    }
+}
+@media (max-width: 1400px) {
+    .hero {
+        &__image {
+            background-size: 130%;
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .hero {
+        &__image {
+            background-size: 138%;
+            background-position: center;
+        }
+    }
+}
+
+@media (max-width: 1060px) {
+    .hero {
+        &__image {
+            background-size: cover;
+            background-position: center;
+        }
+    }
 }

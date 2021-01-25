@@ -17,28 +17,28 @@ export function JamScroll({ jams }) {
         slidesToScroll: 1,
         responsive: [
             {
-              breakpoint: 1680,
+              breakpoint: 1860,
               settings: {
                 slidesToShow: 4,
                 slidesToScroll: 1,
             }
             },
             {
-              breakpoint: 1280,
+              breakpoint: 1530,
               settings: {
                 slidesToShow: 3,
                 slidesToScroll: 1,
               }
             },
             {
-              breakpoint: 1080,
+              breakpoint: 1200,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1
               }
             },
             {
-              breakpoint: 860,
+              breakpoint: 760,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,

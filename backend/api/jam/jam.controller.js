@@ -6,8 +6,10 @@ async function getJams(req, res) {
         const filterBy = {
             title: req.query?.title || '',
             region: req.query?.region || '',
+            tags: req.query?.tags || '',
         }
-        
+        // filterBy.tags = filterBy.tags.split(',')
+        console.log(filterBy);
         const jams = await jamService.query(filterBy)
         res.send(jams)
     } catch (err) {

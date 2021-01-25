@@ -15,6 +15,7 @@ function query(filterBy={}) {
     var queryStr = '?'
     if(filterBy.title) queryStr += `&title=${filterBy.title}`
     if(filterBy.region) queryStr += `&region=${filterBy.region}`
+    if(filterBy.tags) queryStr += `&tags=${filterBy.tags}`
     
     console.log(queryStr);
     

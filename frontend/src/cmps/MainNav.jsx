@@ -23,9 +23,9 @@ class _MainNav extends Component {
 
     sendInvite = (data)=> {
         const Invite = ()=> {
-            return <div>
-                <h3>{data.msg}</h3>
-                <Link to={data.link}>Go To The Jam!</Link>
+            return <div className="invite-container">
+                <h4><span>{data.name} </span>{data.msg}</h4>
+                <Link to={data.link}>See more details >></Link>
             </div>
         }
         toast(<Invite/>, {
@@ -35,7 +35,7 @@ class _MainNav extends Component {
             closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
-            progress: undefined,
+            progress: undefined
             });
     }
 
@@ -92,7 +92,3 @@ const mapDispatchToProps = {
 
 
 export const MainNav = withRouter(connect(mapStateToProps, mapDispatchToProps)(_MainNav))
-
-
-// idan raichel id 6005e093bf4a64698823123e
-// tomer id 6005e093bf4a646988231239
