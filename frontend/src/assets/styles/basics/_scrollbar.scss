@@ -1,0 +1,33 @@
+
+::-webkit-scrollbar {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  transform: translateY(0px);
+  cursor: pointer;
+  background-color: transparent;
+  // overflow-y: scroll;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(83, 83, 83, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(151, 150, 150, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #695da2;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
