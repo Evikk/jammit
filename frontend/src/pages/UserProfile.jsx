@@ -8,7 +8,7 @@ import { UserInfo } from '../cmps/UserProfile/UserInfo'
 import { UserTalents } from '../cmps/UserProfile/UserTalents'
 import Loader from 'react-loader-spinner'
 import { JamList } from "../cmps/JamList";
-import { UserList } from "../cmps/UserList";
+// import { UserList } from "../cmps/UserList";
 
 
 class _UserProfile extends Component {

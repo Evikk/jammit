@@ -7,13 +7,14 @@ import { JamScroll } from '../cmps/JamScroll.jsx'
 import { HeroSection } from '../cmps/HeroSection.jsx'
 import Loader from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
-import { JamList } from '../cmps/JamList.jsx'
+import LazyLoad from 'react-lazyload';
 import recordlogo from "../assets/img/recordlogo.png"
 
 class _Home extends Component {
   state = {}
 
   componentDidMount() {
+    window.scrollTo(0,0)
     this.props.loadJams()
     this.props.loadUsers()
   }
@@ -45,7 +46,7 @@ class _Home extends Component {
               </div>
     return ( 
       <div className="home">
-        <HeroSection/>
+        <LazyLoad><HeroSection/></LazyLoad>
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
               <div className="title-row">
@@ -77,7 +78,7 @@ class _Home extends Component {
           </div>
         </main>
         <footer className="flex column align-center">
-          <img className="footer-logo" src={recordlogo}/>
+          <img className="footer-logo" src={recordlogo} alt="footer-logo"/>
           <small>All RIGHT RESERVED TO JAMEET 2021&copy;</small>
         </footer>
       </div>

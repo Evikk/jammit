@@ -279,10 +279,10 @@ class _JamExplore extends Component {
     }
 
     timeFormatter = () => {
-        return <p>
+        return <div>
             <span>{new Intl.DateTimeFormat('il', { month: 'short' }).format(new Date(this.state.selectedJam.startsAt))}</span><span>-</span>
             <span>{new Date(this.state.selectedJam.startsAt).toLocaleString('he-IL', { day: '2-digit', hour: '2-digit', minute: '2-digit' })}</span>
-        </p>
+        </div>
     }
 
     onMarkerClick = (props, marker) => {
@@ -476,31 +476,3 @@ const mapDispatchToProps = {
 export const JamExplore = GoogleApiWrapper({
     apiKey: "AIzaSyBTd-r9ES9me88-mTQasKgom191cNMihjY",
 })(connect(mapStateToProps, mapDispatchToProps)(_JamExplore));
-
-// {/* <div className="jams-explore-container">
-//                 <div className="jams-explore-filter flex column">
-//                     <h1>Filter Jams</h1>
-//                     <div className="filter-inputs">
-//                         <input type="text" name="name" id=""/>
-//                         <select name="filterByInst">
-//                             <option value="">By Instrument Missing</option>
-//                             <option value="">Singer</option>
-//                             <option value="">Guitar</option>
-//                             <option value="">Drums</option>
-//                             <option value="">Bass</option>
-//                             <option value="">Keyboard</option>
-//                         </select>
-//                         <select name="filterByRegion">
-//                             <option value="">By Region</option>
-//                             <option value="">North</option>
-//                             <option value="">Center</option>
-//                             <option value="">South</option>
-//                         </select>
-//                     </div>
-//                 </div>
-//                 <ul className="jams-explore-list">
-//                     {jams.map((jam) => (
-//                         <JamPreview key={jam._id} jam={jam}/>
-//                     ))}
-//                 </ul>
-//             </div> */}

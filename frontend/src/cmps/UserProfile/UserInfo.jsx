@@ -2,17 +2,17 @@ import ChatRoundedIcon from '@material-ui/icons/ChatRounded';
 import FavoriteBorderRoundedIcon from '@material-ui/icons/FavoriteBorderRounded';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import FavoriteRoundedIcon from '@material-ui/icons/FavoriteRounded';
-import AddRoundedIcon from '@material-ui/icons/AddRounded';
-import { useHistory } from 'react-router';
+// import AddRoundedIcon from '@material-ui/icons/AddRounded';
+// import { useHistory } from 'react-router';
 
 
 export function UserInfo({user, followToggle, onFollowIconClick, isUserAdmin}) {
-    const history = useHistory()
+    // const history = useHistory()
     return (
         <div className="user-left-box flex column">
             <div className="user-basic-info">
                 <div className="user-img">
-                    <img src={user.imgUrl} />
+                    <img src={user.imgUrl} alt="user-img"/>
                 </div>
                 <div className="user-tags-name flex column">
                     <span className="user-stage-name fs30">{user.username}</span>

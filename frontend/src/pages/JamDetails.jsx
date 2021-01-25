@@ -148,7 +148,7 @@ class _JamDetails extends Component {
                                 {!isEditMode && <div className="users-going-section">
                                     <JamGoingListModal usersGoing={this.state.jam.usersGoing} />
                                     <ul className="users-going-con">
-                                        {this.state.jam.usersGoing.slice(0, 3).map(function (user, index) {
+                                        {this.state.jam.usersGoing.slice(this.state.jam.usersGoing.length-4).map(function (user, index) {
                                             return <JamUserPreview key={index} user={user} />
                                         })}
                                     </ul>

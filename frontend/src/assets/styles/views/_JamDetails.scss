@@ -140,6 +140,7 @@
     display: grid;
     grid-template-rows: repeat(auto-fill, 150px);
     grid-template-columns: repeat(auto-fit, 150px);
+    justify-content: center;
     ul {
         display: flex;
         width: 100%;

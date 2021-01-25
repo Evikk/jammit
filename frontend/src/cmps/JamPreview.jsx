@@ -1,34 +1,23 @@
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import {instIcons} from '../assets/img/inst-icons/icons.js'
+import { iconService } from '../services/iconService.js'
 import { Link } from "react-router-dom";
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import LazyLoad from 'react-lazyload';
+
 export function JamPreview({ jam }) {
 
-    function showIcons (){
-        return instIcons.map((icon, idx)=>{
-            const user = jam.usersGoing.find(currUser => {
-                return currUser.playing.some(inst=>{
-                    const instName = Object.keys(icon)[0]
-                    return instName === inst
-                })
-            })
-            if (user) return <div key={idx} className="inst-icon">
-                <img src={Object.values(icon)[0]} alt="instrument"/>
-            </div>
-        })
-    }
     const slotsLeft = jam.capacity - jam.usersGoing.length
     
     return (
-        <li className="jam-card flex column">
+    <li className="jam-card flex column">
             <Link to={`/jam/${jam._id}`}>
             <div className="thumb-wrapper flex column pos-relative">
-                <img className="jam-thumb"  src={jam.imgUrl} alt="jam-thumbnail"/>
+                <LazyLoad height={200}>
+                <img className="jam-thumb"  src={jam.thumbUrl} alt="jam-thumbnail"/>
+                </LazyLoad>
                 <div className="inst-icons-wrapper">
-                    {showIcons()}
+                    {iconService.displayJamIcons(jam)}
                 </div>
             </div>
-            {/* <h2>{jam.title}</h2> */}
             <div className="jam-card-content flex">
                 <div className="jam-details-wrapper">
                     <div className="first-row">

@@ -22,9 +22,6 @@ export function userReducer(state = initialState, action = {}) {
     case 'SET_USERS':
       console.log("action.users ",action.users );
       return { ...state, users: action.users }
-    
-    case 'SET_SCORE':
-      return { ...state, loggedInUser: { ...state.loggedInUser, score: action.score } }
     default:
       return state
   }
