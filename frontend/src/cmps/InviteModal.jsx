@@ -40,22 +40,11 @@ class _InviteModal extends React.Component {
           }
       }
     componentDidMount() {
-        const {invited} = this.state
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) this.handleCloseModal();
         });
-        if (this.props.loggedInUser){
-            socketService.setup()
-            socketService.emit('user connection', this.props.loggedInUser._id);
-        }
     }
 
-    componentWillUnmount(){
-        if (this.props.loggedInUser){
-            socketService.off('user connection', this.props.loggedInUser._id)
-            clearTimeout(this.timeout)
-        }
-    }
 
     handleChange(user, invited) {
         if (invited) {

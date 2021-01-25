@@ -16,7 +16,6 @@ class _MainNav extends Component {
             socketService.setup()
             socketService.emit('user connection', this.props.loggedInUser._id);
             socketService.on('send',this.sendInvite)
-            
         }
         mainNavService.setHomePageNavStyle()
     }
@@ -53,6 +52,11 @@ class _MainNav extends Component {
             mainNavService.setNavStyle()
         }else{
             mainNavService.setHomePageNavStyle()
+        }
+        if (this.props.loggedInUser) {
+            socketService.setup()
+            socketService.emit('user connection', this.props.loggedInUser._id);
+            socketService.on('send',this.sendInvite)
         }
     }
 
