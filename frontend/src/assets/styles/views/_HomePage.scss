@@ -33,7 +33,7 @@
 .title-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     background-color: #695da2;
     // background-color: #8c6aa7;
     // background-color: #7f6ed1;
@@ -91,8 +91,9 @@ footer{
         font-size: 2rem;
     }
     .title-row {
-        h1 {padding-left: 3px;}
-        a {margin-right: 3px}
+        align-items: center;
+        h1 {padding-left: 3px; margin-left: 3px;}
+        a {margin-right: 3px;  font-size: 1rem; font-weight: bold; margin-right:6px;}
     }
 }
 
