@@ -10,9 +10,12 @@ import { JamCreate } from './pages/JamCreate'
 import { MainNav } from './cmps/MainNav'
 import { UserSection } from './pages/UserSection'
 import { JamsList } from './pages/JamsList'
+// import {CustomScrollbars} from './cmps/Scrollbar'
+// import { Scrollbars } from 'react-custom-scrollbars';
 
 export function App() {
   return (
+    // <Scrollbars style={{ height: 1000 }}>
     <div className="app main-container">
       <Router>
         <MainNav/>
@@ -33,6 +36,7 @@ export function App() {
         </footer>
       </Router>
     </div>
+    //  </Scrollbars>
   )
 }
 

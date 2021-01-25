@@ -9,6 +9,7 @@ import Loader from 'react-loader-spinner'
 import { Link } from 'react-router-dom'
 import LazyLoad from 'react-lazyload';
 import recordlogo from "../assets/img/recordlogo.png"
+// import { CustomScrollbars} from '../cmps/Scrollbar'
 
 class _Home extends Component {
   state = {}
@@ -45,7 +46,9 @@ class _Home extends Component {
                 <Loader type="Bars" color="#00475F" height={200} width={200} timeout={5000} />
               </div>
     return ( 
+
       <div className="home">
+        
         <LazyLoad><HeroSection/></LazyLoad>
         <main className="main-content zebra-container flex column space-between">
           <div className="jams section">
