@@ -1,4 +1,4 @@
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+// import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {instIcons} from '../assets/img/inst-icons/icons.js'
 import { Link } from "react-router-dom";
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
