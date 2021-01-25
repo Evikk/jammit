@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, NavLink, Link } from 'react-router-dom'
+import { withRouter, NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../store/actions/userActions.js'
 
@@ -29,7 +29,7 @@ class _Header extends Component {
                     <NavLink to="/search">Jams</NavLink>
                     <NavLink to="/members">Members</NavLink>
                 {loggedInUser ? <div className="loggedin-avatar flex fs12">
-                <img src={loggedInUser.imgUrl} className="cursor-pointer" onClick={()=>this.props.history.push(`/user/${loggedInUser._id}`)}/>
+                <img src={loggedInUser.imgUrl} alt="logged-in-user-avatar"className="cursor-pointer" onClick={()=>this.props.history.push(`/user/${loggedInUser._id}`)}/>
                     {/* <Link to={`user/${loggedInUser._id}`}></Link> */}
                     {/* <span onClick={()=>this.props.logout()}>Sign out</span> */}
                     </div>

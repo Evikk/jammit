@@ -9,7 +9,7 @@ export function UserPreview({ user }) {
         <li className="user-card flex column" onClick={()=>history.push(`/user/${user._id}`)}>
             <div className="thumb flex column pos-relative">
                 <div className="img-wrapper flex justify-center">
-                    <img className="user-card thumb" src={user.imgUrl} className="userThumb" alt="user-thumbnail"/>
+                    <img className="user-card thumb userThumb" src={user.imgUrl}  alt="user-thumbnail"/>
                     <div className="user-inst-icons-wrapper">
                         {iconService.displayUserIcons(user)}
                     </div>

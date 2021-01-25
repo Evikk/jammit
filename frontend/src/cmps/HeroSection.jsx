@@ -1,6 +1,6 @@
 import ScrollTo from "react-scroll-into-view";
 import recordlogo from "../assets/img/recordlogo.png"
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 export function HeroSection() {
     return (
         <div className="container">
