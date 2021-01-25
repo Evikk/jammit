@@ -1,10 +1,14 @@
+
 ::-webkit-scrollbar {
-  // position: relative;
-  width: 12px;
-  // height: 403px;
-  // transform: translateY(0px);
+  position: relative;
+  width: 15px;
+  height: 15px;
+  transform: translateY(0px);
   cursor: pointer;
   background-color: transparent;
+  // overflow-y: scroll;
+  border-radius: 10px;
+
 }
 
 ::-webkit-scrollbar-track {
@@ -23,7 +27,8 @@
   background: #695da2;
 }
 
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  border-radius: 10px;
+}
 
-// ::-webkit-scrollbar-corner {
-//   background-color: transparent;
-// }
