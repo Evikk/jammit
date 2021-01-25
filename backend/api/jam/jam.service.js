@@ -13,6 +13,7 @@ module.exports = {
 
 async function query(filterBy = {}, sortBy = {}) {
     const criteria = _buildCriteria(filterBy)
+    console.log(criteria);
     // const sort = {}
     // const sortParam = sortBy.sort
     // if (sortBy.sort) sort[sortParam] = 1
@@ -20,6 +21,7 @@ async function query(filterBy = {}, sortBy = {}) {
     try {
         const collection = await dbService.getCollection('jam')
         var jams = await collection.find(criteria).toArray()
+        // console.log(jams);
         return jams
     } catch (err) {
         logger.error('cannot find jams', err)
@@ -118,8 +120,8 @@ function _buildCriteria(filterBy) {
         const regionCriteria = { $regex: filterBy.region, $options: 'i' }
         criteria.region = regionCriteria
     }
-    if (filterBy.instrument) {
-        criteria.inStock = { $eq: filterBy.inStock }
+    if (filterBy.tags) {
+        criteria.tags = { $in: filterBy.tags.split(',') }
     }
     
     return criteria

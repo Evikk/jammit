@@ -74,10 +74,13 @@
     }
 }
 
-
-// .navbar a:not(:first-child):hover{
-//     color: rgb(24, 21, 21);
-//     background-color: rgb(165, 49, 49);
-    
-// }
+.invite-container {
+    span {
+        color: rgb(34, 33, 33);
+    }
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}
 

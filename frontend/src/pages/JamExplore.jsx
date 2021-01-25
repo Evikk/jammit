@@ -14,6 +14,7 @@ import HourglassEmptyRoundedIcon from '@material-ui/icons/HourglassEmptyRounded'
 import { Link } from "react-router-dom"
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import { JamNavbar } from '../cmps/JamDetailsNavbar';
+import { JamsFilter } from "../cmps/JamsFilter.jsx";
 
 const mapStyles = {
     width: "100%",
@@ -262,7 +263,8 @@ class _JamExplore extends Component {
         activeMarker: {}, // Shows the active marker upon click
         selectedPlace: null, // Shows the InfoWindow to the selected place upon a marker
         isPopupShow: false,
-        selectedJam: null
+        selectedJam: null,
+        filteredJams: []
     };
 
     mapRef = React.createRef();
@@ -296,6 +298,7 @@ class _JamExplore extends Component {
     }
 
     componentDidUpdate(prevProps) {
+        
         if (this.props.jams !== prevProps.jams) {
             this.setState({ markers: this.displayMarkers() });
             if (this.state.activeMarker && this.state.activeMarker.position) {
@@ -307,17 +310,6 @@ class _JamExplore extends Component {
             }
           
         }
-    }
-
-    onJamCenter = (jamId) => {
-        const marker = this.state.markers.find(marker => {
-            return marker.key === jamId
-        })
-        const props = marker.props
-        this.setState({
-            selectedPlace: props,
-            mapZoom: 17
-        });
     }
 
     getUserMarker = ()=>{
@@ -356,10 +348,11 @@ class _JamExplore extends Component {
         });
     }
 
-    //   centerMoved(mapProps, map) {
-    //       console.log(map.center.lat());
+    filterJams = (filterby) =>{
+        this.props.loadJams(filterby)
+        // this.setState({filteredJams})
+    }
 
-    //   }
     _mapLoaded(mapProps, map) {
         map.setOptions({
             styles: mapStyle
@@ -378,6 +371,7 @@ class _JamExplore extends Component {
         return (
             <>
                 <section className="flex explore-container pos-relative">
+                    <JamsFilter filterJams={this.filterJams}/>
                     <button className="center-map-btn" onClick={() => {
                         const selectedPlaceCopy = { ...selectedPlace }
                         selectedPlaceCopy.position.lat = userPos.position.lat
