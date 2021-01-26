@@ -16,7 +16,6 @@ class _MainNav extends Component {
             socketService.setup()
             socketService.emit('user connection', this.props.loggedInUser._id);
             socketService.on('send',this.sendInvite)
-            
         }
         mainNavService.setHomePageNavStyle()
     }
@@ -25,7 +24,7 @@ class _MainNav extends Component {
         const Invite = ()=> {
             return <div className="invite-container">
                 <h4><span>{data.name} </span>{data.msg}</h4>
-                <Link to={data.link}>See more details >></Link>
+                <Link to={data.link}>See more details &gt;&gt;</Link>
             </div>
         }
         toast(<Invite/>, {
@@ -53,6 +52,11 @@ class _MainNav extends Component {
             mainNavService.setNavStyle()
         }else{
             mainNavService.setHomePageNavStyle()
+        }
+        if (this.props.loggedInUser) {
+            socketService.setup()
+            socketService.emit('user connection', this.props.loggedInUser._id);
+            socketService.on('send',this.sendInvite)
         }
     }
 
