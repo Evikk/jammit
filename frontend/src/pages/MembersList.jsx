@@ -18,16 +18,8 @@ class _MembersList extends Component {
         this.props.loadUsers()
     }
 
-    // handleChange = (ev) => {
-    //     const filterBy = { ...this.state.filterBy };
-    //     filterBy[ev.target.name] = ev.target.value;
-    //     this.setState({ filterBy }, ()=> {
-    //         this.props.loadUsers(this.state.filterBy)
-    //     });
-    // };
     onHandleInputChange = ({ target }) => {
         const field = target.name
-        // let value = (target.type === 'number') ? +target.value : target.value
 
         this.setState(prevState => {
             return {
@@ -83,18 +75,6 @@ class _MembersList extends Component {
                 <div className="members-container">
                     <UserList users={users} />
                 </div>
-                {/* <div className="input-box">
-                        <SearchRoundedIcon className="search-icon" />
-                        <form onSubmit={this.onSetFilter}>
-                            <input name="username"
-                                type="text"
-                                id="username"
-                                className="fs18"
-                                placeholder="Looking for someone?"
-                                value={username}
-                                onChange={this.onHandleInputChange} />
-                        </form>
-                    </div> */}
             </section>
         )
     }

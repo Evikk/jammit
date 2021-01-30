@@ -119,7 +119,7 @@ export class _LoginSignup extends React.Component {
                     placeholder="Password"
                 />
                 <button>Login</button>
-                <p className="message">Not registered? <span onClick={()=>this.setState({isSignUp: true})}>Create an account</span></p>
+                {/* <p className="message">Not registered? <span onClick={()=>this.setState({isSignUp: true})}>Create an account</span></p> */}
             </form>
         );
 
